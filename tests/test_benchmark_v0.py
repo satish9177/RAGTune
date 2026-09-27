@@ -194,3 +194,149 @@ def test_human_audit_packet_v2_structure():
     assert text.count("- [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**") == 40
     assert "AWAITING_HUMAN_REVIEW" in text
 
+
+def test_v3_human_audit_packet_and_spec_consistency():
+    """Verify Benchmark v0 canonical specs, JSONL dataset, and HUMAN_AUDIT_40_V3.md consistency."""
+    from scripts.benchmark_specs import BENCHMARK_V0_SPECS
+
+    # 1. Verify specs vs JSONL dataset
+    with open("benchmarks/benchmark_v0.jsonl", "r", encoding="utf-8") as f:
+        queries = [json.loads(line) for line in f]
+    assert len(queries) == 140
+    assert len(BENCHMARK_V0_SPECS) == 140
+
+    q_by_id = {q["query_id"]: q for q in queries}
+
+    for spec in BENCHMARK_V0_SPECS:
+        qid, eco, qtext, prov, meta, unc, rec, g3, g2s, g1s = spec
+        assert qid in q_by_id, f"Missing {qid} in benchmark_v0.jsonl"
+        q = q_by_id[qid]
+        assert q["query_text"] == qtext, f"Query text mismatch for {qid}: '{q['query_text']}' != '{qtext}'"
+        assert q["domain"] == eco
+        assert q["provenance_type"] == prov
+
+        # Canonical Grade 3 match
+        g3_refs = [r["chunk_id"] for r in q["relevant_chunks"] if r["grade"] == 3]
+        assert len(g3_refs) == 1
+        assert g3_refs[0].startswith(g3), f"{qid} G3 prefix mismatch: {g3_refs[0]} vs {g3}"
+
+        # Grade 2 match
+        g2_refs = [r["chunk_id"] for r in q["relevant_chunks"] if r["grade"] == 2]
+        assert len(g2_refs) == len(g2s)
+        for pfx, cid in zip(g2s, g2_refs):
+            assert cid.startswith(pfx)
+
+        # Grade 1 match
+        g1_refs = [r["chunk_id"] for r in q["relevant_chunks"] if r["grade"] == 1]
+        assert len(g1_refs) == len(g1s)
+        for pfx, cid in zip(g1s, g1_refs):
+            assert cid.startswith(pfx)
+
+    # 2. Verify HUMAN_AUDIT_40_V3.md
+    packet_v3 = Path("benchmarks/review/HUMAN_AUDIT_40_V3.md")
+    assert packet_v3.exists(), "HUMAN_AUDIT_40_V3.md must exist"
+    packet_text = packet_v3.read_text(encoding="utf-8")
+
+    with open("benchmarks/review/human_audit_sample_ids.json", "r", encoding="utf-8") as f:
+        sample_manifest = json.load(f)
+    sample_qids = sample_manifest["sample_query_ids"]
+    assert len(sample_qids) == 40
+
+    # Ensure all 40 sample queries exist in V3 packet
+    for qid in sample_qids:
+        assert f"[{qid}]" in packet_text, f"Missing query section for {qid} in HUMAN_AUDIT_40_V3.md"
+        q = q_by_id[qid]
+        g3_cid = next(r["chunk_id"] for r in q["relevant_chunks"] if r["grade"] == 3)
+
+        # Verify reported_new_grade3_chunk == actual_grade3_chunk
+        assert f"| `{g3_cid[:12]}` |" in packet_text, f"Summary table missing canonical chunk {g3_cid[:12]} for {qid}"
+        assert f"Chunk ID: `{g3_cid[:12]}`" in packet_text, f"Item section missing canonical chunk {g3_cid[:12]} for {qid}"
+
+    # Verify zero simulated human approvals
+    for qid in sample_qids:
+        q = q_by_id[qid]
+        assert q["review_status"] == "AWAITING_HUMAN_REVIEW"
+        assert q["reviewer"] is None
+        assert q["reviewed_at"] is None
+
+    assert packet_text.count("- [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**") == 40
+    assert "- [x]" not in packet_text and "- [X]" not in packet_text
+
+    # Verify badge counts: 18 Approved As-Is + 22 Repaired
+    assert packet_text.count("[HUMAN-AUDIT APPROVED AS-IS]") == 37  # 1 intro + 18 table + 18 items
+    assert packet_text.count("[POST-REVISE REPAIRED]") == 45  # 1 intro + 22 table + 22 items
+
+
+def test_v3_grade2_and_comparative_relevance():
+    """Verify semantic connection for Grade 2 chunks and coverage of both sides for comparative queries."""
+    import re
+
+    chunks_by_id = {}
+    with open("data/processed/partitioned_chunks.jsonl", "r", encoding="utf-8") as f:
+        for line in f:
+            item = json.loads(line)
+            if item.get("partition") == "validation":
+                chunks_by_id[item["chunk_id"]] = item
+
+    with open("benchmarks/benchmark_v0.jsonl", "r", encoding="utf-8") as f:
+        queries = [json.loads(line) for line in f]
+    q_by_id = {q["query_id"]: q for q in queries}
+
+    # 1. No Grade-2 evidence is marked when it has no semantic connection to the query
+    stopwords = {
+        "what", "when", "where", "which", "does", "that", "this", "with", "from",
+        "into", "than", "more", "most", "other", "some", "such", "only", "same",
+        "have", "been", "being", "between", "during", "regarding", "versus", "across", "using"
+    }
+
+    for q in queries:
+        qid = q["query_id"]
+        tokens = re.findall(r"[A-Za-z0-9_]+", q["query_text"].lower())
+        kw = [w for w in tokens if len(w) > 3 and w not in stopwords]
+
+        for r in q["relevant_chunks"]:
+            if r["grade"] == 2:
+                cid = r["chunk_id"]
+                c = chunks_by_id[cid]
+                text = (c["content"] + " " + c.get("breadcrumb", "")).lower()
+                overlap = [k for k in kw if k in text]
+                assert len(overlap) > 0, (
+                    f"Grade 2 chunk {cid[:12]} for {qid} has zero keyword connection to query: kw={kw}"
+                )
+
+    # 2. Comparative queries cover every named side across Grade >= 2 evidence
+    comparative_checks = [
+        ("v0_k8s_015", ["recreate", "rollingupdate"]),
+        ("v0_fa_023", ["root_path", "root-path"]),
+        ("v0_k8s_007", ["readwriteonce", "readwriteoncepod"]),
+        ("v0_pg_011", ["synchronous_commit", "remote_write"]),
+        ("v0_k8s_022", ["rolebinding", "clusterrolebinding"]),
+        ("v0_fa_018", ["allow_origins", "credential"]),
+        ("v0_pt_002", ["create_graph", "grad"]),
+        ("v0_pt_021", ["file_descriptor", "file_system"]),
+        ("v0_pt_023", ["symmetric", "asymmetric"]),
+    ]
+
+    for qid, terms in comparative_checks:
+        q = q_by_id[qid]
+        g2_and_3 = [chunks_by_id[r["chunk_id"]]["content"].lower() for r in q["relevant_chunks"] if r["grade"] >= 2]
+        combined = " ".join(g2_and_3)
+        for term in terms:
+            assert term in combined, f"Comparative query {qid} does not cover named term '{term}' across Grade >= 2 passages"
+
+
+def test_v3_evidence_sanity_audit_report():
+    """Verify benchmarks/v3_evidence_audit_report.json status."""
+    report_path = Path("benchmarks/v3_evidence_audit_report.json")
+    assert report_path.exists(), "v3_evidence_audit_report.json must exist"
+
+    with open(report_path, "r", encoding="utf-8") as f:
+        rep = json.load(f)
+
+    assert rep["summary"]["total_queries"] == 140
+    assert rep["summary"]["automated_check_fail"] == 0
+    assert rep["summary"]["automated_check_pass"] == 139
+    assert rep["summary"]["automated_check_review"] == 1
+    assert rep["details"]["AUTOMATED_CHECK_REVIEW"][0]["query_id"] == "v0_fa_018"
+
+

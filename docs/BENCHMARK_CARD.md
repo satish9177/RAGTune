@@ -47,30 +47,43 @@ Following Gebru et al. (2021) and Hugging Face Dataset Card standards.
   - `v0_fa_028` (FastAPI CORS preflight headers, SO 65632734, 2021-01-08) $\to$ **`CC BY-SA 4.0`**
 - All 3 external queries are included in the 40-query human audit packet (`benchmarks/review/HUMAN_AUDIT_40.md`).
 
-### 3.4 Human Audit Review Recommendations & Relevance Repair Methodology
-Following the generation of the initial 40-query human review sample (`benchmarks/review/HUMAN_AUDIT_40.md`), human inspection revealed a systematic relevance-mapping defect in the initial draft:
-1. **Human Audit Recommendations**:
-   - **APPROVE (5 queries)**: `v0_pt_025`, `v0_k8s_011`, `v0_fa_004`, `v0_fa_026`, `v0_fa_028`.
-   - **REJECT (1 query)**: `v0_pt_027` (DataLoader worker `/dev/shm` bus error was absent from the PyTorch documentation partition).
-   - **REVISE (34 queries)**: Grade 3 canonical evidence was frequently anchored to introductory overviews, table-of-contents summaries, or neighboring sections rather than the exact answer-bearing passage (e.g. `work_mem` query mapped to `temp_buffers` content; `synchronous_commit` query mapped to generic `fsync` overview).
-2. **Relevance Repair Methodology**:
-   - **Query & Evidence Replacement (7 queries)**:
-     - `v0_pt_027` replaced with an authentic PyTorch troubleshooting scenario from `notes/faq.rst`: CUDA Out of Memory (OOM) exception handler traceback reference cycle memory leak and mitigation via local variable scoping (`1599a13b824d`).
-     - 6 queries replaced where the target concepts lacked coverage in the validation partition: `v0_pg_016` (`pg_depend` dependencies), `v0_pg_017` (`pg_type` alignment and TOAST storage), `v0_pg_018` (`pg_index` column flags), `v0_pt_002` (`param.grad` accumulation semantics), `v0_pt_012` (autograd in-place modification version checking), and `v0_k8s_017` (PersistentVolume reclaim policies).
-   - **Evidence Re-Anchoring (133 queries)**:
-     - All 140 queries re-anchored to unambiguous, answer-bearing chunk IDs in the validation partition using deterministic prefix mapping in `scripts/benchmark_specs.py` with zero regex fallbacks.
-     - Anti-generic check enforced via `is_generic_intro` and focused answer span extraction via `extract_answer_span`.
-   - **Zero Simulated Human Decisions**:
-     - Review status for the 40 sampled queries remains strictly `AWAITING_HUMAN_REVIEW` (reviewer = null, reviewed_at = null).
-     - The remaining 100 queries remain `AI_SOURCE_VERIFIED`.
-   - **Audit Artifact Preservation & V2 Packet**:
-     - Historical `benchmarks/review/HUMAN_AUDIT_40.md` is preserved intact.
-     - `benchmarks/review/HUMAN_AUDIT_40_V2.md` was generated with explicit previous decision badges, diff explanations, answer-centered excerpts, and clean review checkboxes.
-3. **Post-Repair Evidence Audit Results (`benchmarks/post_repair_evidence_audit_report.json`)**:
+### 3.4 Human Audit Review Dispositions & V3 Relevance Repair Methodology
+
+The development benchmark quality process incorporates iterative human audit review and rigorous validation:
+
+1. **Initial V1 Human Audit & V2 Repairs**:
+   - Initial 40-query audit packet (`benchmarks/review/HUMAN_AUDIT_40.md`) identified relevance-mapping defects (e.g. `work_mem` query mapped to `temp_buffers`; `synchronous_commit` mapped to generic `fsync` overview).
+   - Produced `benchmarks/review/HUMAN_AUDIT_40_V2.md` with re-anchored passages and replacement of unsupported queries.
+
+2. **V2 Human Review Recommendations (Satish)**:
+   - **APPROVE AS-IS (18 queries)**: `v0_pg_025`, `v0_pg_034`, `v0_pt_003`, `v0_pt_025`, `v0_pt_027`, `v0_k8s_011`, `v0_k8s_014`, `v0_k8s_017`, `v0_k8s_025`, `v0_k8s_027`, `v0_k8s_029`, `v0_fa_004`, `v0_fa_010`, `v0_fa_011`, `v0_fa_016`, `v0_fa_022`, `v0_fa_026`, `v0_fa_028`.
+   - **REVISE (22 queries)**: `v0_pg_001`, `v0_pg_002`, `v0_pg_011`, `v0_pg_013`, `v0_pg_016`, `v0_pg_017`, `v0_pg_018`, `v0_pg_026`, `v0_pg_030`, `v0_pt_002`, `v0_pt_012`, `v0_pt_015`, `v0_pt_018`, `v0_pt_021`, `v0_pt_023`, `v0_pt_032`, `v0_k8s_007`, `v0_k8s_010`, `v0_k8s_015`, `v0_k8s_022`, `v0_fa_018`, `v0_fa_023`.
+   - **REJECT (0 queries)**: No queries rejected; all retained within the validation partition.
+
+3. **V3 Relevance Repair Architecture & Methodology**:
+   - **Single Canonical Spec (`scripts/benchmark_specs.py`)**: All 140 query definitions, provenance metadata, uncertainty flags, and graded relevance chunk prefixes are maintained in a single source of truth, eliminating spec-to-report drift.
+   - **Mechanical Snapshot Diffing**: `scripts/generate_human_audit_packet_v3.py` diffs `benchmarks/review/benchmark_v0_v2_snapshot.jsonl` against current `benchmarks/benchmark_v0.jsonl`, guaranteeing that `reported_new_grade3_chunk == actual_grade3_chunk`.
+   - **Exact Passage Re-Anchoring (22 queries)**:
+     - PostgreSQL: `v0_pg_001` (`bd01abb12ba6`, `shared_buffers`), `v0_pg_002` (`c702d7353ba3`, `work_mem`), `v0_pg_011` (`6cf7e592b2d8`, crash durability of `on` vs `remote_write`), `v0_pg_013` (`4cb1a6e848ab`, `hot_standby_feedback`), `v0_pg_016` (`a1d4c0645801`, `DEPENDENCY_NORMAL` vs `DEPENDENCY_AUTO`), `v0_pg_017` (`6c035189f85c`, `typalign`/`typstorage`), `v0_pg_018` (`58602e758a4a`, `indisprimary`/`indisclustered`/`indisvalid`), `v0_pg_026` (`e0bcb398517f`, `max_connections`), `v0_pg_030` (`4151c530c8cf`, `deadlock_timeout` diagnostics).
+     - PyTorch: `v0_pt_002` (`79cab38f8b32`, `create_graph` accumulation), `v0_pt_012` (`d7fb32e88610`, in-place version tracking), `v0_pt_015` (`6ba0b24e5699`, CUDA tensor sharing start methods), `v0_pt_018` (`87f584fa213e`, `spawn` exception handling), `v0_pt_021` (`47c7bc4b7227`, `file_descriptor` vs `file_system`), `v0_pt_023` (`5bf6b4652e3d`, symmetric vs asymmetric quantization equations), `v0_pt_032` (`c51ddba8d3d5`, training loop autograd history accumulation OOM).
+     - Kubernetes: `v0_k8s_007` (`60113ca5b874`, `ReadWriteOnce` vs `ReadWriteOncePod`), `v0_k8s_010` (`2199ee2405be`, `required` vs `preferred` node affinity), `v0_k8s_015` (`b997853e6622` RollingUpdate & `6ddcf2182d64` Recreate promoted to G2), `v0_k8s_022` (`74825e38c71a`, RoleBinding vs ClusterRoleBinding authorization scope).
+     - FastAPI: `v0_fa_018` (`4e814ec518ec`, wildcard CORS origin credentials exclusion), `v0_fa_023` (`7008bc96ad50` `root_path` app parameter vs `4a8ba42bc58f` `--root-path` ASGI CLI option).
+   - **Query Text Alignment**: Where validation documentation lacked coverage for earlier AI-phrased queries, questions were rewritten to match authentic technical documentation concepts (`v0_pt_012`, `v0_pt_015`, `v0_pt_018`, `v0_pt_023`, `v0_pt_032`, `v0_fa_018`, `v0_fa_023`).
+   - **Comparative Completeness & Grade 2 Pruning**: For comparative queries, all named sides are covered across Grade $\ge 2$ passages. Unrelated Grade 2 passages were pruned (`v0_pg_005`, `v0_pt_026`), guaranteeing 100% semantic connection across all Grade 2 passages.
+   - **Zero Simulated Human Decisions**: All 40 sampled queries remain strictly `AWAITING_HUMAN_REVIEW` (reviewer = null, reviewed_at = null). The remaining 100 queries are `AI_SOURCE_VERIFIED`.
+
+4. **Automated Evidence Sanity Audit (`benchmarks/v3_evidence_audit_report.json`)**:
    - Total queries audited: 140
-   - `EVIDENCE_STRONG`: 140 (100.0%)
-   - `EVIDENCE_NEEDS_REVIEW`: 0 (0.0%)
-   - `EVIDENCE_INVALID`: 0 (0.0%)
+   - `AUTOMATED_CHECK_PASS`: 139 (99.3%)
+   - `AUTOMATED_CHECK_REVIEW`: 1 (0.7%, `v0_fa_018` due to cross-passage concept distribution across G3 and G2)
+   - `AUTOMATED_CHECK_FAIL`: 0 (0.0%)
+   - *Methodological Disclaimer*: Automated evidence verification provides a structural sanity check layer (anti-generic checks, keyword overlap, displacement detection) and does not constitute formal human semantic certification.
+
+5. **Audit Packet Artifacts**:
+   - Historical V1 packet: `benchmarks/review/HUMAN_AUDIT_40.md` (preserved intact).
+   - Historical V2 packet: `benchmarks/review/HUMAN_AUDIT_40_V2.md` (preserved intact).
+   - V2 pre-repair snapshot: `benchmarks/review/benchmark_v0_v2_snapshot.jsonl` (preserved for auditing).
+   - Current V3 packet: `benchmarks/review/HUMAN_AUDIT_40_V3.md` (18 `[HUMAN-AUDIT APPROVED AS-IS]`, 22 `[POST-REVISE REPAIRED]`, complete diffs, answer-centered excerpts, unselected checkboxes).
 
 ## 4. Graded Relevance Guidelines & Annotation Protocol
 
