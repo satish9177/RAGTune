@@ -15,8 +15,9 @@ __pycache__/
 .coverage
 htmlcov/
 
-# Local databases and search indices
+# Local databases, checkpoints and search indices
 data/indices/
+data/checkpoints/
 *.db
 *.db-journal
 *.sqlite

@@ -1,0 +1,49 @@
+{
+  "experiment_id": "E3-BGE-FT-v0-candidate",
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "description": "Provisional Contrastive Fine-Tuned BGE-small on TRAIN partition",
+  "timestamp_utc": "2026-09-27T21:44:53Z",
+  "git_commit_sha": "8d6f409f73ee19cfd5f4e17e4700d2113232a1da",
+  "base_model": "BAAI/bge-small-en-v1.5",
+  "training_data_path": "data/training/retriever_train_v0.jsonl",
+  "training_data_sha256": "9fbeacf34f88a3dce7bbee5efad0225245d71c743a1a93d360ac78461d1de9fb",
+  "training_data_partition": "train",
+  "training_hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "loss": "MultipleNegativesRankingLoss",
+    "training_time_sec": 8.696075699990615
+  },
+  "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_path": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_v0_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "benchmark_source_partition": "validation",
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.34285714285714286,
+    "recall_at_5": 0.7011904761904761,
+    "recall_at_10": 0.7892857142857143,
+    "recall_at_20": 0.85,
+    "mrr_at_10": 0.693718820861678,
+    "ndcg_at_10": 0.6349792365873095
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 2.5813234000233933,
+    "queries_per_sec": 54.23574589636124,
+    "mean_latency_ms": 18.421788571036554,
+    "p50_latency_ms": 17.31819991255179,
+    "p95_latency_ms": 26.723184972070158,
+    "p99_latency_ms": 30.968714974587748,
+    "peak_vram_allocated_mb": 2321.90625,
+    "training_time_sec": 8.696075699990615
+  },
+  "failure_summary": {
+    "total_failures_top10": 9,
+    "failure_rate_top10": 0.06428571428571428,
+    "failures_top50": 3
+  }
+}
