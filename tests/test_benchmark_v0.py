@@ -112,3 +112,85 @@ def test_quality_audit_and_review_packets_exist():
     assert sample_manifest["human_audit_sample_count"] == 40
     assert len(sample_manifest["sample_query_ids"]) == 40
 
+
+def test_post_repair_evidence_relevance():
+    """Verify that 100% of benchmark v0 queries have strong, answer-bearing evidence."""
+    from scripts.evidence_verifier import is_generic_intro, extract_answer_span
+
+    report_path = Path("benchmarks/post_repair_evidence_audit_report.json")
+    assert report_path.exists(), "Post-repair evidence audit report must exist"
+
+    with open(report_path, "r", encoding="utf-8") as f:
+        rep = json.load(f)
+
+    assert rep["summary"]["total_queries"] == 140
+    assert rep["summary"]["evidence_strong"] == 140
+    assert rep["summary"]["evidence_needs_review"] == 0
+    assert rep["summary"]["evidence_invalid"] == 0
+    assert rep["summary"]["evidence_strong_percentage"] == 100.0
+
+    # Load validation partition chunks
+    chunks_by_id = {}
+    with open("data/processed/partitioned_chunks.jsonl", "r", encoding="utf-8") as f:
+        for line in f:
+            item = json.loads(line)
+            if item.get("partition") == "validation":
+                chunks_by_id[item["chunk_id"]] = item
+
+    with open("benchmarks/benchmark_v0.jsonl", "r", encoding="utf-8") as f:
+        queries = [json.loads(line) for line in f]
+
+    for q in queries:
+        qid = q["query_id"]
+        g3_refs = [r for r in q["relevant_chunks"] if r["grade"] == 3]
+        assert len(g3_refs) == 1, f"{qid} must have exactly one Grade 3 chunk"
+        g3_cid = g3_refs[0]["chunk_id"]
+        assert g3_cid in chunks_by_id, f"{qid} Grade 3 chunk {g3_cid} must be in validation partition"
+        g3_chunk = chunks_by_id[g3_cid]
+
+        # Zero Grade 3 chunks may match generic intro patterns
+        assert not is_generic_intro(g3_chunk["content"]), (
+            f"{qid} Grade 3 chunk {g3_cid} matched generic intro pattern!"
+        )
+
+        # Ensure answer span extractor can find focused span
+        query_words = [w.strip("?,.:;\"'`()[]{}") for w in q["query_text"].split() if len(w) > 3]
+        span = extract_answer_span(g3_chunk["content"], query_words, window_chars=250)
+        assert len(span) > 20, f"{qid} failed to produce a valid answer span"
+
+    # Specific check for rejected & replaced v0_pt_027
+    pt_027 = next(q for q in queries if q["query_id"] == "v0_pt_027")
+    assert "memory" in pt_027["query_text"].lower()
+    assert "dev/shm" not in pt_027["query_text"].lower()
+    assert "bus error" not in pt_027["query_text"].lower()
+    g3_pt027 = pt_027["relevant_chunks"][0]["chunk_id"]
+    pt027_content = chunks_by_id[g3_pt027]["content"]
+    assert "exception" in pt027_content.lower()
+    assert "stack frame" in pt027_content.lower()
+
+
+def test_human_audit_packet_v2_structure():
+    """Verify that HUMAN_AUDIT_40_V2.md exists and adheres to review contract."""
+    packet_v2 = Path("benchmarks/review/HUMAN_AUDIT_40_V2.md")
+    assert packet_v2.exists(), "HUMAN_AUDIT_40_V2.md must exist"
+
+    text = packet_v2.read_text(encoding="utf-8")
+
+    # Historical packet must also be preserved
+    assert Path("benchmarks/review/HUMAN_AUDIT_40.md").exists()
+
+    # Must contain 40 query sections
+    assert "Total Audit Sample** | **40**" in text
+    for i in range(1, 41):
+        assert f"### {i}. `[" in text, f"Missing section for item {i}"
+
+    # Must contain explicit badges for previous human decisions (in summary list, table, and item headers)
+    assert text.count("[PREVIOUSLY APPROVED - EVIDENCE PRESERVED]") == 11  # 1 summary + 5 table + 5 items
+    assert text.count("[PREVIOUSLY REJECTED - QUERY & EVIDENCE REPLACED]") == 3  # 1 summary + 1 table + 1 item
+    assert text.count("[PREVIOUSLY REVISE - QUERY & EVIDENCE REPLACED]") == 13  # 1 summary + 6 table + 6 items
+    assert text.count("[PREVIOUSLY REVISE - EVIDENCE RE-ANCHORED]") == 57  # 1 summary + 28 table + 28 items
+
+    # Review checkboxes must be unselected (zero simulated decisions)
+    assert text.count("- [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**") == 40
+    assert "AWAITING_HUMAN_REVIEW" in text
+

@@ -47,6 +47,31 @@ Following Gebru et al. (2021) and Hugging Face Dataset Card standards.
   - `v0_fa_028` (FastAPI CORS preflight headers, SO 65632734, 2021-01-08) $\to$ **`CC BY-SA 4.0`**
 - All 3 external queries are included in the 40-query human audit packet (`benchmarks/review/HUMAN_AUDIT_40.md`).
 
+### 3.4 Human Audit Review Recommendations & Relevance Repair Methodology
+Following the generation of the initial 40-query human review sample (`benchmarks/review/HUMAN_AUDIT_40.md`), human inspection revealed a systematic relevance-mapping defect in the initial draft:
+1. **Human Audit Recommendations**:
+   - **APPROVE (5 queries)**: `v0_pt_025`, `v0_k8s_011`, `v0_fa_004`, `v0_fa_026`, `v0_fa_028`.
+   - **REJECT (1 query)**: `v0_pt_027` (DataLoader worker `/dev/shm` bus error was absent from the PyTorch documentation partition).
+   - **REVISE (34 queries)**: Grade 3 canonical evidence was frequently anchored to introductory overviews, table-of-contents summaries, or neighboring sections rather than the exact answer-bearing passage (e.g. `work_mem` query mapped to `temp_buffers` content; `synchronous_commit` query mapped to generic `fsync` overview).
+2. **Relevance Repair Methodology**:
+   - **Query & Evidence Replacement (7 queries)**:
+     - `v0_pt_027` replaced with an authentic PyTorch troubleshooting scenario from `notes/faq.rst`: CUDA Out of Memory (OOM) exception handler traceback reference cycle memory leak and mitigation via local variable scoping (`1599a13b824d`).
+     - 6 queries replaced where the target concepts lacked coverage in the validation partition: `v0_pg_016` (`pg_depend` dependencies), `v0_pg_017` (`pg_type` alignment and TOAST storage), `v0_pg_018` (`pg_index` column flags), `v0_pt_002` (`param.grad` accumulation semantics), `v0_pt_012` (autograd in-place modification version checking), and `v0_k8s_017` (PersistentVolume reclaim policies).
+   - **Evidence Re-Anchoring (133 queries)**:
+     - All 140 queries re-anchored to unambiguous, answer-bearing chunk IDs in the validation partition using deterministic prefix mapping in `scripts/benchmark_specs.py` with zero regex fallbacks.
+     - Anti-generic check enforced via `is_generic_intro` and focused answer span extraction via `extract_answer_span`.
+   - **Zero Simulated Human Decisions**:
+     - Review status for the 40 sampled queries remains strictly `AWAITING_HUMAN_REVIEW` (reviewer = null, reviewed_at = null).
+     - The remaining 100 queries remain `AI_SOURCE_VERIFIED`.
+   - **Audit Artifact Preservation & V2 Packet**:
+     - Historical `benchmarks/review/HUMAN_AUDIT_40.md` is preserved intact.
+     - `benchmarks/review/HUMAN_AUDIT_40_V2.md` was generated with explicit previous decision badges, diff explanations, answer-centered excerpts, and clean review checkboxes.
+3. **Post-Repair Evidence Audit Results (`benchmarks/post_repair_evidence_audit_report.json`)**:
+   - Total queries audited: 140
+   - `EVIDENCE_STRONG`: 140 (100.0%)
+   - `EVIDENCE_NEEDS_REVIEW`: 0 (0.0%)
+   - `EVIDENCE_INVALID`: 0 (0.0%)
+
 ## 4. Graded Relevance Guidelines & Annotation Protocol
 
 ### 4.1 Graded Relevance Definitions
