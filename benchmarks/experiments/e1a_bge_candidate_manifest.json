@@ -1,0 +1,49 @@
+{
+  "experiment_id": "E1a-BGE-v0-candidate",
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "description": "Provisional Dense Baseline (BAAI/bge-small-en-v1.5) on Candidate Benchmark v0 (N=140)",
+  "timestamp_utc": "2026-09-27T21:05:31Z",
+  "git_commit_sha": "a191efbdb95922a7318aeecf64757b00040408f9",
+  "model_id": "BAAI/bge-small-en-v1.5",
+  "model_exact_commit_sha": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "embedding_dimension": 384,
+  "normalization": "l2",
+  "query_instruction_prefix": "Represent this sentence for searching relevant passages: ",
+  "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_path": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_v0_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "benchmark_source_partition": "validation",
+  "corpus_chunks_indexed": 11645,
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.30238095238095236,
+    "recall_at_5": 0.6547619047619047,
+    "recall_at_10": 0.7392857142857143,
+    "recall_at_20": 0.8321428571428572,
+    "mrr_at_10": 0.6461876417233561,
+    "ndcg_at_10": 0.5985914790275817
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 2.519103200058453,
+    "queries_per_sec": 55.57533331574167,
+    "mean_latency_ms": 17.979684289145684,
+    "p50_latency_ms": 16.394349979236722,
+    "p95_latency_ms": 25.743845058605064,
+    "p99_latency_ms": 29.286743997363374,
+    "peak_vram_allocated_mb": 379.73095703125
+  },
+  "failure_summary": {
+    "total_failures_top10": 14,
+    "failure_rate_top10": 0.1,
+    "failures_top50": 5,
+    "failure_mechanisms": {
+      "code_syntax_and_identifier_mismatch": 2,
+      "dense_semantic_confuser_crowding": 6,
+      "semantic_fine_grained_distinction": 3,
+      "dense_embedding_drift_or_sparse_semantic_signal": 3
+    }
+  }
+}
