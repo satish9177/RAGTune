@@ -1,0 +1,44 @@
+{
+  "experiment_id": "E0-v0-candidate",
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "description": "Provisional Formal Lexical Baseline (SQLite FTS5 BM25) on Candidate Benchmark v0 (N=140)",
+  "timestamp_utc": "2026-09-27T21:01:37Z",
+  "git_commit_sha": "b600c0981773d54c818caf3ca5b07430738cc39f",
+  "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_path": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_v0_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "benchmark_source_partition": "validation",
+  "corpus_chunks_indexed": 11645,
+  "retrieval_engine": "SQLite FTS5 BM25 (k1=1.2, b=0.75, unicode61)",
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.30238095238095236,
+    "recall_at_5": 0.6333333333333333,
+    "recall_at_10": 0.7571428571428571,
+    "recall_at_20": 0.8535714285714285,
+    "mrr_at_10": 0.6523582766439909,
+    "ndcg_at_10": 0.6183514614911423
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 3.3847398000070825,
+    "queries_per_sec": 41.362115929770155,
+    "mean_latency_ms": 24.158804284109333,
+    "p50_latency_ms": 23.711199988611042,
+    "p95_latency_ms": 34.766975045204155,
+    "p99_latency_ms": 47.74423599243151
+  },
+  "failure_summary": {
+    "total_failures_top10": 11,
+    "failure_rate_top10": 0.07857142857142857,
+    "failures_top50": 2,
+    "failure_mechanisms": {
+      "semantic_fine_grained_distinction": 3,
+      "code_syntax_and_identifier_mismatch": 2,
+      "lexical_term_flooding_by_confusers": 4,
+      "vocabulary_mismatch_or_sparse_coverage": 2
+    }
+  }
+}
