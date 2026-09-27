@@ -1,0 +1,46 @@
+{
+  "experiment_id": "E2c-Hybrid-Qwen3-v0-candidate",
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "description": "Provisional Reference Hybrid Baseline (SQLite BM25 + Qwen3-Embedding-0.6B via RRF k=60)",
+  "timestamp_utc": "2026-09-27T21:33:01Z",
+  "git_commit_sha": "15efce1455dda8623cb303b8add19245a25a5951",
+  "fusion_metadata": {
+    "retriever_a": "SQLite FTS5 BM25 (k1=1.2, b=0.75)",
+    "retriever_b": "Qwen/Qwen3-Embedding-0.6B",
+    "fusion_method": "Reciprocal Rank Fusion (RRF)",
+    "rrf_k": 60
+  },
+  "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_path": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_v0_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "benchmark_source_partition": "validation",
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.3559523809523809,
+    "recall_at_5": 0.725,
+    "recall_at_10": 0.8464285714285714,
+    "recall_at_20": 0.9107142857142857,
+    "mrr_at_10": 0.7285997732426304,
+    "ndcg_at_10": 0.6992701825293056
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 10.865985400442966,
+    "queries_per_sec": 12.88424333740525,
+    "mean_latency_ms": 77.61418143173545,
+    "p50_latency_ms": 74.8633000404574,
+    "p95_latency_ms": 98.93382000024428,
+    "p99_latency_ms": 111.66511299423857
+  },
+  "failure_summary": {
+    "total_failures_top10": 4,
+    "failure_rate_top10": 0.02857142857142857,
+    "failures_top50": 1,
+    "failure_mechanisms": {
+      "hybrid_confuser_consensus": 3,
+      "hybrid_sparse_and_dense_omission": 1
+    }
+  }
+}
