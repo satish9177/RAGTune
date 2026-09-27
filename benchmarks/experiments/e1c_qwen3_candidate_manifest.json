@@ -1,0 +1,48 @@
+{
+  "experiment_id": "E1c-Qwen3-v0-candidate",
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "description": "Provisional Dense Reference Baseline (Qwen/Qwen3-Embedding-0.6B) on Candidate Benchmark v0 (N=140)",
+  "timestamp_utc": "2026-09-27T21:30:51Z",
+  "git_commit_sha": "dc3f505e5d2e134d5924dff30b7a77321de9f5cc",
+  "model_id": "Qwen/Qwen3-Embedding-0.6B",
+  "model_exact_commit_sha": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "embedding_dimension": 1024,
+  "normalization": "l2",
+  "query_instruction_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery: ",
+  "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_path": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_v0_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "benchmark_source_partition": "validation",
+  "corpus_chunks_indexed": 11645,
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.3845238095238095,
+    "recall_at_5": 0.7464285714285714,
+    "recall_at_10": 0.825,
+    "recall_at_20": 0.9,
+    "mrr_at_10": 0.7610969387755103,
+    "ndcg_at_10": 0.7119938702655902
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 10.847039200016297,
+    "queries_per_sec": 12.906747861645936,
+    "mean_latency_ms": 77.46418143173547,
+    "p50_latency_ms": 74.7133000404574,
+    "p95_latency_ms": 98.78382000024428,
+    "p99_latency_ms": 111.51511299423856,
+    "peak_vram_allocated_mb": 15868.462890625
+  },
+  "failure_summary": {
+    "total_failures_top10": 6,
+    "failure_rate_top10": 0.04285714285714286,
+    "failures_top50": 1,
+    "failure_mechanisms": {
+      "code_syntax_and_identifier_mismatch": 1,
+      "dense_semantic_confuser_crowding": 4,
+      "semantic_fine_grained_distinction": 1
+    }
+  }
+}
