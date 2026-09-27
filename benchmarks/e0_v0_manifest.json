@@ -1,6 +1,8 @@
 {
-  "experiment_id": "E0-v0",
-  "description": "Formal Lexical Baseline (SQLite FTS5 BM25) on Benchmark v0 (Development Benchmark, N=140)",
+  "experiment_id": "E0-v0-draft",
+  "status": "PROVISIONAL_DRAFT",
+  "description": "Provisional Lexical Baseline (SQLite FTS5 BM25) on Benchmark v0 (Draft Development Run, Pending Benchmark v0 Human Review)",
+  "canonical_status": "PENDING_BENCHMARK_V0_HUMAN_REVIEW",
   "timestamp_utc": "2026-09-27T16:10:37Z",
   "git_commit_sha": "715649908b6b857f27313443eb805ce8ac87ce0f",
   "corpus_freeze_v0_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",

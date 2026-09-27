@@ -84,7 +84,14 @@ class BenchmarkQuery(BaseModel):
     domain: Literal["postgresql", "pytorch", "kubernetes", "fastapi"]
     query_text: str = Field(description="Exact query string presented to retrieval systems")
     typology: Literal["direct_lookup", "comparative_discrimination", "troubleshooting_scenario"]
-    provenance_type: Literal["synthetic_grounded", "human_authored", "external_derived"]
+    provenance_type: Literal[
+        "synthetic_grounded",
+        "ai_authored_project_query",
+        "external_derived_verified",
+        "human_authored",
+        "human_reviewed_project_query",
+        "external_derived",
+    ]
     provenance_metadata: Dict[str, Any] = Field(
         default_factory=dict, description="Provenance tracking: URL, license, author attribution, paraphrase status"
     )
@@ -100,6 +107,15 @@ class BenchmarkQuery(BaseModel):
     )
     uncertainty: bool = Field(default=False, description="Flag indicating borderline or ambiguous relevance")
     annotation_notes: str = Field(default="", description="Reviewer notes and guidelines adherence")
+    review_status: Literal["UNREVIEWED", "APPROVED", "REVISE", "REJECTED"] = Field(
+        default="UNREVIEWED", description="Human review state"
+    )
+    reviewer: Optional[str] = Field(default=None, description="Human reviewer identifier")
+    review_notes: str = Field(default="", description="Human reviewer notes or change requests")
+    reviewed_at: Optional[str] = Field(default=None, description="UTC timestamp of human review")
+    ai_recommendation: Literal["APPROVE_CANDIDATE", "REVISE_CANDIDATE", "REJECT_CANDIDATE"] = Field(
+        default="APPROVE_CANDIDATE", description="Preliminary AI quality audit recommendation"
+    )
 
     model_config = {"frozen": True}
 

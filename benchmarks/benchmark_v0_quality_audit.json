@@ -1,0 +1,186 @@
+{
+  "benchmark_id": "benchmark_v0",
+  "total_queries_audited": 140,
+  "near_duplicate_query_pairs_ge_0_60": [],
+  "anti_parroting_summary": {
+    "mean_jaccard_vs_evidence": 0.0687,
+    "max_jaccard_vs_evidence": 0.2195,
+    "pairs_ge_0_40": []
+  },
+  "repeated_question_stems": {
+    "what are the": 3,
+    "how does the": 7,
+    "what is the": 27,
+    "how to resolve": 4,
+    "why does an": 7,
+    "how does torch": 3,
+    "why does a": 7
+  },
+  "overused_canonical_evidence_chunks": {
+    "41d1bbb3a8da8acd96ad33cf": [
+      "v0_pg_006",
+      "v0_pg_007",
+      "v0_pg_016",
+      "v0_pg_017",
+      "v0_pg_028",
+      "v0_pg_032"
+    ],
+    "cd270fbc8fad2ce2e6e02a5b": [
+      "v0_pt_002",
+      "v0_pt_003",
+      "v0_pt_011",
+      "v0_pt_012",
+      "v0_pt_028",
+      "v0_pt_029",
+      "v0_pt_030"
+    ],
+    "14db012076f4c2dbb8d9c0a4": [
+      "v0_pt_008",
+      "v0_pt_019",
+      "v0_pt_026"
+    ],
+    "c51ddba8d3d5feee10d8794b": [
+      "v0_pt_020",
+      "v0_pt_022",
+      "v0_pt_027",
+      "v0_pt_031"
+    ],
+    "3cba1ae92b92ab2f0293d3e4": [
+      "v0_k8s_005",
+      "v0_k8s_012",
+      "v0_k8s_013"
+    ],
+    "60cd6667ec963ff771ca01b2": [
+      "v0_k8s_010",
+      "v0_k8s_021",
+      "v0_k8s_022"
+    ],
+    "b32cb24631fa29b9b567e912": [
+      "v0_fa_005",
+      "v0_fa_017",
+      "v0_fa_030"
+    ],
+    "712ae91ad64e897a64b88bc0": [
+      "v0_fa_006",
+      "v0_fa_018",
+      "v0_fa_026",
+      "v0_fa_034"
+    ],
+    "d647280acd571678177c8201": [
+      "v0_fa_010",
+      "v0_fa_022",
+      "v0_fa_033"
+    ],
+    "2b0990f1a2a2664cdeffbce3": [
+      "v0_fa_011",
+      "v0_fa_012",
+      "v0_fa_035"
+    ]
+  },
+  "relevance_positive_distribution": {
+    "queries_with_1_positive": 22,
+    "queries_with_2_positives": 108,
+    "queries_with_3_or_more_positives": 10
+  },
+  "uncertainty_audit": {
+    "total_uncertain": 17,
+    "uncertain_queries": [
+      {
+        "query_id": "v0_pg_011",
+        "domain": "postgresql",
+        "query_text": "What is the durability difference between synchronous_commit set to on versus remote_write in PostgreSQL replication?"
+      },
+      {
+        "query_id": "v0_pg_013",
+        "domain": "postgresql",
+        "query_text": "How does enabling hot_standby_feedback prevent query cancellation on physical replicas compared to increasing max_standby_streaming_delay?"
+      },
+      {
+        "query_id": "v0_pg_018",
+        "domain": "postgresql",
+        "query_text": "What is the difference in locking and index requirements between ON CONFLICT DO NOTHING and ON CONFLICT DO UPDATE?"
+      },
+      {
+        "query_id": "v0_pg_025",
+        "domain": "postgresql",
+        "query_text": "How does the background writer process differ from the checkpointer in writing dirty shared buffers to disk?"
+      },
+      {
+        "query_id": "v0_pg_034",
+        "domain": "postgresql",
+        "query_text": "How to diagnose why autovacuum fails to clean up dead tuples resulting in continuous table bloat on a high-write table?"
+      },
+      {
+        "query_id": "v0_pt_012",
+        "domain": "pytorch",
+        "query_text": "What is the functional difference between retain_graph=True and retain_graph=False during repeated backward calls on the same computational graph?"
+      },
+      {
+        "query_id": "v0_pt_015",
+        "domain": "pytorch",
+        "query_text": "How does custom DDP hook processing over a GradBucket differ from registering standard tensor-level backward hooks?"
+      },
+      {
+        "query_id": "v0_pt_021",
+        "domain": "pytorch",
+        "query_text": "What is the distinction between exporting PyTorch models to ONNX using TorchDynamo compared to legacy TorchScript tracing?"
+      },
+      {
+        "query_id": "v0_pt_032",
+        "domain": "pytorch",
+        "query_text": "Why does state checkpointing in custom DDP communication hooks require special handling when model parameters change?"
+      },
+      {
+        "query_id": "v0_k8s_014",
+        "domain": "kubernetes",
+        "query_text": "What is the operational difference between hard eviction thresholds and soft eviction thresholds in kubelet node-pressure eviction?"
+      },
+      {
+        "query_id": "v0_k8s_015",
+        "domain": "kubernetes",
+        "query_text": "How does kubelet rank Pods for eviction under memory pressure based on QoS class and priority?"
+      },
+      {
+        "query_id": "v0_k8s_017",
+        "domain": "kubernetes",
+        "query_text": "What is the difference between Immediate and WaitForFirstConsumer volume binding modes in StorageClasses?"
+      },
+      {
+        "query_id": "v0_k8s_022",
+        "domain": "kubernetes",
+        "query_text": "What happens when a RoleBinding in a specific namespace references a ClusterRole instead of a namespaced Role?"
+      },
+      {
+        "query_id": "v0_k8s_029",
+        "domain": "kubernetes",
+        "query_text": "Why does a stateful pod remain Pending with volume node affinity conflict when using a local PersistentVolume?"
+      },
+      {
+        "query_id": "v0_fa_011",
+        "domain": "fastapi",
+        "query_text": "How does FastAPI execution differ between defining a path operation with def versus async def regarding the asyncio event loop and external threadpool?"
+      },
+      {
+        "query_id": "v0_fa_016",
+        "domain": "fastapi",
+        "query_text": "Why does setting allow_origins=['*'] fail in browser clients when allow_credentials=True is enabled in CORSMiddleware?"
+      },
+      {
+        "query_id": "v0_fa_018",
+        "domain": "fastapi",
+        "query_text": "What is the difference between setting APIRouter prefix='/api' and passing root_path='/api' to FastAPI when hosting behind a reverse proxy?"
+      }
+    ]
+  },
+  "review_status_summary": {
+    "UNREVIEWED": 140,
+    "APPROVED": 0,
+    "REVISE": 0,
+    "REJECTED": 0,
+    "ai_recommendations": {
+      "APPROVE_CANDIDATE": 140,
+      "REVISE_CANDIDATE": 0,
+      "REJECT_CANDIDATE": 0
+    }
+  }
+}
