@@ -1,0 +1,8 @@
+{
+  "experiment_id": "E1b-Gemma-v0-candidate",
+  "status": "BLOCKED_GATED_ACCESS",
+  "model_id": "google/embeddinggemma-300m",
+  "checked_at_utc": "2026-09-27T21:31:29Z",
+  "error": "huggingface_hub.errors.GatedRepoError: 401 Client Error. Gated repository requires Hugging Face authentication token with accepted model license agreement.",
+  "action_taken": "Logged as BLOCKED_GATED_ACCESS with zero silent substitution. Downstream evaluation proceeds with E0 (Lexical BM25), E1a (BAAI/bge-small-en-v1.5), and E1c (Qwen/Qwen3-Embedding-0.6B)."
+}
