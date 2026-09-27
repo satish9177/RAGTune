@@ -1,0 +1,40 @@
+{
+  "experiment_id": "E0-v0",
+  "description": "Formal Lexical Baseline (SQLite FTS5 BM25) on Benchmark v0 (Development Benchmark, N=140)",
+  "timestamp_utc": "2026-09-27T16:08:33Z",
+  "git_commit_sha": "037b20a601d4a3334125b587c72ac5ca0019b915",
+  "corpus_freeze_v0_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_sha256": "423420b923c15a74e0125f9a00a5538df175e37c6da3fbe03e103a700d097b2a",
+  "benchmark_source_partition": "validation",
+  "corpus_chunks_indexed": 11645,
+  "retrieval_engine": "SQLite FTS5 BM25 (k1=1.2, b=0.75, unicode61)",
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.10714285714285714,
+    "recall_at_5": 0.30357142857142855,
+    "recall_at_10": 0.42142857142857143,
+    "recall_at_20": 0.5464285714285714,
+    "mrr_at_10": 0.2998044217687075,
+    "ndcg_at_10": 0.2824179988968128
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 2.002006800030358,
+    "queries_per_sec": 69.92983240510326,
+    "mean_latency_ms": 14.292872851781015,
+    "p50_latency_ms": 14.294549997430295,
+    "p95_latency_ms": 19.659364991821345,
+    "p99_latency_ms": 23.23007601546123
+  },
+  "failure_summary": {
+    "total_failures_top10": 60,
+    "failure_rate_top10": 0.42857142857142855,
+    "failures_top50": 32,
+    "failure_mechanisms": {
+      "code_syntax_and_identifier_mismatch": 23,
+      "semantic_fine_grained_distinction": 17,
+      "vocabulary_mismatch_or_sparse_coverage": 11,
+      "lexical_term_flooding_by_confusers": 9
+    }
+  }
+}
