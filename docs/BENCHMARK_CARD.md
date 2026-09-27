@@ -55,12 +55,24 @@ Following Gebru et al. (2021) and Hugging Face Dataset Card standards.
 - **Uncertainty Flag**: Queries or passage mappings where relevance is borderline are explicitly flagged with `"uncertainty": true` in the benchmark metadata.
 - *Inter-Annotator Agreement*: No claims of inter-annotator agreement are made unless multiple independent annotators formally label overlapping subsets.
 
-## 5. Partitioning & Leakage Controls
+## 5. Partitioning, Roles & Leakage Controls
 - **Partition Ratio**: Train 60%, Validation 15%, Frozen Test 25%.
 - **Partition Unit**: Top-level documentation chapters and modules. Chunks from the same topic are strictly co-located.
+- **Three-Tier Query Roles**:
+  1. **Training Queries (`train` partition)**: Exclusively used for contrastive pair construction, hard-negative mining, and bi-encoder/cross-encoder fine-tuning.
+  2. **Development / Validation Benchmark (`validation` partition, Benchmark v0)**: 140 manually verified queries used for E0/E1/E2 comparisons, hyperparameter tuning, model checkpoint selection, early stopping, and failure discovery.
+  3. **Final Frozen Benchmark (`frozen_test` partition)**: Reserved exclusively for final, unbiased, release-candidate evaluation. Never mined for hard negatives, never used for model training, never used for early stopping.
+- **Pilot Benchmark Reclassification**:
+  - `benchmarks/pilot_benchmark.jsonl` (16 queries) is strictly an **engineering smoke test** (`DIAGNOSTIC_ONLY`).
+  - Its evidence belongs to `frozen_test` and is strictly barred from training or hard-negative mining.
 - **Searchable Index Composition**: During evaluation, the searchable index contains all corpus chunks (Train + Val + Test) to test retrieval of unseen target documents from among the entire collection.
-- **Leakage Controls**: MinHash LSH and dense cosine similarity audits detect and quarantine near-duplicates above defined thresholds. Subtle semantic overlap may remain.
+- **Leakage Controls**: Code-level guardrails (`ragtune.training.guardrails`) enforce partition boundaries at runtime, raising `FrozenTestLeakageError` if frozen-test data ever enters training.
 
 ## 6. Intended & Inappropriate Uses
 - **Intended Use**: Benchmarking first-stage dense/lexical retrievers and second-stage rerankers on domain-specific technical documentation; evaluating hard-negative mining efficacy.
+- **Prohibited Use**:
+  - Never use frozen-test queries, positives, or retrieved confusers as training data or hard negatives.
+  - Never tune hyperparameters or make early-stopping decisions against the frozen test set.
+  - Do not use pilot smoke test numbers as public benchmark claims.
+
 - **Inappropriate Uses**: Evaluating conversational dialog fluency, training generic open-domain chatbots, or measuring non-grounded generative LLM output.

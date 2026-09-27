@@ -5,8 +5,18 @@
 - No metric improvement may be reported unless the experiment was executed on hardware and produced serialized prediction logs.
 - Baselines E0 through E7 must be executed strictly in order; no baseline may be skipped.
 - Every experiment run must persist: Git commit hash, random seed, hardware telemetry, raw predictions JSONL, and evaluated metrics.
+- **Three-Tier Benchmark Partition Roles**:
+  1. **Training Queries (`train` partition only)**: Used for contrastive training, positive pair generation, hard-negative mining, and model fitting.
+  2. **Development Benchmark (`validation` partition only, Benchmark v0)**: 140 queries used for iterative E0/E1/E2 comparisons, hyperparameter tuning, model checkpoint selection, early stopping, and failure discovery.
+  3. **Frozen Final Benchmark (`frozen_test` partition only)**: Reserved strictly for final unbiased evaluation of frozen release candidates.
+- **Absolute Prohibition on Frozen-Test Leakage**:
+  - Frozen-test queries, canonical positives, and retrieved confusers MUST NOT generate training positives or hard negatives.
+  - Frozen-test queries MUST NOT guide hyperparameter selection, checkpoint promotion, or early stopping.
+  - Runtime assertions (`ragtune.training.guardrails.validate_training_triple`) enforce this boundary and raise `FrozenTestLeakageError` on any violation.
+- **Pilot Benchmark Status**: The initial 16-query pilot (`benchmarks/pilot_benchmark.jsonl`) is strictly an `engineering_smoke_test` (`DIAGNOSTIC_ONLY`) used to verify metric calculation pipelines. Its numbers are not public benchmark claims.
 
 ## 2. Baseline & Experiment Matrix
+
 
 | ID | Name | First-Stage Retrieval | Fusion / Reranker | Model / Engine | Purpose |
 |:---|:-----|:----------------------|:------------------|:---------------|:--------|

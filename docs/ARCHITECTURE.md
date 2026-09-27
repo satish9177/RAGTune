@@ -59,6 +59,7 @@ For a query $q$ with known positive set $D_q^+ = \{ (d_i^+, r_i) \}$:
    - Score margin relative to positive: $\Delta_{\text{margin}}$.
    - Rank position relative to known positives.
    - Raw teacher scores are logged as telemetry, not thresholded with arbitrary absolute numbers.
+6. **Partition Leakage Prohibition**: Candidates are strictly rejected if the query, positive, or candidate chunk belongs to `frozen_test`. Hard negatives for contrastive training MUST ONLY be mined from queries and passages originating in the `train` source partition. Development failures (from `validation`) may inspire mining heuristics but their evidence chunks never enter training triples directly.
 
 ## 3. First-Stage Lexical Engine: SQLite FTS5
 
