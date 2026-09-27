@@ -1,0 +1,99 @@
+{
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "freeze_rule": "Canonical freeze gate requires Satish formal review of HUMAN_AUDIT_9_FINAL.md; zero human approvals simulated",
+  "candidate_name": "Benchmark-v0-candidate",
+  "benchmark_file": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "corpus_freeze_v0": {
+    "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+    "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+    "partitioned_chunks_path": "data/processed/partitioned_chunks.jsonl",
+    "partitioned_chunks_sha256": "a2df6633e04540b9578b0f4cd353473dbb8d72067887f0b2c6f9999495acee40",
+    "partition_manifest_path": "benchmarks/partition_manifest.json",
+    "partition_manifest_sha256": "af6cafe8cad8b1784a3720f9ea13c8e069bb94e5f7ef20b121a2f5c5e28af58a",
+    "partition_unit": "top-level documentation module/chapter"
+  },
+  "git_commit": "5d1e0bb27c6e8ac52a38a739a074349a7e24b217",
+  "total_queries": 140,
+  "domain_distribution": {
+    "postgresql": 35,
+    "pytorch": 35,
+    "kubernetes": 35,
+    "fastapi": 35
+  },
+  "typology_distribution": {
+    "direct_lookup": 40,
+    "comparative_discrimination": 60,
+    "troubleshooting_scenario": 40
+  },
+  "provenance_distribution": {
+    "ai_authored_project_query": 88,
+    "synthetic_grounded": 49,
+    "external_derived_verified": 3
+  },
+  "relevance_grade_distribution": {
+    "grade_3_canonical": 140,
+    "grade_2_directly_relevant": 115,
+    "grade_1_supporting": 31,
+    "total_relevance_judgments": 286
+  },
+  "uncertainty_flagged_count": 17,
+  "human_audit_status": {
+    "total_audit_sample_count": 40,
+    "previously_accepted_count": 31,
+    "previously_accepted_query_ids": [
+      "v0_fa_004",
+      "v0_fa_010",
+      "v0_fa_011",
+      "v0_fa_016",
+      "v0_fa_018",
+      "v0_fa_022",
+      "v0_fa_023",
+      "v0_fa_026",
+      "v0_fa_028",
+      "v0_k8s_010",
+      "v0_k8s_011",
+      "v0_k8s_014",
+      "v0_k8s_015",
+      "v0_k8s_017",
+      "v0_k8s_022",
+      "v0_k8s_025",
+      "v0_k8s_027",
+      "v0_k8s_029",
+      "v0_pg_001",
+      "v0_pg_025",
+      "v0_pg_026",
+      "v0_pg_030",
+      "v0_pg_034",
+      "v0_pt_002",
+      "v0_pt_003",
+      "v0_pt_012",
+      "v0_pt_015",
+      "v0_pt_018",
+      "v0_pt_023",
+      "v0_pt_025",
+      "v0_pt_027"
+    ],
+    "pending_final_human_review_count": 9,
+    "pending_final_human_review_query_ids": [
+      "v0_pg_002",
+      "v0_pg_011",
+      "v0_pg_013",
+      "v0_pg_016",
+      "v0_pg_017",
+      "v0_pg_018",
+      "v0_pt_021",
+      "v0_pt_032",
+      "v0_k8s_007"
+    ],
+    "final_review_packet_path": "benchmarks/review/HUMAN_AUDIT_9_FINAL.md"
+  },
+  "automated_audit_summary": {
+    "total_queries": 140,
+    "automated_check_pass": 139,
+    "automated_check_review": 1,
+    "automated_check_fail": 0,
+    "pass_percentage": 99.3
+  }
+}

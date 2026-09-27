@@ -106,19 +106,14 @@ This packet presents the 40-query development benchmark sample following the V2 
 > **V2 Audit Disposition: REVISE -> V3 Repair Diff**:
 > - **Query Text**: Unchanged ("_What operation-level memory allocation is controlled by work_mem in PostgreSQL?_")
 > - **Previous Evidence (V2)**: G3:c702d7353ba3, G2:bd01abb12ba6
-> - **Repaired Evidence (V3)**: G3:c702d7353ba3, G1:d5b2659b0954
-> - **Repair Rationale**: Re-anchored canonical Grade 3 to c702d7353ba3 (work_mem per-operation sort/hash memory sizing in config.sgml); retained d5b2659b0954 (work_mem header) as G1 supporting context; removed unrelated shared_buffers chunk.
+> - **Repaired Evidence (V3)**: G3:c702d7353ba3
+> - **Repair Rationale**: Re-anchored canonical Grade 3 to c702d7353ba3 (work_mem per-operation sort/hash memory sizing in config.sgml); removed unrelated temp_buffers passage.
 
 #### Graded Relevance Evidence Passages (Answer-Centered Excerpts):
 - **Grade 3 (Canonical Best Evidence)** — Chunk ID: `c702d7353ba3` (`config.sgml`, 461 tokens)
   - *Breadcrumb*: `Server Configuration`
   - *Annotation Note*: Canonical best evidence in config.sgml (Server Configuration).
   - *Answer-Bearing Excerpt*: > "_Sets the base maximum amount of memory to be used by a query operation  (such as a sort or hash table) before writing to temporary disk files. If this value is specified without units, it is taken as kilobytes. The default value is four megabytes ( 4MB ). Note that a complex query might perform several sort and hash  operations at the same time, with each operation generally being  allowed to use as much memory as this value specifies before  it starts  to write data into temporary files. Also, several running  sessions could be doing such operations concurrently._"
-
-- **Grade 1 (Supporting Context)** — Chunk ID: `d5b2659b0954` (`config.sgml`, 397 tokens)
-  - *Breadcrumb*: `Server Configuration`
-  - *Annotation Note*: Supporting contextual passage in config.sgml (Server Configuration).
-  - *Answer-Bearing Excerpt*: > "_Sets the maximum amount of memory used for temporary buffers within  each database session. These are session-local buffers used only  for access to temporary tables. If this value is specified without units, it is taken as blocks,  that is BLCKSZ bytes, typically 8kB. The default is eight megabytes ( 8MB ). (If BLCKSZ is not 8kB, the default value scales  proportionally to it.)  This setting can be changed within individual  sessions, but only before the first use of temporary tables  within the session; subsequent attempts to change the value will  have no effect on that session._"
 
 #### Human Reviewer Decision (Satish):
 - [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**
@@ -141,19 +136,14 @@ This packet presents the 40-query development benchmark sample following the V2 
 > **V2 Audit Disposition: REVISE -> V3 Repair Diff**:
 > - **Query Text**: Unchanged ("_What is the durability difference between synchronous_commit set to on versus remote_write in PostgreSQL replication?_")
 > - **Previous Evidence (V2)**: G3:16e38b8eb501, G2:6cf7e592b2d8, G1:4cb1a6e848ab
-> - **Repaired Evidence (V3)**: G3:6cf7e592b2d8, G2:16e38b8eb501
-> - **Repair Rationale**: Re-anchored canonical Grade 3 to 6cf7e592b2d8 (explicit durability/crash recovery behavior of on vs remote_write under server crash vs standby crash in config.sgml); retained 16e38b8eb501 (synchronous_commit parameter enum) as G2.
+> - **Repaired Evidence (V3)**: G3:6cf7e592b2d8
+> - **Repair Rationale**: Re-anchored canonical Grade 3 to 6cf7e592b2d8 (explicit durability/crash recovery behavior of on vs remote_write under server crash vs standby crash in config.sgml); removed fsync/synchronous_commit=off passage.
 
 #### Graded Relevance Evidence Passages (Answer-Centered Excerpts):
 - **Grade 3 (Canonical Best Evidence)** — Chunk ID: `6cf7e592b2d8` (`config.sgml`, 510 tokens)
   - *Breadcrumb*: `Server Configuration`
   - *Annotation Note*: Canonical best evidence in config.sgml (Server Configuration).
   - *Answer-Bearing Excerpt*: > "_This  ensures the transaction will not be lost unless both the primary and  all synchronous standbys suffer corruption of their database storage. When set to remote_write , commits will wait until replies  from the current synchronous standby(s) indicate they have  received the commit record of the transaction and written it to  their file systems. This setting ensures data preservation if a standby instance of  PostgreSQL crashes, but not if the standby  suffers an operating-system-level crash because the data has not  necessarily reached durable storage on the standby._"
-
-- **Grade 2 (Directly Relevant Supporting)** — Chunk ID: `16e38b8eb501` (`config.sgml`, 489 tokens)
-  - *Breadcrumb*: `Server Configuration`
-  - *Annotation Note*: Directly relevant supporting passage in config.sgml (Server Configuration).
-  - *Answer-Bearing Excerpt*: > "_(The maximum  delay is three times .) Unlike  , setting this parameter to off   does not create any risk of database inconsistency: an operating  system or database crash might  result in some recent allegedly-committed transactions being lost, but  the database state will be just the same as if those transactions had  been aborted cleanly. So, turning synchronous_commit off  can be a useful alternative when performance is more important than  exact certainty about the durability of a transaction. For more  discussion see ._"
 
 #### Human Reviewer Decision (Satish):
 - [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**
@@ -176,8 +166,8 @@ This packet presents the 40-query development benchmark sample following the V2 
 > **V2 Audit Disposition: REVISE -> V3 Repair Diff**:
 > - **Query Text**: Unchanged ("_How does enabling hot_standby_feedback prevent query cancellation on physical replicas compared to increasing max_standby_streaming_delay?_")
 > - **Previous Evidence (V2)**: G3:4cb1a6e848ab, G2:16e38b8eb501
-> - **Repaired Evidence (V3)**: G3:4cb1a6e848ab, G2:7ebc2979ff55, G1:b239bf42ebfe
-> - **Repair Rationale**: Re-anchored canonical Grade 3 to 4cb1a6e848ab (hot_standby_feedback preventing vacuum cleanup of needed rows on primary); retained 7ebc2979ff55 (max_standby_streaming_delay) as G2; removed unrelated fsync passage.
+> - **Repaired Evidence (V3)**: G3:4cb1a6e848ab, G2:7ebc2979ff55
+> - **Repair Rationale**: Re-anchored canonical Grade 3 to 4cb1a6e848ab (hot_standby_feedback eliminating query cancels caused by cleanup records vs primary bloat); retained 7ebc2979ff55 (max_standby_streaming_delay waiting before canceling standby queries) as G2; removed unrelated fsync passage.
 
 #### Graded Relevance Evidence Passages (Answer-Centered Excerpts):
 - **Grade 3 (Canonical Best Evidence)** — Chunk ID: `4cb1a6e848ab` (`config.sgml`, 450 tokens)
@@ -189,11 +179,6 @@ This packet presents the 40-query development benchmark sample following the V2 
   - *Breadcrumb*: `Server Configuration`
   - *Annotation Note*: Directly relevant supporting passage in config.sgml (Server Configuration).
   - *Answer-Bearing Excerpt*: > "_When hot standby is active, this parameter determines how long the  standby server should wait before canceling standby queries that  conflict with about-to-be-applied WAL entries, as described in  .  max_standby_streaming_delay applies when WAL data is  being received via streaming replication.  If this value is specified without units, it is taken as milliseconds.  The default is 30 seconds.  A value of -1 allows the standby to wait forever for conflicting  queries to complete.  This parameter..._"
-
-- **Grade 1 (Supporting Context)** — Chunk ID: `b239bf42ebfe` (`config.sgml`, 507 tokens)
-  - *Breadcrumb*: `Server Configuration`
-  - *Annotation Note*: Supporting contextual passage in config.sgml (Server Configuration).
-  - *Answer-Bearing Excerpt*: > "_The delay occurs once the database in recovery has reached a consistent  state, until the standby is promoted or triggered. After that the standby  will end recovery without further waiting. WAL records must be kept on the standby until they are ready to be  applied. Therefore, longer delays will result in a greater accumulation  of WAL files, increasing disk space requirements for the standby's  pg_wal directory. This parameter is intended for use with streaming replication deployments;  however, if the parameter is specified it will be honored in all cases  except crash recovery._"
 
 #### Human Reviewer Decision (Satish):
 - [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**
@@ -788,19 +773,14 @@ This packet presents the 40-query development benchmark sample following the V2 
 > - **Previous V2 Query**: "_How do fp16_compress_hook and bf16_compress_hook reduce communication overhead during gradient allreduce in DistributedDataParallel?_"
 > - **Repaired V3 Query**: "**How to resolve GPU 'cuda runtime error(2): out of memory' caused by autograd history accumulation in a PyTorch training loop?**"
 > - **Previous Evidence (V2)**: G3:48dfb03a454f, G2:83646611205f
-> - **Repaired Evidence (V3)**: G3:c51ddba8d3d5, G2:d79a0dcbe218
-> - **Repair Rationale**: Rewrote query to authentic PyTorch FAQ troubleshooting: 'How to resolve GPU \'cuda runtime error(2): out of memory\' caused by autograd history accumulation in a PyTorch training loop?'; re-anchored canonical Grade 3 to c51ddba8d3d5 (autograd history accumulation across iterations in loss accumulation and fix using .item() in notes/faq.rst); retained d79a0dcbe218 as G2.
+> - **Repaired Evidence (V3)**: G3:c51ddba8d3d5
+> - **Repair Rationale**: Rewrote query to authentic PyTorch FAQ troubleshooting: 'How to resolve GPU \'cuda runtime error(2): out of memory\' caused by autograd history accumulation in a PyTorch training loop?'; re-anchored canonical Grade 3 to c51ddba8d3d5 (autograd history accumulation across iterations in loss accumulation and fix using .item() in notes/faq.rst); removed generic unrelated CUDA OOM causes.
 
 #### Graded Relevance Evidence Passages (Answer-Centered Excerpts):
 - **Grade 3 (Canonical Best Evidence)** — Chunk ID: `c51ddba8d3d5` (`notes/faq.rst`, 493 tokens)
   - *Breadcrumb*: `Frequently Asked Questions > My model reports "cuda runtime error(2): out of memory"`
   - *Annotation Note*: Canonical best evidence in notes/faq.rst (Frequently Asked Questions > My model reports "cuda runtime error(2): out of memory").
   - *Answer-Bearing Excerpt*: > "_As the error message suggests, you have run out of memory on your GPU.  Since we often deal with large amounts of data in PyTorch, small mistakes can rapidly cause your program to use up all of your GPU; fortunately, the fixes in these cases are often simple. Here are a few common things to check: **Don't accumulate history across your training loop.** By default, computations involving variables that require gradients will keep history.  This means that you should avoid using such variables in ..._"
-
-- **Grade 2 (Directly Relevant Supporting)** — Chunk ID: `d79a0dcbe218` (`notes/faq.rst`, 485 tokens)
-  - *Breadcrumb*: `Frequently Asked Questions > My model reports "cuda runtime error(2): out of memory"`
-  - *Annotation Note*: Directly relevant supporting passage in notes/faq.rst (Frequently Asked Questions > My model reports "cuda runtime error(2): out of memory").
-  - *Answer-Bearing Excerpt*: > "_**Don't use linear layers that are too large.** A linear layer ``nn.Linear(m, n)`` uses :math:`O(nm)` memory: that is to say, the memory requirements of the weights scales quadratically with the number of features.  It is very easy to `blow through your memory <https://github.com/pytorch/pytorch/issues/958>`_ this way (and remember that you will need at least twice the size of the weights, since you also need to store the gradients.) **Consider checkpointing.** You can trade-off memory for compute by using `checkpoint <https://pytorch.org/docs/stable/checkpoint.html>`_._"
 
 #### Human Reviewer Decision (Satish):
 - [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**
@@ -822,8 +802,8 @@ This packet presents the 40-query development benchmark sample following the V2 
 > **V2 Audit Disposition: REVISE -> V3 Repair Diff**:
 > - **Query Text**: Unchanged ("_What is the difference between ReadWriteOnce and ReadWriteOncePod volume access modes in Kubernetes?_")
 > - **Previous Evidence (V2)**: G3:60113ca5b874, G2:8786a18f2e70
-> - **Repaired Evidence (V3)**: G3:60113ca5b874, G2:8786a18f2e70
-> - **Repair Rationale**: Re-anchored canonical Grade 3 to 60113ca5b874 (distinction between ReadWriteOnce single node vs ReadWriteOncePod single pod in persistent-volumes.md); retained 8786a18f2e70 (volume access mode enforcement) as G2.
+> - **Repaired Evidence (V3)**: G3:60113ca5b874, G1:8786a18f2e70
+> - **Repair Rationale**: Re-anchored canonical Grade 3 to 60113ca5b874 (distinction between ReadWriteOnce single node vs ReadWriteOncePod single pod in persistent-volumes.md); demoted generic access-mode caveats 8786a18f2e70 to G1.
 
 #### Graded Relevance Evidence Passages (Answer-Centered Excerpts):
 - **Grade 3 (Canonical Best Evidence)** — Chunk ID: `60113ca5b874` (`concepts/storage/persistent-volumes.md`, 491 tokens)
@@ -831,9 +811,9 @@ This packet presents the 40-query development benchmark sample following the V2 
   - *Annotation Note*: Canonical best evidence in concepts/storage/persistent-volumes.md (Introduction > Persistent Volumes > Access Modes).
   - *Answer-Bearing Excerpt*: > "_A PersistentVolume can be mounted on a host in any way supported by the resource provider. As shown in the table below, providers will have different capabilities and each PV's access modes are set to the specific modes supported by that particular volume. For example, NFS can support multiple read/write clients, but a specific NFS PV might be exported on the server as read-only. Each PV gets its own set of access modes describing that specific PV's capabilities. The access modes are: `ReadWrite..._"
 
-- **Grade 2 (Directly Relevant Supporting)** — Chunk ID: `8786a18f2e70` (`concepts/storage/persistent-volumes.md`, 221 tokens)
+- **Grade 1 (Supporting Context)** — Chunk ID: `8786a18f2e70` (`concepts/storage/persistent-volumes.md`, 221 tokens)
   - *Breadcrumb*: `Introduction > Persistent Volumes > Access Modes`
-  - *Annotation Note*: Directly relevant supporting passage in concepts/storage/persistent-volumes.md (Introduction > Persistent Volumes > Access Modes).
+  - *Annotation Note*: Supporting contextual passage in concepts/storage/persistent-volumes.md (Introduction > Persistent Volumes > Access Modes).
   - *Answer-Bearing Excerpt*: > "_Kubernetes uses volume access modes to match PersistentVolumeClaims and PersistentVolumes. In some cases, the volume access modes also constrain where the PersistentVolume can be mounted. Volume access modes do **not** enforce write protection once the storage has been mounted. Even if the access modes are specified as ReadWriteOnce, ReadOnlyMany, or ReadWriteMany, they don't set any constraints on the volume. For example, even if a PersistentVolume is created as ReadOnlyMany, it is no guarantee that it will be read-only._"
 
 #### Human Reviewer Decision (Satish):

@@ -340,3 +340,24 @@ def test_v3_evidence_sanity_audit_report():
     assert rep["details"]["AUTOMATED_CHECK_REVIEW"][0]["query_id"] == "v0_fa_018"
 
 
+def test_v3_human_audit_9_final():
+    """Verify benchmarks/review/HUMAN_AUDIT_9_FINAL.md packet."""
+    packet_path = Path("benchmarks/review/HUMAN_AUDIT_9_FINAL.md")
+    assert packet_path.exists(), "HUMAN_AUDIT_9_FINAL.md must exist"
+
+    text = packet_path.read_text(encoding="utf-8")
+    target_qids = [
+        "v0_pg_002", "v0_pg_011", "v0_pg_013", "v0_pg_016", "v0_pg_017",
+        "v0_pg_018", "v0_pt_021", "v0_pt_032", "v0_k8s_007"
+    ]
+
+    for qid in target_qids:
+        assert f"[{qid}]" in text, f"Missing {qid} in HUMAN_AUDIT_9_FINAL.md"
+
+    # Exactly 9 unselected decision blocks
+    assert text.count("- [ ] **APPROVE**  |  - [ ] **REVISE**  |  - [ ] **REJECT**") == 9
+    assert "- [x]" not in text and "- [X]" not in text
+    assert "PENDING_HUMAN_REVIEW" in text
+
+
+
