@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "created_at_utc": "2026-09-27T13:31:58.711019+00:00",
+  "sources": [
+    {
+      "ecosystem": "postgresql",
+      "canonical_repository_url": "https://github.com/postgres/postgres.git",
+      "requested_version": "REL_16_3",
+      "actual_resolved_tag": "REL_16_3",
+      "resolved_commit_sha": "05ffe9398b758bbb8d30cc76e9bbc638dab2d477",
+      "retrieval_timestamp_utc": "2026-09-27T13:31:58.711019+00:00",
+      "license": "PostgreSQL License",
+      "documentation_path_included": "doc/src/sgml",
+      "source_file_count": 387,
+      "snapshot_archive_sha256": "b469e68433a34f73a33023a8832a23c147f789db048fa29802097b1016fd6a99",
+      "snapshot_archive_path": "benchmarks/archives/postgresql_snapshot.tar.gz"
+    },
+    {
+      "ecosystem": "pytorch",
+      "canonical_repository_url": "https://github.com/pytorch/pytorch.git",
+      "requested_version": "v2.3.1",
+      "actual_resolved_tag": "v2.3.1",
+      "resolved_commit_sha": "63d5e9221bedd1546b7d364b5ce4171547db12a9",
+      "retrieval_timestamp_utc": "2026-09-27T13:31:58.711019+00:00",
+      "license": "BSD-3-Clause",
+      "documentation_path_included": "docs/source",
+      "source_file_count": 171,
+      "snapshot_archive_sha256": "d26b8aad583d6beb0c8a9b8a77ede7f71c68b71914743ab25f6a570cb7605d2a",
+      "snapshot_archive_path": "benchmarks/archives/pytorch_snapshot.tar.gz"
+    },
+    {
+      "ecosystem": "kubernetes",
+      "canonical_repository_url": "https://github.com/kubernetes/website.git",
+      "requested_version": "v1.30",
+      "actual_resolved_tag": "snapshot-initial-v1.30",
+      "resolved_commit_sha": "0471ca12572f26cd6f553dafddbe1de22c4abf7f",
+      "retrieval_timestamp_utc": "2026-09-27T13:31:58.711019+00:00",
+      "license": "Apache-2.0 / CC-BY-4.0",
+      "documentation_path_included": "content/en/docs",
+      "source_file_count": 1352,
+      "snapshot_archive_sha256": "c384f9ff6d392d0969603af0abdaa4a548bc37489bde398b2ef6eb2fc4e9b3cb",
+      "snapshot_archive_path": "benchmarks/archives/kubernetes_snapshot.tar.gz"
+    },
+    {
+      "ecosystem": "fastapi",
+      "canonical_repository_url": "https://github.com/fastapi/fastapi.git",
+      "requested_version": "0.111.0",
+      "actual_resolved_tag": "0.111.0",
+      "resolved_commit_sha": "1c3e6918750ccb3f20ea260e9a4238ce2c0e5f63",
+      "retrieval_timestamp_utc": "2026-09-27T13:31:58.711019+00:00",
+      "license": "MIT License",
+      "documentation_path_included": "docs/en/docs",
+      "source_file_count": 137,
+      "snapshot_archive_sha256": "2afee21412a82ebc3ccee1fbeb145712e1eacbb7d98d02dd27ea784ee4d2d7f2",
+      "snapshot_archive_path": "benchmarks/archives/fastapi_snapshot.tar.gz"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases and search indices
+data/indices/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Raw cloned external documentation sources (reconstructed deterministically via archives/manifest)
+data/sources/
+
+# Scratch & temporary files
+scratch/
+*.tmp
+*.log
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets & credentials
+.env
+*.pem
+*.key
+*.token
+credentials.json

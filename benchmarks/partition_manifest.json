@@ -1,0 +1,5008 @@
+{
+  "seed": 42,
+  "split_ratios": {
+    "train": 0.6,
+    "validation": 0.15,
+    "frozen_test": 0.25
+  },
+  "summary": {
+    "train": {
+      "file_count": 743,
+      "chunk_count": 6414,
+      "by_ecosystem": {
+        "postgresql": 1790,
+        "pytorch": 928,
+        "kubernetes": 2935,
+        "fastapi": 761
+      }
+    },
+    "validation": {
+      "file_count": 184,
+      "chunk_count": 1575,
+      "by_ecosystem": {
+        "postgresql": 426,
+        "pytorch": 139,
+        "kubernetes": 830,
+        "fastapi": 180
+      }
+    },
+    "frozen_test": {
+      "file_count": 313,
+      "chunk_count": 3656,
+      "by_ecosystem": {
+        "postgresql": 1348,
+        "pytorch": 316,
+        "kubernetes": 1148,
+        "fastapi": 844
+      }
+    }
+  },
+  "files": {
+    "train": [
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/sub-applications.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/static-files.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/generate-clients.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/security/get-current-user.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/response-cookies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/httpconnection.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/body-updates.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/staticfiles.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/dependencies/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/additional-responses.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/security/simple-oauth2.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/body.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/debugging.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "project-generation.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/bigger-applications.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/first-steps.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/wsgi.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/response-headers.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "history-design-future.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/security/oauth2-scopes.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/extra-models.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/dataclasses.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/cloud.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/extra-data-types.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/async-sql-encode-databases.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/https.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/websockets.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/header-params.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "help/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "alternatives.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/testclient.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/exceptions.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/separate-openapi-schemas.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/custom-request-and-route.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/middleware.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/path-operation-configuration.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/extending-openapi.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/additional-status-codes.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/nosql-databases-couchbase.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/path-params.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/query-params.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/path-operation-advanced-configuration.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "python-types.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/handling-errors.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/middleware.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/request.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/conditional-openapi.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/security/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "newsletter.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "benchmarks.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/path-params-numeric-validations.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/docker.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/async-tests.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/manually.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/body-multiple-params.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/websockets.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/response-directly.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/server-workers.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/body-fields.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/security/first-steps.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "features.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/openapi/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/status.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/cookie-params.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/metadata.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "resources/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/dependencies/dependencies-with-yield.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/response.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/parameters.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/request-files.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/templating.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/response-status-code.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/templates.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/fastapi.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "fastapi-people.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/openapi/models.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/concepts.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/sql-databases.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/node-pressure-eviction.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/dockershim.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/api-server-bypass-risks.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/pod-security-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/pod-lifecycle.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/configure-upgrade-etcd.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/networking/ports-and-protocols.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/downward-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cloud-controller-manager.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/kube-state-metrics.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/volume.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/cron-jobs.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/networking/service-protocols.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-volume-storage.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/labels-annotations-taints/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/stateful-application/cassandra.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/endpoint-slice.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/nodelocaldns.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/configmap.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/webhook.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/downward-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/windows-security.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/cloud-native-security.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/install-kubectl-macos.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cncf.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/container-env-variables.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/pod-priority.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/extended-resource.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/best-practices/multiple-zones.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/cluster-ip-allocation.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/disruption.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/containerd.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/coredns.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/stateless-application/guestbook.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/verify-signed-artifacts.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/statefulset.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/system-traces.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/persistent-volume-claim.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/instrumentation/slis.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/service-accounts-admin.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/service-account.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/install-kubectl-linux.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/limit-storage-consumption.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/kubectl-node-debug.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/api-concepts.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/migrate-from-psp.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/operator-pattern.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/authentication.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/scheduling/policies.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/member.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/topics-on-dockershim-and-cri-compatible-runtimes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/enable-disable-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/replica.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/inject-data-application/define-command-argument-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cloud-provider.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/service-traffic-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/reviewer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configmap-secret/managing-secret-using-kustomize.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-liveness-readiness-startup-probes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/taint.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/rbac.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/gateway.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/annotation.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/storage-classes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/extensible-admission-controllers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/connecting-frontend-backend.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/setup-extension-api-server.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/configuration/configure-redis-using-configmap.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/resource-bin-packing.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/coarse-parallel-processing-work-queue.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/ingress-minikube.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/best-practices/node-conformance.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/windows/user-guide.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/mixed-version-proxy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-kubernetes-objects/declarative-config.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/service.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/namespaces.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configmap-secret/managing-secret-using-config-file.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/storage-limits.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/dual-stack.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/finalizer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-pod-configmap.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/run-stateless-application-deployment.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/troubleshooting-cni-plugin-related-errors.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/configure-pdb.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/network/extend-service-ip-ranges.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/issues-security/issues.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/change-pv-access-mode-readwriteoncepod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-daemon/pods-some-nodes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/autoscaling.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cidr.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cluster-architect.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/kubectl-whats-next.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/labels-annotations-taints/audit-annotations.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/switch-to-evented-pleg.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/dynamic-provisioning.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/components.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/check-if-dockershim-removal-affects-you.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-kubernetes-objects/imperative-command.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/namespaces.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/pod-disruption.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/configuration/configmap.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubectl/kubectl-plugins.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/security/apparmor.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubelet-credential-provider.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/optional-kubectl-configs-bash-linux.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cluster-operator.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/security/cluster-level-pss.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/assign-memory-resource.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cri.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/quota-api-object.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/sig.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tls/manual-rotation-of-ca-certificates.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/annotations.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/affinity.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/immutable-infrastructure.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/security-context.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/addons.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/translate-compose-kubernetes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/upgrading-linux-nodes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/ephemeral-containers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/shuffle-sharding.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/horizontal-pod-autoscale.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/best-practices/enforcing-pod-security-standards.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/volume-snapshot-classes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/compute-storage-net/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-daemon/update-daemon-set.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/cpu-management-policies.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/windows.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/system-logs.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/crictl.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cla.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/port-forward-access-application-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/resource-metrics-pipeline.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/windows-storage.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/control-plane-flags.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/container-runtime-interface.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/replication-controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-pod-initialization.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/addons.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/assign-pods-nodes-using-node-affinity.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/turnkey-solutions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/configuration/manage-resources-containers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/cluster-autoscaling.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/list-all-running-container-images.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/setup-konnectivity.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "test.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/logging.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/ephemeral-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/inject-data-application/define-environment-variable-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/owners-dependents.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/validating-admission-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/controller-manager-leader-migration.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/scheduler-perf-tuning.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/compute-storage-net/network-plugins.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/memory-manager.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/volume-plugin.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubelet-config-file.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/mixed-version-proxy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/change-package-repository.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/configuration/secret.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/inject-data-application/define-interdependent-environment-variables.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/dns-debugging-resolution.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/abac.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/applications.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/csi.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/label.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/app-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/debug-cluster/flow-control.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/hardening-guide/authentication-mechanisms.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cluster-infrastructure.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/deprecation-guide.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kubernetes-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/topology-spread-constraints.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/kubectl-convert-overview.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/dynamic-resource-allocation.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-service-account.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/services/pods-and-endpoint-termination-flow.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-runasusername.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/wg.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/kubeadm-reconfigure.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/debug-running-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/customresourcedefinition.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/server-side-apply.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-persistent-volume-storage.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/install-kubeadm.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/resource-usage-monitoring.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/cloud-controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/proxies.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/dynamic-volume-provisioning.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/controlling-access.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/decrypt-data.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/endpoint.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/debug-pods.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/networking/virtual-ips.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/migrating-telemetry-and-security-agents.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kube-scheduler.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/approver.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/object-management.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/pod-priority-preemption.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/mirror-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/init-containers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/authorization.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/declare-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/application-architect.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/parallel-processing-expansion.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kubeadm.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/external-api/external-metrics.v1beta1.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/best-practices/certificates.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kube-apiserver.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/kubelet-authn-authz.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/kube-scheduler.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/bootstrap-tokens.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/horizontal-pod-autoscaler.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/access-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-kubernetes-objects/kustomization.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/api-eviction.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/instrumentation/node-metrics.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cadvisor.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-kubernetes-objects/storage-version-migration.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/configure-cgroup-driver.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/networking.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/replica-set.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/event.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/system-metrics.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/disruptions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/assign-cpu-resource.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/delete-stateful-set.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/pod-disruption-budget.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/eviction.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/jwt.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/cluster-upgrade.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/kubelet-tls-bootstrapping.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/certificates.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/flow-control.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/manage-resources/memory-constraint-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/create-cluster-kubeadm.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/force-delete-stateful-set-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/socks5-proxy-access-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/volume-snapshots.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/psp-to-pod-security-standards.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/static-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/pod-security-admission.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/manifest.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/change-default-storage-class.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/certificate-signing-requests.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/manage-resources/cpu-default-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/fine-parallel-processing-work-queue.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cronjob.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/manage-resources/cpu-constraint-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/custom-resources/custom-resource-definitions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/configure-access-multiple-clusters.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/pull-image-private-registry.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/run-single-instance-stateful-application.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/device-plugin-api-versions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/limitrange.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/change-runtime-containerd.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-kubernetes-objects/imperative-config.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/service-accounts.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/node-labels.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/field-selectors.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/leases.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/stateless-application/expose-external-ip-address.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/deprecation-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/configure-dns-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/helm-chart.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/compute-storage-net/device-plugins.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/kubernetes-basics/create-cluster/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/http-proxy-access-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/verify-kubectl.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/ingress-controllers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/network-policy-provider/weave-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/enforce-standards-admission-controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/image.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/migrate-dockershim-dockerd.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/access-cluster-services.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/topology-aware-routing.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/run-replicated-stateful-application.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/policy/limit-range.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/best-practices/cluster-large.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/device-plugin.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/containers/images.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/names.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/hello-minikube.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/network-policy-provider/romana-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/downstream.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/pod-failure-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/optional-kubectl-configs-bash-mac.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/labels.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/finalizers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/service.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/docker.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/networking/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/replicaset.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kubectl.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/storage-class.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/spec.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/pod-scheduling-readiness.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/troubleshooting-kubeadm.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/volume-pvc-datasource.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubelet-in-userns.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/stateful-application/basic-stateful-set.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/daemonset.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/persistent-volume.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/inject-data-application/environment-variable-expose-pod-information.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/application-developer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/configure-multiple-schedulers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/api-extension/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/share-process-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/security/ns-level-pss.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/node-status.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/inject-data-application/downward-api-volume-expose-pod-information.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/control-plane-node-communication.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/assign-pods-nodes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/create-external-load-balancer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/audit.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/network-policy-provider/calico-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/userns.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/_index.md"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_tsconfig.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pltcl.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "sourcerepo.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_tsdictionary.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/truncate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_tstemplate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/delete.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_access_method.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "history.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgrowlocks.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_system.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "external-projects.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "oldsnapshot.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "user-manag.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pgarchivecleanup.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "regress.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_table.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_operator.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_tablespace.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "system-views.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_ctl-ref.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "planstats.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/set_constraints.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/psql-ref.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_basebackup.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "contrib.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "features.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/start_transaction.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/load.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "logicaldecoding.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_opclass.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "nls.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "mvcc.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_type.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "dict-int.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "citext.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_subscription.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "install-binaries.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "lo.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_group.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/execute.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_user.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_aggregate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/set_session_auth.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/close.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/copy.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "manage-ag.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_index.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "postgres.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/discard.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "btree.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/show.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "spi.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "advanced.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "datatype.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_user_mapping.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_event_trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ltree.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_procedure.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_group.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/explain.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/commit.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "storage.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_tablespace.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "protocol.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "arch-dev.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "high-availability.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_routine.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_subscription.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_rule.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "hash.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "parallel.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xaggr.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "intro.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_publication.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "json.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_rule.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "installation.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_operator.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/rollback_to.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "custom-scan.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/analyze.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "bgworker.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "passwordcheck.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_table.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_server.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "queries.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pgbench.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_user_mapping.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_language.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_extension.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_aggregate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/vacuumdb.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "appendix-obsolete-pgxlogdump.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_extension.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_database.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_table_as.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_role.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "release-16.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_statistics.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "start.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "oid2name.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "archive-modules.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_type.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "tablesample-method.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "indices.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "unaccent.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "appendix-obsolete-pgresetxlog.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xoper.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/dropdb.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgsurgery.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_publication.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/commit_prepared.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/update.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "appendix-obsolete.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_user_mapping.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "color.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "generic-wal.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/rollback_prepared.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xtypes.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_schema.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "spgist.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_receivewal.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "indexam.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_opclass.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/values.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/clusterdb.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_foreign_data_wrapper.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "release.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgcrypto.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_tsdictionary.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "btree-gist.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "tablefunc.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/reindexdb.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgprewarm.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_function.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "maintenance.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "replication-origins.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/reassign_owned.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_type.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "earthdistance.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgfreespacemap.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/reset.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "gist.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_transform.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_procedure.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_policy.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_amcheck.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/postgres-ref.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_foreign_table.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_checksums.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/import_foreign_schema.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "geqo.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_default_privileges.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_tstemplate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "limits.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "appendix-obsolete-recovery-config.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/fetch.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_opfamily.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "tsm-system-rows.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "tableam.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "basic-archive.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "adminpack.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_tstemplate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/begin.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_server.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_large_object.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/set.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "tcn.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "lobj.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_controldata.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xplang.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "syntax.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "client-auth.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "plperl.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_domain.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_waldump.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/do.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_dumpall.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/call.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgbuffercache.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "vacuumlo.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_cast.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/select.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/vacuum.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/prepare_transaction.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/declare.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "fdwhandler.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/merge.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_cast.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/createuser.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_owned.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "dfunc.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xindex.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "problems.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_procedure.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_opclass.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_sequence.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_resetwal.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "basebackup-to-shell.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "query.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_event_trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "bki.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "biblio.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_opfamily.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/listen.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "auto-explain.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "gin.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_tsparser.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_server.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_transform.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "monitoring.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_rule.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "appendix-obsolete-default-roles.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_verifybackup.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "legal.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_sequence.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_policy.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/initdb.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_policy.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_recvlogical.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ddl.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_index.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "notation.sgml"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "rpc/rref.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "func.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/metrics.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cuda._sanitizer.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_fine_grain_apis.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "linalg.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/cpu_threading_torchscript_inference.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "tensor_attributes.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_cudagraph_trees.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "onnx_torchscript.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_faq.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "distributed.elastic.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/cuda.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cpu.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/gradcheck.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch_cuda_memory.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "_templates/autosummary/class.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/serialization.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "tensorboard.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "logging.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/randomness.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_transformations.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/numerical_accuracy.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "_templates/classtemplate.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cuda.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_inductor_profiling.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "nn.attention.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.ao.ns._numeric_suite_fx.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_deepdive.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "jit_language_reference_v2.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch_environment_variables.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "nested.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "_templates/sobolengine.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/mps.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "fx.experimental.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "distributed.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/autograd.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "complex_numbers.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_ir.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "futures.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/train_script.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.ao.ns._numeric_suite.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "quantization-backend-configuration.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "mps.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "library.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/extending.func.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "signal.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "tensors.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cpp_index.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "onnx.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "meta.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "fx.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "debugging_environment_variables.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "named_tensor.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "mobile_optimizer.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "jit_python_reference.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "name_inference.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/amp_examples.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_dynamic_shapes.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/examples.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_troubleshooting.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "threading_environment_variables.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "masked.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "func.whirlwind_tour.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_best_practices_for_backends.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "amp.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/fsdp.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_nn_module.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/timer.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "xpu.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "quantization.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/extending.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_guards_overview.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/modules.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "distributed.optim.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "pipeline.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cudnn_persistent_rnn.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "rpc/distributed_autograd.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "community/build_ci_governance.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/agent.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.overrides.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "sparse.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "func.batch_norm.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cuda_environment_variables.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/windows.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "nn.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "quantization-accuracy-debugging.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_fake_tensor.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "special.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/large_scale_deployments.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "onnx_torchscript_supported_aten_ops.rst"
+      }
+    ],
+    "validation": [
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/background-tasks.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/response-change-status-code.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/apirouter.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/graphql.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/behind-a-proxy.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "async.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/query-params-str-validations.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "external-links.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "fastapi-cli.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/openapi-callbacks.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "help-fastapi.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/request-forms.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/openapi-webhooks.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/cors.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/dependencies/global-dependencies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/request-forms-and-files.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/security/http-basic-auth.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/encoder.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "deployment/versions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/certificate.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/reserve-compute-resources.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/windows/intro.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/quality-service-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/assign-pod-node.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/ingress.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/platform-developer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/gateway.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configmap-secret/managing-secret-using-kubectl.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/client-libraries.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/job-with-pod-to-pod-communication.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-gmsa.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/optional-kubectl-configs-fish.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/persistent-volumes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/determine-reason-pod-failure.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/static-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/safely-drain-node.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/issues-security/official-cve-feed.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/network-policy-provider/kube-router-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/enforce-standards-namespace-labels.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/security-checklist.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/stateful-application/zookeeper.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kubelet.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/pod-overhead.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/node-pressure-eviction.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/priority-class.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/api-extension/apiserver-aggregation.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/managed-service.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/kubernetes-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/operator.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/job.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/containers/container-environment.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/deployment.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/external-api/custom-metrics.v1beta2.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/attach-handler-lifecycle-event.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/manage-resources/quota-pod-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/nodes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/stateful-application/mysql-wordpress-persistent-volume.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/api-eviction.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/instrumentation/cri-pod-container-metrics.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/preemption.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/quantity.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/rbac-good-practices.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/container-runtime.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/use-cascading-deletion.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/ephemeral-volumes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/inject-data-application/distribute-credentials-secure.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/kubeadm-upgrade.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/extend-kubernetes/configure-aggregation-layer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/rbac.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/kubelet-checkpoint-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/policy/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/node.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/endpoint-slices.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kms-provider.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/web-ui-dashboard.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/namespaces-walkthrough.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/cgroups.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/init-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/horizontal-pod-autoscale-walkthrough.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/flexvolume.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/node.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/policy/pid-limiting.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cgroup.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/tools/map-crictl-dockercli.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/local-debugging.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/indexed-parallel-processing-static.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/dns-horizontal-autoscaling.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/proxy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/job/automated-tasks-with-cron-jobs.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/policy/resource-quotas.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/access-cluster-api.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/configuration/configure-java-microservice/configure-java-microservice.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/cri.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/secret.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/management.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/scale-stateful-set.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kube-proxy.md"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "datetime.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "errcodes.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_statistics.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_function.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_tsparser.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_tsdictionary.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "intarray.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/createdb.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "catalogs.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_conversion.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_conversion.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "diskusage.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_tablespace.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_subscription.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "hstore.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_opfamily.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/deallocate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_conversion.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_materialized_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "acronyms.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/revoke.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/release_savepoint.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "textsearch.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "intagg.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/savepoint.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "runtime.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pgtestfsync.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "fuzzystrmatch.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "appendix-obsolete-pgreceivexlog.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_collation.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_foreign_table.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_materialized_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_operator.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "config.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "seg.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "sepgsql.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "isn.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "file-fdw.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "btree-gin.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "dml.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_role.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_table.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "info.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_isready.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/security_label.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_schema.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_user.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_extension.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/end.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/abort.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xact.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/unlisten.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "install-windows.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_database.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_role.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_schema.sgml"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "onnx_dynamo_onnxruntime_backend.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "distributed.checkpoint.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/broadcasting.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "quantization-support.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_performance_dashboard.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/faq.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "ddp_comm_hooks.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "multiprocessing.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "func.api.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "nn.functional.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "nn.init.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/kubernetes.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "type_info.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "community/contribution_guide.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "storage.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cond.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "miscellaneous_environment_variables.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "jit_builtin_functions.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/hip.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "autograd.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "onnx_dynamo.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "distributed.tensor.parallel.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "nn.attention.bias.rst"
+      }
+    ],
+    "frozen_test": [
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/custom-docs-ui-assets.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/security/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/schema-extra-example.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/body-nested-models.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "about/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/dependencies/classes-as-dependencies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/security/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/security/oauth2-jwt.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/testing.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/configure-swagger-ui.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/background.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/uploadfile.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/responses.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "release-notes.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/testing-database.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/encoders.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/response-model.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/openapi/docs.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "learn/index.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/using-request-directly.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/testing-events.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/middleware.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/advanced-dependencies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/events.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "tutorial/dependencies/sub-dependencies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/settings.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/testing-dependencies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "contributing.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/general.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "how-to/sql-databases-peewee.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "reference/dependencies.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/custom-response.md"
+      },
+      {
+        "ecosystem": "fastapi",
+        "file_path": "advanced/testing-websockets.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-gpus/scheduling-gpus.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/control-plane.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cri-o.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/security/seccomp.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/workload.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/etcd.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/optional-kubectl-configs-zsh.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/manage-resources/memory-default-namespace.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-kubernetes-objects/update-api-object-kubectl-patch.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/node/kubelet-config-directory-merging.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/multi-tenancy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/policy/node-resource-managers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/configuration/organize-cluster-access-kubeconfig.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/encrypt-data.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/network/validate-dual-stack.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/minikube.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/object.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/scheduling-framework.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/troubleshoot-kubectl.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cni.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/deployment.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/toleration.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/extensions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/uid.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/dns-custom-nameservers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/pod-lifecycle.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/qos-class.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/service-catalog.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/developing-cloud-controller-manager.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/statefulset.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/run-application/access-api-from-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/pod-qos.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/job.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/create-hostprocess-pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/daemonset.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/name.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/health-checks.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/debug-init-containers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/debug-statefulset.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tls/managing-tls-in-a-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/configure-projected-volume-storage.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/sidecar-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/volume-health-monitoring.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/user-namespaces.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/developer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/admission-controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/migrating-from-dockershim/find-out-runtime-you-use.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/cluster-administration/logging.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/network-policy-provider/cilium-network-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/containers/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/upgrading-windows-nodes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/kubeadm/kubeadm-certs.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/sysctl-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/api-group.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/high-availability.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/volumes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/selector.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tls/certificate-rotation.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/tools/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/get-shell-running-container.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "home/supported-doc-versions.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/contributor.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kops.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-daemon/rollback-daemon-set.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/replicationcontroller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/change-pv-reclaim-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/probe.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/manage-hugepages/scheduling-hugepages.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/issues-security/security.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/extend-kubernetes/api-extension/custom-resources.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/using-api/cel.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/ha-topology.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-cluster/monitor-node-health.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/communicate-containers-same-pod-shared-volume.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/pods/sidecar-containers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/volume-attributes-classes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/cluster-operations.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/container-lifecycle-hooks.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/secrets-good-practices.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/code-contributor.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/running-cloud-controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/scheduling/config.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/user-namespaces.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/included/optional-kubectl-configs-pwsh.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/projected-volumes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/security/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/pod-security-standards.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/sysctl.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/istio.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/common-labels.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/scheduling-eviction/taint-and-toleration.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/controller.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/certificates.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/upstream.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/security/pod-security-policy.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/extended-resource-node.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/workloads/controllers/ttlafterfinished.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/debug/debug-application/debug-service.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/overview/working-with-objects/_index.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/pod.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/kubelet-integration.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/access-application-cluster/service-access-application-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/windows-networking.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/ip-masq-agent.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/ingress.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/services/source-ip.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/container-runtimes.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/feature-gates.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/external-api/metrics.v1beta1.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/tools/install-kubectl-windows.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "setup/production-environment/tools/kubeadm/dual-stack-support.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tutorials/services/connect-applications-service.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/aggregation-layer.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/architecture/garbage-collection.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/security-context.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/configure-pod-container/resize-container-resources.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/group-version-resource.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/securing-a-cluster.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/data-plane.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/configuration/windows-resource-management.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/network/customize-hosts-file-for-pods.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/kube-controller-manager.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/garbage-collection.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/network-policies.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/containers/container-lifecycle-hooks.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/containers/runtime-class.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "tasks/administer-cluster/topology-manager.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/services-networking/dns-pod-service.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/storage/storage-capacity.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/access-authn-authz/admission-controllers.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/host-aliases.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/master.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "reference/glossary/resource-quota.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/configuration/overview.md"
+      },
+      {
+        "ecosystem": "kubernetes",
+        "file_path": "concepts/windows/_index.md"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/notify.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_config-ref.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgstattuple.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "contrib-spi.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_function.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_sequence.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_tsconfig.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "tsm-system-time.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "plpython.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "charset.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_user.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "sslinfo.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/lock.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_group.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/refresh_materialized_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_event_trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/prepare.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xfunc.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/dropuser.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "logical-replication.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "custom-rmgr.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_foreign_table.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgstatstatements.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_aggregate.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_foreign_data_wrapper.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "libpq.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_domain.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_collation.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "rules.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "reference.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "event-trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "test-decoding.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/set_role.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_publication.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "plpgsql.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "brin.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "cube.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pageinspect.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_dump.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_database.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/reindex.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/rollback.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_routine.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/insert.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "dblink.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_index.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "glossary.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/ecpg-ref.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_domain.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "bloom.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_foreign_data_wrapper.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pgupgrade.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/comment.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_collation.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ecpg.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_language.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "trigger.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "wal.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/checkpoint.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgtrgm.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "jit.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "sources.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/cluster.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "typeconv.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "keywords.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "amcheck.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_materialized_view.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_restore.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_access_method.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgwalinspect.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_tsconfig.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "uuid-ossp.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/set_transaction.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "perform.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/move.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "auth-delay.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pgtesttiming.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/drop_statistics.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "postgres-fdw.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "pgvisibility.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "docguide.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "backup-manifest.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "backup.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/create_tsparser.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/pg_rewind.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "dict-xsyn.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/grant.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "rowtypes.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "extend.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "information_schema.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "plhandler.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "rangetypes.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/alter_language.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "xml2.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "array.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "func.sgml"
+      },
+      {
+        "ecosystem": "postgresql",
+        "file_path": "ref/select_into.sgml"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "export.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_api.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "fft.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "community/governance.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "func.migrating.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "community/design.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "community/persons_of_interest.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "export.ir_spec.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/multiprocessing.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "tensor_view.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "deterministic.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/quickstart.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_custom_backends.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "notes/ddp.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_profiling_torch_compile.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/rendezvous.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "_templates/autosummary/classnoinheritance.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "monitor.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "rpc.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "index.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "optim.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "func.ux_limitations.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "utils.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_aot_inductor.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "jit_language_reference.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "hub.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "data.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "bottleneck.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "checkpoint.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "package.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "cudnn_rnn_determinism.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "torch.compiler_get_started.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "deploy.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "elastic/customization.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "jit.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "jit_unsupported.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "model_zoo.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "backends.rst"
+      },
+      {
+        "ecosystem": "pytorch",
+        "file_path": "distributed.algorithms.join.rst"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "total_chunks": 11645,
+  "tokenizer_provenance": {
+    "tokenizer_model_id": "BAAI/bge-small-en-v1.5",
+    "tokenizer_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "library": "transformers",
+    "library_version": "5.17.0"
+  },
+  "ecosystems": {
+    "fastapi": {
+      "chunk_count": 1785,
+      "unique_files_count": 137,
+      "total_tokens": 413276,
+      "min_tokens": 11,
+      "max_tokens": 512,
+      "avg_tokens": 231.5,
+      "p50_tokens": 193.0,
+      "p90_tokens": 483.0,
+      "p95_tokens": 500.0,
+      "p99_tokens": 510.0
+    },
+    "kubernetes": {
+      "chunk_count": 4913,
+      "unique_files_count": 565,
+      "total_tokens": 1122887,
+      "min_tokens": 6,
+      "max_tokens": 512,
+      "avg_tokens": 228.6,
+      "p50_tokens": 192.0,
+      "p90_tokens": 473.0,
+      "p95_tokens": 498.0,
+      "p99_tokens": 510.0
+    },
+    "postgresql": {
+      "chunk_count": 3564,
+      "unique_files_count": 383,
+      "total_tokens": 1553013,
+      "min_tokens": 4,
+      "max_tokens": 512,
+      "avg_tokens": 435.8,
+      "p50_tokens": 476.0,
+      "p90_tokens": 508.0,
+      "p95_tokens": 510.0,
+      "p99_tokens": 512.0
+    },
+    "pytorch": {
+      "chunk_count": 1383,
+      "unique_files_count": 155,
+      "total_tokens": 395045,
+      "min_tokens": 2,
+      "max_tokens": 512,
+      "avg_tokens": 285.6,
+      "p50_tokens": 297.0,
+      "p90_tokens": 497.8,
+      "p95_tokens": 505.0,
+      "p99_tokens": 511.0
+    }
+  }
+}

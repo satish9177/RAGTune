@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "recorded_at_utc": "2026-09-27T12:42:00Z",
+  "models": [
+    {
+      "model_id": "BAAI/bge-small-en-v1.5",
+      "model_type": "bi_encoder",
+      "role": "lightweight_baseline",
+      "exact_commit_sha": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "tokenizer_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "embedding_dimension": 384,
+      "normalization": "l2",
+      "instruction_prefix": "Represent this sentence for searching relevant passages: ",
+      "gated_access": false,
+      "library": "transformers / sentence-transformers"
+    },
+    {
+      "model_id": "google/embeddinggemma-300m",
+      "model_type": "bi_encoder",
+      "role": "modern_compact_baseline_primary_candidate",
+      "exact_commit_sha": "57c266a740f537b4dc058e1b0cda161fd15afa75",
+      "tokenizer_revision": "57c266a740f537b4dc058e1b0cda161fd15afa75",
+      "embedding_dimension": 768,
+      "normalization": "l2",
+      "instruction_prefix": "task: search result | query: ",
+      "gated_access": false,
+      "library": "transformers / sentence-transformers"
+    },
+    {
+      "model_id": "Qwen/Qwen3-Embedding-0.6B",
+      "model_type": "bi_encoder",
+      "role": "strong_modern_reference",
+      "exact_commit_sha": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "tokenizer_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "embedding_dimension": 1024,
+      "normalization": "l2",
+      "instruction_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:",
+      "gated_access": false,
+      "library": "transformers"
+    },
+    {
+      "model_id": "BAAI/bge-reranker-base",
+      "model_type": "cross_encoder",
+      "role": "stage2_reranker_and_teacher",
+      "exact_commit_sha": "2cfc18c9415c912f9d8155881c133215df768a70",
+      "tokenizer_revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+      "embedding_dimension": null,
+      "normalization": "unnormalized_cross_attention_logit",
+      "instruction_prefix": null,
+      "gated_access": false,
+      "library": "transformers / sentence-transformers"
+    }
+  ]
+}

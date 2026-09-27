@@ -1,0 +1,109 @@
+{
+  "freeze_id": "CORPUS_FREEZE_V0",
+  "created_at_utc": "2026-09-27T14:32:00Z",
+  "status": "FROZEN",
+  "description": "Corpus Freeze v0 establishing the frozen foundation for E0 baseline and subsequent retrieval learning experiments in RAGTune.",
+  "canonical_artifacts_sha256": {
+    "corpus_chunks.jsonl": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+    "partitioned_chunks.jsonl": "a2df6633e04540b9578b0f4cd353473dbb8d72067887f0b2c6f9999495acee40",
+    "partition_manifest.json": "af6cafe8cad8b1784a3720f9ea13c8e069bb94e5f7ef20b121a2f5c5e28af58a",
+    "leakage_audit.jsonl": "13d2712e687766d1ce811b52e6d69bf1660af9367e2393eec2799cf2dd3fa04d",
+    "semantic_leakage_audit.jsonl": "f6c95fdb94c2d264c47c0776cd1bbefeefe0318a3923886b0d9e583f8f7697d7",
+    "pilot_benchmark.jsonl": "c04bca0746cd092da2bca5177bc6633b60cd8d85847c104446501696105fe98d"
+  },
+  "raw_sources": [
+    {
+      "ecosystem": "postgresql",
+      "canonical_repository_url": "https://github.com/postgres/postgres.git",
+      "requested_version": "REL_16_3",
+      "actual_resolved_tag": "REL_16_3",
+      "resolved_commit_sha": "05ffe9398b758bbb8d30cc76e9bbc638dab2d477",
+      "license": "PostgreSQL License",
+      "included_path": "doc/src/sgml",
+      "source_file_count": 387,
+      "processed_file_count": 383,
+      "snapshot_archive_sha256": "b469e68433a34f73a33023a8832a23c147f789db048fa29802097b1016fd6a99"
+    },
+    {
+      "ecosystem": "pytorch",
+      "canonical_repository_url": "https://github.com/pytorch/pytorch.git",
+      "requested_version": "v2.3.1",
+      "actual_resolved_tag": "v2.3.1",
+      "resolved_commit_sha": "63d5e9221bedd1546b7d364b5ce4171547db12a9",
+      "license": "BSD-3-Clause",
+      "included_path": "docs/source",
+      "source_file_count": 171,
+      "processed_file_count": 155,
+      "snapshot_archive_sha256": "d26b8aad583d6beb0c8a9b8a77ede7f71c68b71914743ab25f6a570cb7605d2a"
+    },
+    {
+      "ecosystem": "kubernetes",
+      "canonical_repository_url": "https://github.com/kubernetes/website.git",
+      "requested_version": "v1.30",
+      "actual_resolved_tag": "snapshot-initial-v1.30",
+      "resolved_commit_sha": "0471ca12572f26cd6f553dafddbe1de22c4abf7f",
+      "license": "Apache-2.0 / CC-BY-4.0",
+      "included_path": "content/en/docs",
+      "source_file_count": 1352,
+      "processed_file_count": 565,
+      "snapshot_archive_sha256": "c384f9ff6d392d0969603af0abdaa4a548bc37489bde398b2ef6eb2fc4e9b3cb"
+    },
+    {
+      "ecosystem": "fastapi",
+      "canonical_repository_url": "https://github.com/fastapi/fastapi.git",
+      "requested_version": "0.111.0",
+      "actual_resolved_tag": "0.111.0",
+      "resolved_commit_sha": "1c3e6918750ccb3f20ea260e9a4238ce2c0e5f63",
+      "license": "MIT License",
+      "included_path": "docs/en/docs",
+      "source_file_count": 137,
+      "processed_file_count": 137,
+      "snapshot_archive_sha256": "2afee21412a82ebc3ccee1fbeb145712e1eacbb7d98d02dd27ea784ee4d2d7f2"
+    }
+  ],
+  "chunking_configuration": {
+    "max_tokens": 512,
+    "strategy": "structural_recursive_heading_aware",
+    "code_block_atomicity": "preserved_up_to_max_tokens_then_recursive_split",
+    "parser_filters": {
+      "rst_field_lists_stripped": true,
+      "hugo_directives_and_comments_stripped": true,
+      "sgml_entities_handled": true,
+      "minimum_body_characters": 40
+    }
+  },
+  "tokenizer_configuration": {
+    "model_id": "BAAI/bge-small-en-v1.5",
+    "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "library": "transformers",
+    "library_version": "5.17.0"
+  },
+  "exclusion_policies": {
+    "kubernetes": [
+      "content/en/docs/reference/kubectl/**",
+      "content/en/docs/reference/kubernetes-api/**",
+      "content/en/docs/reference/setup-tools/**",
+      "content/en/docs/reference/command-line-tools-reference/**",
+      "content/en/docs/reference/config-api/**",
+      "content/en/docs/contribute/**",
+      "content/en/docs/doc-contributor-tools/**",
+      "**/metrics.md"
+    ]
+  },
+  "corpus_totals": {
+    "total_chunks": 11645,
+    "total_processed_files": 1240,
+    "total_tokens": 3484221,
+    "max_chunk_tokens": 512,
+    "min_chunk_tokens": 2
+  },
+  "partition_totals": {
+    "train": { "file_count": 743, "chunk_count": 6414 },
+    "validation": { "file_count": 184, "chunk_count": 1575 },
+    "frozen_test": { "file_count": 313, "chunk_count": 3656 }
+  },
+  "working_tree_status": {
+    "git_controlled": false,
+    "note": "RAGTune workspace root is an unversioned project directory containing nested git checkouts in data/sources"
+  }
+}
