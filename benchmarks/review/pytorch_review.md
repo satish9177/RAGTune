@@ -415,7 +415,7 @@
 
 - **Ecosystem**: `pytorch` | **Typology**: `comparative_discrimination` | **Role**: `development`
 - **Provenance**: `external_derived_verified`
-  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing", "platform": "Stack Overflow", "post_id": "48822463", "title": "How to use pytorch multiprocessing?", "author": "fmka", "license": "CC BY-SA 3.0", "retrieval_date": "2026-09-27"}`
+  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing", "revision_url": "https://stackoverflow.com/posts/48822463/revisions", "platform": "Stack Overflow", "post_id": "48822463", "title": "How to use pytorch multiprocessing?", "author": "fmka", "contribution_timestamp": "2018-02-16T12:00:23Z", "license": "CC BY-SA 3.0", "retrieval_date": "2026-09-27"}`
 - **Uncertainty Flag**: `False (Unambiguous)`
 - **AI Quality Recommendation**: **`APPROVE_CANDIDATE`**
 

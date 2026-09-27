@@ -1,0 +1,428 @@
+{
+  "benchmark_id": "benchmark_v0",
+  "total_benchmark_queries": 140,
+  "human_audit_sample_count": 40,
+  "sampling_strategy": "deterministic_stratified_v1",
+  "random_seed": 42,
+  "freeze_rule": "Benchmark v0 will be officially frozen only after Satish completes human review of this 40-query sample.",
+  "composition": {
+    "uncertain_queries": 17,
+    "external_verified_queries": 3,
+    "stratified_additional_queries": 20
+  },
+  "domain_counts": {
+    "postgresql": 11,
+    "pytorch": 10,
+    "kubernetes": 10,
+    "fastapi": 9
+  },
+  "typology_counts": {
+    "direct_lookup": 8,
+    "comparative_discrimination": 23,
+    "troubleshooting_scenario": 9
+  },
+  "sample_query_ids": [
+    "v0_fa_004",
+    "v0_fa_010",
+    "v0_fa_011",
+    "v0_fa_016",
+    "v0_fa_018",
+    "v0_fa_022",
+    "v0_fa_023",
+    "v0_fa_026",
+    "v0_fa_028",
+    "v0_k8s_007",
+    "v0_k8s_010",
+    "v0_k8s_011",
+    "v0_k8s_014",
+    "v0_k8s_015",
+    "v0_k8s_017",
+    "v0_k8s_022",
+    "v0_k8s_025",
+    "v0_k8s_027",
+    "v0_k8s_029",
+    "v0_pg_001",
+    "v0_pg_002",
+    "v0_pg_011",
+    "v0_pg_013",
+    "v0_pg_016",
+    "v0_pg_017",
+    "v0_pg_018",
+    "v0_pg_025",
+    "v0_pg_026",
+    "v0_pg_030",
+    "v0_pg_034",
+    "v0_pt_002",
+    "v0_pt_003",
+    "v0_pt_012",
+    "v0_pt_015",
+    "v0_pt_018",
+    "v0_pt_021",
+    "v0_pt_023",
+    "v0_pt_025",
+    "v0_pt_027",
+    "v0_pt_032"
+  ],
+  "sample_details": [
+    {
+      "query_id": "v0_fa_004",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_fa_010",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_fa_011",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_fa_016",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_fa_018",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_fa_022",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_fa_023",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_fa_026",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_fa_028",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "external_derived_verified",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "external_derived_verified"
+    },
+    {
+      "query_id": "v0_k8s_007",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_k8s_010",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_k8s_011",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_k8s_014",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_k8s_015",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_k8s_017",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_k8s_022",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_k8s_025",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_k8s_027",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_k8s_029",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pg_001",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pg_002",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pg_011",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pg_013",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pg_016",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pg_017",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pg_018",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pg_025",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pg_026",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "external_derived_verified",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "external_derived_verified"
+    },
+    {
+      "query_id": "v0_pg_030",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pg_034",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pt_002",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pt_003",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pt_012",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pt_015",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pt_018",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "provenance_type": "external_derived_verified",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "external_derived_verified"
+    },
+    {
+      "query_id": "v0_pt_021",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    },
+    {
+      "query_id": "v0_pt_023",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pt_025",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pt_027",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "ai_authored_project_query",
+      "uncertainty": false,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "stratified_additional_sample"
+    },
+    {
+      "query_id": "v0_pt_032",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "provenance_type": "synthetic_grounded",
+      "uncertainty": true,
+      "ai_recommendation": "APPROVE_CANDIDATE",
+      "inclusion_reason": "uncertainty_flagged"
+    }
+  ]
+}

@@ -680,7 +680,7 @@
 
 - **Ecosystem**: `fastapi` | **Typology**: `troubleshooting_scenario` | **Role**: `development`
 - **Provenance**: `external_derived_verified`
-  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/65632734/fastapi-cors-preflight-request-fails-with-no-access-control-allow-origin-header", "platform": "Stack Overflow", "post_id": "65632734", "title": "FastAPI: Response to preflight request doesn't pass access control check", "license": "CC BY-SA 4.0", "retrieval_date": "2026-09-27"}`
+  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/65632734/fastapi-cors-preflight-request-fails-with-no-access-control-allow-origin-header", "revision_url": "https://stackoverflow.com/posts/65632734/revisions", "platform": "Stack Overflow", "post_id": "65632734", "title": "FastAPI: Response to preflight request doesn't pass access control check", "contribution_timestamp": "2021-01-08T15:23:44Z", "license": "CC BY-SA 4.0", "retrieval_date": "2026-09-27"}`
 - **Uncertainty Flag**: `False (Unambiguous)`
 - **AI Quality Recommendation**: **`APPROVE_CANDIDATE`**
 

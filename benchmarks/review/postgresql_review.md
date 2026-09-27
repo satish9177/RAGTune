@@ -615,7 +615,7 @@
 
 - **Ecosystem**: `postgresql` | **Typology**: `troubleshooting_scenario` | **Role**: `development`
 - **Provenance**: `external_derived_verified`
-  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/3086759/postgresql-sorry-too-many-clients-already", "platform": "Stack Overflow", "post_id": "3086759", "title": "Postgresql sorry, too many clients already", "license": "CC BY-SA 2.5/3.0", "retrieval_date": "2026-09-27"}`
+  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/3086759/postgresql-sorry-too-many-clients-already", "revision_url": "https://stackoverflow.com/posts/3086759/revisions", "platform": "Stack Overflow", "post_id": "3086759", "title": "Postgresql sorry, too many clients already", "contribution_timestamp": "2010-06-22T08:14:48Z", "license": "CC BY-SA 2.5", "retrieval_date": "2026-09-27"}`
 - **Uncertainty Flag**: `False (Unambiguous)`
 - **AI Quality Recommendation**: **`APPROVE_CANDIDATE`**
 

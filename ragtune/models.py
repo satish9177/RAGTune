@@ -107,9 +107,17 @@ class BenchmarkQuery(BaseModel):
     )
     uncertainty: bool = Field(default=False, description="Flag indicating borderline or ambiguous relevance")
     annotation_notes: str = Field(default="", description="Reviewer notes and guidelines adherence")
-    review_status: Literal["UNREVIEWED", "APPROVED", "REVISE", "REJECTED"] = Field(
-        default="UNREVIEWED", description="Human review state"
-    )
+    review_status: Literal[
+        "UNREVIEWED",
+        "AWAITING_HUMAN_REVIEW",
+        "AI_SOURCE_VERIFIED",
+        "HUMAN_APPROVED",
+        "HUMAN_REVISED",
+        "HUMAN_REJECTED",
+        "APPROVED",
+        "REVISE",
+        "REJECTED",
+    ] = Field(default="UNREVIEWED", description="Human review state")
     reviewer: Optional[str] = Field(default=None, description="Human reviewer identifier")
     review_notes: str = Field(default="", description="Human reviewer notes or change requests")
     reviewed_at: Optional[str] = Field(default=None, description="UTC timestamp of human review")

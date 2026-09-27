@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import random
 import re
 from typing import Any, Dict, List
 
@@ -106,7 +107,7 @@ def main():
 
     # Troubleshooting Scenario (10)
     specs.extend([
-        {"qid": "v0_pg_026", "file": "config.sgml", "pat": r"max_connections", "q": "How to resolve 'FATAL: sorry, too many clients already' by configuring connection limits and pooling parameters in PostgreSQL?", "prov": "external_derived_verified", "meta": {"source_url": "https://stackoverflow.com/questions/3086759/postgresql-sorry-too-many-clients-already", "platform": "Stack Overflow", "post_id": "3086759", "title": "Postgresql sorry, too many clients already", "license": "CC BY-SA 2.5/3.0", "retrieval_date": "2026-09-27"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
+        {"qid": "v0_pg_026", "file": "config.sgml", "pat": r"max_connections", "q": "How to resolve 'FATAL: sorry, too many clients already' by configuring connection limits and pooling parameters in PostgreSQL?", "prov": "external_derived_verified", "meta": {"source_url": "https://stackoverflow.com/questions/3086759/postgresql-sorry-too-many-clients-already", "revision_url": "https://stackoverflow.com/posts/3086759/revisions", "platform": "Stack Overflow", "post_id": "3086759", "title": "Postgresql sorry, too many clients already", "contribution_timestamp": "2010-06-22T08:14:48Z", "license": "CC BY-SA 2.5", "retrieval_date": "2026-09-27"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pg_027", "file": "config.sgml", "pat": r"statement_timeout", "q": "Why does an active query fail with 'canceling statement due to statement timeout' and how to isolate it to a specific session?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pg_028", "file": "catalogs.sgml", "pat": r"pg_stat_activity.*idle in transaction", "q": "How to identify and terminate orphaned sessions stuck in 'idle in transaction' holding locks using pg_stat_activity?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pg_029", "file": "config.sgml", "pat": r"deadlock_timeout", "q": "How does deadlock_timeout allow PostgreSQL to detect circular locking dependencies before canceling a transaction?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
@@ -144,7 +145,7 @@ def main():
         {"qid": "v0_pt_015", "file": "ddp_comm_hooks.rst", "pat": r"GradBucket", "q": "How does custom DDP hook processing over a GradBucket differ from registering standard tensor-level backward hooks?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": True, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pt_016", "file": "distributed.checkpoint.rst", "pat": r"load_state_dict.*save_state_dict", "q": "What is the architectural advantage of torch.distributed.checkpoint over torch.save for large distributed checkpoints?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pt_017", "file": "distributed.tensor.parallel.rst", "pat": r"RowwiseParallel.*ColwiseParallel|row-parallel", "q": "What is the trade-off in communication cost between column-parallel linear and row-parallel linear layers in Tensor Parallelism?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
-        {"qid": "v0_pt_018", "file": "multiprocessing.rst", "pat": r"spawn.*fork", "q": "Why does torch.multiprocessing mandate using the spawn start method instead of fork when child workers access CUDA devices?", "prov": "external_derived_verified", "meta": {"source_url": "https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing", "platform": "Stack Overflow", "post_id": "48822463", "title": "How to use pytorch multiprocessing?", "author": "fmka", "license": "CC BY-SA 3.0", "retrieval_date": "2026-09-27"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
+        {"qid": "v0_pt_018", "file": "multiprocessing.rst", "pat": r"spawn.*fork", "q": "Why does torch.multiprocessing mandate using the spawn start method instead of fork when child workers access CUDA devices?", "prov": "external_derived_verified", "meta": {"source_url": "https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing", "revision_url": "https://stackoverflow.com/posts/48822463/revisions", "platform": "Stack Overflow", "post_id": "48822463", "title": "How to use pytorch multiprocessing?", "author": "fmka", "contribution_timestamp": "2018-02-16T12:00:23Z", "license": "CC BY-SA 3.0", "retrieval_date": "2026-09-27"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pt_019", "file": "multiprocessing.rst", "pat": r"file_descriptor.*file_system", "q": "How does the file_descriptor sharing strategy compare to file_system when transferring tensors across worker processes?", "prov": "synthetic_grounded", "meta": {"prompt": "IPC tensor sharing strategies"}, "uncertainty": False, "pos_target": 1, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pt_020", "file": "notes/faq.rst", "pat": r"pin_memory", "q": "How does DataLoader(pin_memory=True) accelerate host-to-device memory transfers compared to non-pinned host memory?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent", "inspiration": "Pinned memory speedup in DataLoader"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_pt_021", "file": "onnx_dynamo.rst", "pat": r"onnx\.export.*dynamo", "q": "What is the distinction between exporting PyTorch models to ONNX using TorchDynamo compared to legacy TorchScript tracing?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": True, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
@@ -258,7 +259,7 @@ def main():
     specs.extend([
         {"qid": "v0_fa_026", "file": "advanced/behind-a-proxy.md", "pat": r"root_path|proxy", "q": "Why does the Swagger UI /docs endpoint fail to load OpenAPI schemas or show 404 errors when running FastAPI behind a reverse proxy that strips prefixes?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_fa_027", "file": "async.md", "pat": r"blocking", "q": "Why does a high-concurrency FastAPI service experience sudden latency spikes across all endpoints when an async def route makes a synchronous blocking database call?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 3, "rec": "APPROVE_CANDIDATE"},
-        {"qid": "v0_fa_028", "file": "tutorial/cors.md", "pat": r"allow_origins|preflight", "q": "How to resolve 'Response to preflight request doesn't pass access control check: No Access-Control-Allow-Origin header is present on the requested resource' in FastAPI?", "prov": "external_derived_verified", "meta": {"source_url": "https://stackoverflow.com/questions/65632734/fastapi-cors-preflight-request-fails-with-no-access-control-allow-origin-header", "platform": "Stack Overflow", "post_id": "65632734", "title": "FastAPI: Response to preflight request doesn't pass access control check", "license": "CC BY-SA 4.0", "retrieval_date": "2026-09-27"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
+        {"qid": "v0_fa_028", "file": "tutorial/cors.md", "pat": r"allow_origins|preflight", "q": "How to resolve 'Response to preflight request doesn't pass access control check: No Access-Control-Allow-Origin header is present on the requested resource' in FastAPI?", "prov": "external_derived_verified", "meta": {"source_url": "https://stackoverflow.com/questions/65632734/fastapi-cors-preflight-request-fails-with-no-access-control-allow-origin-header", "revision_url": "https://stackoverflow.com/posts/65632734/revisions", "platform": "Stack Overflow", "post_id": "65632734", "title": "FastAPI: Response to preflight request doesn't pass access control check", "contribution_timestamp": "2021-01-08T15:23:44Z", "license": "CC BY-SA 4.0", "retrieval_date": "2026-09-27"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_fa_029", "file": "tutorial/request-forms-and-files.md", "pat": r"python-multipart", "q": "Why does an endpoint accepting Form(...) or File(...) upload return 422 Unprocessable Entity or fail on startup requesting python-multipart?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_fa_030", "file": "tutorial/encoder.md", "pat": r"jsonable_encoder", "q": "How to fix 'TypeError: Object of type datetime is not JSON serializable' when returning database query objects from a custom response in FastAPI?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 1, "rec": "APPROVE_CANDIDATE"},
         {"qid": "v0_fa_031", "file": "tutorial/background-tasks.md", "pat": r"BackgroundTasks", "q": "Why does an unhandled exception inside a BackgroundTasks function fail silently without returning a 500 error to the client?", "prov": "ai_authored_project_query", "meta": {"generator": "ai_agent"}, "uncertainty": False, "pos_target": 2, "rec": "APPROVE_CANDIDATE"},
@@ -270,7 +271,37 @@ def main():
 
     print(f"Total defined query specifications: {len(specs)}")
 
-    # 3. Build BenchmarkQuery objects with dynamic relevance sets
+    # 3. Determine deterministic 40-query human audit sample
+    # Composition:
+    # - 17 queries currently flagged uncertain (100%)
+    # - 3 verified external queries (100%)
+    # - 20 stratified additional queries (5 per domain: 2 direct lookup, 2 comparative, 1 troubleshooting)
+    uncertain_qids = {item["qid"] for item in specs if item["uncertainty"]}
+    external_qids = {item["qid"] for item in specs if item["prov"] == "external_derived_verified"}
+    preselected = uncertain_qids | external_qids
+
+    by_domain: Dict[str, List[Dict[str, Any]]] = {}
+    for item in specs:
+        if item["qid"] not in preselected:
+            eco = "postgresql" if "_pg_" in item["qid"] else "pytorch" if "_pt_" in item["qid"] else "kubernetes" if "_k8s_" in item["qid"] else "fastapi"
+            by_domain.setdefault(eco, []).append(item)
+
+    rng = random.Random(42)
+    stratified_additional_qids: List[str] = []
+    for domain in ["postgresql", "pytorch", "kubernetes", "fastapi"]:
+        d_specs = by_domain[domain]
+        dl = sorted([s for s in d_specs if int(s["qid"].split("_")[-1]) <= 10], key=lambda x: x["qid"])
+        cd = sorted([s for s in d_specs if 11 <= int(s["qid"].split("_")[-1]) <= 25], key=lambda x: x["qid"])
+        ts = sorted([s for s in d_specs if int(s["qid"].split("_")[-1]) >= 26], key=lambda x: x["qid"])
+        sampled_dl = rng.sample(dl, 2)
+        sampled_cd = rng.sample(cd, 2)
+        sampled_ts = rng.sample(ts, 1)
+        stratified_additional_qids.extend([s["qid"] for s in sampled_dl + sampled_cd + sampled_ts])
+
+    human_audit_40_qids = sorted(list(preselected | set(stratified_additional_qids)))
+    assert len(human_audit_40_qids) == 40, f"Expected 40 sample queries, got {len(human_audit_40_qids)}"
+
+    # 4. Build BenchmarkQuery objects with dynamic relevance sets
     all_queries: List[BenchmarkQuery] = []
     positive_counts = {1: 0, 2: 0, 3: 0}
     prov_counts: Dict[str, int] = {}
@@ -343,9 +374,17 @@ def main():
         if item["uncertainty"]:
             uncertainty_count += 1
 
+        if qid in human_audit_40_qids:
+            review_status = "AWAITING_HUMAN_REVIEW"
+            status_desc = "Awaiting human review by Satish."
+        else:
+            review_status = "AI_SOURCE_VERIFIED"
+            status_desc = "Verified against official documentation sources by AI audit pipeline."
+
         annotation_notes = (
             f"Ground truth in validation partition ({c3['relative_file_path']}). "
             f"Canonical evidence chunk {c3_id[:10]} directly answers query. "
+            f"Status: {status_desc} "
             f"AI recommendation: {item['rec']}."
         )
 
@@ -361,7 +400,7 @@ def main():
             role="development",
             uncertainty=item["uncertainty"],
             annotation_notes=annotation_notes,
-            review_status="UNREVIEWED",
+            review_status=review_status,
             reviewer=None,
             review_notes="",
             reviewed_at=None,
@@ -375,6 +414,7 @@ def main():
     print("Relevance positive distribution:", positive_counts)
     print("Provenance counts:", prov_counts)
     print(f"Uncertainty candidate count: {uncertainty_count} / {len(all_queries)} ({uncertainty_count/len(all_queries)*100:.1f}%)")
+    print(f"Review status counts: AWAITING_HUMAN_REVIEW={sum(1 for q in all_queries if q.review_status == 'AWAITING_HUMAN_REVIEW')}, AI_SOURCE_VERIFIED={sum(1 for q in all_queries if q.review_status == 'AI_SOURCE_VERIFIED')}")
 
     # Save to disk
     out_file = Path("benchmarks/benchmark_v0.jsonl")
@@ -382,6 +422,57 @@ def main():
         for q in all_queries:
             f.write(q.model_dump_json() + "\n")
     print(f"Saved updated Benchmark v0 to: {out_file}")
+
+    # Build and save sample details manifest
+    sample_details = []
+    for qid in human_audit_40_qids:
+        sp = next(s for s in specs if s["qid"] == qid)
+        eco = "postgresql" if "_pg_" in qid else "pytorch" if "_pt_" in qid else "kubernetes" if "_k8s_" in qid else "fastapi"
+        idx = int(qid.split("_")[-1])
+        typology = "direct_lookup" if idx <= 10 else "comparative_discrimination" if idx <= 25 else "troubleshooting_scenario"
+        reason = "uncertainty_flagged" if sp["uncertainty"] else "external_derived_verified" if sp["prov"] == "external_derived_verified" else "stratified_additional_sample"
+        sample_details.append({
+            "query_id": qid,
+            "domain": eco,
+            "typology": typology,
+            "provenance_type": sp["prov"],
+            "uncertainty": sp["uncertainty"],
+            "ai_recommendation": sp["rec"],
+            "inclusion_reason": reason,
+        })
+
+    audit_sample_manifest = {
+        "benchmark_id": "benchmark_v0",
+        "total_benchmark_queries": len(specs),
+        "human_audit_sample_count": 40,
+        "sampling_strategy": "deterministic_stratified_v1",
+        "random_seed": 42,
+        "freeze_rule": "Benchmark v0 will be officially frozen only after Satish completes human review of this 40-query sample.",
+        "composition": {
+            "uncertain_queries": len(uncertain_qids),
+            "external_verified_queries": len(external_qids),
+            "stratified_additional_queries": len(stratified_additional_qids),
+        },
+        "domain_counts": {
+            "postgresql": sum(1 for d in sample_details if d["domain"] == "postgresql"),
+            "pytorch": sum(1 for d in sample_details if d["domain"] == "pytorch"),
+            "kubernetes": sum(1 for d in sample_details if d["domain"] == "kubernetes"),
+            "fastapi": sum(1 for d in sample_details if d["domain"] == "fastapi"),
+        },
+        "typology_counts": {
+            "direct_lookup": sum(1 for d in sample_details if d["typology"] == "direct_lookup"),
+            "comparative_discrimination": sum(1 for d in sample_details if d["typology"] == "comparative_discrimination"),
+            "troubleshooting_scenario": sum(1 for d in sample_details if d["typology"] == "troubleshooting_scenario"),
+        },
+        "sample_query_ids": human_audit_40_qids,
+        "sample_details": sample_details,
+    }
+
+    sample_ids_path = Path("benchmarks/review/human_audit_sample_ids.json")
+    sample_ids_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(sample_ids_path, "w", encoding="utf-8") as f:
+        json.dump(audit_sample_manifest, f, indent=2)
+    print(f"Saved human audit sample IDs manifest to: {sample_ids_path}")
 
 
 if __name__ == "__main__":

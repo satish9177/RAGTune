@@ -21,6 +21,8 @@ from pathlib import Path
 import re
 from typing import Any, Dict, List, Tuple
 
+from scripts.generate_human_audit_packet import generate_human_audit_packet
+
 
 def tokenize(text: str) -> List[str]:
     return [t.lower() for t in re.findall(r"[A-Za-z0-9_]+", text) if len(t) > 0]
@@ -124,16 +126,19 @@ def main():
             ],
         },
         "review_status_summary": {
+            "AWAITING_HUMAN_REVIEW": sum(1 for q in queries if q.get("review_status") == "AWAITING_HUMAN_REVIEW"),
+            "AI_SOURCE_VERIFIED": sum(1 for q in queries if q.get("review_status") == "AI_SOURCE_VERIFIED"),
+            "HUMAN_APPROVED": sum(1 for q in queries if q.get("review_status") == "HUMAN_APPROVED"),
+            "HUMAN_REVISED": sum(1 for q in queries if q.get("review_status") == "HUMAN_REVISED"),
+            "HUMAN_REJECTED": sum(1 for q in queries if q.get("review_status") == "HUMAN_REJECTED"),
             "UNREVIEWED": sum(1 for q in queries if q.get("review_status") == "UNREVIEWED"),
-            "APPROVED": sum(1 for q in queries if q.get("review_status") == "APPROVED"),
-            "REVISE": sum(1 for q in queries if q.get("review_status") == "REVISE"),
-            "REJECTED": sum(1 for q in queries if q.get("review_status") == "REJECTED"),
             "ai_recommendations": {
                 "APPROVE_CANDIDATE": sum(1 for q in queries if q.get("ai_recommendation") == "APPROVE_CANDIDATE"),
                 "REVISE_CANDIDATE": sum(1 for q in queries if q.get("ai_recommendation") == "REVISE_CANDIDATE"),
                 "REJECT_CANDIDATE": sum(1 for q in queries if q.get("ai_recommendation") == "REJECT_CANDIDATE"),
             }
-        }
+        },
+        "freeze_rule": "Benchmark v0 will be officially frozen only after Satish completes human review of the 40-query sample in HUMAN_AUDIT_40.md."
     }
 
     audit_path = Path("benchmarks/benchmark_v0_quality_audit.json")
@@ -256,6 +261,9 @@ def main():
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(queries, f, indent=2)
     print(f"Saved JSON review sheet to: {json_path}")
+
+    # Build dedicated 40-query human audit packet
+    generate_human_audit_packet()
 
 
 if __name__ == "__main__":

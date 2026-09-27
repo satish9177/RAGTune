@@ -17,22 +17,35 @@ Following Gebru et al. (2021) and Hugging Face Dataset Card standards.
 
 ## 3. Query Composition & Provenance Tracking
 
-### 3.1 Benchmark v0 Target Distribution (140 Queries)
-- **Domain Coverage**: 35 queries per domain target (PostgreSQL, PyTorch, Kubernetes, FastAPI).
+### 3.1 Benchmark v0 Distribution (140 Development Queries Grounded in Validation Partition)
+- **Domain Coverage**: 35 queries per domain (PostgreSQL, PyTorch, Kubernetes, FastAPI).
 - **Typology Breakdown**:
-  - Direct Lookup: ~40 queries (syntax, flags, configuration).
-  - Comparative Discrimination: ~60 queries (differentiating semantically close concepts).
-  - Troubleshooting / Scenario: ~40 queries (error diagnostics, deadlock, OOM, event loop blocking).
-- **Source Breakdown**:
-  - Synthetic Grounded Queries: ~56 queries (40%) — Jaccard overlap $< 0.50$ against source passage.
-  - Human-Authored Project Queries: ~49 queries (35%) — manually authored and reviewed by project engineer.
-  - Natural External Queries: ~35 queries (25%) — paraphrased from verified GitHub issues and Stack Overflow scenarios with full provenance metadata.
+  - Direct Lookup: 40 queries (syntax, flags, configuration).
+  - Comparative Discrimination: 60 queries (differentiating semantically close concepts).
+  - Troubleshooting / Scenario: 40 queries (error diagnostics, deadlock, OOM, event loop blocking).
+- **Truthful Provenance Breakdown**:
+  - AI-Authored Project Queries: 88 queries (62.9%) — authored by AI agent and verified against validation partition documentation.
+  - Synthetic Grounded Queries: 49 queries (35.0%) — generated from validation documentation passages with strict anti-parroting (mean Jaccard overlap = 0.165, max < 0.40).
+  - Natural External Verified Queries: 3 queries (2.1%) — verified Stack Overflow troubleshooting scenarios with exact post IDs, timestamps, revision history, and applicable licenses.
+  - Human-Authored: 0 queries (strictly reserved until Satish personally authors or edits queries).
 
-### 3.2 External Query Licensing & Redistribution Terms
-- Provenance tracked per external query: source type, source URL, repository/site, author attribution, and applicable terms.
-- Stack Overflow queries follow CC BY-SA terms.
-- GitHub issues follow originating repository terms.
-- Where redistribution rights are ambiguous, the benchmark stores **only provenance metadata and a manually authored paraphrase** capturing the technical scenario, avoiding redistribution of substantial original text.
+### 3.2 Human Audit Sample & Benchmark Freeze Rule
+- **40-Query Human Audit Sample**:
+  - 17 uncertainty-flagged queries (100% of borderline / multi-aspect queries).
+  - 3 external-derived verified queries (100% of Stack Overflow scenarios).
+  - 20 stratified queries (5 per domain, across typologies and provenances, seed=42).
+- **Review States**:
+  - 40 sampled queries: `AWAITING_HUMAN_REVIEW` (reviewer = null, reviewed_at = null).
+  - Remaining 100 queries: `AI_SOURCE_VERIFIED`.
+- **Freeze Rule**: Benchmark v0 will be officially frozen only after Satish completes human review of the 40-query sample documented in `benchmarks/review/HUMAN_AUDIT_40.md`. Zero human decisions are simulated.
+
+### 3.3 External Query Licensing & Redistribution Terms
+- Provenance tracked per external query: platform, post ID, title, source URL, revision URL, contribution timestamp, and exact applicable license.
+- Exact Stack Overflow licensing date rules:
+  - `v0_pg_026` (PostgreSQL `max_connections`, SO 3086759, 2010-06-22) $\to$ **`CC BY-SA 2.5`**
+  - `v0_pt_018` (PyTorch multiprocessing `spawn` vs `fork`, SO 48822463, 2018-02-16) $\to$ **`CC BY-SA 3.0`**
+  - `v0_fa_028` (FastAPI CORS preflight headers, SO 65632734, 2021-01-08) $\to$ **`CC BY-SA 4.0`**
+- All 3 external queries are included in the 40-query human audit packet (`benchmarks/review/HUMAN_AUDIT_40.md`).
 
 ## 4. Graded Relevance Guidelines & Annotation Protocol
 

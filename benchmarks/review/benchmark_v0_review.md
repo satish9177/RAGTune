@@ -634,7 +634,7 @@
 
 - **Ecosystem**: `postgresql` | **Typology**: `troubleshooting_scenario` | **Role**: `development`
 - **Provenance**: `external_derived_verified`
-  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/3086759/postgresql-sorry-too-many-clients-already", "platform": "Stack Overflow", "post_id": "3086759", "title": "Postgresql sorry, too many clients already", "license": "CC BY-SA 2.5/3.0", "retrieval_date": "2026-09-27"}`
+  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/3086759/postgresql-sorry-too-many-clients-already", "revision_url": "https://stackoverflow.com/posts/3086759/revisions", "platform": "Stack Overflow", "post_id": "3086759", "title": "Postgresql sorry, too many clients already", "contribution_timestamp": "2010-06-22T08:14:48Z", "license": "CC BY-SA 2.5", "retrieval_date": "2026-09-27"}`
 - **Uncertainty Flag**: `False (Unambiguous)`
 - **AI Quality Recommendation**: **`APPROVE_CANDIDATE`**
 
@@ -1292,7 +1292,7 @@
 
 - **Ecosystem**: `pytorch` | **Typology**: `comparative_discrimination` | **Role**: `development`
 - **Provenance**: `external_derived_verified`
-  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing", "platform": "Stack Overflow", "post_id": "48822463", "title": "How to use pytorch multiprocessing?", "author": "fmka", "license": "CC BY-SA 3.0", "retrieval_date": "2026-09-27"}`
+  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/48822463/how-to-use-pytorch-multiprocessing", "revision_url": "https://stackoverflow.com/posts/48822463/revisions", "platform": "Stack Overflow", "post_id": "48822463", "title": "How to use pytorch multiprocessing?", "author": "fmka", "contribution_timestamp": "2018-02-16T12:00:23Z", "license": "CC BY-SA 3.0", "retrieval_date": "2026-09-27"}`
 - **Uncertainty Flag**: `False (Unambiguous)`
 - **AI Quality Recommendation**: **`APPROVE_CANDIDATE`**
 
@@ -3283,7 +3283,7 @@
 
 - **Ecosystem**: `fastapi` | **Typology**: `troubleshooting_scenario` | **Role**: `development`
 - **Provenance**: `external_derived_verified`
-  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/65632734/fastapi-cors-preflight-request-fails-with-no-access-control-allow-origin-header", "platform": "Stack Overflow", "post_id": "65632734", "title": "FastAPI: Response to preflight request doesn't pass access control check", "license": "CC BY-SA 4.0", "retrieval_date": "2026-09-27"}`
+  - *Metadata*: `{"source_url": "https://stackoverflow.com/questions/65632734/fastapi-cors-preflight-request-fails-with-no-access-control-allow-origin-header", "revision_url": "https://stackoverflow.com/posts/65632734/revisions", "platform": "Stack Overflow", "post_id": "65632734", "title": "FastAPI: Response to preflight request doesn't pass access control check", "contribution_timestamp": "2021-01-08T15:23:44Z", "license": "CC BY-SA 4.0", "retrieval_date": "2026-09-27"}`
 - **Uncertainty Flag**: `False (Unambiguous)`
 - **AI Quality Recommendation**: **`APPROVE_CANDIDATE`**
 

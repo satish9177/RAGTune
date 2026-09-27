@@ -173,14 +173,17 @@
     ]
   },
   "review_status_summary": {
-    "UNREVIEWED": 140,
-    "APPROVED": 0,
-    "REVISE": 0,
-    "REJECTED": 0,
+    "AWAITING_HUMAN_REVIEW": 40,
+    "AI_SOURCE_VERIFIED": 100,
+    "HUMAN_APPROVED": 0,
+    "HUMAN_REVISED": 0,
+    "HUMAN_REJECTED": 0,
+    "UNREVIEWED": 0,
     "ai_recommendations": {
       "APPROVE_CANDIDATE": 140,
       "REVISE_CANDIDATE": 0,
       "REJECT_CANDIDATE": 0
     }
-  }
+  },
+  "freeze_rule": "Benchmark v0 will be officially frozen only after Satish completes human review of the 40-query sample in HUMAN_AUDIT_40.md."
 }
