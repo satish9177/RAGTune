@@ -1,8 +1,8 @@
 {
   "experiment_id": "E0-v0",
   "description": "Formal Lexical Baseline (SQLite FTS5 BM25) on Benchmark v0 (Development Benchmark, N=140)",
-  "timestamp_utc": "2026-09-27T16:08:33Z",
-  "git_commit_sha": "037b20a601d4a3334125b587c72ac5ca0019b915",
+  "timestamp_utc": "2026-09-27T16:10:37Z",
+  "git_commit_sha": "715649908b6b857f27313443eb805ce8ac87ce0f",
   "corpus_freeze_v0_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
   "benchmark_v0_sha256": "423420b923c15a74e0125f9a00a5538df175e37c6da3fbe03e103a700d097b2a",
   "benchmark_source_partition": "validation",
@@ -19,12 +19,12 @@
   },
   "latency_telemetry": {
     "total_queries": 140,
-    "total_elapsed_sec": 2.002006800030358,
-    "queries_per_sec": 69.92983240510326,
-    "mean_latency_ms": 14.292872851781015,
-    "p50_latency_ms": 14.294549997430295,
-    "p95_latency_ms": 19.659364991821345,
-    "p99_latency_ms": 23.23007601546123
+    "total_elapsed_sec": 2.0733477000612766,
+    "queries_per_sec": 67.52364786468877,
+    "mean_latency_ms": 14.803261425445921,
+    "p50_latency_ms": 14.680099964607507,
+    "p95_latency_ms": 22.257770068245,
+    "p99_latency_ms": 26.534129986539458
   },
   "failure_summary": {
     "total_failures_top10": 60,
