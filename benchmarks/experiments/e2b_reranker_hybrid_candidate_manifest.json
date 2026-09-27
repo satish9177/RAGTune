@@ -1,0 +1,49 @@
+{
+  "experiment_id": "E2b-Reranker-Hybrid-v0-candidate",
+  "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+  "canonical_status": "NOT_FROZEN",
+  "description": "Stage-2 Cross-Encoder Reranker (BAAI/bge-reranker-base) on E2a Hybrid Top-50",
+  "timestamp_utc": "2026-09-27T21:37:26Z",
+  "git_commit_sha": "e91c16b605d432c246758a2f8bae205f4c52a214",
+  "reranker_model": "BAAI/bge-reranker-base",
+  "reranker_exact_commit_sha": "2cfc18c9415c912f9d8155881c133215df768a70",
+  "stage1_info": {
+    "stage1_id": "E2a-Hybrid-BGE-v0-candidate",
+    "reranked_depth": 50
+  },
+  "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "benchmark_v0_path": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_v0_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "benchmark_source_partition": "validation",
+  "total_queries": 140,
+  "overall_metrics": {
+    "recall_at_1": 0.3488095238095238,
+    "recall_at_5": 0.6547619047619047,
+    "recall_at_10": 0.7642857142857142,
+    "recall_at_20": 0.8464285714285714,
+    "mrr_at_10": 0.7020861678004535,
+    "ndcg_at_10": 0.6564655423493603
+  },
+  "latency_telemetry": {
+    "total_queries": 140,
+    "total_elapsed_sec": 170.38078889949247,
+    "queries_per_sec": 0.8216888823222078,
+    "mean_latency_ms": 1217.0056349963747,
+    "p50_latency_ms": 1218.6763499630615,
+    "p95_latency_ms": 1373.5780100163538,
+    "p99_latency_ms": 1391.476098037092,
+    "peak_vram_allocated_mb": 1338.732421875
+  },
+  "failure_summary": {
+    "total_failures_top10": 13,
+    "failure_rate_top10": 0.09285714285714286,
+    "failures_top50": 1,
+    "failure_mechanisms": {
+      "code_syntax_and_identifier_mismatch": 2,
+      "cross_encoder_misranking": 8,
+      "stage1_pool_miss": 1,
+      "semantic_fine_grained_distinction": 2
+    }
+  }
+}
