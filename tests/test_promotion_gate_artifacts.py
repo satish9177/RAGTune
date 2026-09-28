@@ -13,8 +13,7 @@ def test_promotion_gate_report_exists():
     assert "E6C-Top50" in content
     assert "SciFact" in content
     assert "OOD_DEV_CONSUMED" in content
-    assert "E5C_PREFERRED_DEVELOPMENT_STAGE1" in content
-    assert "E5C_PREDECLARED_GATE_PASS" in content
+    assert "E5C_DEVELOPMENT_PROMOTION_PASS_FINAL_OOD_PENDING" in content
     assert "v0_k8s_032" in content
 
 
@@ -54,10 +53,101 @@ def test_e7_domain_reranker_plan_exists():
     assert plan_path.exists(), "E7_DOMAIN_RERANKER_PLAN.md must exist"
     content = plan_path.read_text(encoding="utf-8")
     assert "E7" in content
+    assert "6,414" in content
     assert "Candidate Depth" in content
     assert "RTX 5050" in content
     assert "E5C" in content
     assert "E6C-Top20" in content
+
+
+def test_e7_readiness_artifact():
+    readiness_path = Path("benchmarks/canonical/E7_READINESS.md")
+    assert readiness_path.exists(), "E7_READINESS.md must exist"
+    content = readiness_path.read_text(encoding="utf-8")
+    assert "6,414 chunks" in content
+    assert "188 queries" in content
+    assert "READY_FOR_TRAINING_AFTER_HUMAN_NEGATIVE_AUDIT" in content
+    assert "OOD_DEV_CONSUMED" in content
+    assert "PENDING_HUMAN_AUDIT" in content
+
+
+def test_canonical_train_chunk_counts():
+    manifest_path = Path("benchmarks/partition_manifest.json")
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+    assert manifest["summary"]["train"]["chunk_count"] == 6414
+    assert manifest["summary"]["validation"]["chunk_count"] == 1575
+    assert manifest["summary"]["frozen_test"]["chunk_count"] == 3656
+    assert (
+        manifest["summary"]["train"]["chunk_count"]
+        + manifest["summary"]["validation"]["chunk_count"]
+        + manifest["summary"]["frozen_test"]["chunk_count"]
+        == 11645
+    )
+
+
+def test_e7_training_inputs_containment():
+    """Verify that all queries and passages permitted for E7 training come 100% from canonical train."""
+    chunks_path = Path("data/processed/partitioned_chunks.jsonl")
+    train_chunk_ids = set()
+    val_chunk_ids = set()
+    test_chunk_ids = set()
+    with open(chunks_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                c = json.loads(line)
+                if c["partition"] == "train":
+                    train_chunk_ids.add(c["chunk_id"])
+                elif c["partition"] == "validation":
+                    val_chunk_ids.add(c["chunk_id"])
+                elif c["partition"] == "frozen_test":
+                    test_chunk_ids.add(c["chunk_id"])
+
+    assert len(train_chunk_ids) == 6414
+    assert len(val_chunk_ids) == 1575
+    assert len(test_chunk_ids) == 3656
+
+    # Test retriever_train_v0.jsonl
+    train_queries_path = Path("data/training/retriever_train_v0.jsonl")
+    assert train_queries_path.exists()
+    with open(train_queries_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                q = json.loads(line)
+                assert q["positive_chunk_id"] in train_chunk_ids
+                assert q["positive_chunk_id"] not in val_chunk_ids
+                assert q["positive_chunk_id"] not in test_chunk_ids
+                assert q["negative_chunk_id"] in train_chunk_ids
+                assert q["negative_chunk_id"] not in val_chunk_ids
+                assert q["negative_chunk_id"] not in test_chunk_ids
+
+    # Test hard_negatives_v1.jsonl
+    hn_path = Path("data/training/hard_negatives_v1.jsonl")
+    assert hn_path.exists()
+    with open(hn_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                q = json.loads(line)
+                assert q["positive_chunk_id"] in train_chunk_ids
+                assert q["positive_chunk_id"] not in val_chunk_ids
+                assert q["positive_chunk_id"] not in test_chunk_ids
+                assert q["negative_chunk_id"] in train_chunk_ids
+                assert q["negative_chunk_id"] not in val_chunk_ids
+                assert q["negative_chunk_id"] not in test_chunk_ids
+
+
+def test_ood_datasets_reservation_integrity():
+    """Verify that SciFact is marked OOD_DEV_CONSUMED, and FiQA / BRIGHT remain untouched."""
+    report_path = Path("benchmarks/canonical/DEVELOPMENT_PROMOTION_GATE.md")
+    content = report_path.read_text(encoding="utf-8")
+    assert "OOD_DEV_CONSUMED" in content
+
+    # Assert no FiQA or BRIGHT metric results are in benchmarks/experiments
+    exp_dir = Path("benchmarks/experiments")
+    for f in exp_dir.glob("*.json"):
+        name = f.name.lower()
+        assert "fiqa" not in name, f"FiQA metric file found: {f.name}"
+        assert "bright" not in name, f"BRIGHT metric file found: {f.name}"
 
 
 def test_e6_reranker_artifacts():

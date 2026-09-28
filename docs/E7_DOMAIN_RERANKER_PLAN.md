@@ -24,8 +24,8 @@ In Experiment E6, the generic, off-the-shelf cross-encoder `BAAI/bge-reranker-ba
 
 To prevent data snooping, leakage, or benchmark gaming:
 1. **Source Partition**:
-   - All training queries, positive passages, and candidate negative passages must originate **EXCLUSIVELY** from the `train` partition of `data/processed/partitioned_chunks.jsonl` (7,336 chunks total).
-   - Zero chunks or queries from `validation` (Benchmark v0, 1,436 chunks) or `frozen_test` (2,873 chunks) may enter training or negative mining.
+   - All training queries, positive passages, and candidate negative passages must originate **EXCLUSIVELY** from the `train` partition of `data/processed/partitioned_chunks.jsonl` (6,414 chunks total, verified against `benchmarks/partition_manifest.json`).
+   - Zero chunks or queries from `validation` (Benchmark v0, 1,575 chunks) or `frozen_test` (3,656 chunks) may enter training or negative mining.
 2. **Negative Sampling from Retrieval Pools**:
    - Negatives must be mined by executing Stage-1 retrieval (BM25 and BGE dense) over the **train partition only**.
    - Negatives must prioritize:

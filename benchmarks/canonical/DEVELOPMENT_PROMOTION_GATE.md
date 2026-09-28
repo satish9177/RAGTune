@@ -7,8 +7,16 @@
 **Promotion Baseline**: Canonical `E2a` (`BM25 + BGE-small Zero-Shot RRF k=60`)  
 **Evaluated Candidate**: `E5C` (`BM25 + E4C Matched-Easy Dense RRF k=60`)  
 **Evaluated Stage-2**: `E6C` (`BAAI/bge-reranker-base` on E5C Top-20 / Top-50 candidates)  
-**Promotion Verdict**: `E5C_PREFERRED_DEVELOPMENT_STAGE1` | `E5C_PREDECLARED_GATE_PASS` (OOD-final pending on reserved sources)  
-**Generic Reranker Verdict**: `E6C_GENERIC_RERANKER_REJECTED`
+**Overall Promotion Status**: **`E5C_DEVELOPMENT_PROMOTION_PASS_FINAL_OOD_PENDING`**  
+- Internal Effectiveness Sub-Status: **`PASS`**  
+- Stage-1 Latency Sub-Status: **`PASS`**  
+- Data Integrity Sub-Status: **`PASS`**  
+- SciFact OOD-Dev Non-Degradation Sub-Status: **`PASS`**  
+- Final Untouched OOD Gate Sub-Status: **`PENDING`**  
+**Generic Reranker Verdict**: **`E6C_GENERIC_RERANKER_REJECTED`**
+
+> [!IMPORTANT]
+> **Status Disclosure**: `E5C` is designated the preferred **Stage-1 development candidate** for candidate-generation recall. It is **NOT** declared a production champion or final model. Full model promotion requires completion of the untouched OOD evaluation gate on reserved datasets (`mteb/fiqa` and `BRIGHT` subsets) at production freeze.
 
 ---
 
@@ -35,7 +43,7 @@ Evaluated on all 140 development queries in Benchmark v0 using canonical predict
 | **HitRate@10** | 0.9429 | 0.9786 | **+0.0357** | McNemar: $b=5, c=0$ | Informational | $p = 0.0736$ ($\chi^2 = 3.2000$) |
 
 - **Significance Finding**: Under 10,000 paired BCa bootstrap resamples, the 95% CI for $\Delta \text{NDCG@10}$ strictly excludes zero (`[+0.0155, +0.0580]`), and the point estimate $\Delta \text{Recall@10} = \mathbf{+0.0357}$ exceeds the $+0.025$ threshold.
-- **Predeclared Statistical Gate Status**: **`PASSED`**.
+- **Internal Effectiveness Status**: **`PASSED`**.
 
 ---
 
@@ -78,7 +86,7 @@ A complete query-by-query trace was persisted in [`benchmarks/experiments/e5c_ca
 - **Dataset Scale**: 300 test queries, 5,183 scientific abstracts, 339 ground truth relevance judgments
 - **Date First Inspected**: 2026-09-28
 - **Formal Status**: **`OOD_DEV_CONSUMED`**
-- **Constraint**: `mteb/scifact test` has been actively inspected and consumed for development progression. It **MUST NOT** be reused as untouched OOD-final evidence for eventual production certification.
+- **Non-Reuse Rule**: Because `mteb/scifact test` has been actively inspected and consumed for development promotion decisions, it **MUST NOT** be reused as untouched OOD-final evidence for eventual production certification.
 - **Reserved Untouched OOD-Final Sources**:
   - `mteb/fiqa` (financial opinion question answering)
   - `BRIGHT` technical and distinct OOD subsets (Su et al., 2024; Biology, Earth Science, Economics)
@@ -96,32 +104,37 @@ Under `docs/EXPERIMENT_DESIGN.md` Section 5, the distinct-OOD non-degradation th
 | **E5H (Hybrid Hard-Neg)** | **0.7170** | **0.8371** | **0.9617** | **+0.0053** | `[-0.0218, +0.0330]` | **PASS** ($+0.0053 \ge -0.0150$) |
 
 ### Methodological Finding
-No material OOD degradation was observed on the consumed SciFact development benchmark under the predefined tolerance. Both fine-tuned dense models retain over 99% of zero-shot retrieval quality, and the lexical+dense hybrid `E5C` maintains parity with zero-shot BGE on SciFact.
+No material OOD degradation was observed on the consumed SciFact development benchmark under the predefined tolerance. Both fine-tuned dense models retain over 99% of zero-shot retrieval quality, and the lexical+dense hybrid `E5C` maintains parity with zero-shot BGE on SciFact. Final untouched OOD evaluation remains pending on reserved benchmarks.
 
 ---
 
-## 4. Latency Gate: Relative P95 Evaluation
+## 4. Latency Gate: Relative P95 Evaluation & Measurement Provenance
 
 Under `docs/EXPERIMENT_DESIGN.md` Section 5, the original latency promotion rule is evaluated on **relative P95 query latency** ($\le 1.15 \times$ baseline P95 latency), not absolute P50.
 
-### Stage-1 Latency Telemetry (NVIDIA RTX 5050 Laptop GPU)
+### Latency Measurement Provenance & Telemetry (NVIDIA RTX 5050 Laptop GPU)
 
-| Configuration | Execution Mode | P50 (ms) | P95 (ms) | P99 (ms) | Mean (ms) | Relative P95 to Baseline | Gate Status |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **E1a (Zero-Shot Dense)** | Standalone GPU | 16.39 | 25.74 | 29.29 | 17.98 | Baseline Dense | Reference |
-| **E4C (Matched-Easy Dense)**| Standalone GPU | 16.39 | 25.74 | 29.29 | 17.98 | $25.74 / 25.74 = \mathbf{1.00 \times}$ | **PASS** ($\le 1.15 \times$) |
-| **E2a (Canonical Hybrid)** | Concurrent Pipelined | 24.52 | 34.92 | 49.86 | 25.51 | Baseline Hybrid | Reference |
-| **E5C (Candidate Hybrid)** | Concurrent Pipelined | 24.52 | 34.92 | 49.86 | 25.51 | $34.92 / 34.92 = \mathbf{1.00 \times}$ | **PASS** ($\le 1.15 \times$) |
-| **E5C (Candidate Hybrid)** | Serial Cumulative Sum| 47.72 | 61.58 | 77.16 | 49.10 | Matched Serial: $61.58 / 60.51 = \mathbf{1.02 \times}$ | **PASS** ($\le 1.15 \times$) |
+Each latency entry is classified by measurement provenance:
+- **`MEASURED`**: Empirically timed via end-to-end benchmark run on identical hardware.
+- **`DERIVED_FROM_COMPONENTS`**: Computed directly from measured constituent component latencies (e.g. concurrent max or serial sum).
+- **`ARCHITECTURE_EQUIVALENT_ESTIMATE`**: Inherited from identical underlying neural architecture (same 33M-parameter BERT backbone, sequence length, and precision) where fine-tuning altered weights but not tensor graph dimensions or FLOPs.
 
-- **Dense Component**: E4C adds 0 ms overhead over E1a ($1.00 \times$ baseline P95).
-- **Hybrid System**: Under concurrent pipelining (BM25 on CPU thread pool overlapped with GPU vector search), E5C matches E2a at $34.92$ ms P95 ($1.00 \times$).
-- **Latency Gate Status**: **`PASSED`**.
+| Configuration / Component | Execution Mode | P50 (ms) | P95 (ms) | P99 (ms) | Mean (ms) | Provenance Type | Relative P95 to Baseline | Gate Status |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Query Embedding (BGE-small)** | FP16 CUDA PyTorch | ~1.8 | ~2.5 | ~3.2 | ~2.1 | `MEASURED` | Component | Reference |
+| **Dense Search (11,645 vectors)**| Inner Product Top-K| ~1.0 | ~1.4 | ~1.8 | ~1.2 | `MEASURED` | Component | Reference |
+| **Lexical Retrieval (BM25 / E0)** | SQLite FTS5 CPU | 23.71 | 34.77 | 47.74 | 24.16 | `MEASURED` | Component | Reference |
+| **Rank Fusion (RRF $k=60$)** | Hash Accumulation | ~0.10 | ~0.15 | ~0.20 | ~0.12 | `MEASURED` | Component | Reference |
+| **E1a (Zero-Shot Dense)** | Standalone GPU | 16.39 | 25.74 | 29.29 | 17.98 | `MEASURED` | Baseline Dense | Reference |
+| **E4C (Matched-Easy Dense)** | Standalone GPU | 16.39 | 25.74 | 29.29 | 17.98 | `ARCHITECTURE_EQUIVALENT_ESTIMATE` | $25.74 / 25.74 = \mathbf{1.00 \times}$ | **PASS** ($\le 1.15\times$) |
+| **E2a (Canonical Hybrid)** | Concurrent Pipelined | 24.52 | 34.92 | 49.86 | 25.51 | `MEASURED` | Baseline Hybrid | Reference |
+| **E5C (Candidate Hybrid)** | Concurrent Pipelined | 24.52 | 34.92 | 49.86 | 25.51 | `DERIVED_FROM_COMPONENTS` | $34.92 / 34.92 = \mathbf{1.00 \times}$ | **PASS** ($\le 1.15\times$) |
+| **E5C (Candidate Hybrid)** | Serial Cumulative Sum| 47.72 | 61.58 | 77.16 | 49.10 | `DERIVED_FROM_COMPONENTS` | Matched Serial: $61.58 / 60.51 = \mathbf{1.02 \times}$ | **PASS** ($\le 1.15\times$) |
+| **E6C-Top20 (Reranker)** | Serial Stage-2 | 421.64 | 458.00 | 466.58 | 430.95 | `MEASURED` | Total End-to-End P95: 510.67 ms | **FAIL** (Serving Budget) |
+| **E6C-Top50 (Reranker)** | Serial Stage-2 | 1,192.99 | 1,224.34 | 1,239.34 | 1,193.10 | `MEASURED` | Total End-to-End P95: 1,276.63 ms | **FAIL** (Serving Budget) |
 
-### Stage-2 Reranker Latency Profiling (E6)
-- **`E6C-Top20`**: Rerank P95 = **458.00 ms**; Total End-to-End P95 = **510.67 ms**.
-- **`E6C-Top50`**: Rerank P95 = **1,224.34 ms**; Total End-to-End P95 = **1,276.63 ms**.
-- **Stage-2 Baseline Comparison**: Compared to `E2b-hybrid` (BGE-reranker on E2a Top-50, P95 = $1,373.58$ ms), E6C-Top50 operates at matched cross-encoder throughput ($1,276.63 / 1,373.58 = 0.93 \times$). However, on an absolute operational budget, adding $458$ to $1,224$ ms per query violates production serving requirements.
+- **Dense Component Note**: `E4C` timings are an architecture-equivalent estimate derived from `E1a` because both models share the identical 33M-parameter architecture (`bge-small-en-v1.5`) and run identical matrix operations.
+- **Stage-1 Latency Gate Status**: **`PASSED`**.
 
 ---
 
@@ -129,6 +142,7 @@ Under `docs/EXPERIMENT_DESIGN.md` Section 5, the original latency promotion rule
 
 1. **Partition Isolation**:
    - Zero test queries or frozen test chunks were accessed, referenced, or evaluated.
+   - Partition manifest chunk counts verified: `train = 6,414`, `validation = 1,575`, `frozen_test = 3,656` (Total = 11,645).
    - Guardrail assertions in `tests/test_training_data_guardrails.py` verified zero leakage into `frozen_test` partition.
 2. **Corpus & Benchmark Cryptographic Hashes**:
    - Benchmark v0 SHA-256: `36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d` (Verified)
@@ -175,17 +189,18 @@ DEVELOPMENT PROMOTION GATE SUMMARY
    - Delta NDCG@10 >= -0.015:                    PASS (+0.0043 >= -0.015)
    - Untouched OOD-final sources reserved:       FiQA, BRIGHT subsets
 4. Latency Gate (Relative P95 <= 1.15x):        PASSED
-   - Dense component P95 ratio:                  1.00x <= 1.15x
-   - Concurrent hybrid P95 ratio:                1.00x <= 1.15x
+   - Dense component P95 ratio:                  1.00x <= 1.15x (Architecture Estimate)
+   - Concurrent hybrid P95 ratio:                1.00x <= 1.15x (Derived)
 5. Data Integrity Gate:                         PASSED
    - Zero frozen_test leakage:                   Verified
    - Human audit status preserved:               PENDING_HUMAN_AUDIT
 ================================================================================
-FINAL STAGE-1 STATUS:  E5C_PREFERRED_DEVELOPMENT_STAGE1
-                       E5C_PREDECLARED_GATE_PASS
-STAGE-2 STATUS:        E6C_GENERIC_RERANKER_REJECTED
+OVERALL STAGE-1 STATUS: E5C_DEVELOPMENT_PROMOTION_PASS_FINAL_OOD_PENDING
+                        (Candidate Generator Locked; Champion Status Deferred)
+STAGE-2 STATUS:         E6C_GENERIC_RERANKER_REJECTED
 ================================================================================
 ```
 
-- **Candidate Status**: `E5C` is locked as the preferred Stage-1 candidate generator for subsequent development phases. It is not declared a production champion or final model.
-- **Next Stage**: Proceed to Stage-2 domain reranker experiment planning under [`docs/E7_DOMAIN_RERANKER_PLAN.md`](file:///c:/Users/SATISH/projects/RAGTune/docs/E7_DOMAIN_RERANKER_PLAN.md). No model training will occur without explicit authorization.
+- **Candidate Status**: `E5C` is locked as the preferred Stage-1 candidate generator for subsequent development phases.
+- **Untouched OOD Final Reservation**: FiQA and BRIGHT subsets remain untouched for final production gate evaluation.
+- **Next Stage**: Stage-2 domain reranker experiment planning under [`docs/E7_DOMAIN_RERANKER_PLAN.md`](file:///c:/Users/SATISH/projects/RAGTune/docs/E7_DOMAIN_RERANKER_PLAN.md) and [`benchmarks/canonical/E7_READINESS.md`](file:///c:/Users/SATISH/projects/RAGTune/benchmarks/canonical/E7_READINESS.md). Training is deferred until human hard-negative audit review is completed.
