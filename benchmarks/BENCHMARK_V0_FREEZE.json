@@ -9,7 +9,7 @@
     "decision": "APPROVED",
     "description": "Satish explicitly reviewed the final benchmark audit results and approved all 40 queries in the human audit sample (31 initial audit recommendations approved + final 9 approved queries: v0_pg_002, v0_pg_011, v0_pg_013, v0_pg_016, v0_pg_017, v0_pg_018, v0_pt_021, v0_pt_032, v0_k8s_007). Zero unprovided human decisions simulated. Prior audit statuses are truthfully preserved as reviewer recommendations / pending review until this explicit human approval event."
   },
-  "commit_hash": "ade4c23",
+  "commit_hash": "efe284d",
   "benchmark_name": "Benchmark-v0",
   "benchmark_file": "benchmarks/benchmark_v0.jsonl",
   "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
