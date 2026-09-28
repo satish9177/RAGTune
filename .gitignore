@@ -18,6 +18,7 @@ htmlcov/
 # Local databases, checkpoints and search indices
 data/indices/
 data/checkpoints/
+data/models/
 *.db
 *.db-journal
 *.sqlite

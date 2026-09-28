@@ -92,3 +92,26 @@ def test_guardrail_catches_validation_leakage(partition_lookup: dict[str, str]):
 
     with pytest.raises(PartitionDisciplineError):
         validate_training_triple(bad_triple, chunk_partition_lookup=partition_lookup)
+
+
+def test_hard_negatives_v1_zero_leakage(partition_lookup: dict[str, str]):
+    """Assert all triples in hard_negatives_v1.jsonl strictly belong to train partition."""
+    hn_path = Path("data/training/hard_negatives_v1.jsonl")
+    assert hn_path.exists(), f"Hard negatives file not found: {hn_path}"
+
+    with open(hn_path, "r", encoding="utf-8") as f:
+        triples = [json.loads(line) for line in f if line.strip()]
+
+    assert len(triples) > 0, "Hard negatives set should not be empty."
+
+    for t in triples:
+        validate_training_triple(t, chunk_partition_lookup=partition_lookup)
+        assert t["query_source_partition"] == "train"
+        assert t["positive_source_partition"] == "train"
+        assert t["negative_source_partition"] == "train"
+        assert partition_lookup[t["positive_chunk_id"]] == "train"
+        assert partition_lookup[t["negative_chunk_id"]] == "train"
+        assert t["positive_chunk_id"] != t["negative_chunk_id"]
+        assert t["teacher_margin"] >= 0.25
+        assert t["verification_status"] == "ACCEPTED_VERIFIED_HARD_NEGATIVE"
+

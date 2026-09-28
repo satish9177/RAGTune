@@ -1,0 +1,303 @@
+{
+  "comparison": "E3 (Basic FT) -> E4 (Hard-Negative FT)",
+  "summary": {
+    "total_queries": 140,
+    "failures_fixed_by_hard_negatives": 4,
+    "previously_correct_queries_regressed": 3,
+    "net_recall_transition": 1,
+    "maintained_correct": 128,
+    "persistent_failures": 5
+  },
+  "transition_by_typology": {
+    "direct_lookup": {
+      "fixed": 2,
+      "regressed": 1,
+      "maintained": 36,
+      "unresolved": 1
+    },
+    "comparative_discrimination": {
+      "fixed": 1,
+      "regressed": 1,
+      "maintained": 56,
+      "unresolved": 2
+    },
+    "troubleshooting_scenario": {
+      "fixed": 1,
+      "regressed": 1,
+      "maintained": 36,
+      "unresolved": 2
+    }
+  },
+  "failures_fixed": [
+    {
+      "query_id": "v0_pg_003",
+      "query_text": "Which database maintenance operations utilize maintenance_work_mem in PostgreSQL?",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "e3_top10": [
+        "c975bb0d7ada3a30ca9a565f",
+        "b035abbd2eb17b14b69f192d",
+        "91eb941d0bb6422878e11237",
+        "63c7c39967924b050080ff22",
+        "e74ee2d8e097119c7413cc34",
+        "d51f647e5ddb02fb49db52e5",
+        "201f7197805f9af0a0e646bd",
+        "e47fcb8686ed1a0aed754bb3",
+        "544863fde9240949cd139c72",
+        "d4eb7e4ca24900728ecb675b"
+      ],
+      "e4_top10": [
+        "ab7567036858157084230cab",
+        "b035abbd2eb17b14b69f192d",
+        "802dedfd3090cf2125c7a017",
+        "c702d7353ba371001ec01f62",
+        "aa9a49142787a8aab1d8b100",
+        "c975bb0d7ada3a30ca9a565f",
+        "63c7c39967924b050080ff22",
+        "e1d5de132798e1e8df84dae2",
+        "8ef74713e5d7f3431ef5c68d",
+        "91eb941d0bb6422878e11237"
+      ],
+      "canonical_chunk_id": "c702d7353ba371001ec01f62",
+      "delta_ndcg10": 0.3390090350877799,
+      "delta_recall10": 0.5
+    },
+    {
+      "query_id": "v0_pg_004",
+      "query_text": "What are the allowed settings for wal_level in PostgreSQL and what do they enable?",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "e3_top10": [
+        "eebe3a2f4afcf6901f594723",
+        "3320d2133407f1cbcae8406e",
+        "ed76e8eee59fe8ac001c18fd",
+        "aa9a49142787a8aab1d8b100",
+        "22c2916b6ae0f3b36a8027ee",
+        "f2c3d61e23d160f4a9f3bd79",
+        "007261b221654a8494ad068c",
+        "83e90d3185f74b51b2cc3286",
+        "014bf3f838f877623593b1a5",
+        "23d6c2c3ef99eef2d87c1336"
+      ],
+      "e4_top10": [
+        "84096384a2d7c84e8e5eb05c",
+        "f2c3d61e23d160f4a9f3bd79",
+        "22c2916b6ae0f3b36a8027ee",
+        "eebe3a2f4afcf6901f594723",
+        "66eabdfc68575ca04b85ecc5",
+        "6fc9bd2e720e4588fcbe8d48",
+        "8f8b275418aa8140626e4b7d",
+        "469907b851671962ba4e4303",
+        "c8c727fed36fc15cb538c54f",
+        "ed76e8eee59fe8ac001c18fd"
+      ],
+      "canonical_chunk_id": "84096384a2d7c84e8e5eb05c",
+      "delta_ndcg10": 0.7871546029909718,
+      "delta_recall10": 0.5
+    },
+    {
+      "query_id": "v0_pg_013",
+      "query_text": "How does enabling hot_standby_feedback prevent query cancellation on physical replicas compared to increasing max_standby_streaming_delay?",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "e3_top10": [
+        "567dd052d421a4c72bc5a813",
+        "29b7764788d8297eb0863222",
+        "0a9ce39eb9092716fd0d4a41",
+        "b9ee7f32cdc830bbda1e7489",
+        "f8eadbfbc1a28bfe31de9f0b",
+        "0ad75ab530829c3c7496b2cc",
+        "b239bf42ebfe798371fe42ea",
+        "26d50686ece552be6af7aac2",
+        "807d4558792d2867f88b023f",
+        "22794822627cd9695e64361a"
+      ],
+      "e4_top10": [
+        "567dd052d421a4c72bc5a813",
+        "29b7764788d8297eb0863222",
+        "b9ee7f32cdc830bbda1e7489",
+        "0a9ce39eb9092716fd0d4a41",
+        "26d50686ece552be6af7aac2",
+        "7ebc2979ff5565234a7f99ec",
+        "0ad75ab530829c3c7496b2cc",
+        "9b1cacf7214a75427d8c8dff",
+        "4cb1a6e848ab9a3184eb5c17",
+        "a57f69f32a3ac595010deffb"
+      ],
+      "canonical_chunk_id": "4cb1a6e848ab9a3184eb5c17",
+      "delta_ndcg10": 0.3571243439897748,
+      "delta_recall10": 1.0
+    },
+    {
+      "query_id": "v0_k8s_034",
+      "query_text": "Why does a PersistentVolumeClaim remain unbound with matching failures in Kubernetes, and how does the control loop evaluate requested storage capacity and access modes?",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "e3_top10": [
+        "1bb5ad0c5ea54acb3146d454",
+        "7a2028983d51d0b34533a68f",
+        "189ea71b4a38cff3faededc1",
+        "4a984f8344026744a8fafe4d",
+        "71c8ee63e44b51a2ac4f8d5c",
+        "169127b99e2318651a4724cd",
+        "7796cc79c7ba439881851f84",
+        "137af63032703905249c7e64",
+        "fa0f9e93fdaf5a372619962b",
+        "2ef239043e0544f1a4a3714c"
+      ],
+      "e4_top10": [
+        "7a2028983d51d0b34533a68f",
+        "4a984f8344026744a8fafe4d",
+        "1bb5ad0c5ea54acb3146d454",
+        "71c8ee63e44b51a2ac4f8d5c",
+        "54952a6aaad9e7381deb02d4",
+        "169127b99e2318651a4724cd",
+        "1bb912265c0c8dd52c9e7279",
+        "eed9582f51e977f86103b624",
+        "8ca1692226f494ce85e373bb",
+        "cc51a792f517ceca847f7b0e"
+      ],
+      "canonical_chunk_id": "54952a6aaad9e7381deb02d4",
+      "delta_ndcg10": 0.40606603077690073,
+      "delta_recall10": 1.0
+    }
+  ],
+  "queries_regressed": [
+    {
+      "query_id": "v0_pt_003",
+      "query_text": "Which method on the autograd Function context object must be used to save tensors for the backward pass in PyTorch?",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "e3_top10": [
+        "ce63c7290202270ba8511b5a",
+        "2861431a8666e94c8626f5ce",
+        "fafdb401e9569b9115243f0f",
+        "b216451f745617e101324ea6",
+        "ad3c67ed59f2a53c96f1cb50",
+        "b08bf54d935f4bba1b799556",
+        "c0cb8eb7c2e0882f9f0ddf80",
+        "1a053f2574dc19ffc7c440a8",
+        "d7fb32e886107c9c3cb07c3e",
+        "2a699e8b1ff50b860e583a33"
+      ],
+      "e4_top10": [
+        "ce63c7290202270ba8511b5a",
+        "b216451f745617e101324ea6",
+        "2a699e8b1ff50b860e583a33",
+        "2861431a8666e94c8626f5ce",
+        "c0cb8eb7c2e0882f9f0ddf80",
+        "6c6fe2dd34709eaedabcb243",
+        "453c9bbe45c9cd0914fb025f",
+        "ad3c67ed59f2a53c96f1cb50",
+        "3b289a17e00751827488aeca",
+        "b08bf54d935f4bba1b799556"
+      ],
+      "canonical_chunk_id": "d8b0ed4f51de18ce2177115b",
+      "delta_ndcg10": -0.10155306288225219,
+      "delta_recall10": -0.5
+    },
+    {
+      "query_id": "v0_pt_034",
+      "query_text": "Why does an elementwise tensor addition fail with size mismatch errors when dimensions are not equal and neither is 1 in PyTorch?",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "e3_top10": [
+        "779ee7677378ca236e469d2e",
+        "e4c6d2865a0893c7fb11eb49",
+        "9fdb18b7a92256f59c4664a5",
+        "2b8a68cf2e323f1f2be70a23",
+        "23fc835226c0be70e8b78674",
+        "5764d7a64867ae4bc9c06b2c",
+        "52e9dc175d29ead881eff0bf",
+        "a31494a23687fb2ebdf173ac",
+        "8d019d5747e62a9519c0ffbb",
+        "fe0acce42d4675599498095b"
+      ],
+      "e4_top10": [
+        "2b8a68cf2e323f1f2be70a23",
+        "eab42da320869241557edb5a",
+        "8d019d5747e62a9519c0ffbb",
+        "52e9dc175d29ead881eff0bf",
+        "260819b88d9ac2ec0fd7a940",
+        "779ee7677378ca236e469d2e",
+        "cba0fcccde4af937f732cc59",
+        "23fc835226c0be70e8b78674",
+        "26ec73a9cd4d4deac6d88f02",
+        "66ab169c3fa9480aec56cbad"
+      ],
+      "canonical_chunk_id": "a31494a23687fb2ebdf173ac",
+      "delta_ndcg10": -0.24831962984386616,
+      "delta_recall10": -0.5
+    },
+    {
+      "query_id": "v0_k8s_020",
+      "query_text": "What is the distinction between a ResourceQuota that limits aggregated namespace consumption and a LimitRange that constrains individual pods?",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "e3_top10": [
+        "842688d4d195a2f4d44f02f4",
+        "6f7c49c9b796ad4349aa48c7",
+        "dbcdef0f47248da7b9886ce5",
+        "21f474220a38f21e8bb1fe20",
+        "3e0dd972c66bb2ba8d145bde",
+        "cca3d475d730812fa11e4c21",
+        "713507a89d30e19951fafa97",
+        "e53cff7e0f7f63b0ea5c352b",
+        "eb10715b53c90c9c1986a1b1",
+        "e5dfedb480aa38c3e1103e09"
+      ],
+      "e4_top10": [
+        "6f7c49c9b796ad4349aa48c7",
+        "e53cff7e0f7f63b0ea5c352b",
+        "e184a2fb1dd44d4cc2d61e48",
+        "cca3d475d730812fa11e4c21",
+        "21f474220a38f21e8bb1fe20",
+        "1710a9b06733092c2144e28b",
+        "e5dfedb480aa38c3e1103e09",
+        "3e0dd972c66bb2ba8d145bde",
+        "569e23f82594883e664f9996",
+        "dbcdef0f47248da7b9886ce5"
+      ],
+      "canonical_chunk_id": "7f2f8d9e75e63d2a8dd34275",
+      "delta_ndcg10": -0.3373519727104165,
+      "delta_recall10": -0.5
+    }
+  ],
+  "distractor_corrections": [
+    {
+      "query_id": "v0_pg_003",
+      "query_text": "Which database maintenance operations utilize maintenance_work_mem in PostgreSQL?",
+      "distractors_pushed_down": [
+        "c975bb0d7ada3a30ca9a565f",
+        "91eb941d0bb6422878e11237"
+      ],
+      "canonical_chunk_id": "c702d7353ba371001ec01f62"
+    },
+    {
+      "query_id": "v0_pg_004",
+      "query_text": "What are the allowed settings for wal_level in PostgreSQL and what do they enable?",
+      "distractors_pushed_down": [
+        "eebe3a2f4afcf6901f594723",
+        "3320d2133407f1cbcae8406e",
+        "ed76e8eee59fe8ac001c18fd"
+      ],
+      "canonical_chunk_id": "84096384a2d7c84e8e5eb05c"
+    },
+    {
+      "query_id": "v0_pg_013",
+      "query_text": "How does enabling hot_standby_feedback prevent query cancellation on physical replicas compared to increasing max_standby_streaming_delay?",
+      "distractors_pushed_down": [
+        "0a9ce39eb9092716fd0d4a41"
+      ],
+      "canonical_chunk_id": "4cb1a6e848ab9a3184eb5c17"
+    },
+    {
+      "query_id": "v0_k8s_034",
+      "query_text": "Why does a PersistentVolumeClaim remain unbound with matching failures in Kubernetes, and how does the control loop evaluate requested storage capacity and access modes?",
+      "distractors_pushed_down": [
+        "189ea71b4a38cff3faededc1"
+      ],
+      "canonical_chunk_id": "54952a6aaad9e7381deb02d4"
+    }
+  ]
+}

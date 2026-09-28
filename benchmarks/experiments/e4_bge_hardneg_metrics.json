@@ -1,0 +1,214 @@
+{
+  "experiment_id": "E4",
+  "experiment_name": "E4-BGE-HardNeg-v0",
+  "description": "TRAIN-only Fine-Tuning of BGE-small with Verified Hard Negatives and Multi-Layer False-Negative Protection",
+  "status": "COMPLETED",
+  "benchmark_file": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "evaluation_scope": "Benchmark v0 Development Queries (validation partition only)",
+  "training_telemetry": {
+    "model_name": "BAAI/bge-small-en-v1.5",
+    "model_revision": "main",
+    "training_data_path": "data/training/hard_negatives_v1.jsonl",
+    "training_data_sha256": "f3a9bf4229babc720ad6038b9aca46e1c9ff36f359c5be72b633abd1828d7100",
+    "training_data_partition": "train",
+    "optimizer": "AdamW",
+    "learning_rate": 2e-05,
+    "num_train_epochs": 3,
+    "per_device_train_batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "effective_batch_size": 16,
+    "warmup_ratio": 0.1,
+    "objective_loss": "MultipleNegativesRankingLoss",
+    "max_sequence_length": 512,
+    "precision": "fp16",
+    "peak_vram_allocated_mb": 4205.43896484375,
+    "peak_vram_reserved_mb": 4496.0,
+    "wall_time_sec": 61.74796779989265,
+    "examples_seen": 2217,
+    "total_training_triples": 739,
+    "seed": 42
+  },
+  "metrics": {
+    "recall_at_1": 0.35,
+    "recall_at_5": 0.7011904761904761,
+    "recall_at_10": 0.8035714285714286,
+    "recall_at_20": 0.875,
+    "mrr_at_10": 0.710266439909297,
+    "ndcg_at_10": 0.6627609075032369,
+    "top10_failures": 8,
+    "failure_rate": 0.05714285714285714
+  },
+  "latency": {
+    "mean_ms": 18.051703578592942,
+    "p50_ms": 16.967000032309443,
+    "p95_ms": 25.38485003169626,
+    "p99_ms": 28.764774976298177,
+    "total_eval_time_sec": 2.5290814999025315,
+    "queries_per_sec": 55.35606503997418
+  },
+  "domain_breakdown": {
+    "fastapi": {
+      "recall_at_10": 0.8571428571428571,
+      "mrr_at_10": 0.7616666666666666,
+      "ndcg_at_10": 0.7086285179393218,
+      "query_count": 35
+    },
+    "kubernetes": {
+      "recall_at_10": 0.7142857142857143,
+      "mrr_at_10": 0.4815079365079364,
+      "ndcg_at_10": 0.4882268412913581,
+      "query_count": 35
+    },
+    "postgresql": {
+      "recall_at_10": 0.8,
+      "mrr_at_10": 0.7455102040816326,
+      "ndcg_at_10": 0.6800929575495609,
+      "query_count": 35
+    },
+    "pytorch": {
+      "recall_at_10": 0.8428571428571429,
+      "mrr_at_10": 0.8523809523809525,
+      "ndcg_at_10": 0.7740953132327074,
+      "query_count": 35
+    }
+  },
+  "typology_breakdown": {
+    "comparative_discrimination": {
+      "recall_at_10": 0.85,
+      "mrr_at_10": 0.7625198412698412,
+      "ndcg_at_10": 0.7230229149150494,
+      "query_count": 60
+    },
+    "direct_lookup": {
+      "recall_at_10": 0.8125,
+      "mrr_at_10": 0.6220833333333333,
+      "ndcg_at_10": 0.6007630582067778,
+      "query_count": 40
+    },
+    "troubleshooting_scenario": {
+      "recall_at_10": 0.725,
+      "mrr_at_10": 0.7200694444444444,
+      "ndcg_at_10": 0.6343657456819778,
+      "query_count": 40
+    }
+  },
+  "statistical_comparisons": [
+    {
+      "comparison": "E4 vs E3",
+      "description": "Primary Learning Hypothesis: Hard-Negative FT vs Basic Contrastive FT",
+      "pre_specified_status": "Pre-specified Primary Retrieval-Learning Hypothesis",
+      "candidate_id": "E4",
+      "baseline_id": "E3",
+      "delta_ndcg10": {
+        "mean": 0.02778167091592762,
+        "ci_95_bca_lower": 0.0001352706795923275,
+        "ci_95_bca_upper": 0.05888827614638706
+      },
+      "delta_recall10": {
+        "mean": 0.014285714285714285,
+        "ci_95_bca_lower": -0.017857142857142856,
+        "ci_95_bca_upper": 0.05357142857142857
+      },
+      "mcnemar_recall10": {
+        "candidate_wins": 4,
+        "candidate_losses": 3,
+        "both_hit": 128,
+        "both_miss": 5,
+        "chi2_stat": 0.0,
+        "p_value": 1.0,
+        "raw_p_value": 1.0,
+        "reporting": "McNemar p=1.0000 (unadjusted for multiple comparisons)"
+      }
+    },
+    {
+      "comparison": "E4 vs E1a",
+      "description": "Hard-Negative FT vs Zero-Shot BGE Baseline",
+      "pre_specified_status": "Pre-specified Secondary Adaptation Hypothesis",
+      "candidate_id": "E4",
+      "baseline_id": "E1a",
+      "delta_ndcg10": {
+        "mean": 0.0641694284756553,
+        "ci_95_bca_lower": 0.030228348361423303,
+        "ci_95_bca_upper": 0.10313422558596706
+      },
+      "delta_recall10": {
+        "mean": 0.06428571428571428,
+        "ci_95_bca_lower": 0.02857142857142857,
+        "ci_95_bca_upper": 0.10714285714285714
+      },
+      "mcnemar_recall10": {
+        "candidate_wins": 7,
+        "candidate_losses": 1,
+        "both_hit": 125,
+        "both_miss": 7,
+        "chi2_stat": 3.125,
+        "p_value": 0.07709987174354205,
+        "raw_p_value": 0.07709987174354205,
+        "reporting": "McNemar p=0.0771 (unadjusted for multiple comparisons)"
+      }
+    },
+    {
+      "comparison": "E4 vs E0",
+      "description": "Hard-Negative FT vs Lexical BM25 Baseline",
+      "pre_specified_status": "Pre-specified Secondary Comparison",
+      "candidate_id": "E4",
+      "baseline_id": "E0",
+      "delta_ndcg10": {
+        "mean": 0.04440944601209473,
+        "ci_95_bca_lower": -0.008284343643549737,
+        "ci_95_bca_upper": 0.09831675712676594
+      },
+      "delta_recall10": {
+        "mean": 0.04642857142857143,
+        "ci_95_bca_lower": -0.0035714285714285713,
+        "ci_95_bca_upper": 0.1
+      },
+      "mcnemar_recall10": {
+        "candidate_wins": 9,
+        "candidate_losses": 6,
+        "both_hit": 123,
+        "both_miss": 2,
+        "chi2_stat": 0.26666666666666666,
+        "p_value": 0.6055766163353462,
+        "raw_p_value": 0.6055766163353462,
+        "reporting": "McNemar p=0.6056 (unadjusted for multiple comparisons)"
+      }
+    },
+    {
+      "comparison": "E4 vs E2a",
+      "description": "Hard-Negative FT vs Hybrid Stage 1 (BM25+BGE)",
+      "pre_specified_status": "Exploratory Comparison",
+      "candidate_id": "E4",
+      "baseline_id": "E2a",
+      "delta_ndcg10": {
+        "mean": 0.012611570648023214,
+        "ci_95_bca_lower": -0.02643323760725693,
+        "ci_95_bca_upper": 0.05194087772654664
+      },
+      "delta_recall10": {
+        "mean": 0.0,
+        "ci_95_bca_lower": -0.03571428571428571,
+        "ci_95_bca_upper": 0.039285714285714285
+      },
+      "mcnemar_recall10": {
+        "candidate_wins": 3,
+        "candidate_losses": 3,
+        "both_hit": 129,
+        "both_miss": 5,
+        "chi2_stat": 0.16666666666666666,
+        "p_value": 0.6830913983096086,
+        "raw_p_value": 0.6830913983096086,
+        "reporting": "McNemar p=0.6831 (unadjusted for multiple comparisons)"
+      }
+    }
+  ],
+  "failure_transition_summary": {
+    "total_queries": 140,
+    "failures_fixed_by_hard_negatives": 4,
+    "previously_correct_queries_regressed": 3,
+    "net_recall_transition": 1,
+    "maintained_correct": 128,
+    "persistent_failures": 5
+  }
+}
