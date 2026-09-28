@@ -72,7 +72,7 @@ No single model universally dominates on all production axes; the empirical eval
 
 2. **Strongest First-Stage Recall@10**: **`SQLite BM25 + Qwen3 RRF (k=60)` (E2c)**
    - Achieves **84.64% Recall@10** and **91.07% Recall@20**, slashing top-10 retrieval failures to only 4 out of 140 queries (2.9%).
-   - Proves the power of reciprocal rank fusion in covering complementary lexical and semantic query modalities.
+   - Demonstrates the empirical benefit of reciprocal rank fusion in covering complementary lexical and semantic query modalities on this development benchmark.
 
 3. **Best Efficiency & Low-Latency Adaptation**: **`BGE-small Fine-Tuned` (E3)**
    - TRAIN-only contrastive adaptation improved BGE-small Recall@10 by **5.0 percentage points** over its zero-shot baseline on the development benchmark (0.7393 $\to$ 0.7893), and improved NDCG@10 by **+3.64 points** (0.5986 $\to$ 0.6350).

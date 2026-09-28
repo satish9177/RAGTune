@@ -5,7 +5,7 @@ Following Gebru et al. (2021) and Hugging Face Dataset Card standards.
 ## 1. Benchmark Summary
 - **Name**: RAGTune Technical Documentation Benchmark
 - **Phased Rollout**:
-  - **Benchmark v0**: Target composition of 140 high-quality, manually verified queries for pipeline validation.
+  - **Benchmark v0**: 140 high-quality development queries grounded in `validation` partition, **CANONICALLY FROZEN** (SHA-256: `36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d`).
   - **Benchmark v1**: Target of approximately 600 queries for full evaluation and publication.
 - **Domains Covered**: PostgreSQL (concurrency/indexing), PyTorch (distributed/memory), Kubernetes (workloads/probes), FastAPI (dependency injection/concurrency).
 
@@ -29,15 +29,17 @@ Following Gebru et al. (2021) and Hugging Face Dataset Card standards.
   - Natural External Verified Queries: 3 queries (2.1%) — verified Stack Overflow troubleshooting scenarios with exact post IDs, timestamps, revision history, and applicable licenses.
   - Human-Authored: 0 queries (strictly reserved until Satish personally authors or edits queries).
 
-### 3.2 Human Audit Sample & Benchmark Freeze Rule
+### 3.2 Human Audit Sample & Canonical Freeze
 - **40-Query Human Audit Sample**:
   - 17 uncertainty-flagged queries (100% of borderline / multi-aspect queries).
   - 3 external-derived verified queries (100% of Stack Overflow scenarios).
   - 20 stratified queries (5 per domain, across typologies and provenances, seed=42).
-- **Review States**:
-  - 40 sampled queries: `AWAITING_HUMAN_REVIEW` (reviewer = null, reviewed_at = null).
-  - Remaining 100 queries: `AI_SOURCE_VERIFIED`.
-- **Freeze Rule**: Benchmark v0 will be officially frozen only after Satish completes human review of the 40-query sample documented in `benchmarks/review/HUMAN_AUDIT_40.md`. Zero human decisions are simulated.
+- **Review Dispositions & Explicit Human Approval**:
+  - **Reviewer**: Satish (Human Lead).
+  - **Explicit Approval Event**: 2026-09-28. Satish personally reviewed the final benchmark audit results and explicitly approved all 40 queries in the sample (31 initial audit recommendations approved + final 9 approved queries: `v0_pg_002`, `v0_pg_011`, `v0_pg_013`, `v0_pg_016`, `v0_pg_017`, `v0_pg_018`, `v0_pt_021`, `v0_pt_032`, `v0_k8s_007`).
+  - Prior audit statuses are truthfully preserved as reviewer recommendations / pending review until this explicit approval event; zero human decisions were simulated.
+  - Remaining 100 queries: `AI_SOURCE_VERIFIED` with automated sanity checks passing 100% (139 PASS / 1 REVIEW / 0 FAIL).
+- **Canonical Freeze State**: Benchmark v0 is officially finalized and canonically frozen at SHA-256 `36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d` (`benchmarks/BENCHMARK_V0_FREEZE.json`).
 
 ### 3.3 External Query Licensing & Redistribution Terms
 - Provenance tracked per external query: platform, post ID, title, source URL, revision URL, contribution timestamp, and exact applicable license.
@@ -83,7 +85,8 @@ The development benchmark quality process incorporates iterative human audit rev
    - Historical V1 packet: `benchmarks/review/HUMAN_AUDIT_40.md` (preserved intact).
    - Historical V2 packet: `benchmarks/review/HUMAN_AUDIT_40_V2.md` (preserved intact).
    - V2 pre-repair snapshot: `benchmarks/review/benchmark_v0_v2_snapshot.jsonl` (preserved for auditing).
-   - Current V3 packet: `benchmarks/review/HUMAN_AUDIT_40_V3.md` (18 `[HUMAN-AUDIT APPROVED AS-IS]`, 22 `[POST-REVISE REPAIRED]`, complete diffs, answer-centered excerpts, unselected checkboxes).
+   - V3 audit packet: `benchmarks/review/HUMAN_AUDIT_40_V3.md` (18 `[HUMAN-AUDIT APPROVED AS-IS]`, 22 `[POST-REVISE REPAIRED]`, complete diffs, answer-centered excerpts, unselected checkboxes).
+   - Final review audit packets: `benchmarks/review/HUMAN_AUDIT_9_FINAL.md` and `benchmarks/review/HUMAN_AUDIT_PG013_FINAL.md` (documenting Satish's explicit human approval of the final audit queries on 2026-09-28).
 
 ## 4. Graded Relevance Guidelines & Annotation Protocol
 

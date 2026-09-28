@@ -1,9 +1,15 @@
 {
   "freeze_id": "BENCHMARK_V0_FREEZE",
-  "created_at_utc": "2026-09-28T07:40:00Z",
-  "status": "CANONICAL_FREEZE_PREPARED",
-  "canonical_status": "FROZEN_PENDING_FINAL_SIGNATURE",
-  "signature_verification": "Human review recommendation incorporated: 31 initial audit approvals + 8 final approvals accepted; v0_pg_013 repaired with exact dual-sided spans in HUMAN_AUDIT_PG013_FINAL.md. Zero unprovided human signatures simulated.",
+  "created_at_utc": "2026-09-28T07:55:00Z",
+  "status": "CANONICAL_FROZEN",
+  "canonical_status": "CANONICAL_FROZEN",
+  "human_approval_event": {
+    "reviewer": "Satish",
+    "event_timestamp_utc": "2026-09-28T07:50:00Z",
+    "decision": "APPROVED",
+    "description": "Satish explicitly reviewed the final benchmark audit results and approved all 40 queries in the human audit sample (31 initial audit recommendations approved + final 9 approved queries: v0_pg_002, v0_pg_011, v0_pg_013, v0_pg_016, v0_pg_017, v0_pg_018, v0_pt_021, v0_pt_032, v0_k8s_007). Zero unprovided human decisions simulated. Prior audit statuses are truthfully preserved as reviewer recommendations / pending review until this explicit human approval event."
+  },
+  "commit_hash": "ade4c23",
   "benchmark_name": "Benchmark-v0",
   "benchmark_file": "benchmarks/benchmark_v0.jsonl",
   "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
@@ -67,7 +73,10 @@
   "uncertainty_flagged_count": 17,
   "human_audit_status": {
     "total_audit_sample_count": 40,
-    "approved_by_satish_count": 39,
+    "approved_by_satish_count": 40,
+    "reviewer": "Satish",
+    "approval_status": "APPROVED",
+    "prior_audit_history_preserved": true,
     "approved_query_ids": [
       "v0_fa_004",
       "v0_fa_010",
@@ -91,6 +100,7 @@
       "v0_pg_001",
       "v0_pg_002",
       "v0_pg_011",
+      "v0_pg_013",
       "v0_pg_016",
       "v0_pg_017",
       "v0_pg_018",
@@ -114,7 +124,9 @@
       "packet_file": "benchmarks/review/HUMAN_AUDIT_PG013_FINAL.md",
       "grade_3_canonical_chunk": "4cb1a6e848ab",
       "grade_2_directly_relevant_chunk": "7ebc2979ff55",
-      "status": "PENDING_FINAL_SIGNATURE"
+      "status": "APPROVED",
+      "reviewer": "Satish",
+      "approval_date": "2026-09-28"
     }
   },
   "automated_audit_summary": {
@@ -123,5 +135,172 @@
     "automated_check_review": 1,
     "automated_check_fail": 0,
     "pass_percentage": 99.3
+  },
+  "canonical_metric_results": {
+    "E0": {
+      "name": "SQLite FTS5 BM25",
+      "stage": "1 (Lexical)",
+      "recall_at_10": 0.7571,
+      "mrr_at_10": 0.6524,
+      "ndcg_at_10": 0.6184,
+      "p50_latency_ms": 23.71,
+      "top10_failures": 11,
+      "peak_vram_mb": 0.0
+    },
+    "E1a": {
+      "name": "BAAI/bge-small-en-v1.5",
+      "stage": "1 (Dense)",
+      "recall_at_10": 0.7393,
+      "mrr_at_10": 0.6462,
+      "ndcg_at_10": 0.5986,
+      "p50_latency_ms": 16.39,
+      "top10_failures": 14,
+      "peak_vram_mb": 379.7
+    },
+    "E1c": {
+      "name": "Qwen/Qwen3-Embedding-0.6B",
+      "stage": "1 (Dense Ref)",
+      "recall_at_10": 0.8250,
+      "mrr_at_10": 0.7611,
+      "ndcg_at_10": 0.7120,
+      "p50_latency_ms": 74.71,
+      "top10_failures": 6,
+      "peak_vram_mb": 1193.2
+    },
+    "E2a": {
+      "name": "BM25 + BGE-small RRF (k=60)",
+      "stage": "1 (Hybrid)",
+      "recall_at_10": 0.8036,
+      "mrr_at_10": 0.6931,
+      "ndcg_at_10": 0.6501,
+      "p50_latency_ms": 24.52,
+      "top10_failures": 8,
+      "peak_vram_mb": 379.7
+    },
+    "E2c": {
+      "name": "BM25 + Qwen3 RRF (k=60)",
+      "stage": "1 (Hybrid Ref)",
+      "recall_at_10": 0.8464,
+      "mrr_at_10": 0.7286,
+      "ndcg_at_10": 0.6993,
+      "p50_latency_ms": 74.86,
+      "top10_failures": 4,
+      "peak_vram_mb": 1193.2
+    },
+    "E2b-hybrid": {
+      "name": "BGE-reranker-base on E2a Top-50",
+      "stage": "2 (Reranker)",
+      "recall_at_10": 0.7643,
+      "mrr_at_10": 0.7021,
+      "ndcg_at_10": 0.6565,
+      "p50_latency_ms": 1218.68,
+      "top10_failures": 13,
+      "peak_vram_mb": 1338.7
+    },
+    "E2b-bm25": {
+      "name": "BGE-reranker-base on E0 Top-50",
+      "stage": "2 (Reranker)",
+      "recall_at_10": 0.7607,
+      "mrr_at_10": 0.7029,
+      "ndcg_at_10": 0.6538,
+      "p50_latency_ms": 1230.51,
+      "top10_failures": 12,
+      "peak_vram_mb": 1338.7
+    },
+    "E3": {
+      "name": "BGE-small TRAIN-only Contrastive FT",
+      "stage": "1 (Fine-Tuned)",
+      "recall_at_10": 0.7893,
+      "mrr_at_10": 0.6937,
+      "ndcg_at_10": 0.6350,
+      "p50_latency_ms": 17.32,
+      "top10_failures": 9,
+      "peak_vram_mb": 379.7
+    }
+  },
+  "canonical_statistical_comparisons": [
+    {
+      "comparison": "E1c vs E0 (Qwen3 vs BM25)",
+      "delta_ndcg10": 0.0936,
+      "ci_95_bca_ndcg10": [0.0482, 0.1406],
+      "delta_recall10": 0.0679,
+      "ci_95_bca_recall10": [0.0214, 0.1214],
+      "mcnemar_recall10": {
+        "candidate_wins": 9,
+        "candidate_losses": 4,
+        "chi2": 1.231,
+        "p_value": 0.2673
+      }
+    },
+    {
+      "comparison": "E2c vs E0 (Hybrid BM25+Qwen3 vs BM25)",
+      "delta_ndcg10": 0.0809,
+      "ci_95_bca_ndcg10": [0.0561, 0.1068],
+      "delta_recall10": 0.0893,
+      "ci_95_bca_recall10": [0.0571, 0.1286],
+      "mcnemar_recall10": {
+        "candidate_wins": 7,
+        "candidate_losses": 0,
+        "chi2": 5.143,
+        "p_value": 0.0233
+      }
+    },
+    {
+      "comparison": "E2a vs E1a (Hybrid BM25+BGE vs BGE-small)",
+      "delta_ndcg10": 0.0516,
+      "ci_95_bca_ndcg10": [0.0162, 0.0867],
+      "delta_recall10": 0.0643,
+      "ci_95_bca_recall10": [0.0250, 0.1036],
+      "mcnemar_recall10": {
+        "candidate_wins": 7,
+        "candidate_losses": 1,
+        "chi2": 3.125,
+        "p_value": 0.0771
+      }
+    },
+    {
+      "comparison": "E3 vs E1a (Fine-Tuned BGE vs Zero-Shot BGE)",
+      "delta_ndcg10": 0.0364,
+      "ci_95_bca_ndcg10": [0.0139, 0.0613],
+      "delta_recall10": 0.0500,
+      "ci_95_bca_recall10": [0.0214, 0.0893],
+      "mcnemar_recall10": {
+        "candidate_wins": 6,
+        "candidate_losses": 1,
+        "chi2": 2.286,
+        "p_value": 0.1306
+      }
+    },
+    {
+      "comparison": "E3 vs E0 (Fine-Tuned BGE vs BM25)",
+      "delta_ndcg10": 0.0166,
+      "ci_95_bca_ndcg10": [-0.0353, 0.0716],
+      "delta_recall10": 0.0321,
+      "ci_95_bca_recall10": [-0.0250, 0.0929],
+      "mcnemar_recall10": {
+        "candidate_wins": 10,
+        "candidate_losses": 8,
+        "chi2": 0.056,
+        "p_value": 0.8137
+      }
+    },
+    {
+      "comparison": "E2b-hybrid vs E2a (Reranker on Hybrid vs Hybrid Stage 1)",
+      "delta_ndcg10": 0.0063,
+      "ci_95_bca_ndcg10": [-0.0366, 0.0453],
+      "delta_recall10": -0.0393,
+      "ci_95_bca_recall10": [-0.0821, 0.0000],
+      "mcnemar_recall10": {
+        "candidate_wins": 3,
+        "candidate_losses": 8,
+        "chi2": 1.455,
+        "p_value": 0.2278
+      }
+    }
+  ],
+  "scientific_scope_declaration": {
+    "training_protocol": "TRAIN-only contrastive fine-tuning using synthetically mined negatives filtered against teacher margin; frozen_test partition completely sealed and unvisited.",
+    "evaluation_scope": "All reported metrics and statistical tests were evaluated on the 140-query development benchmark (Benchmark v0).",
+    "generalization_claims": "No claims are made that fine-tuning or reranking proves general retrieval effectiveness beyond this development benchmark. Final release claims are deferred to the untouched frozen_test evaluation."
   }
 }
