@@ -1,0 +1,233 @@
+{
+  "comparison": "E5C (BM25 + Matched Easy Dense) -> E5H (BM25 + Hard-Negative Dense)",
+  "fusion_method": "Reciprocal Rank Fusion (RRF)",
+  "rrf_k": 60,
+  "primary_causal_hypothesis": {
+    "delta_ndcg10_mean": 0.006464084212779446,
+    "delta_ndcg10_ci_95_bca": [
+      -0.0014829496570304133,
+      0.017733723407939536
+    ],
+    "delta_recall10_mean": -0.0035714285714285713,
+    "delta_recall10_ci_95_bca": [
+      -0.02142857142857143,
+      0.010714285714285714
+    ],
+    "mcnemar": {
+      "candidate_wins": 0,
+      "candidate_losses": 0,
+      "both_hit": 137,
+      "both_miss": 3,
+      "chi2_stat": 0.0,
+      "p_value": 1.0,
+      "raw_p_value": 1.0,
+      "reporting": "McNemar p=1.0000 (unadjusted for multiple comparisons)"
+    },
+    "predeclared_practical_floors": {
+      "delta_recall10_floor": 0.025,
+      "delta_recall10_passed": false,
+      "delta_ndcg10_floor": 0.02,
+      "delta_ndcg10_passed": false
+    }
+  },
+  "summary": {
+    "total_queries": 140,
+    "e5h_wins_recall10": 0,
+    "e5c_wins_recall10": 0,
+    "both_hit": 137,
+    "both_miss": 3,
+    "net_recall_transition": 0,
+    "ndcg_rank_shifts": {
+      "significant_gainers_delta_gt_05": 9,
+      "significant_losers_delta_lt_neg_05": 9
+    }
+  },
+  "transition_by_typology": {
+    "direct_lookup": {
+      "fixed": 0,
+      "regressed": 0,
+      "both_hit": 38,
+      "both_miss": 2
+    },
+    "comparative_discrimination": {
+      "fixed": 0,
+      "regressed": 0,
+      "both_hit": 60,
+      "both_miss": 0
+    },
+    "troubleshooting_scenario": {
+      "fixed": 0,
+      "regressed": 0,
+      "both_hit": 39,
+      "both_miss": 1
+    }
+  },
+  "failures_fixed_by_e5h": [],
+  "queries_regressed_by_e5h": [],
+  "representative_gainers": [
+    {
+      "query_id": "v0_pg_008",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the syntax for using the RETURNING clause in an INSERT or UPDATE statement in PostgreSQL?",
+      "e5c_ndcg": 0.3935773014954859,
+      "e5h_ndcg": 0.4966392596877323,
+      "delta_ndcg": 0.1030619581922464
+    },
+    {
+      "query_id": "v0_pg_015",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How does autovacuum_vacuum_cost_limit throttle background vacuuming I/O compared to autovacuum_vacuum_cost_delay?",
+      "e5c_ndcg": 0.5076850214429881,
+      "e5h_ndcg": 0.6763610077981964,
+      "delta_ndcg": 0.1686759863552083
+    },
+    {
+      "query_id": "v0_pg_030",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to configure deadlock_timeout and log_lock_waits to diagnose intermittent transaction serialization and locking deadlocks in PostgreSQL?",
+      "e5c_ndcg": 0.7871546029909718,
+      "e5h_ndcg": 0.9073218002554915,
+      "delta_ndcg": 0.12016719726451963
+    },
+    {
+      "query_id": "v0_pt_004",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What communication hook in PyTorch DDP compresses model gradients to FP16 before the AllReduce step?",
+      "e5c_ndcg": 0.5518544320968081,
+      "e5h_ndcg": 0.6763610077981964,
+      "delta_ndcg": 0.12450657570138834
+    },
+    {
+      "query_id": "v0_pt_008",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What sharing strategies can be configured using torch.multiprocessing.set_sharing_strategy?",
+      "e5c_ndcg": 0.6653152460429406,
+      "e5h_ndcg": 0.95583058934618,
+      "delta_ndcg": 0.29051534330323947
+    },
+    {
+      "query_id": "v0_pt_009",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What conditions must two tensor shapes satisfy to be broadcastable according to PyTorch broadcasting semantics?",
+      "e5c_ndcg": 0.606422698504514,
+      "e5h_ndcg": 0.8339912323981488,
+      "delta_ndcg": 0.22756853389363474
+    },
+    {
+      "query_id": "v0_k8s_034",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does a PersistentVolumeClaim remain unbound with matching failures in Kubernetes, and how does the control loop evaluate requested storage capacity and access modes?",
+      "e5c_ndcg": 0.606422698504514,
+      "e5h_ndcg": 0.95583058934618,
+      "delta_ndcg": 0.349407890841666
+    },
+    {
+      "query_id": "v0_fa_009",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What class in fastapi.security provides standard HTTP Basic authentication parsing for username and password credentials?",
+      "e5c_ndcg": 0.6653152460429406,
+      "e5h_ndcg": 0.8339912323981488,
+      "delta_ndcg": 0.1686759863552082
+    },
+    {
+      "query_id": "v0_fa_019",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "How does secrets.compare_digest ensure constant time comparison for passwords in FastAPI to defend against security attacks?",
+      "e5c_ndcg": 0.8124242481930318,
+      "e5h_ndcg": 0.9047498029226296,
+      "delta_ndcg": 0.0923255547295978
+    }
+  ],
+  "representative_losers": [
+    {
+      "query_id": "v0_pg_001",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How is the shared_buffers parameter configured in postgresql.conf and what is its default allocation limit?",
+      "e5c_ndcg": 1.0,
+      "e5h_ndcg": 0.9173194127129571,
+      "delta_ndcg": -0.08268058728704286
+    },
+    {
+      "query_id": "v0_pg_012",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How does synchronous_commit = local differ from synchronous_commit = off regarding standby acknowledgment?",
+      "e5c_ndcg": 0.7309292742059024,
+      "e5h_ndcg": 0.6763610077981964,
+      "delta_ndcg": -0.054568266407705956
+    },
+    {
+      "query_id": "v0_pg_020",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How do the query operators provided by intarray compare to PostgreSQL built-in array operators for integer lookups?",
+      "e5c_ndcg": 0.7309292742059024,
+      "e5h_ndcg": 0.641864940605065,
+      "delta_ndcg": -0.08906433360083732
+    },
+    {
+      "query_id": "v0_pg_021",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the distinction between the exist operator ? and the defined operator in the PostgreSQL hstore extension?",
+      "e5c_ndcg": 0.4932355239595741,
+      "e5h_ndcg": 0.44038410560793934,
+      "delta_ndcg": -0.05285141835163476
+    },
+    {
+      "query_id": "v0_pg_024",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the structural difference between the default pg_default tablespace and pg_global catalog tablespace?",
+      "e5c_ndcg": 0.4951303643777381,
+      "e5h_ndcg": 0.30451296789464855,
+      "delta_ndcg": -0.19061739648308956
+    },
+    {
+      "query_id": "v0_k8s_005",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How is nodeSelector configured in a Pod specification to constrain pod scheduling to specific nodes?",
+      "e5c_ndcg": 0.4910938908950193,
+      "e5h_ndcg": 0.3935773014954859,
+      "delta_ndcg": -0.0975165893995334
+    },
+    {
+      "query_id": "v0_k8s_015",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between Recreate and RollingUpdate deployment strategies regarding pod downtime and resource consumption?",
+      "e5c_ndcg": 0.6806060567602009,
+      "e5h_ndcg": 0.6289425859831145,
+      "delta_ndcg": -0.05166347077708644
+    },
+    {
+      "query_id": "v0_k8s_031",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve forbidden errors stating exceeded quota when launching a pod in a resource-constrained namespace?",
+      "e5c_ndcg": 0.44056209797003215,
+      "e5h_ndcg": 0.3390090350877799,
+      "delta_ndcg": -0.10155306288225224
+    },
+    {
+      "query_id": "v0_fa_025",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between setting status_code directly on the Response parameter versus declaring status_code in the path operation decorator?",
+      "e5c_ndcg": 0.5,
+      "e5h_ndcg": 0.43067655807339306,
+      "delta_ndcg": -0.06932344192660694
+    }
+  ]
+}

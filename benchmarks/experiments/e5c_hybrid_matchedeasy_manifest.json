@@ -1,0 +1,33 @@
+{
+  "experiment_id": "E5C",
+  "experiment_name": "E5C-Hybrid-BM25-E4C-v0",
+  "stage": "2 (Production Hybrid: BM25 + Matched Easy Control Dense)",
+  "status": "COMPLETED",
+  "description": "Production-style hybrid fusion combining SQLite FTS5 BM25 and E4C Matched Easy Control dense retriever using fixed RRF (k=60)",
+  "fusion_configuration": {
+    "method": "Reciprocal Rank Fusion (RRF)",
+    "rrf_k": 60,
+    "lexical_retriever": "SQLite FTS5 BM25 (E0)",
+    "dense_retriever": "E4C-BGE-MatchedEasy-v0",
+    "candidate_depth_per_retriever": 50,
+    "top_k_fused": 50
+  },
+  "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "overall_metrics": {
+    "recall_at_1": 0.35238095238095235,
+    "recall_at_5": 0.7357142857142858,
+    "recall_at_10": 0.8392857142857143,
+    "recall_at_20": 0.8964285714285715,
+    "mrr_at_10": 0.723500566893424,
+    "ndcg_at_10": 0.6862719624256006,
+    "top10_failures": 3,
+    "failure_rate": 0.02142857142857143
+  },
+  "latency_telemetry": {
+    "mean_ms": 49.096921432231156,
+    "p50_ms": 47.71649994654581,
+    "p95_ms": 61.58383995643815,
+    "p99_ms": 77.16392901493215
+  }
+}
