@@ -1,0 +1,1054 @@
+{
+  "audit_name": "E7_NEGATIVE_AUDIT_40_AI_REVIEW",
+  "description": "AI-assisted diagnostic review of E7_NEGATIVE_AUDIT_40 detecting severe false-negative rate and circular teacher failure.",
+  "status": "AI_REVIEW_FAILED_NEGATIVE_QUALITY_GATE",
+  "human_decision_disclaimer": "These are AI review recommendations only. Do NOT record them as Satish human decisions.",
+  "total_sample_size": 40,
+  "classification_summary": {
+    "TRUE_NEGATIVE": 20,
+    "FALSE_NEGATIVE": 13,
+    "AMBIGUOUS_UNSAFE": 7
+  },
+  "audit_items": [
+    {
+      "item_index": 1,
+      "query_id": "train_po_0002",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "positive_chunk_id": "13586ed97d7472b603df33b6",
+      "positive_source_path": "release-16.sgml",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 7,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.7411,
+        "negative_score": 0.0301,
+        "margin": 0.7111
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 2,
+      "query_id": "train_po_0011",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure vacuum_freeze_table_age in postgresql?",
+      "positive_chunk_id": "882eee4bd0e86201e0dc069e",
+      "positive_source_path": "maintenance.sgml",
+      "hard_negative_chunk_id": "51714ecb21238e233c7bdf9d",
+      "hard_negative_source_path": "ref/vacuumdb.sgml",
+      "mining_retriever": "dense_e4c",
+      "hybrid_rank": 11,
+      "rrf_score": 0.014925,
+      "teacher_scores": {
+        "positive_score": 0.5425,
+        "negative_score": 0.026,
+        "margin": 0.5165
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 3,
+      "query_id": "train_po_0013",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Example Program in postgresql?",
+      "positive_chunk_id": "04f7981b7172c021ac60b1a5",
+      "positive_source_path": "lobj.sgml",
+      "hard_negative_chunk_id": "201f7197805f9af0a0e646bd",
+      "hard_negative_source_path": "intro.sgml",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 1,
+      "rrf_score": 0.032522,
+      "teacher_scores": {
+        "positive_score": 0.9458,
+        "negative_score": 0.1934,
+        "margin": 0.7524
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 4,
+      "query_id": "train_po_0017",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between pg_subscription and copy_data in postgresql?",
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_path": "ref/create_subscription.sgml",
+      "hard_negative_chunk_id": "1c6368570a381cc7ebc3a15a",
+      "hard_negative_source_path": "ref/copy.sgml",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.030282,
+      "teacher_scores": {
+        "positive_score": 0.9602,
+        "negative_score": 0.1024,
+        "margin": 0.8578
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 5,
+      "query_id": "train_po_0018",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve warning issues with pg_subscription in postgresql?",
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_path": "ref/create_subscription.sgml",
+      "hard_negative_chunk_id": "dc8623d5a4d660f81020ac4c",
+      "hard_negative_source_path": "ref/alter_subscription.sgml",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.029877,
+      "teacher_scores": {
+        "positive_score": 0.8775,
+        "negative_score": 0.1799,
+        "margin": 0.6976
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Candidate from alter_subscription.sgml covers logical replication constraint error skipping, semantically adjacent to subscription warnings.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 6,
+      "query_id": "train_po_0021",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between lo_read and size_t in postgresql?",
+      "positive_chunk_id": "d3354d5f91648052077e559d",
+      "positive_source_path": "lobj.sgml",
+      "hard_negative_chunk_id": "33261619d3d00d74f96c475a",
+      "hard_negative_source_path": "lobj.sgml",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.029644,
+      "teacher_scores": {
+        "positive_score": 0.9353,
+        "negative_score": 0.0677,
+        "margin": 0.8676
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 7,
+      "query_id": "train_po_0022",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve error issues with lo_read in postgresql?",
+      "positive_chunk_id": "d3354d5f91648052077e559d",
+      "positive_source_path": "lobj.sgml",
+      "hard_negative_chunk_id": "7911c6fe60fbc04ee624bdbd",
+      "hard_negative_source_path": "lobj.sgml",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.031281,
+      "teacher_scores": {
+        "positive_score": 0.4362,
+        "negative_score": 0.0435,
+        "margin": 0.3927
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Same document (lobj.sgml) discussing server-side lo_read and lo_write function calls.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 8,
+      "query_id": "train_po_0028",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between measurement_y2006m02 and postgresql.conf in postgresql?",
+      "positive_chunk_id": "ff6ed76bd5adb740df7e6b8d",
+      "positive_source_path": "ddl.sgml",
+      "hard_negative_chunk_id": "ffb1a8dd6f6b3d8667fac59a",
+      "hard_negative_source_path": "system-views.sgml",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 5,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.963,
+        "negative_score": 0.1382,
+        "margin": 0.8249
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Candidate explains postgresql.conf parameter settings and reload behavior without restart, covering one side of the comparative query.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 9,
+      "query_id": "train_po_0030",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "positive_chunk_id": "d45af033d1c66df05a40cdf9",
+      "positive_source_path": "release-16.sgml",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 7,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.733,
+        "negative_score": 0.0301,
+        "margin": 0.7029
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 10,
+      "query_id": "train_po_0034",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between tuples_only and csv_fieldsep in postgresql?",
+      "positive_chunk_id": "57ac5dfb2df1e35188c7d4f8",
+      "positive_source_path": "ref/psql-ref.sgml",
+      "hard_negative_chunk_id": "e3c70f16f52de91a799d0d47",
+      "hard_negative_source_path": "datatype.sgml",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 19,
+      "rrf_score": 0.014085,
+      "teacher_scores": {
+        "positive_score": 0.6494,
+        "negative_score": 0.0214,
+        "margin": 0.628
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 11,
+      "query_id": "train_py_0126",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Guards Overview  Variables in pytorch?",
+      "positive_chunk_id": "d89da464237cf1f5303e0745",
+      "positive_source_path": "torch.compiler_guards_overview.rst",
+      "hard_negative_chunk_id": "fefab7d390d5ae8ce7f22a52",
+      "hard_negative_source_path": "torch.compiler_guards_overview.rst",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.030886,
+      "teacher_scores": {
+        "positive_score": 0.8658,
+        "negative_score": 0.0516,
+        "margin": 0.8142
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (torch.compiler_guards_overview.rst) detailing downstream VariableBuilder and VariableTracker logic directly addressing Guards Variables.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 12,
+      "query_id": "train_py_0129",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Quantization  Quantization API Summary in pytorch?",
+      "positive_chunk_id": "f8f43ecf2dec4566d42359ed",
+      "positive_source_path": "quantization.rst",
+      "hard_negative_chunk_id": "5f6bd2baffdcd75f95702adc",
+      "hard_negative_source_path": "quantization.rst",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.030886,
+      "teacher_scores": {
+        "positive_score": 0.9852,
+        "negative_score": 0.5673,
+        "margin": 0.4179
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 13,
+      "query_id": "train_py_0131",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between symbolic_trace and 2.1 in pytorch?",
+      "positive_chunk_id": "f8f43ecf2dec4566d42359ed",
+      "positive_source_path": "quantization.rst",
+      "hard_negative_chunk_id": "a90259ead224bdf9768664bd",
+      "hard_negative_source_path": "fx.rst",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.031054,
+      "teacher_scores": {
+        "positive_score": 0.9011,
+        "negative_score": 0.5528,
+        "margin": 0.3484
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Candidate from fx.rst provides code example of torch.fx.symbolic_trace, directly addressing one side of the comparative query.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 14,
+      "query_id": "train_py_0133",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between torch.matmul and torch.bmm in pytorch?",
+      "positive_chunk_id": "9c5781c73d65505246f6aa9d",
+      "positive_source_path": "nested.rst",
+      "hard_negative_chunk_id": "fd1d66128a6182938cc1ce8e",
+      "hard_negative_source_path": "torch.rst",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.031025,
+      "teacher_scores": {
+        "positive_score": 0.67,
+        "negative_score": 0.0477,
+        "margin": 0.6223
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 15,
+      "query_id": "train_py_0140",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure TORCH_DISTRIBUTED_DEBUG in pytorch?",
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_path": "distributed.rst",
+      "hard_negative_chunk_id": "80385519cf694a22e286a565",
+      "hard_negative_source_path": "quantization.rst",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 9,
+      "rrf_score": 0.014706,
+      "teacher_scores": {
+        "positive_score": 0.9661,
+        "negative_score": 0.0603,
+        "margin": 0.9058
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 16,
+      "query_id": "train_py_0141",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between TORCH_DISTRIBUTED_DEBUG and OFF in pytorch?",
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_path": "distributed.rst",
+      "hard_negative_chunk_id": "18f030967b351c6a81fb2676",
+      "hard_negative_source_path": "distributed.rst",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.030331,
+      "teacher_scores": {
+        "positive_score": 0.9626,
+        "negative_score": 0.306,
+        "margin": 0.6566
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (distributed.rst) explaining TORCH_DISTRIBUTED_DEBUG usage, monitored_barrier, and debug log levels.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 17,
+      "query_id": "train_py_0151",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of CUDA semantics  Best practices in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "hard_negative_chunk_id": "4403998edec4b54716349856",
+      "hard_negative_source_path": "notes/cuda.rst",
+      "mining_retriever": "dense_e4c",
+      "hybrid_rank": 13,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.9863,
+        "negative_score": 0.4318,
+        "margin": 0.5545
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (notes/cuda.rst) explaining CUDA device semantics and tensor device assignment best practices.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 18,
+      "query_id": "train_py_0152",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure argparse in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "hard_negative_chunk_id": "c5915c47bc83b419bcdcbb0d",
+      "hard_negative_source_path": "notes/cuda.rst",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.025004,
+      "teacher_scores": {
+        "positive_score": 0.8667,
+        "negative_score": 0.0324,
+        "margin": 0.8343
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 19,
+      "query_id": "train_py_0153",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between argparse and args.device in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "hard_negative_chunk_id": "30d43281849e8f3dee46e937",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 9,
+      "rrf_score": 0.015873,
+      "teacher_scores": {
+        "positive_score": 0.9252,
+        "negative_score": 0.045,
+        "margin": 0.8802
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 20,
+      "query_id": "train_py_0154",
+      "ecosystem": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve fail issues with argparse in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "hard_negative_chunk_id": "75d4d0d93b30e4837568404f",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "mining_retriever": "dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.9214,
+        "negative_score": 0.0478,
+        "margin": 0.8737
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 21,
+      "query_id": "train_ku_0265",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure AdmissionReview in kubernetes?",
+      "positive_chunk_id": "61f7b4f6b758dbf813117642",
+      "positive_source_path": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "hard_negative_chunk_id": "93439a88251ff2952a356555",
+      "hard_negative_source_path": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 1,
+      "rrf_score": 0.032522,
+      "teacher_scores": {
+        "positive_score": 0.6551,
+        "negative_score": 0.1019,
+        "margin": 0.5532
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (reference/access-authn-authz/extensible-admission-controllers.md) showing webhook POST requests with AdmissionReview API object structure.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 22,
+      "query_id": "train_ku_0268",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure priorityClassName in kubernetes?",
+      "positive_chunk_id": "7ef2f63519e05d8c05cf20db",
+      "positive_source_path": "concepts/scheduling-eviction/pod-priority-preemption.md",
+      "hard_negative_chunk_id": "dfc2d11956366c1657364bb2",
+      "hard_negative_source_path": "concepts/scheduling-eviction/pod-priority-preemption.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.032258,
+      "teacher_scores": {
+        "positive_score": 0.9994,
+        "negative_score": 0.371,
+        "margin": 0.6284
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (concepts/scheduling-eviction/pod-priority-preemption.md) explaining how to configure priorityClassName in Pod specs.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 23,
+      "query_id": "train_ku_0275",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure ownerReference in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "hard_negative_chunk_id": "cbe7e426d815454c05ba7b47",
+      "hard_negative_source_path": "concepts/security/service-accounts.md",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 8,
+      "rrf_score": 0.015385,
+      "teacher_scores": {
+        "positive_score": 0.3104,
+        "negative_score": 0.0475,
+        "margin": 0.2629
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 24,
+      "query_id": "train_ku_0276",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between ownerReference and OwnerRefInvalidNamespace in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "hard_negative_chunk_id": "752d0033a89a6ba9dc0c36fb",
+      "hard_negative_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "mining_retriever": "dense_e4c",
+      "hybrid_rank": 5,
+      "rrf_score": 0.015873,
+      "teacher_scores": {
+        "positive_score": 0.8917,
+        "negative_score": 0.1148,
+        "margin": 0.777
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 25,
+      "query_id": "train_ku_0277",
+      "ecosystem": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve warning issues with ownerReference in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "hard_negative_chunk_id": "1e605d71fe8e0850d7a44f64",
+      "hard_negative_source_path": "tasks/administer-cluster/dns-debugging-resolution.md",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.4435,
+        "negative_score": 0.1015,
+        "margin": 0.342
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 26,
+      "query_id": "train_ku_0278",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Installing Romana with kubeadm  Applying network policies in kubernetes?",
+      "positive_chunk_id": "baefdc0ab4ae165fee776e8c",
+      "positive_source_path": "tasks/administer-cluster/network-policy-provider/romana-network-policy.md",
+      "hard_negative_chunk_id": "227d41e1823fca619d242e32",
+      "hard_negative_source_path": "tasks/administer-cluster/network-policy-provider/romana-network-policy.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.032002,
+      "teacher_scores": {
+        "positive_score": 0.993,
+        "negative_score": 0.3436,
+        "margin": 0.6494
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (tasks/administer-cluster/network-policy-provider/romana-network-policy.md) containing procedural instructions for installing and applying Romana network policy.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 27,
+      "query_id": "train_ku_0287",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between ca.pem and key.pem in kubernetes?",
+      "positive_chunk_id": "fcba815235ca397bc1ec3328",
+      "positive_source_path": "reference/access-authn-authz/kubelet-tls-bootstrapping.md",
+      "hard_negative_chunk_id": "a871859197ed8a6d187d91f5",
+      "hard_negative_source_path": "reference/access-authn-authz/kubelet-tls-bootstrapping.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.031258,
+      "teacher_scores": {
+        "positive_score": 0.7977,
+        "negative_score": 0.0398,
+        "margin": 0.7579
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Same document (reference/access-authn-authz/kubelet-tls-bootstrapping.md) explaining --client-ca-file and certificate authentication.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 28,
+      "query_id": "train_ku_0289",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Deploying Antrea with kubeadm in kubernetes?",
+      "positive_chunk_id": "6e3109d5438a8e26f56b0030",
+      "positive_source_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "hard_negative_chunk_id": "37e21ac9771d3e03f4a0bc2b",
+      "hard_negative_source_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.032258,
+      "teacher_scores": {
+        "positive_score": 0.9122,
+        "negative_score": 0.2722,
+        "margin": 0.6401
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (tasks/administer-cluster/network-policy-provider/antrea-network-policy.md) containing procedural instructions for deploying Antrea CNI on Kubernetes.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 29,
+      "query_id": "train_ku_0299",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between spec.replicas and handover-to-hpa in kubernetes?",
+      "positive_chunk_id": "14dacfd52d78f2b751b492a1",
+      "positive_source_path": "reference/using-api/server-side-apply.md",
+      "hard_negative_chunk_id": "670e2c116bea82a30eb0d45a",
+      "hard_negative_source_path": "tasks/run-application/horizontal-pod-autoscale.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.032002,
+      "teacher_scores": {
+        "positive_score": 0.6341,
+        "negative_score": 0.1028,
+        "margin": 0.5313
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Candidate from horizontal-pod-autoscale.md substantively explains how HPA interacts with spec.replicas in Deployments/StatefulSets.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 30,
+      "query_id": "train_ku_0300",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Metrics API in kubernetes?",
+      "positive_chunk_id": "b4cbef95d71262020e58d04d",
+      "positive_source_path": "tasks/debug/debug-cluster/resource-metrics-pipeline.md",
+      "hard_negative_chunk_id": "d9dd9f8dd565debbfc880db5",
+      "hard_negative_source_path": "tasks/debug/debug-cluster/resource-metrics-pipeline.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.029139,
+      "teacher_scores": {
+        "positive_score": 0.7264,
+        "negative_score": 0.4718,
+        "margin": 0.2546
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Same document (tasks/debug/debug-cluster/resource-metrics-pipeline.md) discussing kubelet node metrics and Kubernetes API access.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 31,
+      "query_id": "train_fa_0379",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure app in fastapi?",
+      "positive_chunk_id": "dbe44b30f16193bd25679690",
+      "positive_source_path": "deployment/docker.md",
+      "hard_negative_chunk_id": "7d7346fcdf1f02d15e3973cc",
+      "hard_negative_source_path": "deployment/docker.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.029857,
+      "teacher_scores": {
+        "positive_score": 0.6867,
+        "negative_score": 0.4095,
+        "margin": 0.2772
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 32,
+      "query_id": "train_fa_0383",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between dict and list in fastapi?",
+      "positive_chunk_id": "8993648a7cdf754bb648f723",
+      "positive_source_path": "advanced/response-directly.md",
+      "hard_negative_chunk_id": "b19cf4587787d65382555e20",
+      "hard_negative_source_path": "features.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 1,
+      "rrf_score": 0.031778,
+      "teacher_scores": {
+        "positive_score": 0.8154,
+        "negative_score": 0.5289,
+        "margin": 0.2865
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Candidate from features.md explicitly defines and validates both dict and list Python data types in FastAPI.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 33,
+      "query_id": "train_fa_0384",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Deployments Concepts  Restarts  Restart After Crash in fastapi?",
+      "positive_chunk_id": "48d8a013f97bcc2036796396",
+      "positive_source_path": "deployment/concepts.md",
+      "hard_negative_chunk_id": "936ede431845c4e28d1da31a",
+      "hard_negative_source_path": "deployment/concepts.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.030622,
+      "teacher_scores": {
+        "positive_score": 0.7235,
+        "negative_score": 0.3937,
+        "margin": 0.3298
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (deployment/concepts.md) explaining automatic restarts and process managers for crash recovery.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 34,
+      "query_id": "train_fa_0385",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Extra Models  Multiple models  About user_indict  Pydantics dict in fastapi?",
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_path": "tutorial/extra-models.md",
+      "hard_negative_chunk_id": "d89f4667b2233cfeb86f031c",
+      "hard_negative_source_path": "tutorial/extra-models.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 6,
+      "rrf_score": 0.029631,
+      "teacher_scores": {
+        "positive_score": 0.989,
+        "negative_score": 0.4025,
+        "margin": 0.5865
+      },
+      "ai_review": {
+        "decision": "AMBIGUOUS_UNSAFE",
+        "notes": "Same document (tutorial/extra-models.md) discussing response declarations with plain arbitrary dict and Pydantic models.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 35,
+      "query_id": "train_fa_0387",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between user_in and UserIn in fastapi?",
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_path": "tutorial/extra-models.md",
+      "hard_negative_chunk_id": "54d9389be12dc8ba211a59c8",
+      "hard_negative_source_path": "tutorial/extra-models.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.028531,
+      "teacher_scores": {
+        "positive_score": 0.6735,
+        "negative_score": 0.0266,
+        "margin": 0.6469
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Same document (tutorial/extra-models.md) explaining how user_in maps to UserIn / UserInDB.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 36,
+      "query_id": "train_fa_0392",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Get Current User  Create a get_current_user dependency in fastapi?",
+      "positive_chunk_id": "0ed46589a4ede0d40b91674d",
+      "positive_source_path": "tutorial/security/get-current-user.md",
+      "hard_negative_chunk_id": "4ac0e349f0e80360cae9bfdb",
+      "hard_negative_source_path": "advanced/security/oauth2-scopes.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 3,
+      "rrf_score": 0.031281,
+      "teacher_scores": {
+        "positive_score": 0.9854,
+        "negative_score": 0.1217,
+        "margin": 0.8637
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Candidate from advanced/security/oauth2-scopes.md explains the get_current_user dependency tree and security scope propagation.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 37,
+      "query_id": "train_fa_0393",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure get_current_user in fastapi?",
+      "positive_chunk_id": "0ed46589a4ede0d40b91674d",
+      "positive_source_path": "tutorial/security/get-current-user.md",
+      "hard_negative_chunk_id": "4ac0e349f0e80360cae9bfdb",
+      "hard_negative_source_path": "advanced/security/oauth2-scopes.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.030886,
+      "teacher_scores": {
+        "positive_score": 0.5982,
+        "negative_score": 0.0635,
+        "margin": 0.5348
+      },
+      "ai_review": {
+        "decision": "FALSE_NEGATIVE",
+        "notes": "Candidate from advanced/security/oauth2-scopes.md explains how get_current_user is configured as a dependency.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 38,
+      "query_id": "train_fa_0408",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Path Operation Configuration  Response description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "hard_negative_chunk_id": "564b1d086d67a4f34864ec85",
+      "hard_negative_source_path": "advanced/path-operation-advanced-configuration.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 4,
+      "rrf_score": 0.030415,
+      "teacher_scores": {
+        "positive_score": 0.9961,
+        "negative_score": 0.0379,
+        "margin": 0.9581
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 39,
+      "query_id": "train_fa_0409",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure response_description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "hard_negative_chunk_id": "c6105ad9768750834a29247b",
+      "hard_negative_source_path": "deployment/https.md",
+      "mining_retriever": "bm25",
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.9857,
+        "negative_score": 0.0533,
+        "margin": 0.9324
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    },
+    {
+      "item_index": 40,
+      "query_id": "train_fa_0410",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between response_description and description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "hard_negative_chunk_id": "0e0e57630335462875d8b505",
+      "hard_negative_source_path": "tutorial/response-status-code.md",
+      "mining_retriever": "bm25+dense_e4c",
+      "hybrid_rank": 2,
+      "rrf_score": 0.026993,
+      "teacher_scores": {
+        "positive_score": 0.9756,
+        "negative_score": 0.0258,
+        "margin": 0.9498
+      },
+      "ai_review": {
+        "decision": "TRUE_NEGATIVE",
+        "notes": "Candidate discusses distinct entity or unrelated subsystem; legitimate non-relevant confuser.",
+        "is_human_decision": false,
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW"
+      }
+    }
+  ]
+}

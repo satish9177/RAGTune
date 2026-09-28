@@ -67,9 +67,11 @@ def test_e7_readiness_artifact():
     content = readiness_path.read_text(encoding="utf-8")
     assert "6,414 chunks" in content
     assert "188 queries" in content
-    assert "READY_FOR_TRAINING_AFTER_E7_NEGATIVE_HUMAN_AUDIT" in content
+    assert "E7_TRAINING_BLOCKED_PENDING_NEGATIVE_REPAIR_AND_QUERY_POSITIVE_AUDIT" in content
     assert "OOD_DEV_CONSUMED" in content
     assert "PENDING_HUMAN_AUDIT" in content
+    # Assert training is explicitly blocked
+    assert "FINAL READINESS STATE: E7_TRAINING_BLOCKED" in content
 
 
 def test_canonical_train_chunk_counts():
@@ -361,4 +363,190 @@ def test_teacher_and_query_universe_provenance():
     assert "375" in univ_content
     assert "173" in univ_content
     assert "6,414 chunks" in univ_content
+
+
+def test_e7_negative_audit_v1_quality_gate_failure():
+    """Verify that E7_NEGATIVE_AUDIT_40 failure is documented with AI review."""
+    review_path = Path("data/training/E7_NEGATIVE_AUDIT_40_AI_REVIEW.json")
+    assert review_path.exists()
+    with open(review_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    assert data["status"] == "AI_REVIEW_FAILED_NEGATIVE_QUALITY_GATE"
+    summary = data["classification_summary"]
+    assert summary["FALSE_NEGATIVE"] == 13
+    assert summary["AMBIGUOUS_UNSAFE"] == 7
+    assert summary["TRUE_NEGATIVE"] == 20
+
+    # Ensure historical files are preserved
+    assert Path("data/training/E7_NEGATIVE_AUDIT_40.md").exists()
+    assert Path("data/training/E7_NEGATIVE_AUDIT_40.json").exists()
+
+
+def test_v2_semantic_shields_block_all_audit_flaws():
+    """Verify that all 13 false negatives and all 7 ambiguous examples from audit v1 cannot receive SAFE_NEGATIVE_V2."""
+    ledger_v2_path = Path("data/training/e7_candidate_ledger_v2.jsonl")
+    assert ledger_v2_path.exists()
+
+    audit_v1_path = Path("data/training/E7_NEGATIVE_AUDIT_40.json")
+    with open(audit_v1_path, "r", encoding="utf-8") as f:
+        audit_v1 = json.load(f)
+
+    # 13 False Negative items and 7 Ambiguous items from audit v1
+    fn_items = {11, 16, 17, 21, 22, 26, 28, 29, 32, 33, 35, 36, 37}
+    amb_items = {5, 7, 8, 13, 27, 30, 34}
+
+    # Map query_id + candidate_chunk_id to V2 classification
+    ledger_v2_map = {}
+    with open(ledger_v2_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                row = json.loads(line)
+                key = (row["query_id"], row["candidate_chunk_id"])
+                ledger_v2_map[key] = row
+
+    for it in audit_v1["audit_items"]:
+        idx = it["item_index"]
+        key = (it["query_id"], it["hard_negative_chunk_id"])
+        cand_v2 = ledger_v2_map[key]
+
+        if idx in fn_items:
+            assert cand_v2["classification_v2"] != "SAFE_NEGATIVE_V2", (
+                f"False negative item {idx} ({it['query_id']}) must NOT be SAFE_NEGATIVE_V2, got {cand_v2['classification_v2']}"
+            )
+            assert cand_v2["classification_v2"] == "QUARANTINE_POSSIBLE_FALSE_NEGATIVE"
+
+        if idx in amb_items:
+            assert cand_v2["classification_v2"] != "SAFE_NEGATIVE_V2", (
+                f"Ambiguous item {idx} ({it['query_id']}) must NOT be SAFE_NEGATIVE_V2 without explicit human override, got {cand_v2['classification_v2']}"
+            )
+            assert cand_v2["classification_v2"] == "QUARANTINE_POSSIBLE_FALSE_NEGATIVE"
+
+
+def test_e7_query_positive_audit_artifacts():
+    """Verify focused query-positive human audit packet (11 items)."""
+    json_path = Path("data/training/E7_QUERY_POSITIVE_AUDIT.json")
+    md_path = Path("data/training/E7_QUERY_POSITIVE_AUDIT.md")
+    assert json_path.exists()
+    assert md_path.exists()
+
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    assert data["total_items"] == 11
+    assert data["status"] == "PENDING_HUMAN_AUDIT"
+    assert len(data["audit_items"]) == 11
+
+    # Human review fields must be blank
+    for it in data["audit_items"]:
+        assert it["human_audit"]["query_decision"] is None
+        assert it["human_audit"]["positive_decision"] is None
+        assert it["human_audit"]["reviewer"] is None
+
+
+def test_e7_candidate_ledger_and_safe_negatives_v2():
+    """Verify E7 candidate ledger V2, safe negatives pool V2, and V2 human audit packet."""
+    chunks_path = Path("data/processed/partitioned_chunks.jsonl")
+    train_cids = set()
+    val_cids = set()
+    test_cids = set()
+    with open(chunks_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                c = json.loads(line)
+                if c["partition"] == "train":
+                    train_cids.add(c["chunk_id"])
+                elif c["partition"] == "validation":
+                    val_cids.add(c["chunk_id"])
+                elif c["partition"] == "frozen_test":
+                    test_cids.add(c["chunk_id"])
+
+    # Ledger V2
+    ledger_path = Path("data/training/e7_candidate_ledger_v2.jsonl")
+    assert ledger_path.exists()
+    ledger_count = 0
+    with open(ledger_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                row = json.loads(line)
+                ledger_count += 1
+                assert row["positive_chunk_id"] in train_cids
+                assert row["candidate_chunk_id"] in train_cids
+                assert row["candidate_chunk_id"] not in val_cids
+                assert row["candidate_chunk_id"] not in test_cids
+                # Ensure entity fields and answer functions are populated
+                assert "query_entities" in row
+                assert "candidate_entities" in row
+                assert "entity_overlap" in row
+                assert "answer_functions" in row
+    assert ledger_count == 3760
+
+    # Safe Negatives V2
+    safe_path = Path("data/training/e7_safe_negatives_v2.jsonl")
+    assert safe_path.exists()
+    safe_count = 0
+    queries_covered = set()
+    with open(safe_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                row = json.loads(line)
+                safe_count += 1
+                queries_covered.add(row["query_id"])
+                assert row["classification_v2"] == "SAFE_NEGATIVE_V2"
+                assert row["candidate_chunk_id"] in train_cids
+                assert row["candidate_chunk_id"] not in val_cids
+                assert row["candidate_chunk_id"] not in test_cids
+    assert safe_count == 652
+    assert len(queries_covered) == 139
+
+    # V2 Human Audit Packet
+    audit_json = Path("data/training/E7_NEGATIVE_AUDIT_40_V2.json")
+    audit_md = Path("data/training/E7_NEGATIVE_AUDIT_40_V2.md")
+    assert audit_json.exists()
+    assert audit_md.exists()
+    with open(audit_json, "r", encoding="utf-8") as f:
+        audit = json.load(f)
+
+    assert audit["total_sample_size"] == 40
+    assert audit["status"] == "PENDING_HUMAN_AUDIT"
+    assert audit["ecosystem_distribution"] == {
+        "postgresql": 10,
+        "pytorch": 10,
+        "kubernetes": 10,
+        "fastapi": 10,
+    }
+    # Assert stratified typology coverage
+    assert audit["typology_distribution"]["direct_lookup"] > 0
+    assert audit["typology_distribution"]["comparative_discrimination"] > 0
+    assert audit["typology_distribution"]["troubleshooting_scenario"] > 0
+    assert audit["acceptance_gate"]["max_confirmed_false_negatives"] == 0
+    assert audit["acceptance_gate"]["max_ambiguous_rows"] == 2
+
+    # Ensure human review fields are blank
+    for it in audit["audit_items"]:
+        assert it["human_audit"]["decision"] is None
+        assert it["human_audit"]["reviewer"] is None
+
+
+def test_v1_to_v2_transitions():
+    """Verify V1 to V2 candidate disposition transition counts."""
+    disp_path = Path("data/training/e7_candidate_disposition_v2.json")
+    assert disp_path.exists()
+    with open(disp_path, "r", encoding="utf-8") as f:
+        disp = json.load(f)
+
+    trans = disp["safe_v1_transitions"]
+    assert trans["SAFE_V1_to_SAFE_V2"] == 652
+    assert trans["SAFE_V1_to_QUARANTINE"] == 522
+    assert trans["SAFE_V1_to_RELEVANT"] == 0
+    assert trans["SAFE_V1_to_TOO_EASY"] == 42
+    assert sum(trans.values()) == 1216
+
+    counts = disp["v2_disposition_counts"]
+    assert counts["SAFE_NEGATIVE_V2"] == 652
+    assert counts["QUARANTINE_POSSIBLE_FALSE_NEGATIVE"] == 1821
+    assert counts["REJECT_KNOWN_RELEVANT"] == 186
+    assert counts["REJECT_TOO_EASY"] == 1101
+    assert sum(counts.values()) == 3760
+
 

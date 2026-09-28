@@ -2,7 +2,7 @@
 
 **Document Path**: `benchmarks/canonical/E7_READINESS.md`  
 **Date**: 2026-09-28  
-**Readiness Status**: **`READY_FOR_TRAINING_AFTER_E7_NEGATIVE_HUMAN_AUDIT`**  
+**Readiness Status**: **`E7_TRAINING_BLOCKED_PENDING_NEGATIVE_REPAIR_AND_QUERY_POSITIVE_AUDIT`**  
 **Target Architecture**: Stage-2 Domain Cross-Encoder Reranker (`BAAI/bge-reranker-base` fine-tuned)  
 **Upstream Stage-1 Generator**: `E5C` (SQLite FTS5 BM25 + E4C Matched-Easy Dense via RRF $k=60$)  
 **Target Hardware**: NVIDIA GeForce RTX 5050 Laptop GPU (8,151 MiB VRAM, CUDA 12.8, PyTorch 2.11.0+cu128)
@@ -79,65 +79,80 @@ The un-fine-tuned cross-encoder `BAAI/bge-reranker-base` was profiled in E6 and 
 
 ---
 
-## 6. Pre-Condition: Hard-Negative Human Audit Status
+## 6. Audit Diagnostic Findings & Multi-Signal Semantic Shields
 
-### A. Historical E4 Audit (`HARD_NEGATIVE_AUDIT_40`)
-- Preserved unchanged as historical evidence in [`data/training/HARD_NEGATIVE_AUDIT_40.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/HARD_NEGATIVE_AUDIT_40.md).
-- AI diagnostic review recorded in [`data/training/HARD_NEGATIVE_AUDIT_40_AI_REVIEW.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/HARD_NEGATIVE_AUDIT_40_AI_REVIEW.json):
-  - 4 `FALSE_NEGATIVE`, 6 `AMBIGUOUS_UNSAFE_NEGATIVE`, 30 `LIKELY_TRUE_NEGATIVE`.
-  - Diagnosed `train_fa_0377` query-positive mapping defect.
-- Declared as **AI-assisted recommendations only**; human review status remains `PENDING_SATISH_HUMAN_REVIEW`.
+### A. Failure of Circular Teacher Certification (`E7_NEGATIVE_AUDIT_40`)
+An AI diagnostic review of the initial E7 audit revealed that **relying solely on `BAAI/bge-reranker-base` teacher score thresholds is invalid** because the generic teacher suffers from domain-ranking errors:
+- **Audit Result**: TRUE_NEGATIVE: 20/40 (50.0%), **FALSE_NEGATIVE: 13/40 (32.5%)**, AMBIGUOUS: 7/40 (17.5%).
+- **Preserved Artifacts**:
+  - Historical Audit: [`data/training/E7_NEGATIVE_AUDIT_40.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40.md) & [`E7_NEGATIVE_AUDIT_40.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40.json)
+  - Failure Diagnostic Report: [`data/training/E7_NEGATIVE_AUDIT_40_AI_REVIEW.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40_AI_REVIEW.md) (Status: `AI_REVIEW_FAILED_NEGATIVE_QUALITY_GATE`)
 
-### B. E7 Candidate Mining & Safe Negative Pool
-- **Mining Foundation**: `E5C` (BM25 + E4C Dense Hybrid Fusion RRF $k=60$) over all 6,414 `train` chunks.
-- **Candidate Ledger**: [`data/training/e7_candidate_ledger.jsonl`](file:///c:/Users/SATISH/projects/RAGTune/data/training/e7_candidate_ledger.jsonl) (3,760 total candidates across 188 queries).
-- **Candidate Disposition**:
-  - **`SAFE_NEGATIVE`**: 1,216 (32.34%) — PyTorch: 372, FastAPI: 328, Kubernetes: 268, PostgreSQL: 248.
-  - **`QUARANTINE_POSSIBLE_FALSE_NEGATIVE`**: 1,044 (27.77%)
-  - **`REJECT_KNOWN_RELEVANT`**: 186 (4.95%)
-  - **`REJECT_TOO_EASY`**: 1,314 (34.95%)
-- **Quarantine Reasons Breakdown**:
-  - `SAME_DOCUMENT_SUBTOPIC_PROXIMITY`: 357
-  - `HIGH_TEACHER_SCORE_PROBABLE_ANSWER`: 278
-  - `AMBIGUOUS_TEACHER_MARGIN`: 184
-  - `TEACHER_INVERSION_OR_TIE`: 148
-  - `LOW_POSITIVE_TEACHER_CONFIDENCE`: 67
-  - `HIGH_LEXICAL_OVERLAP_WITH_POSITIVE`: 10
+### B. Multi-Signal Semantic Shields Implemented
+To replace circular teacher certification, multi-signal semantic shields were constructed and enforced:
+1. **Strict Same-Document Quarantine**: All candidates from the same document file as the positive are unconditionally quarantined (`SAME_DOCUMENT_CONTEXT_LEAK`), preventing adjacent section leakages.
+2. **Comparative Query Partial / Both-Side Answer Shield**: If a query compares entities A and B, any candidate substantively explaining A, B, or both is quarantined. Partial answers cannot be trained as negatives.
+3. **Exact Technical Entity + Action/Configuration Language**: Candidates containing exact query entities alongside configuration, YAML, procedure, or function behavior syntax are quarantined.
+4. **Troubleshooting Resolution / Diagnostics Shield**: Candidates containing error handling, recovery, or diagnostic steps for queried error states are quarantined.
+5. **Non-Circular Teacher Safeguards**: Margin $\ge 0.25$, $0.02 \le s_{\text{neg}} < 0.60$, $s_{\text{pos}} \ge 0.30$.
+6. **Hardness Criteria**: Rejects trivial distractors ($s_{\text{neg}} < 0.02$ or rank $> 10$ with low score or navigation tables).
 
-### C. Dedicated E7 Human Verification Audit Packet
-- **Markdown Audit Packet**: [`data/training/E7_NEGATIVE_AUDIT_40.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40.md)
-- **Machine-Readable Companion**: [`data/training/E7_NEGATIVE_AUDIT_40.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40.json)
-- **Current Status**: **`PENDING_HUMAN_AUDIT`**
-- **Non-Negotiable Rule**: No domain reranker training (E7) will begin until Satish personally reviews and approves the 40-triple audit sample. No human approval will be simulated.
+### C. Reclassification Transitions (Historical 1,216 SAFE_V1 Pool)
+Rerunning the shields against the historical 1,216 candidates produced:
+- **`SAFE_V1 -> SAFE_NEGATIVE_V2`**: **652** (53.62%)
+- **`SAFE_V1 -> QUARANTINE_POSSIBLE_FALSE_NEGATIVE`**: **522** (42.93%)
+- **`SAFE_V1 -> REJECT_KNOWN_RELEVANT`**: **0** (0.00%)
+- **`SAFE_V1 -> REJECT_TOO_EASY`**: **42** (3.45%)
 
----
-
-## 7. OOD Benchmarks Isolation Status
-
-- **Consumed Development Benchmark**:
-  - `mteb/scifact test`: Marked **`OOD_DEV_CONSUMED`** (used for development non-degradation checks). Must **NOT** be used as untouched OOD-final evidence.
-- **Reserved Untouched Final Benchmarks**:
-  - `mteb/fiqa` (financial QA)
-  - `BRIGHT` technical and distinct OOD subsets (Su et al., 2024; Biology, Earth Science, Economics)
-  - Both datasets remain completely untouched, uninspected, and reserved for final production certification.
+Across all 3,760 candidates in the V2 ledger:
+- `SAFE_NEGATIVE_V2`: 652 (17.34%) — PyTorch: 166, FastAPI: 200, Kubernetes: 149, PostgreSQL: 137
+- `QUARANTINE_POSSIBLE_FALSE_NEGATIVE`: 1,821 (48.43%)
+- `REJECT_KNOWN_RELEVANT`: 186 (4.95%)
+- `REJECT_TOO_EASY`: 1,101 (29.28%)
+- Unique queries with safe negatives: **139 / 188** (49 queries have zero safe negatives; median: 3.0, max: 16).
+- Persisted in [`data/training/e7_candidate_ledger_v2.jsonl`](file:///c:/Users/SATISH/projects/RAGTune/data/training/e7_candidate_ledger_v2.jsonl), [`data/training/e7_safe_negatives_v2.jsonl`](file:///c:/Users/SATISH/projects/RAGTune/data/training/e7_safe_negatives_v2.jsonl), and [`data/training/e7_candidate_disposition_v2.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/e7_candidate_disposition_v2.json).
 
 ---
 
-## 8. Summary Checklist & Readiness State
+## 7. Human Verification Audits (Prerequisites for Training)
+
+### A. Focused Query-Positive Audit (11 Queries)
+- **Artifacts**: [`data/training/E7_QUERY_POSITIVE_AUDIT.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_QUERY_POSITIVE_AUDIT.md) & [`E7_QUERY_POSITIVE_AUDIT.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_QUERY_POSITIVE_AUDIT.json)
+- **Selection**: Deduplicated union of `REVIEW_POSITIVE_MAPPING` (4), `HEADING_ARTIFACT` (7), and `VERY_LOW_LEXICAL_OVERLAP` (2).
+- **Status**: `PENDING_HUMAN_AUDIT` (human fields blank).
+
+### B. Regenerated E7 Negative Verification Audit V2 (40 Items)
+- **Artifacts**: [`data/training/E7_NEGATIVE_AUDIT_40_V2.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40_V2.md) & [`E7_NEGATIVE_AUDIT_40_V2.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40_V2.json)
+- **Stratification**: 10 PostgreSQL, 10 PyTorch, 10 Kubernetes, 10 FastAPI; Direct Lookup (20), Comparative (15), Troubleshooting (5).
+- **Predeclared Acceptance Gate**:
+  - **ZERO confirmed FALSE_NEGATIVE**
+  - **At most 2 AMBIGUOUS among 40** (ambiguous rows excluded from training)
+  - **All confirmed TRUE_NEGATIVE rows judged at least MODERATE_CONFUSER**
+- **Status**: `PENDING_HUMAN_AUDIT` (human fields blank).
+
+---
+
+## 8. Summary Checklist & Explicit Training Prerequisites
 
 ```
 ================================================================================
 E7 EXPERIMENT READINESS CHECKLIST
 ================================================================================
 [x] Canonical TRAIN chunk count verified:            6,414 chunks (exact)
-[x] Permitted TRAIN query set verified:              188 queries (train_* only)
+[x] Permitted TRAIN query set locked:                188 queries (manifest verified)
 [x] Stage-1 upstream candidate pool locked:          E5C Top-20 (HitRate = 99.29%)
 [x] E6 generic reranker failure diagnosis:           Documented (11 demotions)
 [x] GPU memory budget profiled (RTX 5050 8GB):       ~3.8 GiB footprint (PASS)
 [x] SciFact OOD benchmark status:                    OOD_DEV_CONSUMED
 [x] Final OOD benchmarks (FiQA / BRIGHT):            RESERVED & UNTOUCHED
-[ ] Hard-negative 40-triple human audit:             PENDING_HUMAN_AUDIT
+[x] Failed V1 audit diagnostic review recorded:      AI_REVIEW_FAILED_NEGATIVE_QUALITY_GATE
+[x] Multi-signal semantic shields implemented:       Strict same-doc, entity, comparative
+[x] V2 candidate pool reclassified:                  652 SAFE_NEGATIVE_V2 candidates
+[ ] Prerequisite 1: E7_QUERY_POSITIVE_AUDIT:         PENDING_SATISH_HUMAN_REVIEW
+[ ] Prerequisite 2: E7_NEGATIVE_AUDIT_40_V2:         PENDING_SATISH_HUMAN_REVIEW (Gate)
+[ ] Prerequisite 3: Final capped candidate dataset:   Cap max 3 neg/query after signoff
 ================================================================================
-FINAL READINESS STATE: READY_FOR_TRAINING_AFTER_HUMAN_NEGATIVE_AUDIT
+FINAL READINESS STATE: E7_TRAINING_BLOCKED_PENDING_NEGATIVE_REPAIR_AND_QUERY_POSITIVE_AUDIT
 ================================================================================
 ```
+

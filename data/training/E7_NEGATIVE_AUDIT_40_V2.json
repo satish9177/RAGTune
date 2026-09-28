@@ -1,0 +1,2918 @@
+{
+  "audit_name": "E7_NEGATIVE_AUDIT_40_V2",
+  "description": "Regenerated E7 safe-negative human audit packet sampled strictly from SAFE_NEGATIVE_V2 pool under multi-layer semantic shields.",
+  "status": "PENDING_HUMAN_AUDIT",
+  "acceptance_gate": {
+    "max_confirmed_false_negatives": 0,
+    "max_ambiguous_rows": 2,
+    "exclude_ambiguous_from_training": true,
+    "min_difficulty_true_negatives": "MODERATE_CONFUSER"
+  },
+  "total_sample_size": 40,
+  "ecosystem_distribution": {
+    "postgresql": 10,
+    "pytorch": 10,
+    "kubernetes": 10,
+    "fastapi": 10
+  },
+  "typology_distribution": {
+    "direct_lookup": 20,
+    "comparative_discrimination": 15,
+    "troubleshooting_scenario": 5
+  },
+  "audit_items": [
+    {
+      "item_index": 1,
+      "query_id": "train_po_0042",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve error issues with missing_ok in postgresql?",
+      "positive_chunk_id": "96feb7309aadd71be65c9aa6",
+      "positive_source_path": "fdwhandler.sgml",
+      "positive_excerpt": "This function returns a ForeignTable object for the foreign table with the given OID. A ForeignTable object contains properties of the foreign table (see foreign/foreign.h for details). ```sql List * GetForeignColumnOptions(Oid relid, AttrNumber attnum); ``` This function returns the per-column FDW options for the column with the given foreign table OID and attribute number, in the form of a list ...",
+      "hard_negative_chunk_id": "a0d8d423ba90acaeb4c9dab1",
+      "hard_negative_source_path": "postgres.sgml",
+      "hard_negative_excerpt": "%version; %filelist; ]> # PostgreSQL &version; Documentation The PostgreSQL Global Development Group PostgreSQL &version; &legal; &intro; # Tutorial Welcome to the PostgreSQL Tutorial. The following few chapters are intended to give a simple introduction to PostgreSQL , relational database concepts, and the SQL language to those who are new to any one of these aspects. We only assume some general ...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 4,
+      "dense_rank": null,
+      "hybrid_rank": 7,
+      "rrf_score": 0.015625,
+      "teacher_scores": {
+        "positive_score": 0.7537,
+        "negative_score": 0.022,
+        "margin": 0.7317
+      },
+      "lexical_jaccard_overlap": 0.092,
+      "query_entities": [
+        "missing_ok"
+      ],
+      "candidate_entities": [
+        "sql"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 7,
+        "lexical_rank": 4,
+        "dense_rank": null,
+        "teacher_negative_score": 0.022
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 2,
+      "query_id": "train_po_0098",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between do_db_maintenance and target_schema in postgresql?",
+      "positive_chunk_id": "0e3867425f07d0dcbf6e91ac",
+      "positive_source_path": "ref/drop_procedure.sgml",
+      "positive_excerpt": "For compatibility with the SQL standard, it is also allowed to write all the argument data types (including those of OUT arguments) without any argmode markers. When this is done, the types of the procedure's OUT argument(s) will be verified against the command. This provision creates an ambiguity, in that when the argument list contains no argmode markers, it's unclear which rule is intended. The...",
+      "hard_negative_chunk_id": "c975bb0d7ada3a30ca9a565f",
+      "hard_negative_source_path": "maintenance.sgml",
+      "hard_negative_excerpt": "maintenance routine maintenance PostgreSQL , like any database software, requires that certain tasks be performed regularly to achieve optimum performance. The tasks discussed here are required , but they are repetitive in nature and can easily be automated using standard tools such as cron scripts or Windows' Task Scheduler . It is the database administrator's responsibility to set up appropriate...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.9254,
+        "negative_score": 0.0445,
+        "margin": 0.8809
+      },
+      "lexical_jaccard_overlap": 0.1237,
+      "query_entities": [
+        "do_db_maintenance",
+        "target_schema"
+      ],
+      "candidate_entities": [
+        "check_postgres",
+        "mrtg",
+        "scheduler",
+        "vacuum"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "PROCEDURE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.0445
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 3,
+      "query_id": "train_po_0096",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between btree_gin and pg_trgm in postgresql?",
+      "positive_chunk_id": "afbb039fccdc28c6068e5dd9",
+      "positive_source_path": "gin.sgml",
+      "positive_excerpt": "Soft means that the actual number of returned results could differ somewhat from the specified limit, depending on the query and the quality of the system's random number generator. From experience, values in the thousands (e.g., 5000 &mdash; 20000) work well. # Limitations GIN assumes that indexable operators are strict. This means that extractValue will not be called at all on a null item value ...",
+      "hard_negative_chunk_id": "cd695169476d1af6091bd73b",
+      "hard_negative_source_path": "btree.sgml",
+      "hard_negative_excerpt": "index B-Tree # Introduction PostgreSQL includes an implementation of the standard btree (multi-way balanced tree) index data structure. Any data type that can be sorted into a well-defined linear order can be indexed by a btree index. The only limitation is that an index entry cannot exceed approximately one-third of a page (after TOAST compression, if applicable). Because each btree operator clas...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.7556,
+        "negative_score": 0.0284,
+        "margin": 0.7272
+      },
+      "lexical_jaccard_overlap": 0.1518,
+      "query_entities": [
+        "btree_gin",
+        "pg_trgm"
+      ],
+      "candidate_entities": [
+        "pg_amop",
+        "toast"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.0284
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 4,
+      "query_id": "train_po_0125",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between pg_stat_scan_tables and locked_row in postgresql?",
+      "positive_chunk_id": "7a3441a51dc2f688d062ce80",
+      "positive_source_path": "pgrowlocks.sgml",
+      "positive_excerpt": "pgrowlocks The pgrowlocks module provides a function to show row locking information for a specified table. By default use is restricted to superusers, roles with privileges of the pg_stat_scan_tables role, and users with SELECT permissions on the table. # Overview pgrowlocks pgrowlocks(text) returns setof record The parameter is the name of a table. The result is a set of records, with one row fo...",
+      "hard_negative_chunk_id": "908a163098035c2f60194b01",
+      "hard_negative_source_path": "mvcc.sgml",
+      "hard_negative_excerpt": "The Serializable isolation level is implemented using a technique known in academic database literature as Serializable Snapshot Isolation, which builds on Snapshot Isolation by adding checks for serialization anomalies. Some differences in behavior and performance may be observed when compared with other systems that use a traditional locking technique. Please see for detailed information. # Expl...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 16,
+      "dense_rank": 13,
+      "hybrid_rank": 4,
+      "rrf_score": 0.026857,
+      "teacher_scores": {
+        "positive_score": 0.6696,
+        "negative_score": 0.3247,
+        "margin": 0.3449
+      },
+      "lexical_jaccard_overlap": 0.1882,
+      "query_entities": [
+        "locked_row",
+        "pg_stat_scan_tables"
+      ],
+      "candidate_entities": [
+        "access",
+        "accesssharelock",
+        "exclusive",
+        "list",
+        "lock",
+        "mvcc",
+        "pg_locks",
+        "share",
+        "transaction",
+        "truncate"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 4,
+        "lexical_rank": 16,
+        "dense_rank": 13,
+        "teacher_negative_score": 0.3247
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 5,
+      "query_id": "train_po_0120",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between pg_opfamily and pg_opclass in postgresql?",
+      "positive_chunk_id": "d290c5d135e527054f7e5eed",
+      "positive_source_path": "indexam.sgml",
+      "positive_excerpt": "To be useful, an index access method must also have one or more operator families and operator classes defined in pg_opfamily , pg_opclass , pg_amop , and pg_amproc . These entries allow the planner to determine what kinds of query qualifications can be used with indexes of this access method. Operator families and classes are described in , which is prerequisite material for reading this chapter....",
+      "hard_negative_chunk_id": "57e38df1f41751181f84d751",
+      "hard_negative_source_path": "bki.sgml",
+      "hard_negative_excerpt": "PostgreSQL uses many different system catalogs to keep track of the existence and properties of database objects, such as tables and functions. Physically there is no difference between a system catalog and a plain user table, but the backend C code knows the structure and properties of each catalog, and can manipulate it directly at a low level. Thus, for example, it is inadvisable to attempt to ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 6,
+      "dense_rank": 21,
+      "hybrid_rank": 4,
+      "rrf_score": 0.027497,
+      "teacher_scores": {
+        "positive_score": 0.6913,
+        "negative_score": 0.1512,
+        "margin": 0.5401
+      },
+      "lexical_jaccard_overlap": 0.1795,
+      "query_entities": [
+        "pg_opclass",
+        "pg_opfamily"
+      ],
+      "candidate_entities": [
+        "bki",
+        "e.g",
+        "genbki.pl",
+        "header",
+        "oid",
+        "pg_class",
+        "pg_class.h",
+        "pg_proc",
+        "pg_proc.dat",
+        "postgres.bki",
+        "sql"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 4,
+        "lexical_rank": 6,
+        "dense_rank": 21,
+        "teacher_negative_score": 0.1512
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 6,
+      "query_id": "train_po_0013",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Example Program in postgresql?",
+      "positive_chunk_id": "04f7981b7172c021ac60b1a5",
+      "positive_source_path": "lobj.sgml",
+      "positive_excerpt": "is a sample program which shows how the large object interface in libpq can be used. Parts of the program are commented out but are left in the source for the reader's benefit. This program can also be found in src/test/examples/testlo.c in the source distribution. # Large Objects with libpq Example Program ```sql #include #include #include #include #include #include \"libpq-fe.h\" #include \"libpq/l...",
+      "hard_negative_chunk_id": "201f7197805f9af0a0e646bd",
+      "hard_negative_source_path": "intro.sgml",
+      "hard_negative_excerpt": "This book is the official documentation of PostgreSQL . It has been written by the PostgreSQL developers and other volunteers in parallel to the development of the PostgreSQL software. It describes all the functionality that the current version of PostgreSQL officially supports. To make the large amount of information about PostgreSQL manageable, this book has been organized in several parts. Each...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 2,
+      "hybrid_rank": 1,
+      "rrf_score": 0.032522,
+      "teacher_scores": {
+        "positive_score": 0.9458,
+        "negative_score": 0.1934,
+        "margin": 0.7524
+      },
+      "lexical_jaccard_overlap": 0.1029,
+      "query_entities": [],
+      "candidate_entities": [
+        "4.2",
+        "ordbms",
+        "postgres",
+        "sql"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 1,
+        "lexical_rank": 1,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.1934
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 7,
+      "query_id": "train_po_0080",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure max_val in postgresql?",
+      "positive_chunk_id": "a78b8ccad4e64a4f8999ad7b",
+      "positive_source_path": "system-views.sgml",
+      "positive_excerpt": "Minimum allowed value of the parameter (null for non-numeric values) max_val text Maximum allowed value of the parameter (null for non-numeric values) enumvals text[] Allowed values of an enum parameter (null for non-enum values) boot_val text Parameter value assumed at server startup if the parameter is not otherwise set reset_val text Value that RESET would reset the parameter to in the current ...",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "hard_negative_excerpt": "The PostgreSQL source code for released versions can be obtained from the download section of our website: . Download the postgresql- version .tar.gz or postgresql- version .tar.bz2 file you're interested in, then unpack it: tar xf postgresql- version .tar.bz2 This will create a directory postgresql- version under the current directory with the PostgreSQL sources. Change into that directory for th...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 1,
+      "dense_rank": null,
+      "hybrid_rank": 2,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.6974,
+        "negative_score": 0.1089,
+        "margin": 0.5885
+      },
+      "lexical_jaccard_overlap": 0.1474,
+      "query_entities": [
+        "max_val"
+      ],
+      "candidate_entities": [
+        "build_dir",
+        "pg_ctl",
+        "tar.bz2",
+        "tar.gz",
+        "vpath"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 1,
+        "dense_rank": null,
+        "teacher_negative_score": 0.1089
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 8,
+      "query_id": "train_po_0097",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure do_db_maintenance in postgresql?",
+      "positive_chunk_id": "0e3867425f07d0dcbf6e91ac",
+      "positive_source_path": "ref/drop_procedure.sgml",
+      "positive_excerpt": "For compatibility with the SQL standard, it is also allowed to write all the argument data types (including those of OUT arguments) without any argmode markers. When this is done, the types of the procedure's OUT argument(s) will be verified against the command. This provision creates an ambiguity, in that when the argument list contains no argmode markers, it's unclear which rule is intended. The...",
+      "hard_negative_chunk_id": "91eb941d0bb6422878e11237",
+      "hard_negative_source_path": "maintenance.sgml",
+      "hard_negative_excerpt": "can be used safely and easily in all cases. This command requires an ACCESS EXCLUSIVE lock by default, hence it is often preferable to execute it with its CONCURRENTLY option, which requires only a SHARE UPDATE EXCLUSIVE lock. # Log File Maintenance server log log file maintenance It is a good idea to save the database server's log output somewhere, rather than just discarding it via /dev/null . T...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.936,
+        "negative_score": 0.086,
+        "margin": 0.85
+      },
+      "lexical_jaccard_overlap": 0.1398,
+      "query_entities": [
+        "do_db_maintenance"
+      ],
+      "candidate_entities": [
+        "access",
+        "concurrently",
+        "csv",
+        "ddl",
+        "error",
+        "exclusive",
+        "logging_collector",
+        "postgresql.conf",
+        "share",
+        "sql",
+        "update"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "EXAMPLE",
+        "PROCEDURE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.086
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 9,
+      "query_id": "train_po_0051",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure listen_addresses in postgresql?",
+      "positive_chunk_id": "f2eda4b2ea27378476d37593",
+      "positive_source_path": "ref/postgres-ref.sgml",
+      "positive_excerpt": "Disables fsync calls for improved performance, at the risk of data corruption in the event of a system crash. Specifying this option is equivalent to disabling the configuration parameter. Read the detailed documentation before using this! -h hostname Specifies the IP host name or address on which postgres is to listen for TCP/IP connections from client applications. The value can also be a comma-...",
+      "hard_negative_chunk_id": "e85d4cb054bc10396dd49265",
+      "hard_negative_source_path": "ref/listen.sgml",
+      "hard_negative_excerpt": "LISTEN LISTEN 7 SQL - Language Statements LISTEN listen for a notification LISTEN channel # Description LISTEN registers the current session as a listener on the notification channel named channel . If the current session is already registered as a listener for this notification channel, nothing is done. Whenever the command NOTIFY channel is invoked, either by this session or another one connecte...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.873,
+        "negative_score": 0.0781,
+        "margin": 0.7949
+      },
+      "lexical_jaccard_overlap": 0.1599,
+      "query_entities": [
+        "listen_addresses"
+      ],
+      "candidate_entities": [
+        "listen",
+        "notify",
+        "session",
+        "sql",
+        "transaction",
+        "unlisten"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.0781
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 10,
+      "query_id": "train_po_0101",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure geqo_seed in postgresql?",
+      "positive_chunk_id": "d20c49c3de0963db08d3c886",
+      "positive_source_path": "geqo.sgml",
+      "positive_excerpt": "The GEQO planning process uses the standard planner code to generate plans for scans of individual relations. Then join plans are developed using the genetic approach. As shown above, each candidate join plan is represented by a sequence in which to join the base relations. In the initial stage, the GEQO code simply generates some possible join sequences at random. For each join sequence considere...",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "hard_negative_excerpt": "The PostgreSQL source code for released versions can be obtained from the download section of our website: . Download the postgresql- version .tar.gz or postgresql- version .tar.bz2 file you're interested in, then unpack it: tar xf postgresql- version .tar.bz2 This will create a directory postgresql- version under the current directory with the PostgreSQL sources. Change into that directory for th...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 6,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031281,
+      "teacher_scores": {
+        "positive_score": 0.919,
+        "negative_score": 0.0505,
+        "margin": 0.8684
+      },
+      "lexical_jaccard_overlap": 0.1,
+      "query_entities": [
+        "geqo_seed"
+      ],
+      "candidate_entities": [
+        "build_dir",
+        "pg_ctl",
+        "tar.bz2",
+        "tar.gz",
+        "vpath"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 2,
+        "dense_rank": 6,
+        "teacher_negative_score": 0.0505
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 11,
+      "query_id": "train_py_0172",
+      "ecosystem": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve error issues with new_alloc in pytorch?",
+      "positive_chunk_id": "5b74091a0a0a740501f5ef7d",
+      "positive_source_path": "notes/cuda.rst",
+      "positive_excerpt": "```python import torch # Do an initial memory allocator b = torch.zeros(10, device='cuda') # Load the allocator new_alloc = torch.cuda.memory.CUDAPluggableAllocator( 'alloc.so', 'my_malloc', 'my_free') # This will error since the current allocator was already instantiated torch.cuda.memory.change_current_allocator(new_alloc) ```",
+      "hard_negative_chunk_id": "67ed43f3baa98e4a7c197584",
+      "hard_negative_source_path": "cuda.rst",
+      "hard_negative_excerpt": "empty_cache list_gpu_processes mem_get_info memory_stats memory_summary memory_snapshot memory_allocated max_memory_allocated reset_max_memory_allocated memory_reserved max_memory_reserved set_per_process_memory_fraction memory_cached max_memory_cached reset_max_memory_cached reset_peak_memory_stats caching_allocator_alloc caching_allocator_delete get_allocator_backend CUDAPluggableAllocator chang...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 13,
+      "dense_rank": 3,
+      "hybrid_rank": 2,
+      "rrf_score": 0.029572,
+      "teacher_scores": {
+        "positive_score": 0.7234,
+        "negative_score": 0.0207,
+        "margin": 0.7026
+      },
+      "lexical_jaccard_overlap": 0.082,
+      "query_entities": [
+        "new_alloc"
+      ],
+      "candidate_entities": [
+        "caching_allocator_alloc",
+        "caching_allocator_delete",
+        "change_current_allocator",
+        "empty_cache",
+        "get_allocator_backend",
+        "github.com",
+        "list_gpu_processes",
+        "max_memory_allocated",
+        "max_memory_cached",
+        "max_memory_reserved",
+        "mem_get_info",
+        "memory_allocated",
+        "memory_cached",
+        "memory_reserved",
+        "memory_snapshot",
+        "memory_stats",
+        "memory_summary",
+        "reset_max_memory_allocated",
+        "reset_max_memory_cached",
+        "reset_peak_memory_stats",
+        "set_per_process_memory_fraction"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 13,
+        "dense_rank": 3,
+        "teacher_negative_score": 0.0207
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 12,
+      "query_id": "train_py_0203",
+      "ecosystem": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve oom issues with b7f064c000000_0 in pytorch?",
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_path": "torch_cuda_memory.rst",
+      "positive_excerpt": "The Allocator State History shows individual allocator events in a timeline on the left. Select an event in the timeline to see a visual summary of the allocator state at that event. This summary shows each individual segment returned from cudaMalloc and how it is split up into blocks of individual allocations or free space. Mouse over segments and blocks to see the stack trace when the memory was...",
+      "hard_negative_chunk_id": "9b67a6a39f9fa0cc32743b12",
+      "hard_negative_source_path": "name_inference.rst",
+      "hard_negative_excerpt": "Please read :ref:`named_tensors-doc` first for an introduction to named tensors. This document is a reference for *name inference*, a process that defines how named tensors: 1. use names to provide additional automatic runtime correctness checks 2. propagate names from input tensors to output tensors Below is a list of all operations that are supported with named tensors and their associated name ...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 4,
+      "dense_rank": null,
+      "hybrid_rank": 7,
+      "rrf_score": 0.015625,
+      "teacher_scores": {
+        "positive_score": 0.8412,
+        "negative_score": 0.0518,
+        "margin": 0.7894
+      },
+      "lexical_jaccard_overlap": 0.092,
+      "query_entities": [
+        "b7f064c000000_0"
+      ],
+      "candidate_entities": [
+        "api",
+        "file one <https://github.com/pytorch/pytorch/issues/new/choose>",
+        "github.com",
+        "list",
+        "named_tensors",
+        "named_tensors-doc",
+        "search if an issue has already been filed <https://github.com/pytorch/pytorch/issues?q=is%3aopen+is%3aissue+label%3a%22module%3a+named+tensor%22>",
+        "tensor"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 7,
+        "lexical_rank": 4,
+        "dense_rank": null,
+        "teacher_negative_score": 0.0518
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 13,
+      "query_id": "train_py_0212",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between log_level and test_assertion_error in pytorch?",
+      "positive_chunk_id": "1c77428cbf4591d96d453107",
+      "positive_source_path": "torch.compiler_troubleshooting.rst",
+      "positive_excerpt": "If the error that is generated occurs with the ``\"eager\"`` backend, then TorchDynamo is most likely the source of the error. Here is a sample code which will generate an error. ```py import torch import torch._dynamo as dynamo def test_assertion_error(): y = torch.ones(200, 200) z = {y: 5} return z compiled_test_assertion_error = torch.compile(test_assertion_error, backend=\"eager\") compiled_test_a...",
+      "hard_negative_chunk_id": "23a49f237081154f5365faa1",
+      "hard_negative_source_path": "logging.rst",
+      "hard_negative_excerpt": "PyTorch has a configurable logging system, where different components can be given different log level settings. For instance, one component's log messages can be completely disabled, while another component's log messages can be set to maximum verbosity. changes in the future. all components in PyTorch yet. There are two ways to configure the logging system: through the environment variable ``TOR...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.032258,
+      "teacher_scores": {
+        "positive_score": 0.9157,
+        "negative_score": 0.1604,
+        "margin": 0.7554
+      },
+      "lexical_jaccard_overlap": 0.1641,
+      "query_entities": [
+        "log_level",
+        "test_assertion_error"
+      ],
+      "candidate_entities": [
+        ". in addition to components, there are\nalso artifacts. artifacts are specific pieces of debug information associated with a component that are either displayed or not displayed,\nso prefixing an artifact with",
+        ". this option is specified in _registrations.py for artifacts that are so spammy they should only be displayed when explicitly enabled.\nthe following components and artifacts are configurable through the",
+        "<component>",
+        "[+-]<component>",
+        "_registrations.py",
+        "all",
+        "aot",
+        "api",
+        "dynamo",
+        "environment\nvariable (see torch._logging.set_logs for the python api):\n\ncomponents:",
+        "inductor",
+        "is a comma-separated list of",
+        "is a component specified below. the",
+        "list",
+        "logging.warn",
+        "off_by_default",
+        "or",
+        "or the python api torch._logging.set_logs.\n\nset_logs\n\nthe environment variable",
+        "pairs, where",
+        "prefix\nwill decrease the log level of the component, displaying more log messages while the",
+        "prefix\nwill increase the log level of the component and display fewer log messages. the default setting\nis the behavior when a component is not specified in",
+        "pytorch",
+        "set_logs",
+        "special component which configures the default log level of all components. default:",
+        "the log level for the aotautograd component. default:",
+        "the log level for the torchdynamo component. default:",
+        "the log level for the torchinductor component. default:",
+        "torch._logging.set_logs",
+        "torch_logs",
+        "torchdynamo",
+        "torchinductor",
+        "warn",
+        "will be a no-op. since they are associated with a component, enabling that component will typically also enable that artifact,\nunless that artifact was specified to be"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 2,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.1604
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 14,
+      "query_id": "train_py_0160",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between fwd.py and k.py in pytorch?",
+      "positive_chunk_id": "f4f8092da1be00c0bdec041b",
+      "positive_source_path": "torch.compiler_inductor_profiling.rst",
+      "positive_excerpt": "Let\u2019s say we want to take a closer look at ``triton_red_fused\\__native_batch_norm_legit_functional_16`` which is the most expensive reduction kernel and takes 2.19% of overall wall time for the forward graph. We can lookup the kernel name in the ``fwd.py``, and find comment like: **# kernel path: /tmp/torchinductor_shunting/jk/cjk2vm3446xrk7rth7hr6pun7xxo3dnzubwcn6ydrpifal4eykrz.py** I\u2019ll rename i...",
+      "hard_negative_chunk_id": "30d43281849e8f3dee46e937",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "hard_negative_excerpt": "```python import torch import torch._dynamo as dynamo from torch import tensor, device import torch.fx as fx from torch._dynamo.testing import rand_strided from math import inf from torch._dynamo.debug_utils import run_fwd_maybe_bwd from torch.nn import * class Repro(torch.nn.Module): def __init__(self): super().__init__() def forward(self, add): relu = torch.relu(add); add = None return (relu,) m...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 3,
+      "dense_rank": 3,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031746,
+      "teacher_scores": {
+        "positive_score": 0.8615,
+        "negative_score": 0.1042,
+        "margin": 0.7572
+      },
+      "lexical_jaccard_overlap": 0.1098,
+      "query_entities": [
+        "fwd.py",
+        "k.py"
+      ],
+      "candidate_entities": [
+        ". the other difference from the procedure in",
+        "__ is that the minifier is\nautomatically run after encountering a backend compiler error. after a\nsuccessful run, the minifier writes",
+        "base_dir",
+        "debug_utils",
+        "opt_mod",
+        "python\n\nimport torch\nimport torch._dynamo as dynamo\nfrom torch import tensor, device\nimport torch.fx as fx\nfrom torch._dynamo.testing import rand_strided\nfrom math import inf\nfrom torch._dynamo.debug_utils import run_fwd_maybe_bwd\n\nfrom torch.nn import *\n\nclass repro(torch.nn.module):\n    def __init__(self):\n        super().__init__()\n\n    def forward(self, add):\n        relu = torch.relu(add);  add = none\n        return (relu,)\n\n\nmod = repro().cuda()\nopt_mod = torch.compile(mod, backend=\"none\")\n\n\nargs = [((200, 200), (200, 1), torch.float32, 'cpu', false)]\nargs = [rand_strided(sh, st, dt, dev).requires_grad_(rg) for (sh, st, dt, dev, rg) in args]\n\n\nwith torch.cuda.amp.autocast(enabled=false):\n    ref = run_fwd_maybe_bwd(mod, args)\n    res = run_fwd_maybe_bwd(opt_mod, args)",
+        "rand_strided",
+        "repro.py",
+        "requires_grad_",
+        "run_fwd_maybe_bwd",
+        "tensor",
+        "the minifier successfully reduced the graph to the op that raises the\nerror in",
+        "to",
+        "torch._dynamo",
+        "torch._dynamo.config.base_dir",
+        "torch._dynamo.debug_utils",
+        "torch._dynamo.testing",
+        "torch.compile",
+        "torch.cuda.amp.autocast",
+        "torch.float32",
+        "torch.fx",
+        "torch.nn",
+        "torch.nn.module",
+        "torch.relu",
+        "torchinductor",
+        "toy_compiler"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "EXAMPLE",
+        "PROCEDURE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 3,
+        "dense_rank": 3,
+        "teacher_negative_score": 0.1042
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 15,
+      "query_id": "train_py_0133",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between torch.matmul and torch.bmm in pytorch?",
+      "positive_chunk_id": "9c5781c73d65505246f6aa9d",
+      "positive_source_path": "nested.rst",
+      "positive_excerpt": ":func:`torch.matmul`; \"Supports matrix multiplication between two (>= 3d) nested tensors where the last two dimensions are matrix dimensions and the leading (batch) dimensions have the same size (i.e. no broadcasting support for batch dimensions yet).\" :func:`torch.bmm`; \"Supports batch matrix multiplication of two 3-d nested tensors.\" :func:`torch.nn.Linear`; \"Supports 3-d nested input and a dens...",
+      "hard_negative_chunk_id": "fd1d66128a6182938cc1ce8e",
+      "hard_negative_source_path": "torch.rst",
+      "hard_negative_excerpt": "addbmm addmm addmv addr baddbmm bmm chain_matmul cholesky cholesky_inverse cholesky_solve dot geqrf ger inner inverse det logdet slogdet lu lu_solve lu_unpack matmul matrix_power matrix_exp mm mv orgqr ormqr outer pinverse qr svd svd_lowrank pca_lowrank lobpcg trapz trapezoid cumulative_trapezoid triangular_solve vdot",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 6,
+      "dense_rank": 3,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031025,
+      "teacher_scores": {
+        "positive_score": 0.67,
+        "negative_score": 0.0477,
+        "margin": 0.6223
+      },
+      "lexical_jaccard_overlap": 0.0354,
+      "query_entities": [
+        "torch.bmm",
+        "torch.matmul"
+      ],
+      "candidate_entities": [
+        "chain_matmul",
+        "cholesky_inverse",
+        "cholesky_solve",
+        "cumulative_trapezoid",
+        "lu_solve",
+        "lu_unpack",
+        "matrix_exp",
+        "matrix_power",
+        "pca_lowrank",
+        "svd_lowrank",
+        "triangular_solve"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 6,
+        "dense_rank": 3,
+        "teacher_negative_score": 0.0477
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 16,
+      "query_id": "train_py_0217",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchnn  Loss Functions in pytorch?",
+      "positive_chunk_id": "4a77147edd325550435d7b6c",
+      "positive_source_path": "nn.rst",
+      "positive_excerpt": "nn.L1Loss nn.MSELoss nn.CrossEntropyLoss nn.CTCLoss nn.NLLLoss nn.PoissonNLLLoss nn.GaussianNLLLoss nn.KLDivLoss nn.BCELoss nn.BCEWithLogitsLoss nn.MarginRankingLoss nn.HingeEmbeddingLoss nn.MultiLabelMarginLoss nn.HuberLoss nn.SmoothL1Loss nn.SoftMarginLoss nn.MultiLabelSoftMarginLoss nn.CosineEmbeddingLoss nn.MultiMarginLoss nn.TripletMarginLoss nn.TripletMarginWithDistanceLoss",
+      "hard_negative_chunk_id": "7a884f65a8b4480e2f70a477",
+      "hard_negative_source_path": "notes/modules.rst",
+      "hard_negative_excerpt": "Once a network is built, it has to be trained, and its parameters can be easily optimized with one of PyTorch\u2019s Optimizers from :mod:`torch.optim`: ```python # Create the network (from previous section) and optimizer net = Net() optimizer = torch.optim.SGD(net.parameters(), lr=1e-4, weight_decay=1e-2, momentum=0.9) # Run a sample training loop that \"teaches\" the network # to output the constant ze...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 9,
+      "dense_rank": 3,
+      "hybrid_rank": 2,
+      "rrf_score": 0.030366,
+      "teacher_scores": {
+        "positive_score": 0.7935,
+        "negative_score": 0.3796,
+        "margin": 0.4139
+      },
+      "lexical_jaccard_overlap": 0.0123,
+      "query_entities": [],
+      "candidate_entities": [
+        "0.9",
+        "\\ 's",
+        "as a loss function. while this is not a very interesting task, the\nkey parts of training are present:\n\n* a network is created.\n* an optimizer (in this case, a stochastic gradient descent optimizer) is created, and the network\u2019s\n  parameters are associated with it.\n* a training loop...\n    * acquires an input,\n    * runs the network,\n    * computes a loss,\n    * zeros the network\u2019s parameters\u2019 gradients,\n    * calls loss.backward() to update the parameters\u2019 gradients,\n    * calls optimizer.step() to apply the gradients to the parameters.\n\nafter the above snippet has been run, note that the network's parameters have changed. in particular, examining the\nvalue of",
+        "in this simplified example, the network learns to simply output zero, as any non-zero output is \"penalized\" according\nto its absolute value by employing :func:",
+        "l1",
+        "loss.backward",
+        "net.eval",
+        "net.parameters",
+        "net.zero_grad",
+        "optimizer.step",
+        "python\n\n# create the network (from previous section) and optimizer\nnet = net()\noptimizer = torch.optim.sgd(net.parameters(), lr=1e-4, weight_decay=1e-2, momentum=0.9)\n\n# run a sample training loop that \"teaches\" the network\n# to output the constant zero function\nfor _ in range(10000):\n  input = torch.randn(4)\n  output = net(input)\n  loss = torch.abs(output)\n  net.zero_grad()\n  loss.backward()\n  optimizer.step()\n\n# after training, switch the module to eval mode to do inference, compute performance metrics, etc.\n# (see discussion below for a description of training and evaluation modes)\n...\nnet.eval()\n...",
+        "pytorch",
+        "sgd",
+        "torch.abs",
+        "torch.optim",
+        "torch.optim.sgd",
+        "torch.randn",
+        "weight",
+        "weight_decay",
+        "zero_grad"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 9,
+        "dense_rank": 3,
+        "teacher_negative_score": 0.3796
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 17,
+      "query_id": "train_py_0179",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure replace_all_batch_norm_modules_ in pytorch?",
+      "positive_chunk_id": "38d2bdfb4b68f3f8afc9ac1e",
+      "positive_source_path": "func.batch_norm.rst",
+      "positive_excerpt": "If you are attached to BatchNorm, be sure to use a version that doesn't use running stats ```python import torchvision from functools import partial torchvision.models.resnet18(norm_layer=partial(BatchNorm2d, track_running_stats=False)) ``` Option 3: functorch's patching ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ functorch has added some functionality to allow for quick, in-place patching of the module to not...",
+      "hard_negative_chunk_id": "62203cb298947a15ce570727",
+      "hard_negative_source_path": "notes/modules.rst",
+      "hard_negative_excerpt": "PyTorch also provides several more advanced features that are designed to work with modules. All these functionalities are available for custom-written modules, with the small caveat that certain features may require modules to conform to particular constraints in order to be supported. In-depth discussion of these features and the corresponding requirements can be found in the links below. Distri...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 12,
+      "dense_rank": 8,
+      "hybrid_rank": 2,
+      "rrf_score": 0.028595,
+      "teacher_scores": {
+        "positive_score": 0.9796,
+        "negative_score": 0.2883,
+        "margin": 0.6912
+      },
+      "lexical_jaccard_overlap": 0.0728,
+      "query_entities": [
+        "replace_all_batch_norm_modules_"
+      ],
+      "candidate_entities": [
+        "dist_overview",
+        "dist_overview.html",
+        "distributed training overview page <https://pytorch.org/tutorials/beginner/dist_overview.html>",
+        "here <https://pytorch.org/docs/stable/quantization.html>",
+        "profiler.html",
+        "pruning tutorial <https://pytorch.org/tutorials/intermediate/pruning_tutorial.html>",
+        "pruning_tutorial",
+        "pruning_tutorial.html",
+        "pytorch",
+        "pytorch profiler <https://pytorch.org/tutorials/beginner/profiler.html>",
+        "pytorch.org",
+        "quantization.html"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "PROCEDURE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 12,
+        "dense_rank": 8,
+        "teacher_negative_score": 0.2883
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 18,
+      "query_id": "train_py_0240",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchmasked  Unary Operators in pytorch?",
+      "positive_chunk_id": "68813f71c4da15c765710cd5",
+      "positive_source_path": "masked.rst",
+      "positive_excerpt": "Unary operators are operators that only contain only a single input. Applying them to MaskedTensors is relatively straightforward: if the data is masked out at a given index, we apply the operator, otherwise we'll continue to mask out the data. The available unary operators are: abs absolute acos arccos acosh arccosh angle asin arcsin asinh arcsinh atan arctan atanh arctanh bitwise_not ceil clamp ...",
+      "hard_negative_chunk_id": "24a7ed088b8af5877d03427c",
+      "hard_negative_source_path": "sparse.rst",
+      "hard_negative_excerpt": "We aim to support all zero-preserving unary functions. If you find that we are missing a zero-preserving unary function that you need, please feel encouraged to open an issue for a feature request. As always please kindly try the search function first before opening an issue. The following operators currently support sparse COO/CSR/CSC/BSR/CSR tensor inputs. :func:`~torch.abs` :func:`~torch.asin` ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 3,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.032002,
+      "teacher_scores": {
+        "positive_score": 0.8916,
+        "negative_score": 0.073,
+        "margin": 0.8185
+      },
+      "lexical_jaccard_overlap": 0.2571,
+      "query_entities": [],
+      "candidate_entities": [
+        "bsr",
+        "conj_physical",
+        "coo",
+        "csc",
+        "csr",
+        "tensor",
+        "torch.abs",
+        "torch.angle",
+        "torch.asin",
+        "torch.asinh",
+        "torch.atan",
+        "torch.atanh",
+        "torch.ceil",
+        "torch.conj_physical",
+        "torch.erf",
+        "torch.erfinv",
+        "torch.expm1",
+        "torch.floor",
+        "torch.isinf",
+        "torch.isnan",
+        "torch.isneginf",
+        "torch.isposinf",
+        "torch.log1p",
+        "torch.neg",
+        "torch.round",
+        "torch.sgn",
+        "torch.sign",
+        "torch.signbit",
+        "torch.sin",
+        "torch.sinh",
+        "torch.sqrt",
+        "torch.tan",
+        "torch.tanh",
+        "torch.trunc",
+        "~torch.abs",
+        "~torch.angle",
+        "~torch.asin",
+        "~torch.asinh",
+        "~torch.atan",
+        "~torch.atanh",
+        "~torch.ceil",
+        "~torch.conj_physical",
+        "~torch.erf",
+        "~torch.erfinv",
+        "~torch.expm1",
+        "~torch.floor",
+        "~torch.isinf",
+        "~torch.isnan",
+        "~torch.isneginf",
+        "~torch.isposinf",
+        "~torch.log1p",
+        "~torch.neg",
+        "~torch.round",
+        "~torch.sgn",
+        "~torch.sign",
+        "~torch.signbit",
+        "~torch.sin",
+        "~torch.sinh",
+        "~torch.sqrt",
+        "~torch.tan",
+        "~torch.tanh",
+        "~torch.trunc"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 3,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.073
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 19,
+      "query_id": "train_py_0202",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure b7f064c000000_0 in pytorch?",
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_path": "torch_cuda_memory.rst",
+      "positive_excerpt": "The Allocator State History shows individual allocator events in a timeline on the left. Select an event in the timeline to see a visual summary of the allocator state at that event. This summary shows each individual segment returned from cudaMalloc and how it is split up into blocks of individual allocations or free space. Mouse over segments and blocks to see the stack trace when the memory was...",
+      "hard_negative_chunk_id": "c5915c47bc83b419bcdcbb0d",
+      "hard_negative_source_path": "notes/cuda.rst",
+      "hard_negative_excerpt": "PyTorch uses a caching memory allocator to speed up memory allocations. This allows fast memory deallocation without device synchronizations. However, the unused memory managed by the allocator will still show as if used in ``nvidia-smi``. You can use :meth:`~torch.cuda.memory_allocated` and :meth:`~torch.cuda.max_memory_allocated` to monitor memory occupied by tensors, and use :meth:`~torch.cuda....",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 19,
+      "dense_rank": 14,
+      "hybrid_rank": 2,
+      "rrf_score": 0.026172,
+      "teacher_scores": {
+        "positive_score": 0.4655,
+        "negative_score": 0.071,
+        "margin": 0.3944
+      },
+      "lexical_jaccard_overlap": 0.1596,
+      "query_entities": [
+        "b7f064c000000_0"
+      ],
+      "candidate_entities": [
+        ", set",
+        ", which can help you understand the\nunderlying allocation patterns produced by your code.\n\noptimizing memory usage  with",
+        ".  to debug memory errors using",
+        ". we also offer the capability to capture a\ncomplete snapshot of the memory allocator state via\n:meth:",
+        ". you can use :meth:",
+        "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nuse of a caching allocator can interfere with memory checking tools such as",
+        "and\n:meth:",
+        "cuda",
+        "cuda-memcheck",
+        "describes tools for capturing and visualizing traces of memory use.\n\nfor more advanced users, we offer more comprehensive memory benchmarking via\n:meth:",
+        "empty_cache",
+        "gpu",
+        "max_memory_allocated",
+        "max_memory_reserved",
+        "memory_allocated",
+        "memory_reserved",
+        "memory_snapshot",
+        "memory_stats",
+        "nvidia-smi",
+        "pytorch",
+        "pytorch_cuda_alloc_conf",
+        "pytorch_no_cuda_memory_caching",
+        "pytorch_no_cuda_memory_caching=1",
+        "releases all **unused** cached memory from pytorch so that those can be used\nby other gpu applications. however, the occupied gpu memory by tensors will not\nbe freed so it can not increase the amount of gpu memory available for pytorch.\n\nto better understand how cuda memory is being used over time,\n:ref:",
+        "to monitor memory occupied by\ntensors, and use :meth:",
+        "to monitor the total amount of memory\nmanaged by the caching allocator. calling :meth:",
+        "torch.cuda.empty_cache",
+        "torch.cuda.max_memory_allocated",
+        "torch.cuda.max_memory_reserved",
+        "torch.cuda.memory_allocated",
+        "torch.cuda.memory_reserved",
+        "torch.cuda.memory_snapshot",
+        "torch.cuda.memory_stats",
+        "torch_cuda_memory"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 19,
+        "dense_rank": 14,
+        "teacher_negative_score": 0.071
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 20,
+      "query_id": "train_py_0227",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure minifier_launcher.py in pytorch?",
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_path": "torch.compiler_troubleshooting.rst",
+      "positive_excerpt": "From here, let\u2019s run the minifier to get a minimal repro. Setting the environment variable ``TORCHDYNAMO_REPRO_AFTER=\"aot\"`` (or setting ``torch._dynamo.config.repro_after=\"aot\"`` directly) will generate a Python program which reduces the graph produced by AOTAutograd to the smallest subgraph which reproduces the error. (See below for an example where we minify the graph produced by TorchDynamo) R...",
+      "hard_negative_chunk_id": "aaa5d35d6ad0be3c237a071e",
+      "hard_negative_source_path": "func.rst",
+      "hard_negative_excerpt": "torch.func, previously known as \"functorch\", is `JAX-like <https://github.com/google/jax>`_ composable function transforms for PyTorch. This library is currently in `beta <https://pytorch.org/blog/pytorch-feature-classification-changes/#beta>`_. What this means is that the features generally work (unless otherwise documented) and we (the PyTorch team) are committed to bringing this library forward...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 18,
+      "dense_rank": 16,
+      "hybrid_rank": 2,
+      "rrf_score": 0.025978,
+      "teacher_scores": {
+        "positive_score": 0.973,
+        "negative_score": 0.0259,
+        "margin": 0.947
+      },
+      "lexical_jaccard_overlap": 0.1012,
+      "query_entities": [
+        "minifier_launcher",
+        "minifier_launcher.py"
+      ],
+      "candidate_entities": [
+        "api",
+        "beta <https://pytorch.org/blog/pytorch-feature-classification-changes/#beta>",
+        "github",
+        "github.com",
+        "jax",
+        "jax-like <https://github.com/google/jax>",
+        "pytorch",
+        "pytorch.org",
+        "torch.func"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 18,
+        "dense_rank": 16,
+        "teacher_negative_score": 0.0259
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 21,
+      "query_id": "train_ku_0353",
+      "ecosystem": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve timeout issues with nginx in kubernetes?",
+      "positive_chunk_id": "8c342f193290858c578ea423",
+      "positive_source_path": "tasks/administer-cluster/declare-network-policy.md",
+      "positive_excerpt": "When you attempt to access the `nginx` Service from a Pod without the correct labels, the request times out: ```console kubectl run busybox --rm -ti --image=busybox:1.28 -- /bin/sh ``` In your shell, run the command: ```shell wget --spider --timeout=1 nginx ``` ```none Connecting to nginx (10.100.0.16:80) wget: download timed out ```",
+      "hard_negative_chunk_id": "962fda8000217cd1df5bbd21",
+      "hard_negative_source_path": "tasks/run-application/run-stateless-application-deployment.md",
+      "hard_negative_excerpt": "You can run an application by creating a Kubernetes Deployment object, and you can describe a Deployment in a YAML file. For example, this YAML file describes a Deployment that runs the nginx:1.14.2 Docker image: 1. Create a Deployment based on the YAML file: ```shell kubectl apply -f https://k8s.io/examples/application/deployment.yaml ``` 1. Display information about the Deployment: ```shell kube...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 8,
+      "hybrid_rank": 12,
+      "rrf_score": 0.014706,
+      "teacher_scores": {
+        "positive_score": 0.7039,
+        "negative_score": 0.0935,
+        "margin": 0.6104
+      },
+      "lexical_jaccard_overlap": 0.1457,
+      "query_entities": [],
+      "candidate_entities": [
+        "1. display information about a pod:",
+        "1. display information about the deployment:",
+        "1. list the pods created by the deployment:",
+        "1.14.2",
+        "age",
+        "creationtimestamp",
+        "deployment.kubernetes.io",
+        "deployment.yaml",
+        "k8s.io",
+        "list",
+        "minimumreplicasavailable",
+        "minreadyseconds",
+        "name",
+        "name                                ready     status    restarts   age\n   nginx-deployment-1771418926-7o5ns   1/1       running   0          16h\n   nginx-deployment-1771418926-r18az   1/1       running   0          16h",
+        "name:     nginx-deployment\n   namespace:    default\n   creationtimestamp:  tue, 30 aug 2016 18:11:37 -0700\n   labels:     app=nginx\n   annotations:    deployment.kubernetes.io/revision=1\n   selector:   app=nginx\n   replicas:   2 desired | 2 updated | 2 total | 2 available | 0 unavailable\n   strategytype:   rollingupdate\n   minreadyseconds:  0\n   rollingupdatestrategy:  1 max unavailable, 1 max surge\n   pod template:\n     labels:       app=nginx\n     containers:\n       nginx:\n       image:              nginx:1.14.2\n       port:               80/tcp\n       environment:        <none>\n       mounts:             <none>\n     volumes:              <none>\n   conditions:\n     type          status  reason\n     ----          ------  ------\n     available     true    minimumreplicasavailable\n     progressing   true    newreplicasetavailable\n   oldreplicasets:   <none>\n   newreplicaset:    nginx-deployment-1771418926 (2/2 replicas created)\n   no events.",
+        "newreplicaset",
+        "newreplicasetavailable",
+        "oldreplicasets",
+        "ready",
+        "replicas",
+        "restarts",
+        "rollingupdate",
+        "rollingupdatestrategy",
+        "shell\n   kubectl apply -f https://k8s.io/examples/application/deployment.yaml",
+        "shell\n   kubectl describe deployment nginx-deployment",
+        "shell\n   kubectl describe pod <pod-name>",
+        "shell\n   kubectl get pods -l app=nginx",
+        "status",
+        "strategytype",
+        "tcp",
+        "the output is similar to this:",
+        "where",
+        "yaml"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 12,
+        "lexical_rank": null,
+        "dense_rank": 8,
+        "teacher_negative_score": 0.0935
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 22,
+      "query_id": "train_ku_0277",
+      "ecosystem": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve warning issues with ownerReference in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "positive_excerpt": "In v1.20+, if the garbage collector detects an invalid cross-namespace `ownerReference`, or a cluster-scoped dependent with an `ownerReference` referencing a namespaced kind, a warning Event with a reason of `OwnerRefInvalidNamespace` and an `involvedObject` of the invalid dependent is reported. You can check for that kind of Event by running `kubectl get events -A --field-selector=reason=OwnerRef...",
+      "hard_negative_chunk_id": "0d9421e9dfce143ba2941225",
+      "hard_negative_source_path": "reference/issues-security/issues.md",
+      "hard_negative_excerpt": "To report a security issue, please follow the [Kubernetes security disclosure process](/docs/reference/issues-security/security/#report-a-vulnerability). Work on Kubernetes code and public issues are tracked using [GitHub Issues](https://github.com/kubernetes/kubernetes/issues/). * Official [list of known CVEs](/docs/reference/issues-security/official-cve-feed/) (security vulnerabilities) that hav...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 9,
+      "dense_rank": null,
+      "hybrid_rank": 15,
+      "rrf_score": 0.014493,
+      "teacher_scores": {
+        "positive_score": 0.4435,
+        "negative_score": 0.028,
+        "margin": 0.4155
+      },
+      "lexical_jaccard_overlap": 0.0784,
+      "query_entities": [],
+      "candidate_entities": [
+        "cve",
+        "github",
+        "github.com",
+        "googlegroups.com",
+        "groups.google.com",
+        "list",
+        "response"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 15,
+        "lexical_rank": 9,
+        "dense_rank": null,
+        "teacher_negative_score": 0.028
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 23,
+      "query_id": "train_ku_0326",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between kubeadm.kubernetes.io and etcd.advertise in kubernetes?",
+      "positive_chunk_id": "068bd7afd4aa3a49d9b94ed4",
+      "positive_source_path": "reference/labels-annotations-taints/_index.md",
+      "positive_excerpt": "Type: Annotation Example: `kubeadm.kubernetes.io/etcd.advertise-client-urls: https://172.17.0.18:2379` Used on: Pod Annotation that kubeadm places on locally managed etcd Pods to keep track of a list of URLs where etcd clients should connect to. This is used mainly for etcd cluster health check purposes.",
+      "hard_negative_chunk_id": "8517eb73bb684284d23f11f5",
+      "hard_negative_source_path": "setup/production-environment/tools/kubeadm/troubleshooting-kubeadm.md",
+      "hard_negative_excerpt": "Only applicable to upgrading a control plane node with a kubeadm binary v1.28.3 or later, where the node is currently managed by kubeadm versions v1.28.0, v1.28.1 or v1.28.2. Here is the error message you may encounter: ``` [upgrade/etcd] Failed to upgrade etcd: couldn't upgrade control plane. kubeadm has tried to recover everything into the earlier state. Errors faced: static Pod hash for compone...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 6,
+      "dense_rank": 7,
+      "hybrid_rank": 3,
+      "rrf_score": 0.030077,
+      "teacher_scores": {
+        "positive_score": 0.8719,
+        "negative_score": 0.3709,
+        "margin": 0.501
+      },
+      "lexical_jaccard_overlap": 0.1439,
+      "query_entities": [
+        "etcd.advertise",
+        "kubeadm.kubernetes.io"
+      ],
+      "candidate_entities": [
+        "09.109104",
+        "172.17.0.3",
+        "172.17.0.4",
+        "172.17.0.6",
+        "[upgrade/etcd] failed to upgrade etcd: couldn't upgrade control plane. kubeadm has tried to recover everything into the earlier state. errors faced: static pod hash for component etcd on node kinder-upgrade-control-plane-1 did not change after 5m0s: timed out waiting for the condition\n[upgrade/etcd] waiting for previous etcd to become available\ni0907 10:10:09.109104    3704 etcd.go:588] [etcd] attempting to see if all cluster endpoints ([https://172.17.0.6:2379/ https://172.17.0.4:2379/ https://172.17.0.3:2379/]) are available 1/10\n[upgrade/etcd] etcd was rolled back and is now available\nstatic pod hash for component etcd on node kinder-upgrade-control-plane-1 did not change after 5m0s: timed out waiting for the condition\ncouldn't upgrade control plane. kubeadm has tried to recover everything into the earlier state. errors faced\nk8s.io/kubernetes/cmd/kubeadm/app/phases/upgrade.rollbackoldmanifests\n\tcmd/kubeadm/app/phases/upgrade/staticpods.go:525\nk8s.io/kubernetes/cmd/kubeadm/app/phases/upgrade.upgradecomponent\n\tcmd/kubeadm/app/phases/upgrade/staticpods.go:254\nk8s.io/kubernetes/cmd/kubeadm/app/phases/upgrade.performetcdstaticpodupgrade\n\tcmd/kubeadm/app/phases/upgrade/staticpods.go:338\n...",
+        "etcd.go",
+        "i0907",
+        "k8s.io",
+        "staticpods.go",
+        "upgrade.performetcdstaticpodupgrade",
+        "upgrade.rollbackoldmanifests",
+        "upgrade.upgradecomponent",
+        "v1.28.0",
+        "v1.28.1",
+        "v1.28.2",
+        "v1.28.3"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "EXAMPLE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": 6,
+        "dense_rank": 7,
+        "teacher_negative_score": 0.3709
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 24,
+      "query_id": "train_ku_0367",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between controller_utils and 15.525108 in kubernetes?",
+      "positive_chunk_id": "f7501e4b1649032d74075629",
+      "positive_source_path": "concepts/cluster-administration/system-logs.md",
+      "positive_excerpt": "Migration to structured log messages is an ongoing process. Not all log messages are structured in this version. When parsing log files, you must also handle unstructured log messages. Log formatting and value serialization are subject to change. Structured logging introduces a uniform structure in log messages allowing for programmatic extraction of information. You can store and process structur...",
+      "hard_negative_chunk_id": "7ebf1291f3b8d95d5d9f9db9",
+      "hard_negative_source_path": "concepts/architecture/controller.md",
+      "hard_negative_excerpt": "A controller tracks at least one Kubernetes resource type. These have a spec field that represents the desired state. The controller(s) for that resource are responsible for making the current state come closer to that desired state. The controller might carry the action out itself; more commonly, in Kubernetes, a controller will send messages to the that have useful side effects. You'll see examp...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 4,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.927,
+        "negative_score": 0.0462,
+        "margin": 0.8808
+      },
+      "lexical_jaccard_overlap": 0.0862,
+      "query_entities": [
+        "15.525108",
+        "controller_utils"
+      ],
+      "candidate_entities": [],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 4,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.0462
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 25,
+      "query_id": "train_ku_0287",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between ca.pem and key.pem in kubernetes?",
+      "positive_chunk_id": "fcba815235ca397bc1ec3328",
+      "positive_source_path": "reference/access-authn-authz/kubelet-tls-bootstrapping.md",
+      "positive_excerpt": "As without bootstrapping, you will need a Certificate Authority (CA) key and certificate. As without bootstrapping, these will be used to sign the kubelet certificate. As before, it is your responsibility to distribute them to control plane nodes. For the purposes of this document, we will assume these have been distributed to control plane nodes at `/var/lib/kubernetes/ca.pem` (certificate) and `...",
+      "hard_negative_chunk_id": "6ce57dbc466c6513d49f8325",
+      "hard_negative_source_path": "setup/best-practices/certificates.md",
+      "hard_negative_excerpt": "kubeadm generates two separate administrator certificates in kubeconfig files. One is in `admin.conf` and has `Subject: O = kubeadm:cluster-admins, CN = kubernetes-admin`. `kubeadm:cluster-admins` is a custom group bound to the `cluster-admin` ClusterRole. This file is generated on all kubeadm managed control plane machines. Another is in `super-admin.conf` that has `Subject: O = system:masters, C...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 7,
+      "dense_rank": 10,
+      "hybrid_rank": 4,
+      "rrf_score": 0.029211,
+      "teacher_scores": {
+        "positive_score": 0.7977,
+        "negative_score": 0.0242,
+        "margin": 0.7734
+      },
+      "lexical_jaccard_overlap": 0.1797,
+      "query_entities": [
+        "ca.pem",
+        "key.pem"
+      ],
+      "candidate_entities": [
+        "admin.conf",
+        "cluster-admin",
+        "clusterrole",
+        "kubeadm init",
+        "kubeadm:cluster-admins",
+        "kubeconfig",
+        "kubeconfig=<filename> kubectl config set-cluster default-cluster --server=https://<host ip>:6443 --certificate-authority <path-to-kubernetes-ca> --embed-certs\nkubeconfig=<filename> kubectl config set-credentials <credential-name> --client-key <path-to-key>.pem --client-certificate <path-to-cert>.pem --embed-certs\nkubeconfig=<filename> kubectl config set-context default-system --cluster default-cluster --user <credential-name>\nkubeconfig=<filename> kubectl config use-context default-system",
+        "kubectl",
+        "subject: o = kubeadm:cluster-admins, cn = kubernetes-admin",
+        "subject: o = system:masters, cn = kubernetes-super-admin",
+        "super-admin.conf"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 4,
+        "lexical_rank": 7,
+        "dense_rank": 10,
+        "teacher_negative_score": 0.0242
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 26,
+      "query_id": "train_ku_0351",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure nginx in kubernetes?",
+      "positive_chunk_id": "8c342f193290858c578ea423",
+      "positive_source_path": "tasks/administer-cluster/declare-network-policy.md",
+      "positive_excerpt": "When you attempt to access the `nginx` Service from a Pod without the correct labels, the request times out: ```console kubectl run busybox --rm -ti --image=busybox:1.28 -- /bin/sh ``` In your shell, run the command: ```shell wget --spider --timeout=1 nginx ``` ```none Connecting to nginx (10.100.0.16:80) wget: download timed out ```",
+      "hard_negative_chunk_id": "adadee59e158996ab34ad547",
+      "hard_negative_source_path": "tasks/configure-pod-container/share-process-namespace.md",
+      "hard_negative_excerpt": "```none user nginx; worker_processes 1; error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; ```",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 16,
+      "hybrid_rank": 2,
+      "rrf_score": 0.029287,
+      "teacher_scores": {
+        "positive_score": 0.671,
+        "negative_score": 0.1225,
+        "margin": 0.5485
+      },
+      "lexical_jaccard_overlap": 0.0882,
+      "query_entities": [],
+      "candidate_entities": [
+        "error.log",
+        "error_log",
+        "nginx.pid",
+        "none\nuser  nginx;\nworker_processes  1;\n\nerror_log  /var/log/nginx/error.log warn;\npid        /var/run/nginx.pid;\n\nevents {\n    worker_connections  1024;",
+        "worker_connections",
+        "worker_processes"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "EXAMPLE",
+        "PROCEDURE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 2,
+        "dense_rank": 16,
+        "teacher_negative_score": 0.1225
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 27,
+      "query_id": "train_ku_0313",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure userSecretNamespace in kubernetes?",
+      "positive_chunk_id": "9238a67f972cc9b038dfabe2",
+      "positive_source_path": "concepts/storage/storage-classes.md",
+      "positive_excerpt": "- `userSecretNamespace`: The namespace for `userSecretName`. - `fsType`: fsType that is supported by kubernetes. Default: `\"ext4\"`. - `imageFormat`: Ceph RBD image format, \"1\" or \"2\". Default is \"2\". - `imageFeatures`: This parameter is optional and should only be used if you set `imageFormat` to \"2\". Currently supported features are `layering` only. Default is \"\", and no features are turned on.",
+      "hard_negative_chunk_id": "5b5f46830dc52d613fd885b0",
+      "hard_negative_source_path": "tasks/configure-pod-container/configure-runasusername.md",
+      "hard_negative_excerpt": "This page shows how to use the `runAsUserName` setting for Pods and containers that will run on Windows nodes. This is roughly equivalent of the Linux-specific `runAsUser` setting, allowing you to run applications in a container as a different username than the default. ## You need to have a Kubernetes cluster and the kubectl command-line tool must be configured to communicate with your cluster. T...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 10,
+      "dense_rank": 13,
+      "hybrid_rank": 2,
+      "rrf_score": 0.027984,
+      "teacher_scores": {
+        "positive_score": 0.945,
+        "negative_score": 0.0519,
+        "margin": 0.8931
+      },
+      "lexical_jaccard_overlap": 0.1263,
+      "query_entities": [],
+      "candidate_entities": [
+        "runasuser",
+        "runasusername"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 10,
+        "dense_rank": 13,
+        "teacher_negative_score": 0.0519
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 28,
+      "query_id": "train_ku_0310",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure spec.rollbackTo in kubernetes?",
+      "positive_chunk_id": "222fb45e26cf5e106a2b19fa",
+      "positive_source_path": "reference/using-api/deprecation-guide.md",
+      "positive_excerpt": "The **extensions/v1beta1**, **apps/v1beta1**, and **apps/v1beta2** API versions of Deployment are no longer served as of v1.16. * Migrate manifests and API clients to use the **apps/v1** API version, available since v1.9. * All existing persisted objects are accessible via the new API * Notable changes: * `spec.rollbackTo` is removed * `spec.selector` is now required and immutable after creation; ...",
+      "hard_negative_chunk_id": "670e2c116bea82a30eb0d45a",
+      "hard_negative_source_path": "tasks/run-application/horizontal-pod-autoscale.md",
+      "hard_negative_excerpt": "When an HPA is enabled, it is recommended that the value of `spec.replicas` of the Deployment and / or StatefulSet be removed from their . If this isn't done, any time a change to that object is applied, for example via `kubectl apply -f deployment.yaml`, this will instruct Kubernetes to scale the current number of Pods to the value of the `spec.replicas` key. This may not be desired and could be ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 7,
+      "dense_rank": 21,
+      "hybrid_rank": 2,
+      "rrf_score": 0.027271,
+      "teacher_scores": {
+        "positive_score": 0.5016,
+        "negative_score": 0.042,
+        "margin": 0.4596
+      },
+      "lexical_jaccard_overlap": 0.106,
+      "query_entities": [
+        "spec.rollbackto"
+      ],
+      "candidate_entities": [
+        "deployment.yaml",
+        "deployment_name",
+        "horizontalpodautoscaler",
+        "hpa",
+        "kubectl",
+        "kubectl apply -f\ndeployment.yaml",
+        "kubectl apply -f deployment.yaml",
+        "kubectl apply edit-last-applied deployment/<deployment_name>",
+        "replicas",
+        "spec.replicas",
+        "statefulset"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION",
+        "EXAMPLE",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 7,
+        "dense_rank": 21,
+        "teacher_negative_score": 0.042
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 29,
+      "query_id": "train_ku_0346",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure tmpfs in kubernetes?",
+      "positive_chunk_id": "699926636f2773077655e39d",
+      "positive_source_path": "concepts/configuration/manage-resources-containers.md",
+      "positive_excerpt": "If you have a different configuration, then the kubelet does not apply resource limits for ephemeral local storage. The kubelet tracks `tmpfs` emptyDir volumes as container memory use, rather than as local ephemeral storage. The kubelet will only track the root filesystem for ephemeral storage. OS layouts that mount a separate disk to `/var/lib/kubelet` or `/var/lib/containers` will not report eph...",
+      "hard_negative_chunk_id": "7dd2428240a956056b12f9ce",
+      "hard_negative_source_path": "concepts/security/windows-security.md",
+      "hard_negative_excerpt": "On Windows, data from Secrets are written out in clear text onto the node's local storage (as compared to using tmpfs / in-memory filesystems on Linux). As a cluster operator, you should take both of the following additional measures: 1. Use file ACLs to secure the Secrets' file location. 1. Apply volume-level encryption using [BitLocker](https://docs.microsoft.com/windows/security/information-pro...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 16,
+      "hybrid_rank": 2,
+      "rrf_score": 0.029551,
+      "teacher_scores": {
+        "positive_score": 0.7189,
+        "negative_score": 0.0353,
+        "margin": 0.6836
+      },
+      "lexical_jaccard_overlap": 0.1237,
+      "query_entities": [],
+      "candidate_entities": [
+        "bitlocker",
+        "docs.microsoft.com"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 1,
+        "dense_rank": 16,
+        "teacher_negative_score": 0.0353
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 30,
+      "query_id": "train_ku_0369",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure deprecatedVersion in kubernetes?",
+      "positive_chunk_id": "dcfab5394393e002d2afe0cf",
+      "positive_source_path": "reference/using-api/deprecation-policy.md",
+      "positive_excerpt": "On a subsequent release (when the metric's `deprecatedVersion` is equal to _current_kubernetes_version - 3_)), a deprecated metric will become a _hidden_ metric. **_Unlike_** their deprecated counterparts, hidden metrics will _no longer_ be automatically registered to the metrics endpoint (hence hidden). However, they can be explicitly enabled through a command line flag on the binary (`--show-hid...",
+      "hard_negative_chunk_id": "b6c73328787a3e60a94c4515",
+      "hard_negative_source_path": "reference/using-api/deprecation-guide.md",
+      "hard_negative_excerpt": "As the Kubernetes API evolves, APIs are periodically reorganized or upgraded. When APIs evolve, the old API is deprecated and eventually removed. This page contains information you need to know when migrating from deprecated API versions to newer and more stable API versions.",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.7297,
+        "negative_score": 0.4454,
+        "margin": 0.2843
+      },
+      "lexical_jaccard_overlap": 0.0808,
+      "query_entities": [],
+      "candidate_entities": [
+        "api"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.4454
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 31,
+      "query_id": "train_fa_0445",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between maximum_length and regex in fastapi?",
+      "positive_chunk_id": "3193be200596c6cb9dcad2f0",
+      "positive_source_path": "index.md",
+      "positive_excerpt": "For a more complete example including more features, see the <a href=\"https://fastapi.tiangolo.com/tutorial/\">Tutorial - User Guide</a>. **Spoiler alert**: the tutorial - user guide includes: * Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**. * How to set **validation constraints** as `maximum_length` or `regex`. * A very powerf...",
+      "hard_negative_chunk_id": "2296f18aec56362e25a13f1e",
+      "hard_negative_source_path": "alternatives.md",
+      "hard_negative_excerpt": "To understand, compare, and see the difference between Uvicorn, Starlette and FastAPI, check the section about [Benchmarks](benchmarks.md){.internal-link target=_blank}.",
+      "mining_retriever": "bm25",
+      "lexical_rank": 2,
+      "dense_rank": null,
+      "hybrid_rank": 2,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.4929,
+        "negative_score": 0.0304,
+        "margin": 0.4625
+      },
+      "lexical_jaccard_overlap": 0.075,
+      "query_entities": [
+        "maximum_length",
+        "regex"
+      ],
+      "candidate_entities": [
+        "benchmarks.md"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 2,
+        "dense_rank": null,
+        "teacher_negative_score": 0.0304
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 32,
+      "query_id": "train_fa_0410",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between response_description and description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "positive_excerpt": "You can specify the response description with the parameter `response_description`: === \"Python 3.10+\" ```Python hl_lines=\"19\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py310.py!} ``` === \"Python 3.9+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py39.py!} ``` === \"Python 3.8+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operati...",
+      "hard_negative_chunk_id": "0e0e57630335462875d8b505",
+      "hard_negative_source_path": "tutorial/response-status-code.md",
+      "hard_negative_excerpt": "Let's see the previous example again: ```Python hl_lines=\"6\" {!../../../docs_src/response_status_code/tutorial001.py!} ``` `201` is the status code for \"Created\". But you don't have to memorize what each of these codes mean. You can use the convenience variables from `fastapi.status`. ```Python hl_lines=\"1 6\" {!../../../docs_src/response_status_code/tutorial002.py!} ``` They are just a convenience...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 20,
+      "dense_rank": 9,
+      "hybrid_rank": 2,
+      "rrf_score": 0.026993,
+      "teacher_scores": {
+        "positive_score": 0.9756,
+        "negative_score": 0.0258,
+        "margin": 0.9498
+      },
+      "lexical_jaccard_overlap": 0.177,
+      "query_entities": [
+        "description",
+        "response_description"
+      ],
+      "candidate_entities": [
+        ".\n\n**fastapi** provides the same",
+        "as",
+        "docs_src",
+        "fastapi.status",
+        "hl_lines",
+        "image02.png",
+        "is the status code for \"created\".\n\nbut you don't have to memorize what each of these codes mean.\n\nyou can use the convenience variables from",
+        "python hl_lines=\"1  6\"\n{!../../../docs_src/response_status_code/tutorial002.py!}",
+        "python hl_lines=\"6\"\n{!../../../docs_src/response_status_code/tutorial001.py!}",
+        "response",
+        "response_status_code",
+        "starlette.status",
+        "they are just a convenience, they hold the same number, but that way you can use the editor's autocomplete to find them:\n\n<img src=\"/img/tutorial/response-status-code/image02.png\">\n\n!!! note \"technical details\"\n    you could also use",
+        "tutorial001.py",
+        "tutorial002.py"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "DEFINITION",
+        "EXAMPLE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 20,
+        "dense_rank": 9,
+        "teacher_negative_score": 0.0258
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 33,
+      "query_id": "train_fa_0387",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between user_in and UserIn in fastapi?",
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_path": "tutorial/extra-models.md",
+      "positive_excerpt": "`user_in` is a Pydantic model of class `UserIn`. Pydantic models have a `.dict()` method that returns a `dict` with the model's data. So, if we create a Pydantic object `user_in` like: ```Python user_in = UserIn(username=\"john\", password=\"secret\", email=\"john.doe@example.com\") ``` and then we call: ```Python user_dict = user_in.dict() ``` we now have a `dict` with the data in the variable `user_di...",
+      "hard_negative_chunk_id": "2296f18aec56362e25a13f1e",
+      "hard_negative_source_path": "alternatives.md",
+      "hard_negative_excerpt": "To understand, compare, and see the difference between Uvicorn, Starlette and FastAPI, check the section about [Benchmarks](benchmarks.md){.internal-link target=_blank}.",
+      "mining_retriever": "bm25",
+      "lexical_rank": 2,
+      "dense_rank": null,
+      "hybrid_rank": 4,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.6735,
+        "negative_score": 0.0485,
+        "margin": 0.625
+      },
+      "lexical_jaccard_overlap": 0.0423,
+      "query_entities": [
+        "user_in",
+        "userin"
+      ],
+      "candidate_entities": [
+        "benchmarks.md"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 4,
+        "lexical_rank": 2,
+        "dense_rank": null,
+        "teacher_negative_score": 0.0485
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 34,
+      "query_id": "train_fa_0383",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between dict and list in fastapi?",
+      "positive_chunk_id": "8993648a7cdf754bb648f723",
+      "positive_source_path": "advanced/response-directly.md",
+      "positive_excerpt": "When you create a **FastAPI** *path operation* you can normally return any data from it: a `dict`, a `list`, a Pydantic model, a database model, etc. By default, **FastAPI** would automatically convert that return value to JSON using the `jsonable_encoder` explained in [JSON Compatible Encoder](../tutorial/encoder.md){.internal-link target=_blank}. Then, behind the scenes, it would put that JSON-c...",
+      "hard_negative_chunk_id": "2296f18aec56362e25a13f1e",
+      "hard_negative_source_path": "alternatives.md",
+      "hard_negative_excerpt": "To understand, compare, and see the difference between Uvicorn, Starlette and FastAPI, check the section about [Benchmarks](benchmarks.md){.internal-link target=_blank}.",
+      "mining_retriever": "bm25",
+      "lexical_rank": 1,
+      "dense_rank": null,
+      "hybrid_rank": 5,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.8154,
+        "negative_score": 0.0421,
+        "margin": 0.7733
+      },
+      "lexical_jaccard_overlap": 0.0952,
+      "query_entities": [
+        "dict",
+        "list"
+      ],
+      "candidate_entities": [
+        "benchmarks.md"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 5,
+        "lexical_rank": 1,
+        "dense_rank": null,
+        "teacher_negative_score": 0.0421
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 35,
+      "query_id": "train_fa_0429",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between dict and list in fastapi?",
+      "positive_chunk_id": "b19cf4587787d65382555e20",
+      "positive_source_path": "features.md",
+      "positive_excerpt": "* Validation for most (or all?) Python **data types**, including: * JSON objects (`dict`). * JSON array (`list`) defining item types. * String (`str`) fields, defining min and max lengths. * Numbers (`int`, `float`) with min and max values, etc. * Validation for more exotic types, like: * URL. * Email. * UUID. * ...and others. All the validation is handled by the well-established and robust **Pyda...",
+      "hard_negative_chunk_id": "2296f18aec56362e25a13f1e",
+      "hard_negative_source_path": "alternatives.md",
+      "hard_negative_excerpt": "To understand, compare, and see the difference between Uvicorn, Starlette and FastAPI, check the section about [Benchmarks](benchmarks.md){.internal-link target=_blank}.",
+      "mining_retriever": "bm25",
+      "lexical_rank": 1,
+      "dense_rank": null,
+      "hybrid_rank": 5,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.5289,
+        "negative_score": 0.0421,
+        "margin": 0.4868
+      },
+      "lexical_jaccard_overlap": 0.0448,
+      "query_entities": [
+        "dict",
+        "list"
+      ],
+      "candidate_entities": [
+        "benchmarks.md"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "GENERAL_CONTEXT"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 5,
+        "lexical_rank": 1,
+        "dense_rank": null,
+        "teacher_negative_score": 0.0421
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 36,
+      "query_id": "train_fa_0475",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure HTTPConnection in fastapi?",
+      "positive_chunk_id": "9ecf908f16379d896c290fbf",
+      "positive_source_path": "reference/httpconnection.md",
+      "positive_excerpt": "When you want to define dependencies that should be compatible with both HTTP and WebSockets, you can define a parameter that takes an `HTTPConnection` instead of a `Request` or a `WebSocket`. You can import it from `fastapi.requests`: ```python from fastapi.requests import HTTPConnection ``` ::: fastapi.requests.HTTPConnection",
+      "hard_negative_chunk_id": "b961b2990329eb0f8b3d3119",
+      "hard_negative_source_path": "reference/websockets.md",
+      "hard_negative_excerpt": "When defining WebSockets, you normally declare a parameter of type `WebSocket` and with it you can read data from the client and send data to it. It is provided directly by Starlette, but you can import it from `fastapi`: ```python from fastapi import WebSocket ``` !!! tip When you want to define dependencies that should be compatible with both HTTP and WebSockets, you can define a parameter that ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 3,
+      "dense_rank": 3,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031746,
+      "teacher_scores": {
+        "positive_score": 0.9007,
+        "negative_score": 0.5467,
+        "margin": 0.354
+      },
+      "lexical_jaccard_overlap": 0.3827,
+      "query_entities": [],
+      "candidate_entities": [
+        "!!! tip\n    when you want to define dependencies that should be compatible with both http and websockets, you can define a parameter that takes an",
+        ".\n\n::: fastapi.websocket\n    options:\n        members:\n            - scope\n            - app\n            - url\n            - base_url\n            - headers\n            - query_params\n            - path_params\n            - cookies\n            - client\n            - state\n            - url_for\n            - client_state\n            - application_state\n            - receive\n            - send\n            - accept\n            - receive_text\n            - receive_bytes\n            - receive_json\n            - iter_text\n            - iter_bytes\n            - iter_json\n            - send_text\n            - send_bytes\n            - send_json\n            - close\n\nwhen a client disconnects, a",
+        "application_state",
+        "base_url",
+        "client_state",
+        "exception is raised, you can catch it.\n\nyou can import it directly form",
+        "fastapi",
+        "fastapi.websocket",
+        "fastapi.websocketdisconnect",
+        "http",
+        "instead of a",
+        "iter_bytes",
+        "iter_json",
+        "iter_text",
+        "or a",
+        "path_params",
+        "python\nfrom fastapi import websocket",
+        "python\nfrom fastapi import websocketdisconnect",
+        "query_params",
+        "receive_bytes",
+        "receive_json",
+        "receive_text",
+        "send_bytes",
+        "send_json",
+        "send_text",
+        "url_for",
+        "websocket",
+        "websocketdisconnect",
+        "websockets"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "EXAMPLE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": 3,
+        "dense_rank": 3,
+        "teacher_negative_score": 0.5467
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 37,
+      "query_id": "train_fa_0444",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure maximum_length in fastapi?",
+      "positive_chunk_id": "3193be200596c6cb9dcad2f0",
+      "positive_source_path": "index.md",
+      "positive_excerpt": "For a more complete example including more features, see the <a href=\"https://fastapi.tiangolo.com/tutorial/\">Tutorial - User Guide</a>. **Spoiler alert**: the tutorial - user guide includes: * Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**. * How to set **validation constraints** as `maximum_length` or `regex`. * A very powerf...",
+      "hard_negative_chunk_id": "b19cf4587787d65382555e20",
+      "hard_negative_source_path": "features.md",
+      "hard_negative_excerpt": "* Validation for most (or all?) Python **data types**, including: * JSON objects (`dict`). * JSON array (`list`) defining item types. * String (`str`) fields, defining min and max lengths. * Numbers (`int`, `float`) with min and max values, etc. * Validation for more exotic types, like: * URL. * Email. * UUID. * ...and others. All the validation is handled by the well-established and robust **Pyda...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.3916,
+        "negative_score": 0.1284,
+        "margin": 0.2631
+      },
+      "lexical_jaccard_overlap": 0.0942,
+      "query_entities": [
+        "maximum_length"
+      ],
+      "candidate_entities": [
+        "dict",
+        "float",
+        "int",
+        "json",
+        "list",
+        "str",
+        "url",
+        "uuid"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "DEFINITION"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 2,
+        "lexical_rank": null,
+        "dense_rank": 2,
+        "teacher_negative_score": 0.1284
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 38,
+      "query_id": "train_fa_0474",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of HTTPConnection class in fastapi?",
+      "positive_chunk_id": "9ecf908f16379d896c290fbf",
+      "positive_source_path": "reference/httpconnection.md",
+      "positive_excerpt": "When you want to define dependencies that should be compatible with both HTTP and WebSockets, you can define a parameter that takes an `HTTPConnection` instead of a `Request` or a `WebSocket`. You can import it from `fastapi.requests`: ```python from fastapi.requests import HTTPConnection ``` ::: fastapi.requests.HTTPConnection",
+      "hard_negative_chunk_id": "b961b2990329eb0f8b3d3119",
+      "hard_negative_source_path": "reference/websockets.md",
+      "hard_negative_excerpt": "When defining WebSockets, you normally declare a parameter of type `WebSocket` and with it you can read data from the client and send data to it. It is provided directly by Starlette, but you can import it from `fastapi`: ```python from fastapi import WebSocket ``` !!! tip When you want to define dependencies that should be compatible with both HTTP and WebSockets, you can define a parameter that ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 3,
+      "dense_rank": 4,
+      "hybrid_rank": 3,
+      "rrf_score": 0.031498,
+      "teacher_scores": {
+        "positive_score": 0.8161,
+        "negative_score": 0.2601,
+        "margin": 0.556
+      },
+      "lexical_jaccard_overlap": 0.3827,
+      "query_entities": [],
+      "candidate_entities": [
+        "!!! tip\n    when you want to define dependencies that should be compatible with both http and websockets, you can define a parameter that takes an",
+        ".\n\n::: fastapi.websocket\n    options:\n        members:\n            - scope\n            - app\n            - url\n            - base_url\n            - headers\n            - query_params\n            - path_params\n            - cookies\n            - client\n            - state\n            - url_for\n            - client_state\n            - application_state\n            - receive\n            - send\n            - accept\n            - receive_text\n            - receive_bytes\n            - receive_json\n            - iter_text\n            - iter_bytes\n            - iter_json\n            - send_text\n            - send_bytes\n            - send_json\n            - close\n\nwhen a client disconnects, a",
+        "application_state",
+        "base_url",
+        "client_state",
+        "exception is raised, you can catch it.\n\nyou can import it directly form",
+        "fastapi",
+        "fastapi.websocket",
+        "fastapi.websocketdisconnect",
+        "http",
+        "instead of a",
+        "iter_bytes",
+        "iter_json",
+        "iter_text",
+        "or a",
+        "path_params",
+        "python\nfrom fastapi import websocket",
+        "python\nfrom fastapi import websocketdisconnect",
+        "query_params",
+        "receive_bytes",
+        "receive_json",
+        "receive_text",
+        "send_bytes",
+        "send_json",
+        "send_text",
+        "url_for",
+        "websocket",
+        "websocketdisconnect",
+        "websockets"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "EXAMPLE",
+        "TROUBLESHOOTING"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": 3,
+        "dense_rank": 4,
+        "teacher_negative_score": 0.2601
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 39,
+      "query_id": "train_fa_0463",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure get in fastapi?",
+      "positive_chunk_id": "8053fe9372738685123f8902",
+      "positive_source_path": "tutorial/first-steps.md",
+      "positive_excerpt": "This is our \"**path operation function**\": * **path**: is `/`. * **operation**: is `get`. * **function**: is the function below the \"decorator\" (below `@app.get(\"/\")`). ```Python hl_lines=\"7\" {!../../../docs_src/first_steps/tutorial001.py!} ``` This is a Python function. It will be called by **FastAPI** whenever it receives a request to the URL \"`/`\" using a `GET` operation. In this case, it is an...",
+      "hard_negative_chunk_id": "82aa5f9cf9324c154ffcdd3a",
+      "hard_negative_source_path": "reference/parameters.md",
+      "hard_negative_excerpt": "Here's the reference information for the request parameters. These are the special functions that you can put in *path operation function* parameters or dependency functions with `Annotated` to get data from the request. It includes: * `Query()` * `Path()` * `Body()` * `Cookie()` * `Header()` * `Form()` * `File()` You can import them all directly from `fastapi`: ```python from fastapi import Body,...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 16,
+      "dense_rank": 7,
+      "hybrid_rank": 3,
+      "rrf_score": 0.028083,
+      "teacher_scores": {
+        "positive_score": 0.6249,
+        "negative_score": 0.1134,
+        "margin": 0.5115
+      },
+      "lexical_jaccard_overlap": 0.129,
+      "query_entities": [],
+      "candidate_entities": [
+        "annotated",
+        "body()",
+        "cookie",
+        "cookie()",
+        "fastapi",
+        "fastapi.body",
+        "fastapi.cookie",
+        "fastapi.file",
+        "fastapi.form",
+        "fastapi.header",
+        "fastapi.path",
+        "fastapi.query",
+        "file()",
+        "form()",
+        "header",
+        "header()",
+        "path()",
+        "python\nfrom fastapi import body, cookie, file, form, header, path, query",
+        "query()"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "EXAMPLE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": 16,
+        "dense_rank": 7,
+        "teacher_negative_score": 0.1134
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 40,
+      "query_id": "train_fa_0409",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure response_description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "positive_excerpt": "You can specify the response description with the parameter `response_description`: === \"Python 3.10+\" ```Python hl_lines=\"19\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py310.py!} ``` === \"Python 3.9+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py39.py!} ``` === \"Python 3.8+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operati...",
+      "hard_negative_chunk_id": "c6105ad9768750834a29247b",
+      "hard_negative_source_path": "deployment/https.md",
+      "hard_negative_excerpt": "Having **HTTPS** is very important, and quite **critical** in most cases. Most of the effort you as a developer have to put around HTTPS is just about **understanding these concepts** and how they work. But once you know the basic information of **HTTPS for developers** you can easily combine and configure different tools to help you manage everything in a simple way. In some of the next chapters,...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 2,
+      "dense_rank": null,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.9857,
+        "negative_score": 0.0533,
+        "margin": 0.9324
+      },
+      "lexical_jaccard_overlap": 0.0721,
+      "query_entities": [
+        "response_description"
+      ],
+      "candidate_entities": [
+        "https"
+      ],
+      "entity_overlap": [],
+      "answer_functions": [
+        "CONFIGURATION",
+        "PROCEDURE"
+      ],
+      "hardness_signal": {
+        "has_top10_rank": true,
+        "hybrid_rank": 3,
+        "lexical_rank": 2,
+        "dense_rank": null,
+        "teacher_negative_score": 0.0533
+      },
+      "v2_verification_status": "SAFE_NEGATIVE_V2",
+      "v2_verification_reason": "VERIFIED_HARD_CONFUSER_DIFFERENT_ANSWER",
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "difficulty_judgment": null,
+        "allowed_difficulty_judgments": [
+          "HARD_CONFUSER",
+          "MODERATE_CONFUSER",
+          "TRIVIAL"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+{
+  "audit_name": "E7_QUERY_POSITIVE_AUDIT",
+  "description": "Focused human audit of queries with potential positive mapping mismatches, heading artifacts, or low lexical overlap.",
+  "status": "PENDING_HUMAN_AUDIT",
+  "total_items": 11,
+  "selection_criteria": "Deduplicated union of REVIEW_POSITIVE_MAPPING, HEADING_ARTIFACT, and VERY_LOW_LEXICAL_OVERLAP.",
+  "ecosystem_distribution": {
+    "postgresql": 4,
+    "pytorch": 7,
+    "kubernetes": 0,
+    "fastapi": 0
+  },
+  "audit_items": [
+    {
+      "query_id": "train_po_0002",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.0533,
+      "key_tokens_extracted": [
+        "rel_16_stable"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rel_16_stable"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "positive_chunk_id": "13586ed97d7472b603df33b6",
+      "positive_source_file": "release-16.sgml",
+      "positive_breadcrumb": "Release 16.3",
+      "positive_excerpt": "Branch: master [97287bdfa] 2024-01-29 12:08:57 -0600\nBranch: REL_16_STABLE [1b924a86e] 2024-01-29 12:09:03 -0600\nBranch: REL_15_STABLE [3726c1cb0] 2024-01-29 12:09:08 -0600\n-->\n Move is_valid_ascii() \n from mb/pg_wchar.h \n to utils/ascii.h (Jubilee Young)\n\nThis change avoids the need to\n include &lt;simd.h&gt; \n in pg_wchar.h , which was causing problems for\n some third-party code.\n\nBranch: master [400928b83] 2024-01-29 12:06:13 -0500\nBranch: REL_16_STABLE [e02fea093] 2024-01-29 12:06:07 -0500\nB...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_po_0030",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.0316,
+      "key_tokens_extracted": [
+        "rel_16_stable"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rel_16_stable"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "positive_chunk_id": "d45af033d1c66df05a40cdf9",
+      "positive_source_file": "release-16.sgml",
+      "positive_breadcrumb": "Release 16.3",
+      "positive_excerpt": "Branch: REL_16_STABLE [f6f61a4bd] 2024-04-04 17:25:00 +0900\nBranch: REL_15_STABLE [3f96d113f] 2024-04-04 17:25:02 +0900\nBranch: REL_14_STABLE [e10ca95ff] 2024-04-04 17:25:04 +0900\n-->\n Avoid corrupting exception stack if an FDW implements async append\n but doesn't configure any wait conditions for the Append plan node\n to wait for (Alexander Pyhalov)\n\nBranch: master [f5a465f1a] 2024-02-25 16:15:07 -0500\nBranch: REL_16_STABLE [8c785d354] 2024-02-25 16:15:07 -0500\nBranch: REL_15_STABLE [940489b46]...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_po_0054",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "VERY_LOW_LEXICAL_OVERLAP",
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.023,
+      "key_tokens_extracted": [
+        "rel_16_stable"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rel_16_stable"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "positive_chunk_id": "9c7cf48803b2ba36c1defc80",
+      "positive_source_file": "release-16.sgml",
+      "positive_breadcrumb": "Release 16.3",
+      "positive_excerpt": "Branch: master [f65ab862e] 2024-04-29 10:24:56 -0700\nBranch: REL_16_STABLE [92685c389] 2024-04-29 10:24:59 -0700\nBranch: REL_15_STABLE [7c5915c4b] 2024-04-29 10:24:59 -0700\nBranch: REL_14_STABLE [2ca19aa81] 2024-04-29 10:25:00 -0700\nBranch: REL_13_STABLE [70cadfba0] 2024-04-29 10:25:00 -0700\nBranch: REL_12_STABLE [f222349c4] 2024-04-29 10:25:00 -0700\n-->\n Avoid race condition while examining per-relation frozen-XID values\n (Noah Misch)\n\nVACUUM 's computation of per-database frozen-XID\n values fr...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_po_0085",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of A Brief History of PostgreSQL in postgresql?",
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE"
+      ],
+      "lexical_jaccard": 0.1212,
+      "key_tokens_extracted": [
+        "brief",
+        "history"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "brief",
+        "history"
+      ],
+      "positive_chunk_id": "306b8acb0fbe521349fbde11",
+      "positive_source_file": "history.sgml",
+      "positive_breadcrumb": "A Brief History of PostgreSQL",
+      "positive_excerpt": "Many people continue to refer to\n PostgreSQL as Postgres \n (now rarely in all capital letters) because of tradition or because\n it is easier to pronounce. This usage is widely accepted as a\n nickname or alias.\n\nThe emphasis during development of\n Postgres95 was on identifying and\n understanding existing problems in the server code. With\n PostgreSQL , the emphasis has shifted to\n augmenting features and capabilities, although work continues in\n all areas.\n\nDetails about what has happened in Postg...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0151",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of CUDA semantics  Best practices in pytorch?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY",
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.0583,
+      "key_tokens_extracted": [
+        "cuda",
+        "semantics",
+        "best",
+        "practices"
+      ],
+      "key_tokens_matched_in_positive": [
+        "cuda"
+      ],
+      "key_tokens_missing_in_positive": [
+        "semantics",
+        "best",
+        "practices"
+      ],
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_file": "notes/cuda.rst",
+      "positive_breadcrumb": "CUDA semantics > Best practices",
+      "positive_excerpt": "Device-agnostic code\n^^^^^^^^^^^^^^^^^^^^\n\nDue to the structure of PyTorch, you may need to explicitly write\ndevice-agnostic (CPU or GPU) code; an example may be creating a new tensor as\nthe initial hidden state of a recurrent neural network.\n\nThe first step is to determine whether the GPU should be used or not. A common\npattern is to use Python's ``argparse`` module to read in user arguments, and\nhave a flag that can be used to disable CUDA, in combination with\n:meth:`~torch.cuda.is_available`....",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0155",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchTensor  Data types in pytorch?",
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "lexical_jaccard": 0.0,
+      "key_tokens_extracted": [
+        "torchtensor",
+        "data",
+        "types"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "torchtensor",
+        "data",
+        "types"
+      ],
+      "positive_chunk_id": "5d2bd6022f1a2ba994674796",
+      "positive_source_file": "tensors.rst",
+      "positive_breadcrumb": "torch.Tensor > Data types",
+      "positive_excerpt": "``torch.quint8`` quantized 8-bit integer (signed) ``torch.qint8`` quantized 32-bit integer (signed) ``torch.qint32`` quantized 4-bit integer (unsigned) [3]_ ``torch.quint4x2`` 8-bit floating point, e4m3 [5]_ ``torch.float8_e4m3fn`` (limited support) 8-bit floating point, e5m2 [5]_ ``torch.float8_e5m2`` (limited support) ======================================= ===========================================",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0196",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchfx  Writing Transformations in pytorch?",
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "lexical_jaccard": 0.0,
+      "key_tokens_extracted": [
+        "torchfx",
+        "writing",
+        "transformations"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "torchfx",
+        "writing",
+        "transformations"
+      ],
+      "positive_chunk_id": "6356ec9fbbc3d357a317a6e4",
+      "positive_source_file": "fx.rst",
+      "positive_breadcrumb": "torch.fx > Writing Transformations",
+      "positive_excerpt": "+---------------+---------------+----------------------------+--------------------+-------------+ | output | output | output | (topk_1,) | {} | +---------------+---------------+----------------------------+--------------------+-------------+",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0202",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure b7f064c000000_0 in pytorch?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.0521,
+      "key_tokens_extracted": [
+        "b7f064c000000_0"
+      ],
+      "key_tokens_matched_in_positive": [
+        "b7f064c000000_0"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst",
+      "positive_breadcrumb": "Using the visualizer > Allocator State History",
+      "positive_excerpt": "The Allocator State History shows individual allocator events in a timeline on the left. Select an event in the timeline to see a visual summary of the\nallocator state at that event. This summary shows each individual segment returned from cudaMalloc and how it is split up into blocks of individual allocations\nor free space. Mouse over segments and blocks to see the stack trace when the memory was allocated. Mouse over events to see the stack trace when the event occurred,\nsuch as when a tensor ...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0203",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve oom issues with b7f064c000000_0 in pytorch?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.0515,
+      "key_tokens_extracted": [
+        "oom",
+        "b7f064c000000_0"
+      ],
+      "key_tokens_matched_in_positive": [
+        "oom",
+        "b7f064c000000_0"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst",
+      "positive_breadcrumb": "Using the visualizer > Allocator State History",
+      "positive_excerpt": "The Allocator State History shows individual allocator events in a timeline on the left. Select an event in the timeline to see a visual summary of the\nallocator state at that event. This summary shows each individual segment returned from cudaMalloc and how it is split up into blocks of individual allocations\nor free space. Mouse over segments and blocks to see the stack trace when the memory was allocated. Mouse over events to see the stack trace when the event occurred,\nsuch as when a tensor ...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0217",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchnn  Loss Functions in pytorch?",
+      "quality_status": "REVIEW_QUERY",
+      "quality_flags": [
+        "VERY_LOW_LEXICAL_OVERLAP",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "lexical_jaccard": 0.0,
+      "key_tokens_extracted": [
+        "torchnn",
+        "loss",
+        "functions"
+      ],
+      "key_tokens_matched_in_positive": [
+        "loss"
+      ],
+      "key_tokens_missing_in_positive": [
+        "torchnn",
+        "functions"
+      ],
+      "positive_chunk_id": "4a77147edd325550435d7b6c",
+      "positive_source_file": "nn.rst",
+      "positive_breadcrumb": "torch.nn > Loss Functions",
+      "positive_excerpt": "nn.L1Loss\n    nn.MSELoss\n    nn.CrossEntropyLoss\n    nn.CTCLoss\n    nn.NLLLoss\n    nn.PoissonNLLLoss\n    nn.GaussianNLLLoss\n    nn.KLDivLoss\n    nn.BCELoss\n    nn.BCEWithLogitsLoss\n    nn.MarginRankingLoss\n    nn.HingeEmbeddingLoss\n    nn.MultiLabelMarginLoss\n    nn.HuberLoss\n    nn.SmoothL1Loss\n    nn.SoftMarginLoss\n    nn.MultiLabelSoftMarginLoss\n    nn.CosineEmbeddingLoss\n    nn.MultiMarginLoss\n    nn.TripletMarginLoss\n    nn.TripletMarginWithDistanceLoss",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "query_id": "train_py_0226",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of PyTorch 20 Troubleshooting  Minifying TorchInductor Errors in pytorch?",
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY",
+        "HEADING_ARTIFACT"
+      ],
+      "lexical_jaccard": 0.0286,
+      "key_tokens_extracted": [
+        "troubleshooting",
+        "minifying",
+        "torchinductor",
+        "errors"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "troubleshooting",
+        "minifying",
+        "torchinductor",
+        "errors"
+      ],
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "positive_breadcrumb": "PyTorch 2.0 Troubleshooting > Minifying TorchInductor Errors",
+      "positive_excerpt": "From here, let\u2019s run the minifier to get a minimal repro. Setting the\nenvironment variable ``TORCHDYNAMO_REPRO_AFTER=\"aot\"`` (or setting\n``torch._dynamo.config.repro_after=\"aot\"`` directly) will generate a\nPython program which reduces the graph produced by AOTAutograd to the\nsmallest subgraph which reproduces the error. (See below for an example\nwhere we minify the graph produced by TorchDynamo) Running the program\nwith this environment variable should show nearly `identical\noutput <https://gist...",
+      "human_audit": {
+        "query_decision": null,
+        "allowed_query_decisions": [
+          "VALID",
+          "REVISE",
+          "REJECT"
+        ],
+        "positive_decision": null,
+        "allowed_positive_decisions": [
+          "DIRECT_SUPPORT",
+          "PARTIAL_SUPPORT",
+          "POSITIVE_MISMATCH"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    }
+  ]
+}
