@@ -1,0 +1,210 @@
+[
+  {
+    "comparison": "E1a vs E0",
+    "description": "BGE-small vs BM25",
+    "candidate_id": "E1a",
+    "baseline_id": "E0",
+    "delta_ndcg10": {
+      "mean": -0.019759982463560564,
+      "ci_95_bca_lower": -0.07507016948119515,
+      "ci_95_bca_upper": 0.03623698799184341,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": -0.017857142857142856,
+      "ci_95_bca_lower": -0.075,
+      "ci_95_bca_upper": 0.04285714285714286,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 9,
+      "candidate_losses": 12,
+      "both_hit": 117,
+      "both_miss": 2,
+      "chi2_stat": 0.19047619047619047,
+      "p_value": 0.6625205835400574
+    }
+  },
+  {
+    "comparison": "E1c vs E0",
+    "description": "Qwen3 vs BM25",
+    "candidate_id": "E1c",
+    "baseline_id": "E0",
+    "delta_ndcg10": {
+      "mean": 0.09364240877444793,
+      "ci_95_bca_lower": 0.04816968038041448,
+      "ci_95_bca_upper": 0.14057474924127972,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": 0.06785714285714285,
+      "ci_95_bca_lower": 0.02142857142857143,
+      "ci_95_bca_upper": 0.12142857142857143,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 9,
+      "candidate_losses": 4,
+      "both_hit": 125,
+      "both_miss": 2,
+      "chi2_stat": 1.2307692307692308,
+      "p_value": 0.26725749315438785
+    }
+  },
+  {
+    "comparison": "E2a vs E0",
+    "description": "Hybrid (BM25+BGE) vs BM25",
+    "candidate_id": "E2a",
+    "baseline_id": "E0",
+    "delta_ndcg10": {
+      "mean": 0.03179787536407151,
+      "ci_95_bca_lower": -0.002629880330765449,
+      "ci_95_bca_upper": 0.06738224593582258,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": 0.04642857142857143,
+      "ci_95_bca_lower": 0.003571428571428571,
+      "ci_95_bca_upper": 0.09285714285714286,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 8,
+      "candidate_losses": 5,
+      "both_hit": 124,
+      "both_miss": 3,
+      "chi2_stat": 0.3076923076923077,
+      "p_value": 0.5790997419539188
+    }
+  },
+  {
+    "comparison": "E2a vs E1a",
+    "description": "Hybrid (BM25+BGE) vs BGE-small",
+    "candidate_id": "E2a",
+    "baseline_id": "E1a",
+    "delta_ndcg10": {
+      "mean": 0.05155785782763208,
+      "ci_95_bca_lower": 0.01615688471286394,
+      "ci_95_bca_upper": 0.08669164013834643,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": 0.06428571428571428,
+      "ci_95_bca_lower": 0.025,
+      "ci_95_bca_upper": 0.10357142857142858,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 7,
+      "candidate_losses": 1,
+      "both_hit": 125,
+      "both_miss": 7,
+      "chi2_stat": 3.125,
+      "p_value": 0.07709987174354205
+    }
+  },
+  {
+    "comparison": "E2c vs E0",
+    "description": "Hybrid (BM25+Qwen3) vs BM25",
+    "candidate_id": "E2c",
+    "baseline_id": "E0",
+    "delta_ndcg10": {
+      "mean": 0.0809187210381632,
+      "ci_95_bca_lower": 0.056058232637673025,
+      "ci_95_bca_upper": 0.10675623797055464,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": 0.08928571428571429,
+      "ci_95_bca_lower": 0.05714285714285715,
+      "ci_95_bca_upper": 0.12857142857142856,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 7,
+      "candidate_losses": 0,
+      "both_hit": 129,
+      "both_miss": 4,
+      "chi2_stat": 5.142857142857143,
+      "p_value": 0.023342202012890834
+    }
+  },
+  {
+    "comparison": "E3 vs E1a",
+    "description": "Fine-Tuned BGE vs Zero-Shot BGE",
+    "candidate_id": "E3",
+    "baseline_id": "E1a",
+    "delta_ndcg10": {
+      "mean": 0.03638775755972768,
+      "ci_95_bca_lower": 0.013922845062737159,
+      "ci_95_bca_upper": 0.061335831475805694,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": 0.05,
+      "ci_95_bca_lower": 0.02142857142857143,
+      "ci_95_bca_upper": 0.08928571428571427,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 6,
+      "candidate_losses": 1,
+      "both_hit": 125,
+      "both_miss": 8,
+      "chi2_stat": 2.2857142857142856,
+      "p_value": 0.13057001811573699
+    }
+  },
+  {
+    "comparison": "E3 vs E0",
+    "description": "Fine-Tuned BGE vs BM25",
+    "candidate_id": "E3",
+    "baseline_id": "E0",
+    "delta_ndcg10": {
+      "mean": 0.016627775096167117,
+      "ci_95_bca_lower": -0.03527735886236293,
+      "ci_95_bca_upper": 0.07163829103121334,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": 0.03214285714285714,
+      "ci_95_bca_lower": -0.025,
+      "ci_95_bca_upper": 0.09285714285714286,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 10,
+      "candidate_losses": 8,
+      "both_hit": 121,
+      "both_miss": 1,
+      "chi2_stat": 0.05555555555555555,
+      "p_value": 0.8136637157667919
+    }
+  },
+  {
+    "comparison": "E2b-hybrid vs E2a",
+    "description": "Reranker on Hybrid vs Hybrid Stage 1",
+    "candidate_id": "E2b-hybrid",
+    "baseline_id": "E2a",
+    "delta_ndcg10": {
+      "mean": 0.006316205494146334,
+      "ci_95_bca_lower": -0.03656741635845512,
+      "ci_95_bca_upper": 0.04532103857209488,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "delta_recall10": {
+      "mean": -0.039285714285714285,
+      "ci_95_bca_lower": -0.08214285714285714,
+      "ci_95_bca_upper": 0.0,
+      "method": "scipy.stats.bootstrap(method='BCa', n_resamples=10000, seed=42)"
+    },
+    "mcnemar_recall10": {
+      "candidate_wins": 3,
+      "candidate_losses": 8,
+      "both_hit": 124,
+      "both_miss": 5,
+      "chi2_stat": 1.4545454545454546,
+      "p_value": 0.22779999398822903
+    }
+  }
+]

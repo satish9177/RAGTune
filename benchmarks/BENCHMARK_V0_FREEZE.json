@@ -1,0 +1,127 @@
+{
+  "freeze_id": "BENCHMARK_V0_FREEZE",
+  "created_at_utc": "2026-09-28T07:40:00Z",
+  "status": "CANONICAL_FREEZE_PREPARED",
+  "canonical_status": "FROZEN_PENDING_FINAL_SIGNATURE",
+  "signature_verification": "Human review recommendation incorporated: 31 initial audit approvals + 8 final approvals accepted; v0_pg_013 repaired with exact dual-sided spans in HUMAN_AUDIT_PG013_FINAL.md. Zero unprovided human signatures simulated.",
+  "benchmark_name": "Benchmark-v0",
+  "benchmark_file": "benchmarks/benchmark_v0.jsonl",
+  "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "corpus_freeze_v0": {
+    "corpus_chunks_path": "data/processed/corpus_chunks.jsonl",
+    "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+    "partitioned_chunks_path": "data/processed/partitioned_chunks.jsonl",
+    "partitioned_chunks_sha256": "a2df6633e04540b9578b0f4cd353473dbb8d72067887f0b2c6f9999495acee40",
+    "partition_manifest_path": "benchmarks/partition_manifest.json",
+    "partition_manifest_sha256": "af6cafe8cad8b1784a3720f9ea13c8e069bb94e5f7ef20b121a2f5c5e28af58a",
+    "total_corpus_chunks": 11645,
+    "partition_unit": "top-level documentation module/chapter"
+  },
+  "total_queries": 140,
+  "source_partition": "validation",
+  "domain_distribution": {
+    "postgresql": 35,
+    "pytorch": 35,
+    "kubernetes": 35,
+    "fastapi": 35
+  },
+  "typology_distribution": {
+    "direct_lookup": 40,
+    "comparative_discrimination": 60,
+    "troubleshooting_scenario": 40
+  },
+  "provenance_distribution": {
+    "ai_authored_project_query": 88,
+    "synthetic_grounded": 49,
+    "external_derived_verified": 3
+  },
+  "external_derived_verified_license_audit": [
+    {
+      "query_id": "v0_pg_026",
+      "platform": "Stack Overflow",
+      "post_id": "3086759",
+      "contribution_timestamp": "2010-06-22T08:14:48Z",
+      "exact_applicable_license": "CC BY-SA 2.5"
+    },
+    {
+      "query_id": "v0_pt_018",
+      "platform": "Stack Overflow",
+      "post_id": "48832961",
+      "contribution_timestamp": "2018-02-16T18:44:21Z",
+      "exact_applicable_license": "CC BY-SA 3.0"
+    },
+    {
+      "query_id": "v0_fa_028",
+      "platform": "Stack Overflow",
+      "post_id": "67595561",
+      "contribution_timestamp": "2021-05-19T06:58:32Z",
+      "exact_applicable_license": "CC BY-SA 4.0"
+    }
+  ],
+  "relevance_grade_distribution": {
+    "grade_3_canonical": 140,
+    "grade_2_directly_relevant": 115,
+    "grade_1_supporting": 31,
+    "total_relevance_judgments": 286
+  },
+  "uncertainty_flagged_count": 17,
+  "human_audit_status": {
+    "total_audit_sample_count": 40,
+    "approved_by_satish_count": 39,
+    "approved_query_ids": [
+      "v0_fa_004",
+      "v0_fa_010",
+      "v0_fa_011",
+      "v0_fa_016",
+      "v0_fa_018",
+      "v0_fa_022",
+      "v0_fa_023",
+      "v0_fa_026",
+      "v0_fa_028",
+      "v0_k8s_007",
+      "v0_k8s_010",
+      "v0_k8s_011",
+      "v0_k8s_014",
+      "v0_k8s_015",
+      "v0_k8s_017",
+      "v0_k8s_022",
+      "v0_k8s_025",
+      "v0_k8s_027",
+      "v0_k8s_029",
+      "v0_pg_001",
+      "v0_pg_002",
+      "v0_pg_011",
+      "v0_pg_016",
+      "v0_pg_017",
+      "v0_pg_018",
+      "v0_pg_025",
+      "v0_pg_026",
+      "v0_pg_030",
+      "v0_pg_034",
+      "v0_pt_002",
+      "v0_pt_003",
+      "v0_pt_012",
+      "v0_pt_015",
+      "v0_pt_018",
+      "v0_pt_021",
+      "v0_pt_023",
+      "v0_pt_025",
+      "v0_pt_027",
+      "v0_pt_032"
+    ],
+    "repaired_review_packet": {
+      "query_id": "v0_pg_013",
+      "packet_file": "benchmarks/review/HUMAN_AUDIT_PG013_FINAL.md",
+      "grade_3_canonical_chunk": "4cb1a6e848ab",
+      "grade_2_directly_relevant_chunk": "7ebc2979ff55",
+      "status": "PENDING_FINAL_SIGNATURE"
+    }
+  },
+  "automated_audit_summary": {
+    "total_queries": 140,
+    "automated_check_pass": 139,
+    "automated_check_review": 1,
+    "automated_check_fail": 0,
+    "pass_percentage": 99.3
+  }
+}

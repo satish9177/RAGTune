@@ -45,33 +45,45 @@ All 140 candidate development benchmark queries were evaluated over the full fro
 - **RRF Synergy**: Combining BM25 with BGE-small via Reciprocal Rank Fusion ($k=60$) achieves **+4.65% Recall@10** (0.7571 $\to$ 0.8036) and **+3.17% NDCG@10** (0.6184 $\to$ 0.6501) over BM25 alone, while slashing top-10 retrieval failures from 11 down to 8.
 - **Strong Reference Hybrid**: Fusing BM25 with Qwen3-0.6B achieves the highest first-stage Recall@10 in the project (**84.64%**), reducing top-10 failures to only 4 out of 140 queries (2.9%).
 
-### 3.2 Fine-Tuning BGE-small on TRAIN-Only Data (E3) Proves Effectiveness
-- Using 188 contrastive training triples synthesized strictly from the `train` partition (with teacher cross-encoder margin filtering $\ge 0.15$), BGE-small was fine-tuned in just **8.7 seconds** on the RTX 5050 GPU.
-- **Empirical Gain**: Fine-tuned BGE-small (E3) achieved:
-  - **Recall@10**: **0.7893** (+5.00% absolute gain over zero-shot BGE-small 0.7393, and +3.22% over BM25 0.7571).
-  - **NDCG@10**: **0.6350** (+3.64% absolute gain over zero-shot BGE-small 0.5986, and +1.66% over BM25 0.6184).
-  - **MRR@10**: **0.6937** (+4.75% absolute gain over zero-shot BGE-small 0.6462).
-- This confirms that in-domain contrastive adaptation significantly closes the gap between small (33M parameter) models and larger reference embedders, maintaining an ultra-lean 17.3 ms P50 latency.
+### 3.2 Development-Benchmark Contrastive Adaptation (E3)
+- Using 188 contrastive training triples synthesized strictly from the `train` partition (with teacher cross-encoder margin filtering $\ge 0.15$), BGE-small was fine-tuned in 8.7 seconds on the RTX 5050 GPU.
+- **Empirical Development Result**: TRAIN-only contrastive adaptation improved BGE-small Recall@10 by 5.0 percentage points over its zero-shot baseline on the development benchmark (0.7393 $\to$ 0.7893), and improved NDCG@10 by +3.64 points (0.5986 $\to$ 0.6350).
+- **Latency & Memory**: The fine-tuned model maintained an ultra-lean 17.3 ms P50 query latency and 379.7 MB VRAM footprint.
 
 ### 3.3 Stage-2 Cross-Encoder Reranking Trade-Offs
 - `BAAI/bge-reranker-base` substantially concentrates canonical relevance at rank 1:
   - MRR@10 jumps from 0.6524 to **0.7029** on BM25 (+5.05%).
   - Recall@1 jumps from 0.3024 to **0.3488** (+4.64%).
-- However, scoring 50 candidate passages requires **1,218 ms** per query. This validates our design decision that Stage-2 reranking should only be invoked for high-precision or ambiguous queries, while Stage-1 Hybrid satisfies low-latency requirements.
+- However, scoring 50 candidate passages requires **1,218 ms** per query, and overall top-10 recall (76.4%) is lower than first-stage hybrid fusion (80.4% - 84.6%). This validates our design decision that Stage-2 reranking should only be invoked for high-precision or ambiguous queries, while Stage-1 Hybrid satisfies low-latency requirements.
 
 ---
 
-## 4. Rigorous Statistical Testing (Protocol §3.2)
+## 4. Statistical Analysis on Development Benchmark (Protocol §3.2)
 
-10,000 paired bootstrap resamples and McNemar continuity-corrected contingency tests:
+Evaluated via paired Bias-Corrected and Accelerated (BCa) bootstrap ($B=10,000$, `random_state=42` via `scipy.stats.bootstrap`) and Edwards continuity-corrected McNemar contingency tests on the 140-query development benchmark (representing development-benchmark evidence, not final-test proof):
 
 - **E1c (Qwen3-0.6B) vs E0 (BM25)**:
-  - $\Delta \text{NDCG@10}$: **+0.0936** (95% BCa CI: `[+0.0477, +0.1405]`). Lower bound strictly $> 0$.
-  - $\Delta \text{Recall@10}$: **+0.0679** (95% BCa CI: `[+0.0179, +0.1179]`). Exceeds the +2.5% practical floor.
+  - $\Delta \text{NDCG@10}$: **+0.0936** (95% BCa CI: `[+0.0482, +0.1406]`). Lower bound strictly $> 0$.
+  - $\Delta \text{Recall@10}$: **+0.0679** (95% BCa CI: `[+0.0214, +0.1214]`). Exceeds the +2.5% practical significance floor.
+  - McNemar's Test: Wins=9, Losses=4, Tied Hits=125, Tied Misses=2, $\chi^2=1.231$, $p=0.2673$.
+- **E2c (BM25 + Qwen3 RRF) vs E0 (BM25)**:
+  - $\Delta \text{NDCG@10}$: **+0.0809** (95% BCa CI: `[+0.0561, +0.1068]`).
+  - $\Delta \text{Recall@10}$: **+0.0893** (95% BCa CI: `[+0.0571, +0.1286]`).
+  - McNemar's Test: Wins=7, Losses=0, $\chi^2=5.143$, $p=0.0233$ (statistically significant hit expansion without regressions).
 - **E3 (BGE Fine-Tuned) vs E1a (BGE Zero-Shot)**:
-  - $\Delta \text{Recall@10}$: **+0.0500** (+5.00 percentage points).
-  - $\Delta \text{NDCG@10}$: **+0.0364** (+3.64 points).
-  - Top-10 failure reduction: 14 failures $\to$ 9 failures (35.7% relative reduction).
+  - $\Delta \text{Recall@10}$: **+0.0500** (95% BCa CI: `[+0.0214, +0.0893]`).
+  - $\Delta \text{NDCG@10}$: **+0.0364** (95% BCa CI: `[+0.0139, +0.0613]`).
+  - McNemar's Test: Wins=6, Losses=1, Tied Hits=125, Tied Misses=8, $\chi^2=2.286$, $p=0.1306$.
+
+---
+
+## 5. Measured Production Trade-offs (No Universal Winner)
+
+Rather than declaring a single universal winner, measured metrics establish distinct trade-off regimes:
+- **`Qwen/Qwen3-Embedding-0.6B` (E1c)**: Strongest zero-shot dense retrieval (NDCG@10: 0.7120, MRR@10: 0.7611). Trade-off: 1,193 MB weights, 74.7 ms P50 latency.
+- **`BM25 + Qwen3 RRF (k=60)` (E2c)**: Strongest first-stage Recall@10 observed (84.64% Recall@10, 91.07% Recall@20, only 4 failures).
+- **`BGE-small Fine-Tuned` (E3)**: Substantial development-benchmark improvement (+5.0% Recall@10, +3.64% NDCG@10) at ultra-low latency (17.3 ms P50) and low memory footprint (379.7 MB).
+- **`BAAI/bge-reranker-base` (E2b)**: Improved top-rank precision and MRR (0.7029 on BM25 vs 0.6524), but carries high latency (1,218 ms) and weaker top-10 recall (76.4%) compared to hybrid fusion in the current configuration.
 
 ---
 

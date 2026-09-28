@@ -12,9 +12,11 @@ Renders `benchmarks/review/HUMAN_AUDIT_9_FINAL.md` containing:
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
-import re
-from typing import Any, Dict, List
+
+# Add project root to sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scripts.evidence_verifier import extract_answer_span
 
@@ -57,7 +59,8 @@ SPECIFIC_CRITERIA: Dict[str, Dict[str, Any]] = {
             "Removed unrelated fsync passage (`b239bf42ebfe`)",
         ],
         "spans": [
-            ("hot_standby_feedback mechanics", "Specifies whether or not a hot standby will send feedback to the primary or upstream standby about queries currently executing on the standby. This parameter can be used to eliminate query cancels caused by cleanup records, but can cause database bloat on the primary for some workloads. Feedback messages will not be sent more frequently than once per wal_receiver_status_interval . The default value is off ."),
+            ("Grade 3: hot_standby_feedback mechanics", "Specifies whether or not a hot standby will send feedback to the primary or upstream standby about queries currently executing on the standby. This parameter can be used to eliminate query cancels caused by cleanup records, but can cause database bloat on the primary for some workloads. Feedback messages will not be sent more frequently than once per wal_receiver_status_interval . The default value is off . This parameter can only be set in the postgresql.conf file or on the server command line."),
+            ("Grade 2: max_standby_streaming_delay cancellation delay mechanics", "When hot standby is active, this parameter determines how long the standby server should wait before canceling standby queries that conflict with about-to-be-applied WAL entries, as described in Section 27.4.2. max_standby_streaming_delay applies when WAL data is being received via streaming replication. If this value is specified without units, it is taken as milliseconds. The default is 30 seconds. A value of -1 allows the standby to wait forever for conflicting queries to complete. ... Note that max_standby_streaming_delay is not the same as the maximum length of time a query can run before cancellation; rather it is the maximum total time allowed to apply WAL data once it has been received from the primary server. Thus, if one query has resulted in significant delay, subsequent conflicting queries will have much less grace time until the standby server has caught up again."),
         ],
     },
     "v0_pg_016": {

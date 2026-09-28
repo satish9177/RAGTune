@@ -17,7 +17,10 @@ from pathlib import Path
 import random
 import re
 import sys
-from typing import Any, Dict, List
+from pathlib import Path
+
+# Add project root to sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from ragtune.models import BenchmarkQuery, RelevanceJudgment
 from ragtune.training.guardrails import validate_validation_query
