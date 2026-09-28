@@ -1,0 +1,85 @@
+{
+  "experiment_id": "E6H-Reranker-E5H-Top50",
+  "metrics": {
+    "recall_at_1": 0.3488095238095238,
+    "recall_at_5": 0.6511904761904761,
+    "recall_at_10": 0.7714285714285715,
+    "recall_at_20": 0.85,
+    "recall_at_50": 0.9321428571428572,
+    "hit_rate_at_1": 0.5928571428571429,
+    "hit_rate_at_5": 0.8214285714285714,
+    "hit_rate_at_10": 0.9214285714285714,
+    "hit_rate_at_20": 0.9571428571428572,
+    "hit_rate_at_50": 1.0,
+    "mrr_at_10": 0.7043112244897959,
+    "ndcg_at_10": 0.6589109894960855,
+    "top10_failures": 11,
+    "failure_rate": 0.07857142857142857
+  },
+  "latency": {
+    "rerank_only_p50_ms": 1270.8232999430038,
+    "rerank_only_p95_ms": 1299.7866899939254,
+    "rerank_only_p99_ms": 1310.2110000443645,
+    "rerank_only_mean_ms": 1268.052337136552,
+    "total_end_to_end_p50_ms": 1312.136799970176,
+    "total_end_to_end_p95_ms": 1347.7452101185918,
+    "total_end_to_end_p99_ms": 1363.7431999808175,
+    "total_end_to_end_mean_ms": 1310.3184928602006,
+    "throughput_queries_per_sec": 0.7884356946874741,
+    "peak_vram_allocated_mb": 1909.74658203125,
+    "peak_vram_reserved_mb": 2442.0
+  },
+  "domain_breakdown": {
+    "fastapi": {
+      "recall_at_10": 0.7428571428571429,
+      "hit_rate_at_10": 0.8857142857142857,
+      "mrr_at_10": 0.649795918367347,
+      "ndcg_at_10": 0.591304398580221,
+      "query_count": 35
+    },
+    "kubernetes": {
+      "recall_at_10": 0.7,
+      "hit_rate_at_10": 0.8857142857142857,
+      "mrr_at_10": 0.6974943310657595,
+      "ndcg_at_10": 0.6389447279930756,
+      "query_count": 35
+    },
+    "postgresql": {
+      "recall_at_10": 0.8,
+      "hit_rate_at_10": 0.9428571428571428,
+      "mrr_at_10": 0.6270975056689342,
+      "ndcg_at_10": 0.6216457317494656,
+      "query_count": 35
+    },
+    "pytorch": {
+      "recall_at_10": 0.8428571428571429,
+      "hit_rate_at_10": 0.9714285714285714,
+      "mrr_at_10": 0.8428571428571429,
+      "ndcg_at_10": 0.7837490996615795,
+      "query_count": 35
+    }
+  },
+  "typology_breakdown": {
+    "comparative_discrimination": {
+      "recall_at_10": 0.8416666666666667,
+      "hit_rate_at_10": 0.9833333333333333,
+      "mrr_at_10": 0.7101322751322752,
+      "ndcg_at_10": 0.7012809017774697,
+      "query_count": 60
+    },
+    "direct_lookup": {
+      "recall_at_10": 0.7875,
+      "hit_rate_at_10": 0.9,
+      "mrr_at_10": 0.7103075396825397,
+      "ndcg_at_10": 0.6530128904390636,
+      "query_count": 40
+    },
+    "troubleshooting_scenario": {
+      "recall_at_10": 0.65,
+      "hit_rate_at_10": 0.85,
+      "mrr_at_10": 0.6895833333333333,
+      "ndcg_at_10": 0.6012542201310309,
+      "query_count": 40
+    }
+  }
+}

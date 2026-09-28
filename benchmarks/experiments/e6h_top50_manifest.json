@@ -1,0 +1,42 @@
+{
+  "experiment_id": "E6H-Reranker-E5H-Top50",
+  "experiment_name": "E6H-Reranker-E5H-Top50",
+  "stage": "3 (Stage-2 Cross-Encoder Reranker, Candidate Depth 50)",
+  "status": "COMPLETED",
+  "model_name": "BAAI/bge-reranker-base",
+  "model_revision": "main",
+  "stage1_source": "E5H (BM25 + Hard-Negative Dense RRF)",
+  "stage1_preds_path": "benchmarks/experiments/e5h_hybrid_hardneg_predictions.jsonl",
+  "candidate_depth": 50,
+  "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "overall_metrics": {
+    "recall_at_1": 0.3488095238095238,
+    "recall_at_5": 0.6511904761904761,
+    "recall_at_10": 0.7714285714285715,
+    "recall_at_20": 0.85,
+    "recall_at_50": 0.9321428571428572,
+    "hit_rate_at_1": 0.5928571428571429,
+    "hit_rate_at_5": 0.8214285714285714,
+    "hit_rate_at_10": 0.9214285714285714,
+    "hit_rate_at_20": 0.9571428571428572,
+    "hit_rate_at_50": 1.0,
+    "mrr_at_10": 0.7043112244897959,
+    "ndcg_at_10": 0.6589109894960855,
+    "top10_failures": 11,
+    "failure_rate": 0.07857142857142857
+  },
+  "latency_telemetry": {
+    "rerank_only_p50_ms": 1270.8232999430038,
+    "rerank_only_p95_ms": 1299.7866899939254,
+    "rerank_only_p99_ms": 1310.2110000443645,
+    "rerank_only_mean_ms": 1268.052337136552,
+    "total_end_to_end_p50_ms": 1312.136799970176,
+    "total_end_to_end_p95_ms": 1347.7452101185918,
+    "total_end_to_end_p99_ms": 1363.7431999808175,
+    "total_end_to_end_mean_ms": 1310.3184928602006,
+    "throughput_queries_per_sec": 0.7884356946874741,
+    "peak_vram_allocated_mb": 1909.74658203125,
+    "peak_vram_reserved_mb": 2442.0
+  }
+}

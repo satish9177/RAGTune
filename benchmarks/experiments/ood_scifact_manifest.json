@@ -1,0 +1,17 @@
+{
+  "experiment_id": "OOD-SciFact-Eval-v1",
+  "description": "Out-of-domain development gate evaluation on BEIR SciFact test split",
+  "benchmark": "mteb/scifact",
+  "query_count": 300,
+  "corpus_count": 5183,
+  "systems": [
+    "BM25_Baseline",
+    "E1a_ZeroShot_BGE",
+    "E4C_MatchedEasy_BGE",
+    "E4_HardNeg_BGE",
+    "E5C_Hybrid_MatchedEasy",
+    "E5H_Hybrid_HardNeg"
+  ],
+  "status": "COMPLETED",
+  "gate_verdict": "PASSED"
+}

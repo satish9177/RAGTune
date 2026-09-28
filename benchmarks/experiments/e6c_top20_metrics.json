@@ -1,0 +1,85 @@
+{
+  "experiment_id": "E6C-Reranker-E5C-Top20",
+  "metrics": {
+    "recall_at_1": 0.35952380952380947,
+    "recall_at_5": 0.669047619047619,
+    "recall_at_10": 0.8035714285714286,
+    "recall_at_20": 0.8964285714285715,
+    "recall_at_50": 0.9285714285714286,
+    "hit_rate_at_1": 0.6071428571428571,
+    "hit_rate_at_5": 0.85,
+    "hit_rate_at_10": 0.9357142857142857,
+    "hit_rate_at_20": 0.9928571428571429,
+    "hit_rate_at_50": 0.9928571428571429,
+    "mrr_at_10": 0.7163605442176871,
+    "ndcg_at_10": 0.67750663796557,
+    "top10_failures": 9,
+    "failure_rate": 0.06428571428571428
+  },
+  "latency": {
+    "rerank_only_p50_ms": 421.6378999990411,
+    "rerank_only_p95_ms": 457.9997250752058,
+    "rerank_only_p99_ms": 466.5840999234933,
+    "rerank_only_mean_ms": 430.95430428428307,
+    "total_end_to_end_p50_ms": 473.02724997280166,
+    "total_end_to_end_p95_ms": 510.6740749033633,
+    "total_end_to_end_p99_ms": 518.059350947151,
+    "total_end_to_end_mean_ms": 480.05122571651424,
+    "throughput_queries_per_sec": 2.319575878539447,
+    "peak_vram_allocated_mb": 1405.01220703125,
+    "peak_vram_reserved_mb": 1536.0
+  },
+  "domain_breakdown": {
+    "fastapi": {
+      "recall_at_10": 0.7857142857142857,
+      "hit_rate_at_10": 0.9142857142857143,
+      "mrr_at_10": 0.6575283446712019,
+      "ndcg_at_10": 0.6105423531945035,
+      "query_count": 35
+    },
+    "kubernetes": {
+      "recall_at_10": 0.7428571428571429,
+      "hit_rate_at_10": 0.9142857142857143,
+      "mrr_at_10": 0.704467120181406,
+      "ndcg_at_10": 0.6510759514967509,
+      "query_count": 35
+    },
+    "postgresql": {
+      "recall_at_10": 0.8571428571428571,
+      "hit_rate_at_10": 0.9714285714285714,
+      "mrr_at_10": 0.6510657596371883,
+      "ndcg_at_10": 0.6606301012502348,
+      "query_count": 35
+    },
+    "pytorch": {
+      "recall_at_10": 0.8285714285714286,
+      "hit_rate_at_10": 0.9428571428571428,
+      "mrr_at_10": 0.8523809523809525,
+      "ndcg_at_10": 0.7877781459207907,
+      "query_count": 35
+    }
+  },
+  "typology_breakdown": {
+    "comparative_discrimination": {
+      "recall_at_10": 0.8583333333333333,
+      "hit_rate_at_10": 0.9833333333333333,
+      "mrr_at_10": 0.7311772486772486,
+      "ndcg_at_10": 0.7193941867888821,
+      "query_count": 60
+    },
+    "direct_lookup": {
+      "recall_at_10": 0.8625,
+      "hit_rate_at_10": 0.95,
+      "mrr_at_10": 0.7173412698412698,
+      "ndcg_at_10": 0.6791127442636808,
+      "query_count": 40
+    },
+    "troubleshooting_scenario": {
+      "recall_at_10": 0.6625,
+      "hit_rate_at_10": 0.85,
+      "mrr_at_10": 0.6931547619047619,
+      "ndcg_at_10": 0.6130692084324911,
+      "query_count": 40
+    }
+  }
+}

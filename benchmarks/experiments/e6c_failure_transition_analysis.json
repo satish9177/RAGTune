@@ -1,0 +1,1222 @@
+{
+  "comparison": "E5C (BM25 + Matched-Easy Dense Stage-1) -> E6C-Top50 (Cross-Encoder Reranker)",
+  "summary": {
+    "total_queries": 140,
+    "rank_improvements_delta_gt_05": 41,
+    "rank_regressions_delta_lt_neg_05": 47,
+    "relevant_candidate_in_pool_but_demoted_outside_top10": 11,
+    "stage1_unrecoverable_misses_outside_depth50": 1,
+    "exact_identifier_code_failures": 21
+  },
+  "rank_improvements": [
+    {
+      "query_id": "v0_pg_006",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "Which column in the pg_class system catalog indicates the relation type such as ordinary table, index, sequence, or view in PostgreSQL?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.5743091194356716,
+      "e6_ndcg": 0.6763610077981964,
+      "delta_ndcg": 0.10205188836252477
+    },
+    {
+      "query_id": "v0_pg_008",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the syntax for using the RETURNING clause in an INSERT or UPDATE statement in PostgreSQL?",
+      "s1_rank": 3,
+      "e6_rank": 2,
+      "s1_ndcg": 0.3935773014954859,
+      "e6_ndcg": 0.4966392596877323,
+      "delta_ndcg": 0.1030619581922464
+    },
+    {
+      "query_id": "v0_pg_012",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How does synchronous_commit = local differ from synchronous_commit = off regarding standby acknowledgment?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.7309292742059024,
+      "e6_ndcg": 0.8339912323981488,
+      "delta_ndcg": 0.1030619581922464
+    },
+    {
+      "query_id": "v0_pg_015",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How does autovacuum_vacuum_cost_limit throttle background vacuuming I/O compared to autovacuum_vacuum_cost_delay?",
+      "s1_rank": 3,
+      "e6_rank": 1,
+      "s1_ndcg": 0.5076850214429881,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.4923149785570119
+    },
+    {
+      "query_id": "v0_pg_028",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How does setting idle_in_transaction_session_timeout prevent orphaned transactions from holding locks and causing table bloat in PostgreSQL?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.8339912323981488,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.16600876760185124
+    },
+    {
+      "query_id": "v0_pg_030",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to configure deadlock_timeout and log_lock_waits to diagnose intermittent transaction serialization and locking deadlocks in PostgreSQL?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.7871546029909718,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.21284539700902816
+    },
+    {
+      "query_id": "v0_pt_003",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "Which method on the autograd Function context object must be used to save tensors for the backward pass in PyTorch?",
+      "s1_rank": 16,
+      "e6_rank": 6,
+      "s1_ndcg": 0.0,
+      "e6_ndcg": 0.280390126950546,
+      "delta_ndcg": 0.280390126950546
+    },
+    {
+      "query_id": "v0_pt_004",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What communication hook in PyTorch DDP compresses model gradients to FP16 before the AllReduce step?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.5518544320968081,
+      "e6_ndcg": 0.6763610077981964,
+      "delta_ndcg": 0.12450657570138834
+    },
+    {
+      "query_id": "v0_pt_005",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "Which DDP communication hook performs BF16 gradient compression across distributed workers?",
+      "s1_rank": 3,
+      "e6_rank": 2,
+      "s1_ndcg": 0.5076850214429881,
+      "e6_ndcg": 0.6419288461539238,
+      "delta_ndcg": 0.13424382471093566
+    },
+    {
+      "query_id": "v0_pt_006",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What function in torch.distributed.checkpoint saves sharded model state dicts to distributed storage?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.8339912323981488,
+      "e6_ndcg": 0.95583058934618,
+      "delta_ndcg": 0.12183935694803127
+    },
+    {
+      "query_id": "v0_pt_008",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What sharing strategies can be configured using torch.multiprocessing.set_sharing_strategy?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.6653152460429406,
+      "e6_ndcg": 0.95583058934618,
+      "delta_ndcg": 0.29051534330323947
+    },
+    {
+      "query_id": "v0_pt_009",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What conditions must two tensor shapes satisfy to be broadcastable according to PyTorch broadcasting semantics?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.606422698504514,
+      "e6_ndcg": 0.95583058934618,
+      "delta_ndcg": 0.349407890841666
+    },
+    {
+      "query_id": "v0_pt_010",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "Which class in PyTorch represents the machine limits and numerical properties such as eps, tiny, and resolution for floating-point data types?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.3373519727104165,
+      "e6_ndcg": 0.5997368403740738,
+      "delta_ndcg": 0.2623848676636573
+    },
+    {
+      "query_id": "v0_pt_011",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "How do sharing strategies differ between CPU tensors and CUDA tensors in PyTorch multiprocessing?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.8339912323981488,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.16600876760185124
+    },
+    {
+      "query_id": "v0_pt_012",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "How does PyTorch detect illegal in-place modifications to tensors saved for backward during automatic differentiation?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.6442869262030828,
+      "e6_ndcg": 0.9737576937588317,
+      "delta_ndcg": 0.3294707675557489
+    },
+    {
+      "query_id": "v0_pt_024",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "Why do in-place operations like add_() forbid expanding tensor shapes during broadcasting in PyTorch?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.47020199776783905,
+      "e6_ndcg": 0.7452525342261976,
+      "delta_ndcg": 0.2750505364583586
+    },
+    {
+      "query_id": "v0_pt_027",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an out-of-memory exception handler fail to allocate memory during recovery in PyTorch, and how does moving recovery code outside the except block resolve it?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.7871546029909718,
+      "e6_ndcg": 0.9176601606601069,
+      "delta_ndcg": 0.13050555766913507
+    },
+    {
+      "query_id": "v0_pt_029",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How does PyTorch detect when a tensor needed for gradient computation has been modified by an in-place operation?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.4966392596877323,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": 0.2905153433032395
+    },
+    {
+      "query_id": "v0_k8s_001",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What default value does maxSurge assume in a Kubernetes Deployment RollingUpdate strategy?",
+      "s1_rank": 13,
+      "e6_rank": 7,
+      "s1_ndcg": 0.06717171396683416,
+      "e6_ndcg": 0.27919269631859855,
+      "delta_ndcg": 0.2120209823517644
+    },
+    {
+      "query_id": "v0_k8s_004",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the default value of backoffLimit for retrying failed pods in a Kubernetes Job?",
+      "s1_rank": 9,
+      "e6_rank": 5,
+      "s1_ndcg": 0.10155306288225219,
+      "e6_ndcg": 0.30451296789464855,
+      "delta_ndcg": 0.20295990501239636
+    },
+    {
+      "query_id": "v0_k8s_005",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How is nodeSelector configured in a Pod specification to constrain pod scheduling to specific nodes?",
+      "s1_rank": 3,
+      "e6_rank": 1,
+      "s1_ndcg": 0.4910938908950193,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": 0.2960607120959525
+    },
+    {
+      "query_id": "v0_k8s_006",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What role does topologyKey play in Kubernetes pod affinity and anti-affinity rules?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.4966392596877323,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": 0.2905153433032395
+    },
+    {
+      "query_id": "v0_k8s_007",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the difference between ReadWriteOnce and ReadWriteOncePod volume access modes in Kubernetes?",
+      "s1_rank": 3,
+      "e6_rank": 1,
+      "s1_ndcg": 0.5897053367440438,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.4102946632559562
+    },
+    {
+      "query_id": "v0_k8s_008",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the default maximum number of endpoints contained within a single Kubernetes EndpointSlice resource?",
+      "s1_rank": 3,
+      "e6_rank": 1,
+      "s1_ndcg": 0.3935773014954859,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": 0.3935773014954859
+    },
+    {
+      "query_id": "v0_k8s_009",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What are the valid reclaim policies for a PersistentVolume in Kubernetes?",
+      "s1_rank": 4,
+      "e6_rank": 1,
+      "s1_ndcg": 0.469514592756915,
+      "e6_ndcg": 0.8935773014954859,
+      "delta_ndcg": 0.4240627087385709
+    },
+    {
+      "query_id": "v0_k8s_012",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between requiredDuringScheduling and preferredDuringScheduling in node affinity?",
+      "s1_rank": 5,
+      "e6_rank": 1,
+      "s1_ndcg": 0.30451296789464855,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": 0.4826416350963233
+    },
+    {
+      "query_id": "v0_k8s_017",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between the Retain and Delete reclaim policies for a Kubernetes PersistentVolume when a PersistentVolumeClaim is deleted?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.608715697963965,
+      "e6_ndcg": 0.9023968347656408,
+      "delta_ndcg": 0.29368113680167585
+    },
+    {
+      "query_id": "v0_k8s_020",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the distinction between a ResourceQuota that limits aggregated namespace consumption and a LimitRange that constrains individual pods?",
+      "s1_rank": 8,
+      "e6_rank": 1,
+      "s1_ndcg": 0.33396140710342526,
+      "e6_ndcg": 0.8996052605611106,
+      "delta_ndcg": 0.5656438534576853
+    },
+    {
+      "query_id": "v0_k8s_023",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference in container lifecycle when a Job pod specifies restartPolicy: OnFailure versus restartPolicy: Never?",
+      "s1_rank": 1,
+      "e6_rank": 4,
+      "s1_ndcg": 0.3373519727104165,
+      "e6_ndcg": 0.42567971341673744,
+      "delta_ndcg": 0.08832774070632093
+    },
+    {
+      "query_id": "v0_k8s_025",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "How do EndpointSlices solve the network scalability limitations of monolithic Endpoints objects for services with thousands of pods?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.6653152460429406,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.33468475395705943
+    },
+    {
+      "query_id": "v0_k8s_030",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does a Kubernetes Job fail with 'BackoffLimitExceeded' when its pods exit with non-zero status codes?",
+      "s1_rank": 4,
+      "e6_rank": 1,
+      "s1_ndcg": 0.4514596926579187,
+      "e6_ndcg": 0.8996052605611106,
+      "delta_ndcg": 0.4481455679031919
+    },
+    {
+      "query_id": "v0_k8s_034",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does a PersistentVolumeClaim remain unbound with matching failures in Kubernetes, and how does the control loop evaluate requested storage capacity and access modes?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.606422698504514,
+      "e6_ndcg": 0.8996052605611106,
+      "delta_ndcg": 0.29318256205659654
+    },
+    {
+      "query_id": "v0_fa_001",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the official recommendation in FastAPI for declaring a path operation when using a blocking third-party library?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.5544949421237185,
+      "e6_ndcg": 0.882808018370203,
+      "delta_ndcg": 0.3283130762464844
+    },
+    {
+      "query_id": "v0_fa_003",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to apply a dependency globally across all routes by passing it to the FastAPI application constructor?",
+      "s1_rank": 10,
+      "e6_rank": 2,
+      "s1_ndcg": 0.2890648263178878,
+      "e6_ndcg": 0.6309297535714575,
+      "delta_ndcg": 0.3418649272535697
+    },
+    {
+      "query_id": "v0_fa_004",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "Which middleware in FastAPI configures Cross-Origin Resource Sharing (CORS) headers for frontend clients?",
+      "s1_rank": 4,
+      "e6_rank": 1,
+      "s1_ndcg": 0.4514596926579187,
+      "e6_ndcg": 0.888707665873224,
+      "delta_ndcg": 0.43724797321530534
+    },
+    {
+      "query_id": "v0_fa_005",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What utility function in FastAPI converts Pydantic models and complex Python objects into JSON-compatible basic data structures?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.6309297535714575,
+      "e6_ndcg": 1.0,
+      "delta_ndcg": 0.36907024642854247
+    },
+    {
+      "query_id": "v0_fa_014",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "How does injecting BackgroundTasks in a sub-dependency compare to receiving it directly as a path operation argument in FastAPI?",
+      "s1_rank": 2,
+      "e6_rank": 1,
+      "s1_ndcg": 0.6653152460429406,
+      "e6_ndcg": 0.8996052605611106,
+      "delta_ndcg": 0.23429001451817
+    },
+    {
+      "query_id": "v0_fa_020",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the memory and performance difference between declaring an uploaded file parameter as UploadFile versus bytes in FastAPI?",
+      "s1_rank": 7,
+      "e6_rank": 3,
+      "s1_ndcg": 0.26238486766365726,
+      "e6_ndcg": 0.3935773014954859,
+      "delta_ndcg": 0.13119243383182866
+    },
+    {
+      "query_id": "v0_fa_025",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between setting status_code directly on the Response parameter versus declaring status_code in the path operation decorator?",
+      "s1_rank": 3,
+      "e6_rank": 2,
+      "s1_ndcg": 0.5,
+      "e6_ndcg": 0.6309297535714575,
+      "delta_ndcg": 0.13092975357145753
+    },
+    {
+      "query_id": "v0_fa_026",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does the Swagger UI /docs endpoint fail to load OpenAPI schemas or show 404 errors when running FastAPI behind a reverse proxy that strips prefixes?",
+      "s1_rank": 4,
+      "e6_rank": 2,
+      "s1_ndcg": 0.4258585191080662,
+      "e6_ndcg": 0.5741414090136012,
+      "delta_ndcg": 0.148282889905535
+    },
+    {
+      "query_id": "v0_fa_034",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How does configuring root_path solve the OpenAPI schema 'servers' URL mismatch when FastAPI is hosted behind a reverse proxy that strips path prefixes?",
+      "s1_rank": 3,
+      "e6_rank": 1,
+      "s1_ndcg": 0.3935773014954859,
+      "e6_ndcg": 0.6177420996609625,
+      "delta_ndcg": 0.22416479816547658
+    }
+  ],
+  "rank_regressions": [
+    {
+      "query_id": "v0_pg_002",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What operation-level memory allocation is controlled by work_mem in PostgreSQL?",
+      "s1_rank": 1,
+      "e6_rank": 9,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.3010299956639812,
+      "delta_ndcg": -0.6989700043360187
+    },
+    {
+      "query_id": "v0_pg_003",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "Which database maintenance operations utilize maintenance_work_mem in PostgreSQL?",
+      "s1_rank": 5,
+      "e6_rank": 15,
+      "s1_ndcg": 0.30451296789464855,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.30451296789464855
+    },
+    {
+      "query_id": "v0_pg_004",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What are the allowed settings for wal_level in PostgreSQL and what do they enable?",
+      "s1_rank": 1,
+      "e6_rank": 37,
+      "s1_ndcg": 0.7871546029909718,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.7871546029909718
+    },
+    {
+      "query_id": "v0_pg_009",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How do the first two characters versus the last three characters in PostgreSQL five-character SQLSTATE codes represent error class and specific condition?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.6309297535714575,
+      "delta_ndcg": -0.36907024642854247
+    },
+    {
+      "query_id": "v0_pg_011",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the durability difference between synchronous_commit set to on versus remote_write in PostgreSQL replication?",
+      "s1_rank": 1,
+      "e6_rank": 3,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.5,
+      "delta_ndcg": -0.5
+    },
+    {
+      "query_id": "v0_pg_017",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How do the typalign and typstorage columns in the pg_type catalog govern data alignment and TOAST storage strategies for PostgreSQL data types?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.6254435063924523,
+      "delta_ndcg": -0.3745564936075477
+    },
+    {
+      "query_id": "v0_pg_019",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "When should the btree_gin extension be used to index scalar columns in a composite GIN index instead of creating a standard B-tree index?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.6309297535714575,
+      "delta_ndcg": -0.36907024642854247
+    },
+    {
+      "query_id": "v0_pg_020",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How do the query operators provided by intarray compare to PostgreSQL built-in array operators for integer lookups?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.7309292742059024,
+      "e6_ndcg": 0.606422698504514,
+      "delta_ndcg": -0.12450657570138834
+    },
+    {
+      "query_id": "v0_pg_021",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the distinction between the exist operator ? and the defined operator in the PostgreSQL hstore extension?",
+      "s1_rank": 2,
+      "e6_rank": 6,
+      "s1_ndcg": 0.4932355239595741,
+      "e6_ndcg": 0.280390126950546,
+      "delta_ndcg": -0.2128453970090281
+    },
+    {
+      "query_id": "v0_pg_022",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How does PostgreSQL separate disk storage across the primary heap, TOAST tables, and associated indexes when monitoring table disk usage?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.888707665873224,
+      "delta_ndcg": -0.11129233412677597
+    },
+    {
+      "query_id": "v0_pg_023",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "How do temp_buffers differ from shared_buffers in scope and per-session allocation in PostgreSQL?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.8339912323981488,
+      "e6_ndcg": 0.606422698504514,
+      "delta_ndcg": -0.22756853389363474
+    },
+    {
+      "query_id": "v0_pg_024",
+      "domain": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the structural difference between the default pg_default tablespace and pg_global catalog tablespace?",
+      "s1_rank": 3,
+      "e6_rank": 9,
+      "s1_ndcg": 0.4951303643777381,
+      "e6_ndcg": 0.23695714672525509,
+      "delta_ndcg": -0.258173217652483
+    },
+    {
+      "query_id": "v0_pg_026",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve 'FATAL: sorry, too many clients already' by configuring max_connections and connection limits in PostgreSQL?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.7807407501417308,
+      "e6_ndcg": 0.5113881456198478,
+      "delta_ndcg": -0.26935260452188303
+    },
+    {
+      "query_id": "v0_pg_027",
+      "domain": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an active query fail with 'canceling statement due to statement timeout' and how to isolate it to a specific session?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.7871546029909718,
+      "e6_ndcg": 0.4966392596877323,
+      "delta_ndcg": -0.2905153433032395
+    },
+    {
+      "query_id": "v0_pt_001",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How can the autograd execution graph be inspected using the grad_fn attribute of a torch.Tensor in PyTorch?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.882808018370203,
+      "e6_ndcg": 0.7452525342261976,
+      "delta_ndcg": -0.1375554841440053
+    },
+    {
+      "query_id": "v0_pt_002",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How does gradient accumulation behavior for param.grad differ when create_graph is False versus True during backward in PyTorch?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.9828422279067397,
+      "e6_ndcg": 0.9173194127129571,
+      "delta_ndcg": -0.06552281519378256
+    },
+    {
+      "query_id": "v0_pt_020",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "How does the structured control flow operator torch.cond differ from Python if-else statements when tracing models for TorchScript or TorchDynamo in PyTorch?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.992619504174702,
+      "e6_ndcg": 0.47020199776783905,
+      "delta_ndcg": -0.522417506406863
+    },
+    {
+      "query_id": "v0_pt_023",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "How do scale and zero-point calculations differ between symmetric and asymmetric affine quantization schemes in PyTorch?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.6177420996609625,
+      "e6_ndcg": 0.5518544320968081,
+      "delta_ndcg": -0.06588766756415443
+    },
+    {
+      "query_id": "v0_pt_025",
+      "domain": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "How does dimension alignment in PyTorch broadcasting operate when one tensor has fewer dimensions than the other?",
+      "s1_rank": 1,
+      "e6_rank": 3,
+      "s1_ndcg": 0.8996052605611106,
+      "e6_ndcg": 0.5060279590656247,
+      "delta_ndcg": -0.39357730149548587
+    },
+    {
+      "query_id": "v0_pt_030",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does nvidia-smi show high memory consumption even after deleting PyTorch tensors, and how does the caching memory allocator function?",
+      "s1_rank": 2,
+      "e6_rank": 3,
+      "s1_ndcg": 0.4966392596877323,
+      "e6_ndcg": 0.3935773014954859,
+      "delta_ndcg": -0.1030619581922464
+    },
+    {
+      "query_id": "v0_pt_034",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an elementwise tensor addition fail with size mismatch errors when dimensions are not equal and neither is 1 in PyTorch?",
+      "s1_rank": 2,
+      "e6_rank": 21,
+      "s1_ndcg": 0.4966392596877323,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.4966392596877323
+    },
+    {
+      "query_id": "v0_k8s_002",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How does maxUnavailable restrict the number of Pods that can be unavailable during a Deployment update?",
+      "s1_rank": 3,
+      "e6_rank": 7,
+      "s1_ndcg": 0.16867598635520825,
+      "e6_ndcg": 0.11245065757013882,
+      "delta_ndcg": -0.05622532878506943
+    },
+    {
+      "query_id": "v0_k8s_003",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What pod fields control the total number of successful completions and concurrent pods in a Kubernetes Job?",
+      "s1_rank": 3,
+      "e6_rank": 13,
+      "s1_ndcg": 0.5388668879616774,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.5388668879616774
+    },
+    {
+      "query_id": "v0_k8s_014",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "How do soft eviction thresholds differ from hard eviction thresholds during kubelet node-pressure eviction?",
+      "s1_rank": 1,
+      "e6_rank": 3,
+      "s1_ndcg": 0.904299193697757,
+      "e6_ndcg": 0.5773534652239384,
+      "delta_ndcg": -0.32694572847381864
+    },
+    {
+      "query_id": "v0_k8s_015",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between Recreate and RollingUpdate deployment strategies regarding pod downtime and resource consumption?",
+      "s1_rank": 2,
+      "e6_rank": 9,
+      "s1_ndcg": 0.6806060567602009,
+      "e6_ndcg": 0.20261180509517823,
+      "delta_ndcg": -0.4779942516650227
+    },
+    {
+      "query_id": "v0_k8s_021",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "How does a namespaced Role differ in scope from a ClusterRole in Kubernetes RBAC?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.9324441894571632,
+      "delta_ndcg": -0.06755581054283677
+    },
+    {
+      "query_id": "v0_k8s_024",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "How do Node conditions MemoryPressure and DiskPressure influence kubelet eviction triggers?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.7871546029909718,
+      "e6_ndcg": 0.4966392596877323,
+      "delta_ndcg": -0.2905153433032395
+    },
+    {
+      "query_id": "v0_k8s_027",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does a node enter DiskPressure condition and what steps does the kubelet take to reclaim disk space before evicting pods?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.7309292742059024,
+      "e6_ndcg": 0.3373519727104165,
+      "delta_ndcg": -0.39357730149548587
+    },
+    {
+      "query_id": "v0_k8s_028",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to troubleshoot a node in MemoryPressure condition where pods are being evicted with reason The node was low on resource: memory?",
+      "s1_rank": 4,
+      "e6_rank": 26,
+      "s1_ndcg": 0.3390090350877799,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.3390090350877799
+    },
+    {
+      "query_id": "v0_k8s_031",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve forbidden errors stating exceeded quota when launching a pod in a resource-constrained namespace?",
+      "s1_rank": 4,
+      "e6_rank": 4,
+      "s1_ndcg": 0.44056209797003215,
+      "e6_ndcg": 0.3390090350877799,
+      "delta_ndcg": -0.10155306288225224
+    },
+    {
+      "query_id": "v0_k8s_035",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does a Kubernetes worker node transition to NotReady condition when the node lease fails to renew?",
+      "s1_rank": 5,
+      "e6_rank": 12,
+      "s1_ndcg": 0.38685280723454163,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.38685280723454163
+    },
+    {
+      "query_id": "v0_fa_006",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What configuration parameter on the FastAPI instance declares the base path when running behind a reverse proxy that strips path prefixes?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.95583058934618,
+      "e6_ndcg": 0.7309292742059024,
+      "delta_ndcg": -0.22490131514027767
+    },
+    {
+      "query_id": "v0_fa_007",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How are OpenAPI callbacks declared in a FastAPI path operation decorator?",
+      "s1_rank": 6,
+      "e6_rank": 20,
+      "s1_ndcg": 0.3562071871080222,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.3562071871080222
+    },
+    {
+      "query_id": "v0_fa_009",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What class in fastapi.security provides standard HTTP Basic authentication parsing for username and password credentials?",
+      "s1_rank": 2,
+      "e6_rank": 6,
+      "s1_ndcg": 0.6653152460429406,
+      "e6_ndcg": 0.37790671635007933,
+      "delta_ndcg": -0.28740852969286124
+    },
+    {
+      "query_id": "v0_fa_010",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How can regular expression pattern validation be added to a query parameter using Query in FastAPI?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 1.0,
+      "e6_ndcg": 0.7309292742059024,
+      "delta_ndcg": -0.26907072579409763
+    },
+    {
+      "query_id": "v0_fa_012",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "Why does calling time.sleep() inside an async def path operation block all incoming requests whereas inside a def function it runs safely in a threadpool?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.9176601606601069,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": -0.13050555766913507
+    },
+    {
+      "query_id": "v0_fa_015",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between setting dependencies on APIRouter(dependencies=[...]) versus the top-level FastAPI(dependencies=[...])?",
+      "s1_rank": 10,
+      "e6_rank": 26,
+      "s1_ndcg": 0.09751658939953338,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.09751658939953338
+    },
+    {
+      "query_id": "v0_fa_016",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "How does using Ellipsis (...) as the default value in Query compare to omitting the default argument when defining a required parameter in FastAPI?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.9073218002554915,
+      "e6_ndcg": 0.7871546029909718,
+      "delta_ndcg": -0.12016719726451963
+    },
+    {
+      "query_id": "v0_fa_017",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between Pydantic model_dump() and FastAPI jsonable_encoder when handling non-standard types like datetime and UUID?",
+      "s1_rank": 1,
+      "e6_rank": 11,
+      "s1_ndcg": 0.9324441894571632,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.9324441894571632
+    },
+    {
+      "query_id": "v0_fa_018",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "Why does FastAPI CORSMiddleware require explicitly specifying origins rather than using allow_origins=['*'] when allow_credentials=True?",
+      "s1_rank": 1,
+      "e6_rank": 2,
+      "s1_ndcg": 0.7309292742059024,
+      "e6_ndcg": 0.6653152460429406,
+      "delta_ndcg": -0.0656140281629618
+    },
+    {
+      "query_id": "v0_fa_021",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "How does the payload encoding and content-type header differ when using Form(...) compared to standard Body(...) in FastAPI endpoints?",
+      "s1_rank": 2,
+      "e6_rank": 7,
+      "s1_ndcg": 0.47020199776783905,
+      "e6_ndcg": 0.24841751140873256,
+      "delta_ndcg": -0.2217844863591065
+    },
+    {
+      "query_id": "v0_fa_023",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "How does configuring root_path as a FastAPI app parameter compare to passing the --root-path command-line option to the ASGI server when running behind a proxy with a stripped prefix?",
+      "s1_rank": 1,
+      "e6_rank": 1,
+      "s1_ndcg": 0.9879538239787089,
+      "e6_ndcg": 0.8250841569231713,
+      "delta_ndcg": -0.16286966705553763
+    },
+    {
+      "query_id": "v0_fa_028",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve 'Response to preflight request doesn't pass access control check: No Access-Control-Allow-Origin header is present on the requested resource' in FastAPI?",
+      "s1_rank": 1,
+      "e6_rank": 8,
+      "s1_ndcg": 0.7309292742059024,
+      "e6_ndcg": 0.10642269850451405,
+      "delta_ndcg": -0.6245065757013883
+    },
+    {
+      "query_id": "v0_fa_029",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an endpoint accepting Form(...) or File(...) upload return 422 Unprocessable Entity or fail on startup requesting python-multipart?",
+      "s1_rank": 1,
+      "e6_rank": 3,
+      "s1_ndcg": 0.7871546029909718,
+      "e6_ndcg": 0.3935773014954859,
+      "delta_ndcg": -0.3935773014954859
+    },
+    {
+      "query_id": "v0_fa_030",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to fix 'TypeError: Object of type datetime is not JSON serializable' when returning database query objects from a custom response in FastAPI?",
+      "s1_rank": 1,
+      "e6_rank": 25,
+      "s1_ndcg": 0.3373519727104165,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.3373519727104165
+    },
+    {
+      "query_id": "v0_fa_033",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an endpoint return 422 'Field required' for a query parameter when the user expects it to be optional?",
+      "s1_rank": 8,
+      "e6_rank": 17,
+      "s1_ndcg": 0.24831962984386616,
+      "e6_ndcg": 0.0,
+      "delta_ndcg": -0.24831962984386616
+    },
+    {
+      "query_id": "v0_fa_035",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How should CPU-intensive machine learning inference tasks be scheduled in FastAPI to prevent blocking other HTTP requests?",
+      "s1_rank": 1,
+      "e6_rank": 6,
+      "s1_ndcg": 0.7452525342261976,
+      "e6_ndcg": 0.26546430890183886,
+      "delta_ndcg": -0.4797882253243588
+    }
+  ],
+  "demoted_in_pool": [
+    {
+      "query_id": "v0_pg_003",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "Which database maintenance operations utilize maintenance_work_mem in PostgreSQL?",
+      "s1_rank": 5,
+      "e6_rank": 15,
+      "canonical_chunk_id": "c702d7353ba371001ec01f62"
+    },
+    {
+      "query_id": "v0_pg_004",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What are the allowed settings for wal_level in PostgreSQL and what do they enable?",
+      "s1_rank": 1,
+      "e6_rank": 37,
+      "canonical_chunk_id": "84096384a2d7c84e8e5eb05c"
+    },
+    {
+      "query_id": "v0_pt_034",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an elementwise tensor addition fail with size mismatch errors when dimensions are not equal and neither is 1 in PyTorch?",
+      "s1_rank": 2,
+      "e6_rank": 21,
+      "canonical_chunk_id": "a31494a23687fb2ebdf173ac"
+    },
+    {
+      "query_id": "v0_k8s_003",
+      "domain": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What pod fields control the total number of successful completions and concurrent pods in a Kubernetes Job?",
+      "s1_rank": 3,
+      "e6_rank": 13,
+      "canonical_chunk_id": "700a739908f70099cc9802bb"
+    },
+    {
+      "query_id": "v0_k8s_028",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to troubleshoot a node in MemoryPressure condition where pods are being evicted with reason The node was low on resource: memory?",
+      "s1_rank": 4,
+      "e6_rank": 26,
+      "canonical_chunk_id": "7ff2a656158ddef0906ad247"
+    },
+    {
+      "query_id": "v0_k8s_035",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does a Kubernetes worker node transition to NotReady condition when the node lease fails to renew?",
+      "s1_rank": 5,
+      "e6_rank": 12,
+      "canonical_chunk_id": "b445c38e3ea8299862b9b6be"
+    },
+    {
+      "query_id": "v0_fa_007",
+      "domain": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How are OpenAPI callbacks declared in a FastAPI path operation decorator?",
+      "s1_rank": 6,
+      "e6_rank": 20,
+      "canonical_chunk_id": "c90d9bf4c5bfb341386ca4dc"
+    },
+    {
+      "query_id": "v0_fa_015",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between setting dependencies on APIRouter(dependencies=[...]) versus the top-level FastAPI(dependencies=[...])?",
+      "s1_rank": 10,
+      "e6_rank": 26,
+      "canonical_chunk_id": "bbb2bb83a3ebad8971a4ecbd"
+    },
+    {
+      "query_id": "v0_fa_017",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between Pydantic model_dump() and FastAPI jsonable_encoder when handling non-standard types like datetime and UUID?",
+      "s1_rank": 1,
+      "e6_rank": 11,
+      "canonical_chunk_id": "09ed00e39072dbc10b0a0d16"
+    },
+    {
+      "query_id": "v0_fa_030",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to fix 'TypeError: Object of type datetime is not JSON serializable' when returning database query objects from a custom response in FastAPI?",
+      "s1_rank": 1,
+      "e6_rank": 25,
+      "canonical_chunk_id": "b32cb24631fa29b9b567e912"
+    },
+    {
+      "query_id": "v0_fa_033",
+      "domain": "fastapi",
+      "typology": "troubleshooting_scenario",
+      "query_text": "Why does an endpoint return 422 'Field required' for a query parameter when the user expects it to be optional?",
+      "s1_rank": 8,
+      "e6_rank": 17,
+      "canonical_chunk_id": "a8b8de40a2ed6a290b8f6307"
+    }
+  ],
+  "stage1_unrecoverable_misses": [
+    {
+      "query_id": "v0_k8s_032",
+      "domain": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to diagnose 'User cannot list resource in API group' errors using kubectl auth can-i and inspect assigned RoleBindings?",
+      "s1_rank": null,
+      "canonical_chunk_id": "179f6c6825199b802c178911"
+    }
+  ],
+  "vocab_code_failures": [
+    {
+      "query_id": "v0_pg_002",
+      "query_text": "What operation-level memory allocation is controlled by work_mem in PostgreSQL?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.6989700043360187
+    },
+    {
+      "query_id": "v0_pg_003",
+      "query_text": "Which database maintenance operations utilize maintenance_work_mem in PostgreSQL?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.30451296789464855
+    },
+    {
+      "query_id": "v0_pg_004",
+      "query_text": "What are the allowed settings for wal_level in PostgreSQL and what do they enable?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.7871546029909718
+    },
+    {
+      "query_id": "v0_pg_011",
+      "query_text": "What is the durability difference between synchronous_commit set to on versus remote_write in PostgreSQL replication?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.5
+    },
+    {
+      "query_id": "v0_pg_017",
+      "query_text": "How do the typalign and typstorage columns in the pg_type catalog govern data alignment and TOAST storage strategies for PostgreSQL data types?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.3745564936075477
+    },
+    {
+      "query_id": "v0_pg_019",
+      "query_text": "When should the btree_gin extension be used to index scalar columns in a composite GIN index instead of creating a standard B-tree index?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.36907024642854247
+    },
+    {
+      "query_id": "v0_pg_023",
+      "query_text": "How do temp_buffers differ from shared_buffers in scope and per-session allocation in PostgreSQL?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.22756853389363474
+    },
+    {
+      "query_id": "v0_pg_024",
+      "query_text": "What is the structural difference between the default pg_default tablespace and pg_global catalog tablespace?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.258173217652483
+    },
+    {
+      "query_id": "v0_pg_026",
+      "query_text": "How to resolve 'FATAL: sorry, too many clients already' by configuring max_connections and connection limits in PostgreSQL?",
+      "domain": "postgresql",
+      "delta_ndcg": -0.26935260452188303
+    },
+    {
+      "query_id": "v0_pt_001",
+      "query_text": "How can the autograd execution graph be inspected using the grad_fn attribute of a torch.Tensor in PyTorch?",
+      "domain": "pytorch",
+      "delta_ndcg": -0.1375554841440053
+    },
+    {
+      "query_id": "v0_pt_002",
+      "query_text": "How does gradient accumulation behavior for param.grad differ when create_graph is False versus True during backward in PyTorch?",
+      "domain": "pytorch",
+      "delta_ndcg": -0.06552281519378256
+    },
+    {
+      "query_id": "v0_pt_020",
+      "query_text": "How does the structured control flow operator torch.cond differ from Python if-else statements when tracing models for TorchScript or TorchDynamo in PyTorch?",
+      "domain": "pytorch",
+      "delta_ndcg": -0.522417506406863
+    },
+    {
+      "query_id": "v0_fa_009",
+      "query_text": "What class in fastapi.security provides standard HTTP Basic authentication parsing for username and password credentials?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.28740852969286124
+    },
+    {
+      "query_id": "v0_fa_012",
+      "query_text": "Why does calling time.sleep() inside an async def path operation block all incoming requests whereas inside a def function it runs safely in a threadpool?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.13050555766913507
+    },
+    {
+      "query_id": "v0_fa_015",
+      "query_text": "What is the difference between setting dependencies on APIRouter(dependencies=[...]) versus the top-level FastAPI(dependencies=[...])?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.09751658939953338
+    },
+    {
+      "query_id": "v0_fa_016",
+      "query_text": "How does using Ellipsis (...) as the default value in Query compare to omitting the default argument when defining a required parameter in FastAPI?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.12016719726451963
+    },
+    {
+      "query_id": "v0_fa_017",
+      "query_text": "What is the difference between Pydantic model_dump() and FastAPI jsonable_encoder when handling non-standard types like datetime and UUID?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.9324441894571632
+    },
+    {
+      "query_id": "v0_fa_018",
+      "query_text": "Why does FastAPI CORSMiddleware require explicitly specifying origins rather than using allow_origins=['*'] when allow_credentials=True?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.0656140281629618
+    },
+    {
+      "query_id": "v0_fa_021",
+      "query_text": "How does the payload encoding and content-type header differ when using Form(...) compared to standard Body(...) in FastAPI endpoints?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.2217844863591065
+    },
+    {
+      "query_id": "v0_fa_023",
+      "query_text": "How does configuring root_path as a FastAPI app parameter compare to passing the --root-path command-line option to the ASGI server when running behind a proxy with a stripped prefix?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.16286966705553763
+    },
+    {
+      "query_id": "v0_fa_029",
+      "query_text": "Why does an endpoint accepting Form(...) or File(...) upload return 422 Unprocessable Entity or fail on startup requesting python-multipart?",
+      "domain": "fastapi",
+      "delta_ndcg": -0.3935773014954859
+    }
+  ]
+}

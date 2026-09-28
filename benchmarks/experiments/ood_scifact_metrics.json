@@ -1,0 +1,76 @@
+{
+  "benchmark": "BEIR/SciFact (mteb/scifact)",
+  "split": "test",
+  "num_queries": 300,
+  "corpus_size": 5183,
+  "results": {
+    "BM25_Baseline": {
+      "recall_at_10": 0.7989444444444445,
+      "recall_at_100": 0.8858888888888888,
+      "ndcg_at_10": 0.669496453308488,
+      "mrr_at_10": 0.6354047619047619,
+      "num_queries": 300
+    },
+    "E1a_ZeroShot_BGE": {
+      "recall_at_10": 0.8362222222222222,
+      "recall_at_100": 0.9416666666666667,
+      "ndcg_at_10": 0.7117094926444577,
+      "mrr_at_10": 0.6807671957671958,
+      "num_queries": 300
+    },
+    "E4C_MatchedEasy_BGE": {
+      "recall_at_10": 0.8195555555555556,
+      "recall_at_100": 0.95,
+      "ndcg_at_10": 0.704436975042976,
+      "mrr_at_10": 0.6760211640211641,
+      "num_queries": 300
+    },
+    "E4_HardNeg_BGE": {
+      "recall_at_10": 0.8295555555555556,
+      "recall_at_100": 0.95,
+      "ndcg_at_10": 0.7088466583447773,
+      "mrr_at_10": 0.679132275132275,
+      "num_queries": 300
+    },
+    "E5C_Hybrid_MatchedEasy": {
+      "recall_at_10": 0.8328888888888889,
+      "recall_at_100": 0.965,
+      "ndcg_at_10": 0.7159978254423202,
+      "mrr_at_10": 0.6848941798941799,
+      "num_queries": 300
+    },
+    "E5H_Hybrid_HardNeg": {
+      "recall_at_10": 0.8370555555555556,
+      "recall_at_100": 0.9616666666666667,
+      "ndcg_at_10": 0.7170124928195154,
+      "mrr_at_10": 0.6861957671957671,
+      "num_queries": 300
+    }
+  },
+  "statistical_comparisons_vs_e1a": {
+    "E4C_MatchedEasy_BGE": {
+      "observed_delta": -0.007272517601481723,
+      "ci_lower": -0.01797240522581263,
+      "ci_upper": 0.0032361670194375044,
+      "degraded": false
+    },
+    "E4_HardNeg_BGE": {
+      "observed_delta": -0.002862834299680415,
+      "ci_lower": -0.0151154145225099,
+      "ci_upper": 0.009671142892684148,
+      "degraded": false
+    },
+    "E5C_Hybrid_MatchedEasy": {
+      "observed_delta": 0.00428833279786247,
+      "ci_lower": -0.023138453820611436,
+      "ci_upper": 0.03203355018283881,
+      "degraded": false
+    },
+    "E5H_Hybrid_HardNeg": {
+      "observed_delta": 0.005303000175057693,
+      "ci_lower": -0.021782605668864592,
+      "ci_upper": 0.0330091933481607,
+      "degraded": false
+    }
+  }
+}
