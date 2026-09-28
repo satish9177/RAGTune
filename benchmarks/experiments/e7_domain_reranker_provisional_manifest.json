@@ -1,0 +1,54 @@
+{
+  "experiment_id": "E7-DomainReranker-BGE-Provisional-v0",
+  "description": "Provisional in-domain cross-encoder reranker trained on multi-signal shielded safe negatives",
+  "workflow_mode": "PROVISIONAL_AI_FILTERED_PENDING_HUMAN_REVIEW",
+  "status": "COMPLETED_PROVISIONAL",
+  "timestamp_utc": "2026-09-28T20:32:09.508230+00:00",
+  "base_model": {
+    "name": "BAAI/bge-reranker-base",
+    "commit_sha": "2cfc18c9415c912f9d8155881c133215df768a70",
+    "parameter_count": 278044417
+  },
+  "training_data": {
+    "path": "data\\training\\e7_reranker_train_provisional_v1.jsonl",
+    "sha256": "18eafe1be0feda8b47e338c62bdb60f951acf81158bac7e410ff821dadc84859",
+    "record_count": 289,
+    "unique_queries": 122,
+    "pair_count": 411,
+    "positive_pairs": 122,
+    "negative_pairs": 289
+  },
+  "hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "grad_accum_steps": 4,
+    "effective_batch_size": 64,
+    "max_length": 384,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "optimizer": "AdamW",
+    "loss_function": "BCEWithLogitsLoss",
+    "precision": "fp16_amp",
+    "seed": 42
+  },
+  "hardware_telemetry": {
+    "gpu_device": "NVIDIA GeForce RTX 5050 Laptop GPU",
+    "gpu_total_vram_mb": 8150.5625,
+    "peak_vram_allocated_mb": 6898.115234375,
+    "peak_vram_reserved_mb": 7794.0,
+    "training_time_seconds": 24.30221870006062
+  },
+  "training_metrics": {
+    "epoch_losses": [
+      0.22021025992356813,
+      0.08807793918710488,
+      0.049029483853910975
+    ],
+    "initial_loss": 0.22021025992356813,
+    "final_loss": 0.049029483853910975,
+    "total_steps": 78,
+    "optimizer_steps": 21
+  },
+  "checkpoint_dir": "data\\models\\e7_bge_reranker_provisional_v0"
+}

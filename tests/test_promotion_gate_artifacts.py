@@ -550,3 +550,166 @@ def test_v1_to_v2_transitions():
     assert sum(counts.values()) == 3760
 
 
+def test_e7_provisional_exclusions_integrity():
+    """Verify conservative provisional query exclusions."""
+    excl_path = Path("data/training/E7_PROVISIONAL_QUERY_EXCLUSIONS.json")
+    audit_path = Path("data/training/E7_QUERY_POSITIVE_AUDIT.json")
+    assert excl_path.exists()
+    assert audit_path.exists()
+
+    with open(excl_path, "r", encoding="utf-8") as f:
+        excl = json.load(f)
+    with open(audit_path, "r", encoding="utf-8") as f:
+        audit = json.load(f)
+
+    assert excl["total_excluded_queries"] == 11
+    assert excl["status"] == "PROVISIONALLY_EXCLUDED_PENDING_HUMAN_AUDIT"
+    audit_qids = [it["query_id"] for it in audit["audit_items"]]
+    assert excl["excluded_query_ids"] == audit_qids
+
+
+def test_e7_provisional_dataset_integrity():
+    """Verify provisional training dataset: partition isolation, query count, and exclusion compliance."""
+    chunks_path = Path("data/processed/partitioned_chunks.jsonl")
+    train_cids = set()
+    val_cids = set()
+    test_cids = set()
+    with open(chunks_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                c = json.loads(line)
+                if c["partition"] == "train":
+                    train_cids.add(c["chunk_id"])
+                elif c["partition"] == "validation":
+                    val_cids.add(c["chunk_id"])
+                elif c["partition"] == "frozen_test":
+                    test_cids.add(c["chunk_id"])
+
+    with open("data/training/E7_PROVISIONAL_QUERY_EXCLUSIONS.json", "r", encoding="utf-8") as f:
+        excluded_qids = set(json.load(f)["excluded_query_ids"])
+
+    train_file = Path("data/training/e7_reranker_train_provisional_v1.jsonl")
+    assert train_file.exists()
+
+    records = []
+    by_query = {}
+    with open(train_file, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                r = json.loads(line)
+                records.append(r)
+                by_query.setdefault(r["query_id"], []).append(r)
+
+                # Partition isolation
+                assert r["positive_chunk_id"] in train_cids, "Positive chunk not in train!"
+                assert r["negative_chunk_id"] in train_cids, "Negative chunk not in train!"
+                assert r["positive_chunk_id"] not in val_cids
+                assert r["negative_chunk_id"] not in val_cids
+                assert r["positive_chunk_id"] not in test_cids
+                assert r["negative_chunk_id"] not in test_cids
+
+                # Exclusions compliance
+                assert r["query_id"] not in excluded_qids, f"Excluded query {r['query_id']} leaked into training!"
+
+    assert len(records) == 289
+    assert len(by_query) == 122
+    assert len(by_query) >= 75, "Fewer than 75 unique training queries!"
+    for qid, q_recs in by_query.items():
+        assert len(q_recs) <= 3, f"Query {qid} has more than 3 negatives!"
+
+
+def test_e7_model_and_training_manifest():
+    """Verify E7 cross-encoder training telemetry and saved checkpoint."""
+    model_dir = Path("data/models/e7_bge_reranker_provisional_v0")
+    manifest_path = Path("benchmarks/experiments/e7_domain_reranker_provisional_manifest.json")
+    assert model_dir.exists()
+    assert (model_dir / "config.json").exists()
+    assert manifest_path.exists()
+
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        m = json.load(f)
+
+    assert m["base_model"]["name"] == "BAAI/bge-reranker-base"
+    assert m["base_model"]["commit_sha"] == "2cfc18c9415c912f9d8155881c133215df768a70"
+    assert m["base_model"]["parameter_count"] == 278044417
+    assert m["hyperparameters"]["epochs"] == 3
+    assert m["hyperparameters"]["learning_rate"] == 2e-5
+    assert m["hyperparameters"]["optimizer"] == "AdamW"
+    assert m["training_data"]["record_count"] == 289
+    assert m["training_data"]["unique_queries"] == 122
+
+
+def test_e7_evaluation_metrics_and_gate():
+    """Verify E7 development evaluation metrics, failure transitions, and statistical results."""
+    preds_path = Path("benchmarks/experiments/e7c_provisional_predictions.jsonl")
+    metrics_path = Path("benchmarks/experiments/e7c_provisional_metrics.json")
+    trans_path = Path("benchmarks/experiments/e7c_failure_transition_analysis.json")
+
+    assert preds_path.exists()
+    assert metrics_path.exists()
+    assert trans_path.exists()
+
+    with open(preds_path, "r", encoding="utf-8") as f:
+        preds = [json.loads(line) for line in f if line.strip()]
+    assert len(preds) == 140
+
+    with open(metrics_path, "r", encoding="utf-8") as f:
+        m = json.load(f)
+    assert m["metrics"]["top10_failures"] == 4
+    assert m["candidate_depth"] == 20
+    assert abs(m["metrics"]["ndcg_at_10"] - 0.6851) < 0.001
+    assert abs(m["metrics"]["recall_at_10"] - 0.8250) < 0.001
+
+    # Statistical test vs E5C
+    vs_e5c = m["statistical_tests"]["vs_e5c_stage1"]
+    assert vs_e5c["delta_ndcg10"]["ci_95_bca_lower"] < 0.0, "Delta NDCG@10 lower bound must be <= 0 (failed gate)"
+    assert vs_e5c["delta_recall10"]["mean"] < 0.025, "Delta Recall@10 must be < +0.025 (failed gate)"
+
+    # Statistical test vs generic E6C
+    vs_e6c = m["statistical_tests"]["vs_e6c_top20_generic"]
+    assert vs_e6c["delta_ndcg10"]["mean"] > 0.0, "E7 must outperform generic E6C on NDCG@10"
+    assert vs_e6c["delta_recall10"]["mean"] > 0.0, "E7 must outperform generic E6C on Recall@10"
+
+    with open(trans_path, "r", encoding="utf-8") as f:
+        t = json.load(f)
+    assert t["comparison_e7_vs_e5c"]["recovered_misses_count"] == 2
+    assert t["comparison_e7_vs_e5c"]["regressed_misses_count"] == 3
+    assert t["comparison_e7_vs_e5c"]["demoted_in_pool_count"] == 3
+    assert t["comparison_e7_vs_e5c"]["unrecoverable_misses_count"] == 1
+    assert t["comparison_e7_vs_e6c_top20"]["recovered_misses_count"] == 5
+    assert t["comparison_e7_vs_e6c_top20"]["regressed_misses_count"] == 0
+
+
+def test_e7_scifact_ood_non_degradation():
+    """Verify BEIR SciFact OOD development non-degradation check."""
+    ood_metrics = Path("benchmarks/experiments/ood_scifact_e7_metrics.json")
+    ood_manifest = Path("benchmarks/experiments/ood_scifact_e7_manifest.json")
+    assert ood_metrics.exists()
+    assert ood_manifest.exists()
+
+    with open(ood_metrics, "r", encoding="utf-8") as f:
+        m = json.load(f)
+    assert m["comparison_e7_vs_e5c"]["non_degradation_gate"] == "PASSED"
+    assert m["comparison_e7_vs_e5c"]["observed_delta_ndcg10"] >= -0.015
+
+
+def test_e7_canonical_gate_and_morning_review_artifacts():
+    """Verify presence and key content of promotion gate and morning review documents."""
+    gate_path = Path("benchmarks/canonical/E7_PROVISIONAL_PROMOTION_GATE.md")
+    review_path = Path("benchmarks/review/E7_MORNING_REVIEW.md")
+    assert gate_path.exists()
+    assert review_path.exists()
+
+    gate_content = gate_path.read_text(encoding="utf-8")
+    assert "E7_PROVISIONAL_REJECTED_AS_STAGE2_DEFAULT" in gate_content
+    assert "RETAIN_E5C_AS_DEVELOPMENT_STAGE1_DEFAULT" in gate_content
+    assert "PROVISIONAL_AI_FILTERED_PENDING_HUMAN_REVIEW" in gate_content
+    assert "v0_k8s_032" in gate_content
+
+    review_content = review_path.read_text(encoding="utf-8")
+    assert "RETAIN_E5C_AS_DEVELOPMENT_STAGE1_DEFAULT" in review_content
+    assert "E7_QUERY_POSITIVE_AUDIT" in review_content
+    assert "E7_NEGATIVE_AUDIT_40_V2" in review_content
+
+
+

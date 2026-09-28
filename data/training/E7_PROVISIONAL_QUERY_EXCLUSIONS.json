@@ -1,0 +1,150 @@
+{
+  "generated_at_utc": "2026-09-28T20:25:58.394727+00:00",
+  "status": "PROVISIONALLY_EXCLUDED_PENDING_HUMAN_AUDIT",
+  "description": "Queries conservatively excluded from provisional E7 domain reranker training until human sign-off.",
+  "source_audit": "data/training/E7_QUERY_POSITIVE_AUDIT.json",
+  "total_excluded_queries": 11,
+  "excluded_query_ids": [
+    "train_po_0002",
+    "train_po_0030",
+    "train_po_0054",
+    "train_po_0085",
+    "train_py_0151",
+    "train_py_0155",
+    "train_py_0196",
+    "train_py_0202",
+    "train_py_0203",
+    "train_py_0217",
+    "train_py_0226"
+  ],
+  "query_details": [
+    {
+      "query_id": "train_po_0002",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "13586ed97d7472b603df33b6",
+      "positive_source_file": "release-16.sgml"
+    },
+    {
+      "query_id": "train_po_0030",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "d45af033d1c66df05a40cdf9",
+      "positive_source_file": "release-16.sgml"
+    },
+    {
+      "query_id": "train_po_0054",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "quality_flags": [
+        "VERY_LOW_LEXICAL_OVERLAP",
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "9c7cf48803b2ba36c1defc80",
+      "positive_source_file": "release-16.sgml"
+    },
+    {
+      "query_id": "train_po_0085",
+      "domain": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of A Brief History of PostgreSQL in postgresql?",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE"
+      ],
+      "positive_chunk_id": "306b8acb0fbe521349fbde11",
+      "positive_source_file": "history.sgml"
+    },
+    {
+      "query_id": "train_py_0151",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of CUDA semantics  Best practices in pytorch?",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY",
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_file": "notes/cuda.rst"
+    },
+    {
+      "query_id": "train_py_0155",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchTensor  Data types in pytorch?",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "positive_chunk_id": "5d2bd6022f1a2ba994674796",
+      "positive_source_file": "tensors.rst"
+    },
+    {
+      "query_id": "train_py_0196",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchfx  Writing Transformations in pytorch?",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "positive_chunk_id": "6356ec9fbbc3d357a317a6e4",
+      "positive_source_file": "fx.rst"
+    },
+    {
+      "query_id": "train_py_0202",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure b7f064c000000_0 in pytorch?",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst"
+    },
+    {
+      "query_id": "train_py_0203",
+      "domain": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve oom issues with b7f064c000000_0 in pytorch?",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst"
+    },
+    {
+      "query_id": "train_py_0217",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of torchnn  Loss Functions in pytorch?",
+      "quality_flags": [
+        "VERY_LOW_LEXICAL_OVERLAP",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "positive_chunk_id": "4a77147edd325550435d7b6c",
+      "positive_source_file": "nn.rst"
+    },
+    {
+      "query_id": "train_py_0226",
+      "domain": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of PyTorch 20 Troubleshooting  Minifying TorchInductor Errors in pytorch?",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY",
+        "HEADING_ARTIFACT"
+      ],
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_file": "torch.compiler_troubleshooting.rst"
+    }
+  ]
+}

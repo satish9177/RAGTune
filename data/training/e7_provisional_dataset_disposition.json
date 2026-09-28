@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-09-28T20:27:33.614412+00:00",
+  "total_safe_v2_candidates": 652,
+  "disposition_counts": {
+    "PROVISIONAL_TRAINABLE_NEGATIVE": 479,
+    "QUARANTINE_SEMANTIC_RISK": 23,
+    "REJECT_TRIVIAL_NOT_HARD": 116,
+    "EXCLUDED_QUERY_PENDING_REVIEW": 34
+  },
+  "unique_queries_with_trainable_negatives": 122,
+  "total_training_records": 289,
+  "domain_distribution": {
+    "fastapi": 87,
+    "kubernetes": 64,
+    "postgresql": 57,
+    "pytorch": 81
+  },
+  "training_file": "data\\training\\e7_reranker_train_provisional_v1.jsonl",
+  "training_file_sha256": "18eafe1be0feda8b47e338c62bdb60f951acf81158bac7e410ff821dadc84859",
+  "ledger_file": "data\\training\\e7_provisional_negative_ledger.jsonl",
+  "ledger_file_sha256": "b96ba3dbe04e8f9e65a4c8c6b639ef2282942b4ac6fc6ce847030b443661cf34"
+}

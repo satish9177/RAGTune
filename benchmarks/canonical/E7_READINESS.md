@@ -132,11 +132,11 @@ Across all 3,760 candidates in the V2 ledger:
 
 ---
 
-## 8. Summary Checklist & Explicit Training Prerequisites
+## 8. Summary Checklist & Provisional Execution State
 
 ```
 ================================================================================
-E7 EXPERIMENT READINESS CHECKLIST
+E7 EXPERIMENT READINESS & PROVISIONAL EXECUTION STATUS
 ================================================================================
 [x] Canonical TRAIN chunk count verified:            6,414 chunks (exact)
 [x] Permitted TRAIN query set locked:                188 queries (manifest verified)
@@ -148,11 +148,23 @@ E7 EXPERIMENT READINESS CHECKLIST
 [x] Failed V1 audit diagnostic review recorded:      AI_REVIEW_FAILED_NEGATIVE_QUALITY_GATE
 [x] Multi-signal semantic shields implemented:       Strict same-doc, entity, comparative
 [x] V2 candidate pool reclassified:                  652 SAFE_NEGATIVE_V2 candidates
-[ ] Prerequisite 1: E7_QUERY_POSITIVE_AUDIT:         PENDING_SATISH_HUMAN_REVIEW
-[ ] Prerequisite 2: E7_NEGATIVE_AUDIT_40_V2:         PENDING_SATISH_HUMAN_REVIEW (Gate)
-[ ] Prerequisite 3: Final capped candidate dataset:   Cap max 3 neg/query after signoff
+[x] Provisional query exclusions locked:             11 queries excluded (E7_PROVISIONAL_QUERY_EXCLUSIONS.json)
+[x] Provisional dataset generated:                   289 records across 122 queries (e7_reranker_train_provisional_v1.jsonl)
+[x] Provisional E7 cross-encoder trained:            BAAI/bge-reranker-base (3 epochs, RTX 5050, 24.30s)
+[x] Benchmark v0 development evaluation:             Completed (e7c_provisional_metrics.json)
+[x] Statistical BCa bootstrap & McNemar tests:       Completed vs E5C and vs E6C
+[x] SciFact OOD-dev non-degradation check:           PASSED (Delta NDCG@10 = -0.0080 >= -0.0150)
+[x] Failure transition trace recorded:               Completed (e7c_failure_transition_analysis.json)
+[x] Formal promotion gate evaluation:                benchmarks/canonical/E7_PROVISIONAL_PROMOTION_GATE.md
+[x] Complete morning review package:                 benchmarks/review/E7_MORNING_REVIEW.md
+[ ] Human Audit 1 (E7_QUERY_POSITIVE_AUDIT):         PENDING_SATISH_HUMAN_REVIEW (11 queries)
+[ ] Human Audit 2 (E7_NEGATIVE_AUDIT_40_V2):         PENDING_SATISH_HUMAN_REVIEW (40 items)
 ================================================================================
 FINAL READINESS STATE: E7_TRAINING_BLOCKED_PENDING_NEGATIVE_REPAIR_AND_QUERY_POSITIVE_AUDIT
+PROVISIONAL STATUS:    E7_PROVISIONAL_REJECTED_AS_STAGE2_DEFAULT
+PIPELINE CHAMPION:     RETAIN_E5C_AS_DEVELOPMENT_STAGE1_DEFAULT
 ================================================================================
 ```
+
+
 
