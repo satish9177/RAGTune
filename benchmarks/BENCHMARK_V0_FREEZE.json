@@ -9,7 +9,6 @@
     "decision": "APPROVED",
     "description": "Satish explicitly reviewed the final benchmark audit results and approved all 40 queries in the human audit sample (31 initial audit recommendations approved + final 9 approved queries: v0_pg_002, v0_pg_011, v0_pg_013, v0_pg_016, v0_pg_017, v0_pg_018, v0_pt_021, v0_pt_032, v0_k8s_007). Zero unprovided human decisions simulated. Prior audit statuses are truthfully preserved as reviewer recommendations / pending review until this explicit human approval event."
   },
-  "commit_hash": "efe284d",
   "benchmark_name": "Benchmark-v0",
   "benchmark_file": "benchmarks/benchmark_v0.jsonl",
   "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
@@ -21,7 +20,19 @@
     "partition_manifest_path": "benchmarks/partition_manifest.json",
     "partition_manifest_sha256": "af6cafe8cad8b1784a3720f9ea13c8e069bb94e5f7ef20b121a2f5c5e28af58a",
     "total_corpus_chunks": 11645,
-    "partition_unit": "top-level documentation module/chapter"
+    "partition_unit": "top-level documentation module/chapter",
+    "exact_partition_chunks": {
+      "train": 6414,
+      "validation": 1575,
+      "frozen_test": 3656,
+      "total": 11645
+    },
+    "partition_ratio_files": {
+      "train": 0.6,
+      "validation": 0.15,
+      "frozen_test": 0.25,
+      "total_files": 1240
+    }
   },
   "total_queries": 140,
   "source_partition": "validation",
@@ -160,9 +171,9 @@
     "E1c": {
       "name": "Qwen/Qwen3-Embedding-0.6B",
       "stage": "1 (Dense Ref)",
-      "recall_at_10": 0.8250,
+      "recall_at_10": 0.825,
       "mrr_at_10": 0.7611,
-      "ndcg_at_10": 0.7120,
+      "ndcg_at_10": 0.712,
       "p50_latency_ms": 74.71,
       "top10_failures": 6,
       "peak_vram_mb": 1193.2
@@ -212,7 +223,7 @@
       "stage": "1 (Fine-Tuned)",
       "recall_at_10": 0.7893,
       "mrr_at_10": 0.6937,
-      "ndcg_at_10": 0.6350,
+      "ndcg_at_10": 0.635,
       "p50_latency_ms": 17.32,
       "top10_failures": 9,
       "peak_vram_mb": 379.7
@@ -222,85 +233,146 @@
     {
       "comparison": "E1c vs E0 (Qwen3 vs BM25)",
       "delta_ndcg10": 0.0936,
-      "ci_95_bca_ndcg10": [0.0482, 0.1406],
+      "ci_95_bca_ndcg10": [
+        0.0482,
+        0.1406
+      ],
       "delta_recall10": 0.0679,
-      "ci_95_bca_recall10": [0.0214, 0.1214],
+      "ci_95_bca_recall10": [
+        0.0214,
+        0.1214
+      ],
       "mcnemar_recall10": {
         "candidate_wins": 9,
         "candidate_losses": 4,
         "chi2": 1.231,
-        "p_value": 0.2673
-      }
+        "p_value": 0.2673,
+        "raw_p_value": 0.2673,
+        "p_value_reporting": "McNemar p=0.2673 (unadjusted for multiple comparisons)"
+      },
+      "pre_specified_status": "Pre-specified Secondary Reference Comparison",
+      "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
     },
     {
       "comparison": "E2c vs E0 (Hybrid BM25+Qwen3 vs BM25)",
       "delta_ndcg10": 0.0809,
-      "ci_95_bca_ndcg10": [0.0561, 0.1068],
+      "ci_95_bca_ndcg10": [
+        0.0561,
+        0.1068
+      ],
       "delta_recall10": 0.0893,
-      "ci_95_bca_recall10": [0.0571, 0.1286],
+      "ci_95_bca_recall10": [
+        0.0571,
+        0.1286
+      ],
       "mcnemar_recall10": {
         "candidate_wins": 7,
         "candidate_losses": 0,
         "chi2": 5.143,
-        "p_value": 0.0233
-      }
+        "p_value": 0.0233,
+        "raw_p_value": 0.0233,
+        "p_value_reporting": "McNemar p=0.0233 (unadjusted for multiple comparisons)"
+      },
+      "pre_specified_status": "Pre-specified Secondary Hybrid Reference",
+      "multiple_comparison_status": "McNemar p=0.0233 (unadjusted for multiple comparisons); non-significant under Holm-Bonferroni across 7 planned tests (alpha=0.0071)"
     },
     {
       "comparison": "E2a vs E1a (Hybrid BM25+BGE vs BGE-small)",
       "delta_ndcg10": 0.0516,
-      "ci_95_bca_ndcg10": [0.0162, 0.0867],
+      "ci_95_bca_ndcg10": [
+        0.0162,
+        0.0867
+      ],
       "delta_recall10": 0.0643,
-      "ci_95_bca_recall10": [0.0250, 0.1036],
+      "ci_95_bca_recall10": [
+        0.025,
+        0.1036
+      ],
       "mcnemar_recall10": {
         "candidate_wins": 7,
         "candidate_losses": 1,
         "chi2": 3.125,
-        "p_value": 0.0771
-      }
+        "p_value": 0.0771,
+        "raw_p_value": 0.0771,
+        "p_value_reporting": "McNemar p=0.0771 (unadjusted for multiple comparisons)"
+      },
+      "pre_specified_status": "Pre-specified Primary Hybrid-over-Dense Hypothesis",
+      "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
     },
     {
       "comparison": "E3 vs E1a (Fine-Tuned BGE vs Zero-Shot BGE)",
       "delta_ndcg10": 0.0364,
-      "ci_95_bca_ndcg10": [0.0139, 0.0613],
-      "delta_recall10": 0.0500,
-      "ci_95_bca_recall10": [0.0214, 0.0893],
+      "ci_95_bca_ndcg10": [
+        0.0139,
+        0.0613
+      ],
+      "delta_recall10": 0.05,
+      "ci_95_bca_recall10": [
+        0.0214,
+        0.0893
+      ],
       "mcnemar_recall10": {
         "candidate_wins": 6,
         "candidate_losses": 1,
         "chi2": 2.286,
-        "p_value": 0.1306
-      }
+        "p_value": 0.1306,
+        "raw_p_value": 0.1306,
+        "p_value_reporting": "McNemar p=0.1306 (unadjusted for multiple comparisons)"
+      },
+      "pre_specified_status": "Pre-specified Primary Fine-Tuning Learning Hypothesis",
+      "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
     },
     {
       "comparison": "E3 vs E0 (Fine-Tuned BGE vs BM25)",
       "delta_ndcg10": 0.0166,
-      "ci_95_bca_ndcg10": [-0.0353, 0.0716],
+      "ci_95_bca_ndcg10": [
+        -0.0353,
+        0.0716
+      ],
       "delta_recall10": 0.0321,
-      "ci_95_bca_recall10": [-0.0250, 0.0929],
+      "ci_95_bca_recall10": [
+        -0.025,
+        0.0929
+      ],
       "mcnemar_recall10": {
         "candidate_wins": 10,
         "candidate_losses": 8,
         "chi2": 0.056,
-        "p_value": 0.8137
-      }
+        "p_value": 0.8137,
+        "raw_p_value": 0.8137,
+        "p_value_reporting": "McNemar p=0.8137 (unadjusted for multiple comparisons)"
+      },
+      "pre_specified_status": "Pre-specified Secondary Comparison",
+      "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
     },
     {
       "comparison": "E2b-hybrid vs E2a (Reranker on Hybrid vs Hybrid Stage 1)",
       "delta_ndcg10": 0.0063,
-      "ci_95_bca_ndcg10": [-0.0366, 0.0453],
+      "ci_95_bca_ndcg10": [
+        -0.0366,
+        0.0453
+      ],
       "delta_recall10": -0.0393,
-      "ci_95_bca_recall10": [-0.0821, 0.0000],
+      "ci_95_bca_recall10": [
+        -0.0821,
+        0.0
+      ],
       "mcnemar_recall10": {
         "candidate_wins": 3,
         "candidate_losses": 8,
         "chi2": 1.455,
-        "p_value": 0.2278
-      }
+        "p_value": 0.2278,
+        "raw_p_value": 0.2278,
+        "p_value_reporting": "McNemar p=0.2278 (unadjusted for multiple comparisons)"
+      },
+      "pre_specified_status": "Pre-specified Primary Stage-2 Reranking Hypothesis",
+      "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
     }
   ],
   "scientific_scope_declaration": {
     "training_protocol": "TRAIN-only contrastive fine-tuning using synthetically mined negatives filtered against teacher margin; frozen_test partition completely sealed and unvisited.",
     "evaluation_scope": "All reported metrics and statistical tests were evaluated on the 140-query development benchmark (Benchmark v0).",
     "generalization_claims": "No claims are made that fine-tuning or reranking proves general retrieval effectiveness beyond this development benchmark. Final release claims are deferred to the untouched frozen_test evaluation."
-  }
+  },
+  "artifact_source_commit": "ade4c23"
 }

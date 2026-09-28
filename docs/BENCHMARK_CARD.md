@@ -110,7 +110,13 @@ The development benchmark quality process incorporates iterative human audit rev
 - *Inter-Annotator Agreement*: No claims of inter-annotator agreement are made unless multiple independent annotators formally label overlapping subsets.
 
 ## 5. Partitioning, Roles & Leakage Controls
-- **Partition Ratio**: Train 60%, Validation 15%, Frozen Test 25%.
+- **Partition Ratio (File Level)**: Train 60.0% (743 files), Validation 15.0% (184 files), Frozen Test 25.0% (313 files). Total files = 1,240.
+- **Exact Partition Chunks (`benchmarks/partition_manifest.json`)**:
+  - `train`: 6,414 chunks (55.08%)
+  - `validation`: 1,575 chunks (13.53%)
+  - `frozen_test`: 3,656 chunks (31.40%)
+  - **Total**: 11,645 chunks (`train + validation + frozen_test == 11,645`).
+- **Historical Count Reconciliation Note**: An earlier informal report summary casually cited `frozen_test = 2,873 chunks (~24.7%)`, which was a naive arithmetic chunk estimate ($11,645 \times 0.2467 = 2,873$) rather than the manifest count. Because partitioning operates on whole document/chapter units and files differ in length, the exact chunk count for `frozen_test` is 3,656 chunks.
 - **Partition Unit**: Top-level documentation chapters and modules. Chunks from the same topic are strictly co-located.
 - **Three-Tier Query Roles**:
   1. **Training Queries (`train` partition)**: Exclusively used for contrastive pair construction, hard-negative mining, and bi-encoder/cross-encoder fine-tuning.

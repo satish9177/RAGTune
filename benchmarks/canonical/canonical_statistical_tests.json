@@ -22,8 +22,12 @@
       "both_hit": 117,
       "both_miss": 2,
       "chi2_stat": 0.19047619047619047,
-      "p_value": 0.6625205835400574
-    }
+      "p_value": 0.6625205835400574,
+      "raw_p_value": 0.6625205835400574,
+      "p_value_reporting": "McNemar p=0.6625 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Primary Dense Baseline Comparison",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   },
   {
     "comparison": "E1c vs E0",
@@ -48,8 +52,12 @@
       "both_hit": 125,
       "both_miss": 2,
       "chi2_stat": 1.2307692307692308,
-      "p_value": 0.26725749315438785
-    }
+      "p_value": 0.26725749315438785,
+      "raw_p_value": 0.26725749315438785,
+      "p_value_reporting": "McNemar p=0.2673 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Secondary Reference Comparison",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   },
   {
     "comparison": "E2a vs E0",
@@ -74,8 +82,12 @@
       "both_hit": 124,
       "both_miss": 3,
       "chi2_stat": 0.3076923076923077,
-      "p_value": 0.5790997419539188
-    }
+      "p_value": 0.5790997419539188,
+      "raw_p_value": 0.5790997419539188,
+      "p_value_reporting": "McNemar p=0.5791 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Primary Hybrid Hypothesis",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   },
   {
     "comparison": "E2a vs E1a",
@@ -100,8 +112,12 @@
       "both_hit": 125,
       "both_miss": 7,
       "chi2_stat": 3.125,
-      "p_value": 0.07709987174354205
-    }
+      "p_value": 0.07709987174354205,
+      "raw_p_value": 0.07709987174354205,
+      "p_value_reporting": "McNemar p=0.0771 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Primary Hybrid-over-Dense Hypothesis",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   },
   {
     "comparison": "E2c vs E0",
@@ -126,8 +142,12 @@
       "both_hit": 129,
       "both_miss": 4,
       "chi2_stat": 5.142857142857143,
-      "p_value": 0.023342202012890834
-    }
+      "p_value": 0.023342202012890834,
+      "raw_p_value": 0.023342202012890834,
+      "p_value_reporting": "McNemar p=0.0233 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Secondary Hybrid Reference",
+    "multiple_comparison_status": "McNemar p=0.0233 (unadjusted for multiple comparisons); non-significant under Holm-Bonferroni across 7 planned tests (alpha=0.0071)"
   },
   {
     "comparison": "E3 vs E1a",
@@ -152,8 +172,12 @@
       "both_hit": 125,
       "both_miss": 8,
       "chi2_stat": 2.2857142857142856,
-      "p_value": 0.13057001811573699
-    }
+      "p_value": 0.13057001811573699,
+      "raw_p_value": 0.13057001811573699,
+      "p_value_reporting": "McNemar p=0.1306 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Primary Fine-Tuning Learning Hypothesis",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   },
   {
     "comparison": "E3 vs E0",
@@ -178,8 +202,12 @@
       "both_hit": 121,
       "both_miss": 1,
       "chi2_stat": 0.05555555555555555,
-      "p_value": 0.8136637157667919
-    }
+      "p_value": 0.8136637157667919,
+      "raw_p_value": 0.8136637157667919,
+      "p_value_reporting": "McNemar p=0.8137 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Secondary Comparison",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   },
   {
     "comparison": "E2b-hybrid vs E2a",
@@ -204,7 +232,11 @@
       "both_hit": 124,
       "both_miss": 5,
       "chi2_stat": 1.4545454545454546,
-      "p_value": 0.22779999398822903
-    }
+      "p_value": 0.22779999398822903,
+      "raw_p_value": 0.22779999398822903,
+      "p_value_reporting": "McNemar p=0.2278 (unadjusted for multiple comparisons)"
+    },
+    "pre_specified_status": "Pre-specified Primary Stage-2 Reranking Hypothesis",
+    "multiple_comparison_status": "unadjusted for multiple comparisons; non-significant"
   }
 ]

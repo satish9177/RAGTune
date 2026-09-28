@@ -23,44 +23,60 @@
 ## 2. Recomputed Statistical Comparisons (Protocol §3.2)
 
 ### E1a vs E0 (BGE-small vs BM25)
-- **Δ NDCG@10**: `-0.0198` (95% BCa Bootstrap CI: `[-0.0751, +0.0362]`)
-- **Δ Recall@10**: `-0.0179` (95% BCa Bootstrap CI: `[-0.0750, +0.0429]`)
-- **McNemar's Test (Recall@10)**: Wins=9, Losses=12, Tied Hits=117, Tied Misses=2, $\chi^2=0.190$, $p=0.6625$
+- **Pre-specified Status**: Pre-specified Primary Dense Baseline Comparison
+- **Effect Size (Δ NDCG@10)**: `-0.0198` (95% BCa Bootstrap CI: `[-0.0751, +0.0362]`)
+- **Effect Size (Δ Recall@10)**: `-0.0179` (95% BCa Bootstrap CI: `[-0.0750, +0.0429]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=9, Candidate Losses=12 (Tied Hits=117, Tied Misses=2)
+- **Significance**: $\chi^2=0.190$, raw $p=0.6625$ (unadjusted for multiple comparisons; non-significant)
 
 ### E1c vs E0 (Qwen3 vs BM25)
-- **Δ NDCG@10**: `+0.0936` (95% BCa Bootstrap CI: `[+0.0482, +0.1406]`)
-- **Δ Recall@10**: `+0.0679` (95% BCa Bootstrap CI: `[+0.0214, +0.1214]`)
-- **McNemar's Test (Recall@10)**: Wins=9, Losses=4, Tied Hits=125, Tied Misses=2, $\chi^2=1.231$, $p=0.2673$
+- **Pre-specified Status**: Pre-specified Secondary Reference Comparison
+- **Effect Size (Δ NDCG@10)**: `+0.0936` (95% BCa Bootstrap CI: `[+0.0482, +0.1406]`)
+- **Effect Size (Δ Recall@10)**: `+0.0679` (95% BCa Bootstrap CI: `[+0.0214, +0.1214]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=9, Candidate Losses=4 (Tied Hits=125, Tied Misses=2)
+- **Significance**: $\chi^2=1.231$, raw $p=0.2673$ (unadjusted for multiple comparisons; non-significant)
 
 ### E2a vs E0 (Hybrid (BM25+BGE) vs BM25)
-- **Δ NDCG@10**: `+0.0318` (95% BCa Bootstrap CI: `[-0.0026, +0.0674]`)
-- **Δ Recall@10**: `+0.0464` (95% BCa Bootstrap CI: `[+0.0036, +0.0929]`)
-- **McNemar's Test (Recall@10)**: Wins=8, Losses=5, Tied Hits=124, Tied Misses=3, $\chi^2=0.308$, $p=0.5791$
+- **Pre-specified Status**: Pre-specified Primary Hybrid Hypothesis
+- **Effect Size (Δ NDCG@10)**: `+0.0318` (95% BCa Bootstrap CI: `[-0.0026, +0.0674]`)
+- **Effect Size (Δ Recall@10)**: `+0.0464` (95% BCa Bootstrap CI: `[+0.0036, +0.0929]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=8, Candidate Losses=5 (Tied Hits=124, Tied Misses=3)
+- **Significance**: $\chi^2=0.308$, raw $p=0.5791$ (unadjusted for multiple comparisons; non-significant)
 
 ### E2a vs E1a (Hybrid (BM25+BGE) vs BGE-small)
-- **Δ NDCG@10**: `+0.0516` (95% BCa Bootstrap CI: `[+0.0162, +0.0867]`)
-- **Δ Recall@10**: `+0.0643` (95% BCa Bootstrap CI: `[+0.0250, +0.1036]`)
-- **McNemar's Test (Recall@10)**: Wins=7, Losses=1, Tied Hits=125, Tied Misses=7, $\chi^2=3.125$, $p=0.0771$
+- **Pre-specified Status**: Pre-specified Primary Hybrid-over-Dense Hypothesis
+- **Effect Size (Δ NDCG@10)**: `+0.0516` (95% BCa Bootstrap CI: `[+0.0162, +0.0867]`)
+- **Effect Size (Δ Recall@10)**: `+0.0643` (95% BCa Bootstrap CI: `[+0.0250, +0.1036]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=7, Candidate Losses=1 (Tied Hits=125, Tied Misses=7)
+- **Significance**: $\chi^2=3.125$, raw $p=0.0771$ (unadjusted for multiple comparisons; non-significant)
 
 ### E2c vs E0 (Hybrid (BM25+Qwen3) vs BM25)
-- **Δ NDCG@10**: `+0.0809` (95% BCa Bootstrap CI: `[+0.0561, +0.1068]`)
-- **Δ Recall@10**: `+0.0893` (95% BCa Bootstrap CI: `[+0.0571, +0.1286]`)
-- **McNemar's Test (Recall@10)**: Wins=7, Losses=0, Tied Hits=129, Tied Misses=4, $\chi^2=5.143$, $p=0.0233$
+- **Pre-specified Status**: Pre-specified Secondary Hybrid Reference
+- **Effect Size (Δ NDCG@10)**: `+0.0809` (95% BCa Bootstrap CI: `[+0.0561, +0.1068]`)
+- **Effect Size (Δ Recall@10)**: `+0.0893` (95% BCa Bootstrap CI: `[+0.0571, +0.1286]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=7, Candidate Losses=0 (Tied Hits=129, Tied Misses=4)
+- **Significance**: $\chi^2=5.143$, McNemar raw $p=0.0233$ (unadjusted for multiple comparisons). Under Holm-Bonferroni correction across the family of 7 planned comparisons ($\alpha_{adjusted}=0.05/7 = 0.0071$), this transition does not reach family-wise statistical significance.
 
 ### E3 vs E1a (Fine-Tuned BGE vs Zero-Shot BGE)
-- **Δ NDCG@10**: `+0.0364` (95% BCa Bootstrap CI: `[+0.0139, +0.0613]`)
-- **Δ Recall@10**: `+0.0500` (95% BCa Bootstrap CI: `[+0.0214, +0.0893]`)
-- **McNemar's Test (Recall@10)**: Wins=6, Losses=1, Tied Hits=125, Tied Misses=8, $\chi^2=2.286$, $p=0.1306$
+- **Pre-specified Status**: Pre-specified Primary Fine-Tuning Learning Hypothesis
+- **Effect Size (Δ NDCG@10)**: `+0.0364` (95% BCa Bootstrap CI: `[+0.0139, +0.0613]`)
+- **Effect Size (Δ Recall@10)**: `+0.0500` (95% BCa Bootstrap CI: `[+0.0214, +0.0893]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=6, Candidate Losses=1 (Tied Hits=125, Tied Misses=8)
+- **Significance**: $\chi^2=2.286$, raw $p=0.1306$ (unadjusted for multiple comparisons; non-significant)
 
 ### E3 vs E0 (Fine-Tuned BGE vs BM25)
-- **Δ NDCG@10**: `+0.0166` (95% BCa Bootstrap CI: `[-0.0353, +0.0716]`)
-- **Δ Recall@10**: `+0.0321` (95% BCa Bootstrap CI: `[-0.0250, +0.0929]`)
-- **McNemar's Test (Recall@10)**: Wins=10, Losses=8, Tied Hits=121, Tied Misses=1, $\chi^2=0.056$, $p=0.8137$
+- **Pre-specified Status**: Pre-specified Secondary Comparison
+- **Effect Size (Δ NDCG@10)**: `+0.0166` (95% BCa Bootstrap CI: `[-0.0353, +0.0716]`)
+- **Effect Size (Δ Recall@10)**: `+0.0321` (95% BCa Bootstrap CI: `[-0.0250, +0.0929]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=10, Candidate Losses=8 (Tied Hits=121, Tied Misses=1)
+- **Significance**: $\chi^2=0.056$, raw $p=0.8137$ (unadjusted for multiple comparisons; non-significant)
 
 ### E2b-hybrid vs E2a (Reranker on Hybrid vs Hybrid Stage 1)
-- **Δ NDCG@10**: `+0.0063` (95% BCa Bootstrap CI: `[-0.0366, +0.0453]`)
-- **Δ Recall@10**: `-0.0393` (95% BCa Bootstrap CI: `[-0.0821, +0.0000]`)
-- **McNemar's Test (Recall@10)**: Wins=3, Losses=8, Tied Hits=124, Tied Misses=5, $\chi^2=1.455$, $p=0.2278$
+- **Pre-specified Status**: Pre-specified Primary Stage-2 Reranking Hypothesis
+- **Effect Size (Δ NDCG@10)**: `+0.0063` (95% BCa Bootstrap CI: `[-0.0366, +0.0453]`)
+- **Effect Size (Δ Recall@10)**: `-0.0393` (95% BCa Bootstrap CI: `[-0.0821, +0.0000]`)
+- **McNemar Discordant Counts (Recall@10)**: Candidate Wins=3, Candidate Losses=8 (Tied Hits=124, Tied Misses=5)
+- **Significance**: $\chi^2=1.455$, raw $p=0.2278$ (unadjusted for multiple comparisons; non-significant)
 
 ## 3. Preserved Model Selection Conclusions & Architectural Trade-offs
 
