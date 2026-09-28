@@ -1,0 +1,28 @@
+{
+  "experiment": "E7_DOMAIN_RERANKER_MINING",
+  "retriever_foundation": "E5C (BM25 + E4C Dense Hybrid Fusion RRF k=60)",
+  "teacher_model": "BAAI/bge-reranker-base",
+  "query_set": "E7_PRIMARY_QUERY_MANIFEST (188 queries)",
+  "corpus_partition": "train (strictly 6,414 chunks)",
+  "total_candidates_mined": 3760,
+  "disposition_counts": {
+    "SAFE_NEGATIVE": 1216,
+    "QUARANTINE_POSSIBLE_FALSE_NEGATIVE": 1044,
+    "REJECT_KNOWN_RELEVANT": 186,
+    "REJECT_TOO_EASY": 1314
+  },
+  "quarantine_reasons": {
+    "SAME_DOCUMENT_SUBTOPIC_PROXIMITY": 357,
+    "LOW_POSITIVE_TEACHER_CONFIDENCE": 67,
+    "AMBIGUOUS_TEACHER_MARGIN": 184,
+    "TEACHER_INVERSION_OR_TIE": 148,
+    "HIGH_TEACHER_SCORE_PROBABLE_ANSWER": 278,
+    "HIGH_LEXICAL_OVERLAP_WITH_POSITIVE": 10
+  },
+  "safe_negatives_by_ecosystem": {
+    "postgresql": 248,
+    "pytorch": 372,
+    "kubernetes": 268,
+    "fastapi": 328
+  }
+}

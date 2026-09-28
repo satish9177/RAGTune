@@ -2,7 +2,7 @@
 
 **Document Path**: `benchmarks/canonical/E7_READINESS.md`  
 **Date**: 2026-09-28  
-**Readiness Status**: **`READY_FOR_TRAINING_AFTER_HUMAN_NEGATIVE_AUDIT`**  
+**Readiness Status**: **`READY_FOR_TRAINING_AFTER_E7_NEGATIVE_HUMAN_AUDIT`**  
 **Target Architecture**: Stage-2 Domain Cross-Encoder Reranker (`BAAI/bge-reranker-base` fine-tuned)  
 **Upstream Stage-1 Generator**: `E5C` (SQLite FTS5 BM25 + E4C Matched-Easy Dense via RRF $k=60$)  
 **Target Hardware**: NVIDIA GeForce RTX 5050 Laptop GPU (8,151 MiB VRAM, CUDA 12.8, PyTorch 2.11.0+cu128)
@@ -29,13 +29,13 @@ All training pairs for E7 must originate strictly from the canonical frozen `tra
 
 ## 2. Permitted Training Queries
 
-Training pairs must use only the canonical train-split queries generated during Phase 3 and stored in:
-`data/training/retriever_train_v0.jsonl`
-- **Total Permitted Query Count**: **188 queries**
-- **Query ID Range**: `train_po_0001` through `train_po_0188` (all prefixed with `train_`)
+Training pairs use strictly the canonical train-split queries generated during Phase 3 and locked in:
+- **Primary Manifest**: `data/training/E7_PRIMARY_QUERY_MANIFEST.json` (SHA-256: `a0cb391c36c1f1d54d8712d9bfe540e4792f0ae8eb6826e68d6bda02d14dffd5`)
+- **Total Permitted Query Count**: Exactly **188 queries**
+- **Query ID Distribution**: PyTorch: 59, PostgreSQL: 45, Kubernetes: 43, FastAPI: 41 (all prefixed with `train_`)
 - **Query Source Partition**: 100% `train` (`query_source_partition: "train"`)
 - **Positive Chunk Partition**: 100% `train` (`positive_source_partition: "train"`)
-- **Permitted Candidates**: Mined strictly over the 6,414 train chunks.
+- **Structural Quality Report**: `data/training/E7_QUERY_POSITIVE_QUALITY.json` (125 `CLEAN`, 59 `REVIEW_QUERY`, 4 `REVIEW_POSITIVE_MAPPING`)
 
 ---
 
@@ -81,11 +81,34 @@ The un-fine-tuned cross-encoder `BAAI/bge-reranker-base` was profiled in E6 and 
 
 ## 6. Pre-Condition: Hard-Negative Human Audit Status
 
-- **Audit Artifacts**:
-  - Markdown Report: [`data/training/HARD_NEGATIVE_AUDIT_40.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/HARD_NEGATIVE_AUDIT_40.md)
-  - Machine-Readable Companion: [`data/training/HARD_NEGATIVE_AUDIT_40.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/HARD_NEGATIVE_AUDIT_40.json)
+### A. Historical E4 Audit (`HARD_NEGATIVE_AUDIT_40`)
+- Preserved unchanged as historical evidence in [`data/training/HARD_NEGATIVE_AUDIT_40.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/HARD_NEGATIVE_AUDIT_40.md).
+- AI diagnostic review recorded in [`data/training/HARD_NEGATIVE_AUDIT_40_AI_REVIEW.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/HARD_NEGATIVE_AUDIT_40_AI_REVIEW.json):
+  - 4 `FALSE_NEGATIVE`, 6 `AMBIGUOUS_UNSAFE_NEGATIVE`, 30 `LIKELY_TRUE_NEGATIVE`.
+  - Diagnosed `train_fa_0377` query-positive mapping defect.
+- Declared as **AI-assisted recommendations only**; human review status remains `PENDING_SATISH_HUMAN_REVIEW`.
+
+### B. E7 Candidate Mining & Safe Negative Pool
+- **Mining Foundation**: `E5C` (BM25 + E4C Dense Hybrid Fusion RRF $k=60$) over all 6,414 `train` chunks.
+- **Candidate Ledger**: [`data/training/e7_candidate_ledger.jsonl`](file:///c:/Users/SATISH/projects/RAGTune/data/training/e7_candidate_ledger.jsonl) (3,760 total candidates across 188 queries).
+- **Candidate Disposition**:
+  - **`SAFE_NEGATIVE`**: 1,216 (32.34%) — PyTorch: 372, FastAPI: 328, Kubernetes: 268, PostgreSQL: 248.
+  - **`QUARANTINE_POSSIBLE_FALSE_NEGATIVE`**: 1,044 (27.77%)
+  - **`REJECT_KNOWN_RELEVANT`**: 186 (4.95%)
+  - **`REJECT_TOO_EASY`**: 1,314 (34.95%)
+- **Quarantine Reasons Breakdown**:
+  - `SAME_DOCUMENT_SUBTOPIC_PROXIMITY`: 357
+  - `HIGH_TEACHER_SCORE_PROBABLE_ANSWER`: 278
+  - `AMBIGUOUS_TEACHER_MARGIN`: 184
+  - `TEACHER_INVERSION_OR_TIE`: 148
+  - `LOW_POSITIVE_TEACHER_CONFIDENCE`: 67
+  - `HIGH_LEXICAL_OVERLAP_WITH_POSITIVE`: 10
+
+### C. Dedicated E7 Human Verification Audit Packet
+- **Markdown Audit Packet**: [`data/training/E7_NEGATIVE_AUDIT_40.md`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40.md)
+- **Machine-Readable Companion**: [`data/training/E7_NEGATIVE_AUDIT_40.json`](file:///c:/Users/SATISH/projects/RAGTune/data/training/E7_NEGATIVE_AUDIT_40.json)
 - **Current Status**: **`PENDING_HUMAN_AUDIT`**
-- **Non-Negotiable Rule**: No training with teacher/heuristic-filtered hard negatives will begin until Satish / the human reviewer reviews and approves the 40-triple audit sample. No human approval will be simulated.
+- **Non-Negotiable Rule**: No domain reranker training (E7) will begin until Satish personally reviews and approves the 40-triple audit sample. No human approval will be simulated.
 
 ---
 

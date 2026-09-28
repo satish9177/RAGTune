@@ -1,0 +1,1344 @@
+{
+  "audit_name": "HARD_NEGATIVE_AUDIT_40_AI_REVIEW",
+  "description": "AI-assisted multi-dimensional review of the 40 historical E4 hard-negative audit candidates.",
+  "status": "AI_RECOMMENDATION_PENDING_HUMAN_CONFIRMATION",
+  "human_approval_note": "These are AI-assisted recommendations only. Do NOT mark as Satish human approval.",
+  "total_sample_size": 40,
+  "ecosystem_distribution": {
+    "postgresql": 10,
+    "pytorch": 10,
+    "kubernetes": 10,
+    "fastapi": 10
+  },
+  "classification_summary": {
+    "negative_semantic_status": {
+      "FALSE_NEGATIVE": 4,
+      "AMBIGUOUS_UNSAFE_NEGATIVE": 6,
+      "LIKELY_TRUE_NEGATIVE": 30
+    },
+    "query_quality": {
+      "SYNTHETIC_TEMPLATED": 24,
+      "WELL_FORMED": 7,
+      "HEADING_ARTIFACT": 8,
+      "QUERY_POSITIVE_MAPPING_DEFECT": 1
+    },
+    "positive_support": {
+      "DIRECT_SUPPORT": 37,
+      "WEAK_SUPPORT": 2,
+      "MISALIGNED_MAPPING": 1
+    },
+    "negative_difficulty": {
+      "MODERATE_CONFUSER": 21,
+      "WEAK_CONFUSER": 10,
+      "HARD_CONFUSER": 9
+    }
+  },
+  "identified_defects": [
+    {
+      "query_id": "train_fa_0377",
+      "defect_type": "QUERY_POSITIVE_MAPPING_DEFECT",
+      "semantic_status": "FALSE_NEGATIVE",
+      "summary": "Positive chunk is misaligned (middleware.md); candidate negative (dependencies-with-yield.md) contains true answer."
+    },
+    {
+      "query_id": "train_py_0226",
+      "defect_type": "SAME_FILE_ANSWER_BEARING",
+      "semantic_status": "FALSE_NEGATIVE",
+      "summary": "Both positive and negative chunks are from torch.compiler_troubleshooting.rst diagnosing Inductor errors."
+    },
+    {
+      "query_id": "train_ku_0252",
+      "defect_type": "CANONICAL_DOCUMENT_FALSE_NEGATIVE",
+      "semantic_status": "FALSE_NEGATIVE",
+      "summary": "Proposed negative is from resource-metrics-pipeline.md, the canonical topic documentation."
+    },
+    {
+      "query_id": "train_fa_0466",
+      "defect_type": "SAME_FILE_ANSWER_BEARING",
+      "semantic_status": "FALSE_NEGATIVE",
+      "summary": "Both positive and negative chunks are from dependencies-with-yield.md detailing yield usage."
+    }
+  ],
+  "audit_items": [
+    {
+      "item_index": 1,
+      "query_id": "train_po_0002",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "positive_chunk_id": "13586ed97d7472b603df33b6",
+      "positive_source_path": "release-16.sgml",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "mining_retriever": "bm25",
+      "teacher_scores": {
+        "positive_score": 0.741149365901947,
+        "negative_score": 0.0300966277718544,
+        "margin": 0.7110527381300926
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.74).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (installation.sgml) from queried entity (release-16.sgml); clear teacher separation (s_pos=0.74, s_neg=0.03, margin=0.71).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 2,
+      "query_id": "train_po_0018",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve warning issues with pg_subscription in postgresql?",
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_path": "ref/create_subscription.sgml",
+      "hard_negative_chunk_id": "4bef2d2ec960062310c6621a",
+      "hard_negative_source_path": "release-16.sgml",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8775310516357422,
+        "negative_score": 0.004855714272707701,
+        "margin": 0.8726753373630345
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.88).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (release-16.sgml) from queried entity (ref/create_subscription.sgml); clear teacher separation (s_pos=0.88, s_neg=0.00, margin=0.87).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 3,
+      "query_id": "train_po_0032",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve exception issues with REL_16_STABLE in postgresql?",
+      "positive_chunk_id": "d45af033d1c66df05a40cdf9",
+      "positive_source_path": "release-16.sgml",
+      "hard_negative_chunk_id": "a0d8d423ba90acaeb4c9dab1",
+      "hard_negative_source_path": "postgres.sgml",
+      "mining_retriever": "bm25",
+      "teacher_scores": {
+        "positive_score": 0.877554178237915,
+        "negative_score": 0.003365724813193083,
+        "margin": 0.874188453424722
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.88).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (postgres.sgml) from queried entity (release-16.sgml); clear teacher separation (s_pos=0.88, s_neg=0.00, margin=0.87).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 4,
+      "query_id": "train_po_0045",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between PSQL_HISTORY and psql_history in postgresql?",
+      "positive_chunk_id": "3bdd517182ce8e74f992301d",
+      "positive_source_path": "ref/psql-ref.sgml",
+      "hard_negative_chunk_id": "201f7197805f9af0a0e646bd",
+      "hard_negative_source_path": "intro.sgml",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8022397756576538,
+        "negative_score": 0.019834639504551888,
+        "margin": 0.7824051361531019
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.80).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (intro.sgml) from queried entity (ref/psql-ref.sgml); clear teacher separation (s_pos=0.80, s_neg=0.02, margin=0.78).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 5,
+      "query_id": "train_po_0056",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of pgrowlocks mdash show a tables row locking information in postgresql?",
+      "positive_chunk_id": "30ad61d4f5fa8ce1ba517b09",
+      "positive_source_path": "pgrowlocks.sgml",
+      "hard_negative_chunk_id": "e08a72d27287ef33e42aaf8d",
+      "hard_negative_source_path": "monitoring.sgml",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9825466275215149,
+        "negative_score": 0.3955547511577606,
+        "margin": 0.5869918763637543
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.98).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (monitoring.sgml) from queried entity (pgrowlocks.sgml); clear teacher separation (s_pos=0.98, s_neg=0.40, margin=0.59).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 6,
+      "query_id": "train_po_0069",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between PG_FUNCTION_INFO_V1 and my_fetch in postgresql?",
+      "positive_chunk_id": "7ca6bd97e2a2e6ebc85490a4",
+      "positive_source_path": "gist.sgml",
+      "hard_negative_chunk_id": "201f7197805f9af0a0e646bd",
+      "hard_negative_source_path": "intro.sgml",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9777510166168213,
+        "negative_score": 0.006760773248970509,
+        "margin": 0.9709902433678508
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.98).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (intro.sgml) from queried entity (gist.sgml); clear teacher separation (s_pos=0.98, s_neg=0.01, margin=0.97).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 7,
+      "query_id": "train_po_0080",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure max_val in postgresql?",
+      "positive_chunk_id": "a78b8ccad4e64a4f8999ad7b",
+      "positive_source_path": "system-views.sgml",
+      "hard_negative_chunk_id": "b77a0ff024fadf9a183036fc",
+      "hard_negative_source_path": "installation.sgml",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.6973875164985657,
+        "negative_score": 0.08410496264696121,
+        "margin": 0.6132825538516045
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.70).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (installation.sgml) from queried entity (system-views.sgml); clear teacher separation (s_pos=0.70, s_neg=0.08, margin=0.61).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 8,
+      "query_id": "train_po_0089",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between pg_ctl and pgsql_log in postgresql?",
+      "positive_chunk_id": "93c59c3e24e90d3ba164add5",
+      "positive_source_path": "maintenance.sgml",
+      "hard_negative_chunk_id": "672231f4ec3fb8131c66e12f",
+      "hard_negative_source_path": "ref/pg_ctl-ref.sgml",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.7853154540061951,
+        "negative_score": 0.4661533236503601,
+        "margin": 0.31916213035583496
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.79).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (ref/pg_ctl-ref.sgml) from queried entity (maintenance.sgml); clear teacher separation (s_pos=0.79, s_neg=0.47, margin=0.32).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 9,
+      "query_id": "train_po_0100",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Genetic Query Optimizer in postgresql?",
+      "positive_chunk_id": "d20c49c3de0963db08d3c886",
+      "positive_source_path": "geqo.sgml",
+      "hard_negative_chunk_id": "28cc129c6e4f3197ddcf1cd5",
+      "hard_negative_source_path": "arch-dev.sgml",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9855818152427673,
+        "negative_score": 0.038140084594488144,
+        "margin": 0.9474417306482792
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.99).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (arch-dev.sgml) from queried entity (geqo.sgml); clear teacher separation (s_pos=0.99, s_neg=0.04, margin=0.95).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 10,
+      "query_id": "train_po_0111",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure lo_import_with_oid in postgresql?",
+      "positive_chunk_id": "f4a280d510db512ab168a69b",
+      "positive_source_path": "lobj.sgml",
+      "hard_negative_chunk_id": "0d6ddf701d836e443335df95",
+      "hard_negative_source_path": "installation.sgml",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9596574902534485,
+        "negative_score": 0.017669931054115295,
+        "margin": 0.9419875591993332
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.96).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (installation.sgml) from queried entity (lobj.sgml); clear teacher separation (s_pos=0.96, s_neg=0.02, margin=0.94).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 11,
+      "query_id": "train_py_0126",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Guards Overview  Variables in pytorch?",
+      "positive_chunk_id": "d89da464237cf1f5303e0745",
+      "positive_source_path": "torch.compiler_guards_overview.rst",
+      "hard_negative_chunk_id": "bf9026caf7dff4fceff540c5",
+      "hard_negative_source_path": "torch.compiler_guards_overview.rst",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.865825355052948,
+        "negative_score": 0.34935396909713745,
+        "margin": 0.5164713859558105
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.87).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (torch.compiler_guards_overview.rst) from queried entity (torch.compiler_guards_overview.rst); clear teacher separation (s_pos=0.87, s_neg=0.35, margin=0.52).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 12,
+      "query_id": "train_py_0140",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure TORCH_DISTRIBUTED_DEBUG in pytorch?",
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_path": "distributed.rst",
+      "hard_negative_chunk_id": "640843a28e56ef4db536afc3",
+      "hard_negative_source_path": "distributed.elastic.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9660772085189819,
+        "negative_score": 0.12496255338191986,
+        "margin": 0.8411146551370621
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.97).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (distributed.elastic.rst) from queried entity (distributed.rst); clear teacher separation (s_pos=0.97, s_neg=0.12, margin=0.84).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 13,
+      "query_id": "train_py_0152",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure argparse in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "hard_negative_chunk_id": "0cbc6b392a926f40681691c2",
+      "hard_negative_source_path": "notes/extending.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8667395710945129,
+        "negative_score": 0.040207505226135254,
+        "margin": 0.8265320658683777
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.87).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (notes/extending.rst) from queried entity (notes/cuda.rst); clear teacher separation (s_pos=0.87, s_neg=0.04, margin=0.83).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 14,
+      "query_id": "train_py_0166",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of CUDA semantics  CUDA Graphs  Non-constraints in pytorch?",
+      "positive_chunk_id": "8905772e4560558f3583088d",
+      "positive_source_path": "notes/cuda.rst",
+      "hard_negative_chunk_id": "c88a9d0a741060fb197aa698",
+      "hard_negative_source_path": "torch.compiler_cudagraph_trees.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9617220163345337,
+        "negative_score": 0.13940918445587158,
+        "margin": 0.8223128318786621
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.96).",
+        "negative_semantic_status": "AMBIGUOUS_UNSAFE_NEGATIVE",
+        "negative_semantic_status_rationale": "Query asks for CUDA graphs non-constraints. Negative discusses live tensor limitations in CUDA graph trees. Both discuss constraints/limitations of CUDA graphs in PyTorch.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 15,
+      "query_id": "train_py_0176",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure autograd_tutorial in pytorch?",
+      "positive_chunk_id": "7b38049a0e3299bc323a6e2d",
+      "positive_source_path": "notes/modules.rst",
+      "hard_negative_chunk_id": "8d6e4500ad2c5b2ca270a8b0",
+      "hard_negative_source_path": "notes/extending.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8681168556213379,
+        "negative_score": 0.2571607232093811,
+        "margin": 0.6109561324119568
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.87).",
+        "negative_semantic_status": "AMBIGUOUS_UNSAFE_NEGATIVE",
+        "negative_semantic_status_rationale": "Query asks about autograd_tutorial. Positive discusses modules, while negative discusses extending autograd with custom Functions. Negative is semantically adjacent and could confuse training.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 16,
+      "query_id": "train_py_0189",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between float32 and uint8 in pytorch?",
+      "positive_chunk_id": "a41cdfea4d75dc4b65109a3c",
+      "positive_source_path": "tensors.rst",
+      "hard_negative_chunk_id": "5764d7a64867ae4bc9c06b2c",
+      "hard_negative_source_path": "notes/numerical_accuracy.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8835639953613281,
+        "negative_score": 0.046978823840618134,
+        "margin": 0.83658517152071
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.88).",
+        "negative_semantic_status": "AMBIGUOUS_UNSAFE_NEGATIVE",
+        "negative_semantic_status_rationale": "Query asks about float32 and uint8 tensors. Negative covers IEEE 754 floating point arithmetic and precision, which directly addresses the precision aspects of float32.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 17,
+      "query_id": "train_py_0201",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Using the visualizer  Allocator State History in pytorch?",
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_path": "torch_cuda_memory.rst",
+      "hard_negative_chunk_id": "c19577ded9932bd871c04113",
+      "hard_negative_source_path": "torch.compiler_cudagraph_trees.rst",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9829275012016296,
+        "negative_score": 0.02577621303498745,
+        "margin": 0.9571512881666422
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.98).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (torch.compiler_cudagraph_trees.rst) from queried entity (torch_cuda_memory.rst); clear teacher separation (s_pos=0.98, s_neg=0.03, margin=0.96).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 18,
+      "query_id": "train_py_0216",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between VariableBuilder and make_guards in pytorch?",
+      "positive_chunk_id": "03fe9fdef395c02b2bb8c035",
+      "positive_source_path": "torch.compiler_guards_overview.rst",
+      "hard_negative_chunk_id": "ec867b318549dc25bee3ee88",
+      "hard_negative_source_path": "torch.compiler_guards_overview.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9186455607414246,
+        "negative_score": 0.511938750743866,
+        "margin": 0.4067068099975586
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.92).",
+        "negative_semantic_status": "AMBIGUOUS_UNSAFE_NEGATIVE",
+        "negative_semantic_status_rationale": "Positive and negative are from the same document (torch.compiler_guards_overview.rst). Positive discusses VariableBuilder and make_guards, negative discusses guard.create and check_fn. Inter-dependent compilation internals make this an unsafe negative.",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 19,
+      "query_id": "train_py_0226",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of PyTorch 20 Troubleshooting  Minifying TorchInductor Errors in pytorch?",
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_path": "torch.compiler_troubleshooting.rst",
+      "hard_negative_chunk_id": "75d4d0d93b30e4837568404f",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.7273332476615906,
+        "negative_score": 0.15851908922195435,
+        "margin": 0.5688141584396362
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.73).",
+        "negative_semantic_status": "FALSE_NEGATIVE",
+        "negative_semantic_status_rationale": "Positive and negative chunks are from the exact same troubleshooting file (torch.compiler_troubleshooting.rst) and both address TorchInductor error diagnosis. The proposed negative provides valid troubleshooting guidance directly relevant to the query.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 20,
+      "query_id": "train_py_0237",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure SubgraphMatcher in pytorch?",
+      "positive_chunk_id": "9a4bd5b051721feeaf60ea09",
+      "positive_source_path": "torch.compiler_transformations.rst",
+      "hard_negative_chunk_id": "54308dfb580d2b127ce0370b",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9069390892982483,
+        "negative_score": 0.043507736176252365,
+        "margin": 0.8634313531219959
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.91).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (torch.compiler_troubleshooting.rst) from queried entity (torch.compiler_transformations.rst); clear teacher separation (s_pos=0.91, s_neg=0.04, margin=0.86).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 21,
+      "query_id": "train_ku_0252",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Resource metrics pipeline in kubernetes?",
+      "positive_chunk_id": "49fcd52f27c26bf0f68f3c95",
+      "positive_source_path": "tasks/debug/debug-cluster/resource-usage-monitoring.md",
+      "hard_negative_chunk_id": "b4cbef95d71262020e58d04d",
+      "hard_negative_source_path": "tasks/debug/debug-cluster/resource-metrics-pipeline.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9990447163581848,
+        "negative_score": 0.020398814231157303,
+        "margin": 0.9786459021270275
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 1.00).",
+        "negative_semantic_status": "FALSE_NEGATIVE",
+        "negative_semantic_status_rationale": "The negative candidate is from the canonical resource metrics pipeline document itself (tasks/debug/debug-cluster/resource-metrics-pipeline.md), explaining its API design and architecture. Penalizing this candidate as a negative suppresses answer-bearing documentation.",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 22,
+      "query_id": "train_ku_0265",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure AdmissionReview in kubernetes?",
+      "positive_chunk_id": "61f7b4f6b758dbf813117642",
+      "positive_source_path": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "hard_negative_chunk_id": "f3400c1afc23d8eb7b2cd233",
+      "hard_negative_source_path": "tasks/configure-pod-container/enforce-standards-admission-controller.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.6551389098167419,
+        "negative_score": 0.3090125322341919,
+        "margin": 0.34612637758255005
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.66).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tasks/configure-pod-container/enforce-standards-admission-controller.md) from queried entity (reference/access-authn-authz/extensible-admission-controllers.md); clear teacher separation (s_pos=0.66, s_neg=0.31, margin=0.35).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 23,
+      "query_id": "train_ku_0276",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between ownerReference and OwnerRefInvalidNamespace in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "hard_negative_chunk_id": "752d0033a89a6ba9dc0c36fb",
+      "hard_negative_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.891732394695282,
+        "negative_score": 0.11477431654930115,
+        "margin": 0.7769580781459808
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.89).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (concepts/overview/working-with-objects/owners-dependents.md) from queried entity (concepts/overview/working-with-objects/owners-dependents.md); clear teacher separation (s_pos=0.89, s_neg=0.11, margin=0.78).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 24,
+      "query_id": "train_ku_0289",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Deploying Antrea with kubeadm in kubernetes?",
+      "positive_chunk_id": "6e3109d5438a8e26f56b0030",
+      "positive_source_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "hard_negative_chunk_id": "37e21ac9771d3e03f4a0bc2b",
+      "hard_negative_source_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9122456908226013,
+        "negative_score": 0.27215439081192017,
+        "margin": 0.6400913000106812
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.91).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tasks/administer-cluster/network-policy-provider/antrea-network-policy.md) from queried entity (tasks/administer-cluster/network-policy-provider/antrea-network-policy.md); clear teacher separation (s_pos=0.91, s_neg=0.27, margin=0.64).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 25,
+      "query_id": "train_ku_0304",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure default in kubernetes?",
+      "positive_chunk_id": "387f614a38eff10947127e43",
+      "positive_source_path": "concepts/security/service-accounts.md",
+      "hard_negative_chunk_id": "f3400c1afc23d8eb7b2cd233",
+      "hard_negative_source_path": "tasks/configure-pod-container/enforce-standards-admission-controller.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.7726679444313049,
+        "negative_score": 0.07990127801895142,
+        "margin": 0.6927666664123535
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.77).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tasks/configure-pod-container/enforce-standards-admission-controller.md) from queried entity (concepts/security/service-accounts.md); clear teacher separation (s_pos=0.77, s_neg=0.08, margin=0.69).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 26,
+      "query_id": "train_ku_0314",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between userSecretNamespace and userSecretName in kubernetes?",
+      "positive_chunk_id": "9238a67f972cc9b038dfabe2",
+      "positive_source_path": "concepts/storage/storage-classes.md",
+      "hard_negative_chunk_id": "56b866be37ad8cd1a09ca618",
+      "hard_negative_source_path": "tasks/configure-pod-container/configure-runasusername.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9722610712051392,
+        "negative_score": 0.0011491499608382583,
+        "margin": 0.9711119212443009
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.97).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tasks/configure-pod-container/configure-runasusername.md) from queried entity (concepts/storage/storage-classes.md); clear teacher separation (s_pos=0.97, s_neg=0.00, margin=0.97).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 27,
+      "query_id": "train_ku_0326",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between kubeadm.kubernetes.io and etcd.advertise in kubernetes?",
+      "positive_chunk_id": "068bd7afd4aa3a49d9b94ed4",
+      "positive_source_path": "reference/labels-annotations-taints/_index.md",
+      "hard_negative_chunk_id": "e1b875e5e71d78746d0db1d7",
+      "hard_negative_source_path": "setup/production-environment/tools/kubeadm/troubleshooting-kubeadm.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8718991279602051,
+        "negative_score": 0.1987060159444809,
+        "margin": 0.6731931120157242
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.87).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (setup/production-environment/tools/kubeadm/troubleshooting-kubeadm.md) from queried entity (reference/labels-annotations-taints/_index.md); clear teacher separation (s_pos=0.87, s_neg=0.20, margin=0.67).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 28,
+      "query_id": "train_ku_0340",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between preemptionPolicy and PreemptLowerPriority in kubernetes?",
+      "positive_chunk_id": "a79c4b78ba8c0c3829217890",
+      "positive_source_path": "concepts/scheduling-eviction/pod-priority-preemption.md",
+      "hard_negative_chunk_id": "f44f53ce04fa4570c0e8be02",
+      "hard_negative_source_path": "concepts/scheduling-eviction/_index.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8325531482696533,
+        "negative_score": 0.14126528799533844,
+        "margin": 0.6912878602743149
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.83).",
+        "negative_semantic_status": "AMBIGUOUS_UNSAFE_NEGATIVE",
+        "negative_semantic_status_rationale": "Positive defines preemptionPolicy. Negative defines the fundamental concept of preemption and scheduling queues in Kubernetes. High semantic overlap on preemption mechanics.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 29,
+      "query_id": "train_ku_0353",
+      "ecosystem": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve timeout issues with nginx in kubernetes?",
+      "positive_chunk_id": "8c342f193290858c578ea423",
+      "positive_source_path": "tasks/administer-cluster/declare-network-policy.md",
+      "hard_negative_chunk_id": "2782c0ac90aeb084171f2744",
+      "hard_negative_source_path": "tasks/debug/debug-application/debug-running-pod.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.7039064168930054,
+        "negative_score": 0.1706738919019699,
+        "margin": 0.5332325249910355
+      },
+      "ai_review_dimensions": {
+        "query_quality": "WELL_FORMED",
+        "query_quality_notes": "Clean and specific technical domain question.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.70).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tasks/debug/debug-application/debug-running-pod.md) from queried entity (tasks/administer-cluster/declare-network-policy.md); clear teacher separation (s_pos=0.70, s_neg=0.17, margin=0.53).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 30,
+      "query_id": "train_ku_0364",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure keda.sh in kubernetes?",
+      "positive_chunk_id": "8f165e1a43cdb04c2079a624",
+      "positive_source_path": "concepts/workloads/autoscaling.md",
+      "hard_negative_chunk_id": "42ea4af75425cf493ee2cc01",
+      "hard_negative_source_path": "tasks/administer-cluster/kubelet-in-userns.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.44489532709121704,
+        "negative_score": 0.07995641976594925,
+        "margin": 0.3649389073252678
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "WEAK_SUPPORT",
+        "positive_support_notes": "Teacher positive score is low (0.44); positive only tangentially touches the entity.",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tasks/administer-cluster/kubelet-in-userns.md) from queried entity (concepts/workloads/autoscaling.md); clear teacher separation (s_pos=0.44, s_neg=0.08, margin=0.36).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 31,
+      "query_id": "train_fa_0377",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure yield in fastapi?",
+      "positive_chunk_id": "906db9255bd67e291c95dd38",
+      "positive_source_path": "tutorial/middleware.md",
+      "hard_negative_chunk_id": "4a6f2b204218ad4260a08292",
+      "hard_negative_source_path": "tutorial/dependencies/dependencies-with-yield.md",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.717226505279541,
+        "negative_score": 0.13160014152526855,
+        "margin": 0.5856263637542725
+      },
+      "ai_review_dimensions": {
+        "query_quality": "QUERY_POSITIVE_MAPPING_DEFECT",
+        "query_quality_notes": "Synthetically templated query mapped to wrong positive document (middleware instead of dependencies).",
+        "positive_support": "MISALIGNED_MAPPING",
+        "positive_support_notes": "Positive chunk discusses HTTP middleware, not yield dependencies.",
+        "negative_semantic_status": "FALSE_NEGATIVE",
+        "negative_semantic_status_rationale": "Severe QUERY_POSITIVE_MAPPING_DEFECT: The query asks for 'yield in fastapi'. The positive chunk is misaligned (middleware.md discussing @app.middleware('http')), whereas the proposed negative (dependencies-with-yield.md) contains the exact answer: 'async def get_db(): try: yield db finally: db.close()'. The candidate is a true positive and was incorrectly presented as a hard negative due to positive mapping displacement.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 32,
+      "query_id": "train_fa_0387",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between user_in and UserIn in fastapi?",
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_path": "tutorial/extra-models.md",
+      "hard_negative_chunk_id": "7a034af924518276665c6f63",
+      "hard_negative_source_path": "tutorial/security/get-current-user.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.6734800338745117,
+        "negative_score": 0.08221367746591568,
+        "margin": 0.591266356408596
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.67).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tutorial/security/get-current-user.md) from queried entity (tutorial/extra-models.md); clear teacher separation (s_pos=0.67, s_neg=0.08, margin=0.59).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 33,
+      "query_id": "train_fa_0397",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure RequestValidationError in fastapi?",
+      "positive_chunk_id": "407fd3e6a72c76b645e1a6ed",
+      "positive_source_path": "tutorial/handling-errors.md",
+      "hard_negative_chunk_id": "051a097b7d62f4549428e379",
+      "hard_negative_source_path": "tutorial/handling-errors.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.8813034892082214,
+        "negative_score": 0.02514801360666752,
+        "margin": 0.8561554756015539
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.88).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (tutorial/handling-errors.md) from queried entity (tutorial/handling-errors.md); clear teacher separation (s_pos=0.88, s_neg=0.03, margin=0.86).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 34,
+      "query_id": "train_fa_0414",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Security - First Steps  What it does in fastapi?",
+      "positive_chunk_id": "61032db09188fdb033ebca76",
+      "positive_source_path": "tutorial/security/first-steps.md",
+      "hard_negative_chunk_id": "cab447a5576cbfd4207e9071",
+      "hard_negative_source_path": "reference/security/index.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.3771459758281708,
+        "negative_score": 0.0736956000328064,
+        "margin": 0.3034503757953644
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "WEAK_SUPPORT",
+        "positive_support_notes": "Teacher positive score is low (0.38); positive only tangentially touches the entity.",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (reference/security/index.md) from queried entity (tutorial/security/first-steps.md); clear teacher separation (s_pos=0.38, s_neg=0.07, margin=0.30).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 35,
+      "query_id": "train_fa_0427",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Features  FastAPI features  Validation in fastapi?",
+      "positive_chunk_id": "b19cf4587787d65382555e20",
+      "positive_source_path": "features.md",
+      "hard_negative_chunk_id": "816588263ff35616cba8085a",
+      "hard_negative_source_path": "advanced/dataclasses.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9969600439071655,
+        "negative_score": 0.04380602389574051,
+        "margin": 0.953154020011425
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 1.00).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (advanced/dataclasses.md) from queried entity (features.md); clear teacher separation (s_pos=1.00, s_neg=0.04, margin=0.95).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 36,
+      "query_id": "train_fa_0440",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of FastAPI People  FastAPI Experts  FastAPI Experts - 3 Months in fastapi?",
+      "positive_chunk_id": "d59baa17f82ead57c2052984",
+      "positive_source_path": "fastapi-people.md",
+      "hard_negative_chunk_id": "8f44e24b8a2902a84993f2c1",
+      "hard_negative_source_path": "history-design-future.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9968879818916321,
+        "negative_score": 0.10474289953708649,
+        "margin": 0.8921450823545456
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 1.00).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (history-design-future.md) from queried entity (fastapi-people.md); clear teacher separation (s_pos=1.00, s_neg=0.10, margin=0.89).",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 37,
+      "query_id": "train_fa_0452",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of FastAPI People  Sponsors  Gold Sponsors in fastapi?",
+      "positive_chunk_id": "2fa67c1949f7e856d627a010",
+      "positive_source_path": "fastapi-people.md",
+      "hard_negative_chunk_id": "98bbc9db2e30bdfc3373df16",
+      "hard_negative_source_path": "fastapi-people.md",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.9943523406982422,
+        "negative_score": 0.09545017033815384,
+        "margin": 0.8989021703600883
+      },
+      "ai_review_dimensions": {
+        "query_quality": "HEADING_ARTIFACT",
+        "query_quality_notes": "Direct heading-to-question conversion with uncleaned delimiters or section titles.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.99).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (fastapi-people.md) from queried entity (fastapi-people.md); clear teacher separation (s_pos=0.99, s_neg=0.10, margin=0.90).",
+        "negative_difficulty": "HARD_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 38,
+      "query_id": "train_fa_0466",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure yield in fastapi?",
+      "positive_chunk_id": "389c0b762c52ceb2ce85c81d",
+      "positive_source_path": "tutorial/dependencies/dependencies-with-yield.md",
+      "hard_negative_chunk_id": "4a6f2b204218ad4260a08292",
+      "hard_negative_source_path": "tutorial/dependencies/dependencies-with-yield.md",
+      "mining_retriever": "bm25+dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.7764174342155457,
+        "negative_score": 0.13160014152526855,
+        "margin": 0.6448172926902771
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.78).",
+        "negative_semantic_status": "FALSE_NEGATIVE",
+        "negative_semantic_status_rationale": "Both positive and proposed negative chunks are from the same document (tutorial/dependencies/dependencies-with-yield.md) describing yield dependencies in FastAPI. The negative candidate discusses exception handling in yield dependencies, which is answer-bearing context.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 39,
+      "query_id": "train_fa_0476",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between HTTPConnection and Request in fastapi?",
+      "positive_chunk_id": "9ecf908f16379d896c290fbf",
+      "positive_source_path": "reference/httpconnection.md",
+      "hard_negative_chunk_id": "19a17df22573948ea139d32e",
+      "hard_negative_source_path": "how-to/custom-request-and-route.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.66280597448349,
+        "negative_score": 0.07757163047790527,
+        "margin": 0.5852343440055847
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.66).",
+        "negative_semantic_status": "LIKELY_TRUE_NEGATIVE",
+        "negative_semantic_status_rationale": "Candidate discusses distinct topic (how-to/custom-request-and-route.md) from queried entity (reference/httpconnection.md); clear teacher separation (s_pos=0.66, s_neg=0.08, margin=0.59).",
+        "negative_difficulty": "WEAK_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    },
+    {
+      "item_index": 40,
+      "query_id": "train_fa_0489",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between Response and dict in fastapi?",
+      "positive_chunk_id": "aafb635f4c55407ae0d934c9",
+      "positive_source_path": "advanced/response-headers.md",
+      "hard_negative_chunk_id": "29724f76954c0e8518f43ad5",
+      "hard_negative_source_path": "advanced/additional-responses.md",
+      "mining_retriever": "dense_bge",
+      "teacher_scores": {
+        "positive_score": 0.765657365322113,
+        "negative_score": 0.015552939847111702,
+        "margin": 0.7501044254750013
+      },
+      "ai_review_dimensions": {
+        "query_quality": "SYNTHETIC_TEMPLATED",
+        "query_quality_notes": "Standard synthetic template with clear technical entities.",
+        "positive_support": "DIRECT_SUPPORT",
+        "positive_support_notes": "Positive chunk directly covers the queried topic (teacher positive score: 0.77).",
+        "negative_semantic_status": "AMBIGUOUS_UNSAFE_NEGATIVE",
+        "negative_semantic_status_rationale": "Positive discusses Response headers and return types. Negative discusses additional response declarations and combining response schemas. Closely related API response semantics.",
+        "negative_difficulty": "MODERATE_CONFUSER"
+      },
+      "review_provenance": {
+        "review_type": "AI_ASSISTED_RECOMMENDATION",
+        "human_reviewer": null,
+        "human_approval_status": "PENDING_SATISH_HUMAN_REVIEW",
+        "is_human_approved": false
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 """Tests asserting integrity of Development Promotion Gate artifacts."""
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -66,7 +67,7 @@ def test_e7_readiness_artifact():
     content = readiness_path.read_text(encoding="utf-8")
     assert "6,414 chunks" in content
     assert "188 queries" in content
-    assert "READY_FOR_TRAINING_AFTER_HUMAN_NEGATIVE_AUDIT" in content
+    assert "READY_FOR_TRAINING_AFTER_E7_NEGATIVE_HUMAN_AUDIT" in content
     assert "OOD_DEV_CONSUMED" in content
     assert "PENDING_HUMAN_AUDIT" in content
 
@@ -214,3 +215,150 @@ def test_candidate_ledger_and_audit_companion():
         data = json.load(f)
     assert data["status"] == "PENDING_HUMAN_AUDIT"
     assert len(data["audit_items"]) == 40
+
+
+def test_historical_audit_ai_review():
+    """Verify historical audit AI review classifications and defect documentation."""
+    # Historical report must remain unchanged
+    md_path = Path("data/training/HARD_NEGATIVE_AUDIT_40.md")
+    assert md_path.exists()
+
+    ai_review_path = Path("data/training/HARD_NEGATIVE_AUDIT_40_AI_REVIEW.json")
+    assert ai_review_path.exists()
+    with open(ai_review_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    assert data["status"] == "AI_RECOMMENDATION_PENDING_HUMAN_CONFIRMATION"
+    summary = data["classification_summary"]["negative_semantic_status"]
+    assert summary["FALSE_NEGATIVE"] == 4
+    assert summary["AMBIGUOUS_UNSAFE_NEGATIVE"] == 6
+    assert summary["LIKELY_TRUE_NEGATIVE"] == 30
+
+    # Specific defect check on train_fa_0377
+    defects = {d["query_id"]: d for d in data["identified_defects"]}
+    assert "train_fa_0377" in defects
+    assert defects["train_fa_0377"]["defect_type"] == "QUERY_POSITIVE_MAPPING_DEFECT"
+    assert defects["train_fa_0377"]["semantic_status"] == "FALSE_NEGATIVE"
+
+
+def test_e7_primary_manifest_and_quality():
+    """Verify E7 primary query manifest (exactly 188 queries) and quality report."""
+    manifest_path = Path("data/training/E7_PRIMARY_QUERY_MANIFEST.json")
+    assert manifest_path.exists()
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    assert manifest["total_queries"] == 188
+    assert len(manifest["queries"]) == 188
+    
+    # Assert exact file SHA-256
+    file_sha = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+    assert file_sha == "a0cb391c36c1f1d54d8712d9bfe540e4792f0ae8eb6826e68d6bda02d14dffd5"
+
+    # Verify quality report
+    quality_path = Path("data/training/E7_QUERY_POSITIVE_QUALITY.json")
+    assert quality_path.exists()
+    with open(quality_path, "r", encoding="utf-8") as f:
+        quality = json.load(f)
+    assert quality["total_queries_evaluated"] == 188
+    dist = quality["status_distribution"]
+    assert dist["CLEAN"] == 125
+    assert dist["REVIEW_QUERY"] == 59
+    assert dist["REVIEW_POSITIVE_MAPPING"] == 4
+
+
+def test_e7_candidate_ledger_and_safe_negatives():
+    """Verify E7 candidate ledger, safe negatives pool, and human audit packet."""
+    chunks_path = Path("data/processed/partitioned_chunks.jsonl")
+    train_cids = set()
+    val_cids = set()
+    test_cids = set()
+    with open(chunks_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                c = json.loads(line)
+                if c["partition"] == "train":
+                    train_cids.add(c["chunk_id"])
+                elif c["partition"] == "validation":
+                    val_cids.add(c["chunk_id"])
+                elif c["partition"] == "frozen_test":
+                    test_cids.add(c["chunk_id"])
+
+    # E7 Candidate Ledger
+    ledger_path = Path("data/training/e7_candidate_ledger.jsonl")
+    assert ledger_path.exists()
+    ledger_count = 0
+    with open(ledger_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                row = json.loads(line)
+                ledger_count += 1
+                assert row["positive_chunk_id"] in train_cids
+                assert row["positive_chunk_id"] not in val_cids
+                assert row["positive_chunk_id"] not in test_cids
+                assert row["candidate_chunk_id"] in train_cids
+                assert row["candidate_chunk_id"] not in val_cids
+                assert row["candidate_chunk_id"] not in test_cids
+    assert ledger_count == 3760, f"Expected 3760 candidates in E7 ledger, got {ledger_count}"
+
+    # E7 Safe Negatives Pool
+    safe_path = Path("data/training/e7_safe_negatives.jsonl")
+    assert safe_path.exists()
+    safe_count = 0
+    with open(safe_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                row = json.loads(line)
+                safe_count += 1
+                assert row["classification"] == "SAFE_NEGATIVE"
+                assert row["candidate_chunk_id"] in train_cids
+                assert row["candidate_chunk_id"] not in val_cids
+                assert row["candidate_chunk_id"] not in test_cids
+    assert safe_count == 1216, f"Expected 1216 safe negatives, got {safe_count}"
+
+    # E7 Disposition Summary
+    disp_path = Path("data/training/e7_candidate_disposition.json")
+    assert disp_path.exists()
+    with open(disp_path, "r", encoding="utf-8") as f:
+        disp = json.load(f)
+    assert disp["total_candidates_mined"] == 3760
+    assert disp["disposition_counts"]["SAFE_NEGATIVE"] == 1216
+    assert disp["disposition_counts"]["QUARANTINE_POSSIBLE_FALSE_NEGATIVE"] == 1044
+    assert disp["disposition_counts"]["REJECT_KNOWN_RELEVANT"] == 186
+    assert disp["disposition_counts"]["REJECT_TOO_EASY"] == 1314
+
+    # E7 Human Audit Packet
+    audit_json = Path("data/training/E7_NEGATIVE_AUDIT_40.json")
+    audit_md = Path("data/training/E7_NEGATIVE_AUDIT_40.md")
+    assert audit_json.exists()
+    assert audit_md.exists()
+    with open(audit_json, "r", encoding="utf-8") as f:
+        audit_data = json.load(f)
+    assert audit_data["status"] == "PENDING_HUMAN_AUDIT"
+    assert audit_data["total_sample_size"] == 40
+    assert audit_data["ecosystem_distribution"] == {
+        "postgresql": 10,
+        "pytorch": 10,
+        "kubernetes": 10,
+        "fastapi": 10,
+    }
+
+
+def test_teacher_and_query_universe_provenance():
+    """Verify teacher provenance and 3-universe overlap documentation."""
+    teacher_path = Path("data/training/HARD_NEGATIVE_TEACHER_PROVENANCE.md")
+    assert teacher_path.exists()
+    teacher_content = teacher_path.read_text(encoding="utf-8")
+    assert "BAAI/bge-reranker-base" in teacher_content
+    assert "0.741149" in teacher_content
+    assert "0.030097" in teacher_content
+
+    univ_path = Path("data/training/TRAIN_QUERY_PROVENANCE.md")
+    assert univ_path.exists()
+    univ_content = univ_path.read_text(encoding="utf-8")
+    assert "188" in univ_content
+    assert "501" in univ_content
+    assert "375" in univ_content
+    assert "173" in univ_content
+    assert "6,414 chunks" in univ_content
+

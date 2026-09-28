@@ -1,0 +1,1856 @@
+{
+  "audit_name": "E7_NEGATIVE_AUDIT_40",
+  "description": "E7-specific candidate negative human audit packet sampled strictly from the verified safe-negative pool.",
+  "status": "PENDING_HUMAN_AUDIT",
+  "mining_foundation": "E5C (BM25 + E4C Dense Hybrid Fusion RRF k=60)",
+  "teacher_model": "BAAI/bge-reranker-base",
+  "total_sample_size": 40,
+  "ecosystem_distribution": {
+    "postgresql": 10,
+    "pytorch": 10,
+    "kubernetes": 10,
+    "fastapi": 10
+  },
+  "audit_items": [
+    {
+      "item_index": 1,
+      "query_id": "train_po_0002",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "positive_chunk_id": "13586ed97d7472b603df33b6",
+      "positive_source_path": "release-16.sgml",
+      "positive_excerpt": "Branch: master [97287bdfa] 2024-01-29 12:08:57 -0600 Branch: REL_16_STABLE [1b924a86e] 2024-01-29 12:09:03 -0600 Branch: REL_15_STABLE [3726c1cb0] 2024-01-29 12:09:08 -0600 --> Move is_valid_ascii() from mb/pg_wchar.h to utils/ascii.h (Jubilee Young) This change avoids the need to include &lt;simd.h&gt; in pg_wchar.h , which was causing problems for some third-party code. Branch: master [400928b83...",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "hard_negative_excerpt": "The PostgreSQL source code for released versions can be obtained from the download section of our website: . Download the postgresql- version .tar.gz or postgresql- version .tar.bz2 file you're interested in, then unpack it: tar xf postgresql- version .tar.bz2 This will create a directory postgresql- version under the current directory with the PostgreSQL sources. Change into that directory for th...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 1,
+      "dense_rank": null,
+      "hybrid_rank": 7,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.7411,
+        "negative_score": 0.0301,
+        "margin": 0.7111
+      },
+      "lexical_jaccard_overlap": 0.0556,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 2,
+      "query_id": "train_po_0011",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure vacuum_freeze_table_age in postgresql?",
+      "positive_chunk_id": "882eee4bd0e86201e0dc069e",
+      "positive_source_path": "maintenance.sgml",
+      "positive_excerpt": "VACUUM uses the visibility map to determine which pages of a table must be scanned. Normally, it will skip pages that don't have any dead row versions even if those pages might still have row versions with old XID values. Therefore, normal VACUUM s won't always freeze every old row version in the table. When that happens, VACUUM will eventually need to perform an aggressive vacuum , which will fre...",
+      "hard_negative_chunk_id": "51714ecb21238e233c7bdf9d",
+      "hard_negative_source_path": "ref/vacuumdb.sgml",
+      "hard_negative_excerpt": "Only execute the vacuum or analyze commands on tables with a multixact ID age of at least mxid_age . This setting is useful for prioritizing tables to process to prevent multixact ID wraparound (see ). For the purposes of this option, the multixact ID age of a relation is the greatest of the ages of the main relation and its associated TOAST table, if one exists. Since the commands issued by vacuu...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 7,
+      "hybrid_rank": 11,
+      "rrf_score": 0.014925,
+      "teacher_scores": {
+        "positive_score": 0.5425,
+        "negative_score": 0.026,
+        "margin": 0.5165
+      },
+      "lexical_jaccard_overlap": 0.1899,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 3,
+      "query_id": "train_po_0013",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Example Program in postgresql?",
+      "positive_chunk_id": "04f7981b7172c021ac60b1a5",
+      "positive_source_path": "lobj.sgml",
+      "positive_excerpt": "is a sample program which shows how the large object interface in libpq can be used. Parts of the program are commented out but are left in the source for the reader's benefit. This program can also be found in src/test/examples/testlo.c in the source distribution. # Large Objects with libpq Example Program ```sql #include #include #include #include #include #include \"libpq-fe.h\" #include \"libpq/l...",
+      "hard_negative_chunk_id": "201f7197805f9af0a0e646bd",
+      "hard_negative_source_path": "intro.sgml",
+      "hard_negative_excerpt": "This book is the official documentation of PostgreSQL . It has been written by the PostgreSQL developers and other volunteers in parallel to the development of the PostgreSQL software. It describes all the functionality that the current version of PostgreSQL officially supports. To make the large amount of information about PostgreSQL manageable, this book has been organized in several parts. Each...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 2,
+      "hybrid_rank": 1,
+      "rrf_score": 0.032522,
+      "teacher_scores": {
+        "positive_score": 0.9458,
+        "negative_score": 0.1934,
+        "margin": 0.7524
+      },
+      "lexical_jaccard_overlap": 0.1029,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 4,
+      "query_id": "train_po_0017",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between pg_subscription and copy_data in postgresql?",
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_path": "ref/create_subscription.sgml",
+      "positive_excerpt": "If any table in the publication has a WHERE clause, rows for which the expression evaluates to false or null will not be published. If the subscription has several publications in which the same table has been published with different WHERE clauses, a row will be published if any of the expressions (referring to that publish operation) are satisfied. In the case of different WHERE clauses, if one ...",
+      "hard_negative_chunk_id": "1c6368570a381cc7ebc3a15a",
+      "hard_negative_source_path": "ref/copy.sgml",
+      "hard_negative_excerpt": "COPY COPY 7 SQL - Language Statements COPY copy data between a file and a table COPY table_name [ ( column_name [, ...] ) ] FROM { ' filename ' | PROGRAM ' command ' | STDIN } [ [ WITH ] ( option [, ...] ) ] [ WHERE condition ] COPY { table_name [ ( column_name [, ...] ) ] | ( query ) } TO { ' filename ' | PROGRAM ' command ' | STDOUT } [ [ WITH ] ( option [, ...] ) ] where option can be one of: F...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 12,
+      "hybrid_rank": 4,
+      "rrf_score": 0.030282,
+      "teacher_scores": {
+        "positive_score": 0.9602,
+        "negative_score": 0.1024,
+        "margin": 0.8578
+      },
+      "lexical_jaccard_overlap": 0.1494,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 5,
+      "query_id": "train_po_0018",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve warning issues with pg_subscription in postgresql?",
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_path": "ref/create_subscription.sgml",
+      "positive_excerpt": "If any table in the publication has a WHERE clause, rows for which the expression evaluates to false or null will not be published. If the subscription has several publications in which the same table has been published with different WHERE clauses, a row will be published if any of the expressions (referring to that publish operation) are satisfied. In the case of different WHERE clauses, if one ...",
+      "hard_negative_chunk_id": "dc8623d5a4d660f81020ac4c",
+      "hard_negative_source_path": "ref/alter_subscription.sgml",
+      "hard_negative_excerpt": "Skips applying all changes of the remote transaction. If incoming data violates any constraints, logical replication will stop until it is resolved. By using the ALTER SUBSCRIPTION ... SKIP command, the logical replication worker skips all data modification changes within the transaction. This option has no effect on the transactions that are already prepared by enabling two_phase on the subscribe...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 5,
+      "dense_rank": 9,
+      "hybrid_rank": 3,
+      "rrf_score": 0.029877,
+      "teacher_scores": {
+        "positive_score": 0.8775,
+        "negative_score": 0.1799,
+        "margin": 0.6976
+      },
+      "lexical_jaccard_overlap": 0.1838,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 6,
+      "query_id": "train_po_0021",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between lo_read and size_t in postgresql?",
+      "positive_chunk_id": "d3354d5f91648052077e559d",
+      "positive_source_path": "lobj.sgml",
+      "positive_excerpt": "lo_read The function int lo_read(PGconn *conn, int fd, char *buf, size_t len); reads up to len bytes from large object descriptor fd into buf (which must be of size len ). The fd argument must have been returned by a previous lo_open . The number of bytes actually read is returned; this will be less than len if the end of the large object is reached first. In the event of an error, the return valu...",
+      "hard_negative_chunk_id": "33261619d3d00d74f96c475a",
+      "hard_negative_source_path": "lobj.sgml",
+      "hard_negative_excerpt": "The server currently does not distinguish between modes INV_WRITE and INV_READ | INV_WRITE : you are allowed to read from the descriptor in either case. However there is a significant difference between these modes and INV_READ alone: with INV_READ you cannot write on the descriptor, and the data read from it will reflect the contents of the large object at the time of the transaction snapshot tha...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 6,
+      "dense_rank": 9,
+      "hybrid_rank": 4,
+      "rrf_score": 0.029644,
+      "teacher_scores": {
+        "positive_score": 0.9353,
+        "negative_score": 0.0677,
+        "margin": 0.8676
+      },
+      "lexical_jaccard_overlap": 0.1699,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 7,
+      "query_id": "train_po_0022",
+      "ecosystem": "postgresql",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve error issues with lo_read in postgresql?",
+      "positive_chunk_id": "d3354d5f91648052077e559d",
+      "positive_source_path": "lobj.sgml",
+      "positive_excerpt": "lo_read The function int lo_read(PGconn *conn, int fd, char *buf, size_t len); reads up to len bytes from large object descriptor fd into buf (which must be of size len ). The fd argument must have been returned by a previous lo_open . The number of bytes actually read is returned; this will be less than len if the end of the large object is reached first. In the event of an error, the return valu...",
+      "hard_negative_chunk_id": "7911c6fe60fbc04ee624bdbd",
+      "hard_negative_source_path": "lobj.sgml",
+      "hard_negative_excerpt": "The functionality of lo_read and lo_write is also available via server-side calls, but the names of the server-side functions differ from the client side interfaces in that they do not contain underscores. You must call these functions as loread and lowrite .",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 6,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031281,
+      "teacher_scores": {
+        "positive_score": 0.4362,
+        "negative_score": 0.0435,
+        "margin": 0.3927
+      },
+      "lexical_jaccard_overlap": 0.08,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 8,
+      "query_id": "train_po_0028",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between measurement_y2006m02 and postgresql.conf in postgresql?",
+      "positive_chunk_id": "ff6ed76bd5adb740df7e6b8d",
+      "positive_source_path": "ddl.sgml",
+      "positive_excerpt": "Create an index on the key column(s), as well as any other indexes you might want, on the partitioned table. (The key index is not strictly necessary, but in most scenarios it is helpful.) This automatically creates a matching index on each partition, and any partitions you create or attach later will also have such an index. An index or unique constraint declared on a partitioned table is virtual...",
+      "hard_negative_chunk_id": "ffb1a8dd6f6b3d8667fac59a",
+      "hard_negative_source_path": "system-views.sgml",
+      "hard_negative_excerpt": "Changes to these settings can be made in postgresql.conf without restarting the server. They can also be set for a particular session in the connection request packet (for example, via libpq 's PGOPTIONS environment variable), but only if the connecting user is a superuser or has been granted the appropriate SET privilege. However, these settings never change in a session after it is started. If y...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 1,
+      "dense_rank": null,
+      "hybrid_rank": 5,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.963,
+        "negative_score": 0.1382,
+        "margin": 0.8249
+      },
+      "lexical_jaccard_overlap": 0.1299,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 9,
+      "query_id": "train_po_0030",
+      "ecosystem": "postgresql",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "positive_chunk_id": "d45af033d1c66df05a40cdf9",
+      "positive_source_path": "release-16.sgml",
+      "positive_excerpt": "Branch: REL_16_STABLE [f6f61a4bd] 2024-04-04 17:25:00 +0900 Branch: REL_15_STABLE [3f96d113f] 2024-04-04 17:25:02 +0900 Branch: REL_14_STABLE [e10ca95ff] 2024-04-04 17:25:04 +0900 --> Avoid corrupting exception stack if an FDW implements async append but doesn't configure any wait conditions for the Append plan node to wait for (Alexander Pyhalov) Branch: master [f5a465f1a] 2024-02-25 16:15:07 -05...",
+      "hard_negative_chunk_id": "6291c3a5707c1bef643cfa81",
+      "hard_negative_source_path": "installation.sgml",
+      "hard_negative_excerpt": "The PostgreSQL source code for released versions can be obtained from the download section of our website: . Download the postgresql- version .tar.gz or postgresql- version .tar.bz2 file you're interested in, then unpack it: tar xf postgresql- version .tar.bz2 This will create a directory postgresql- version under the current directory with the PostgreSQL sources. Change into that directory for th...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 1,
+      "dense_rank": null,
+      "hybrid_rank": 7,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.733,
+        "negative_score": 0.0301,
+        "margin": 0.7029
+      },
+      "lexical_jaccard_overlap": 0.0657,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 10,
+      "query_id": "train_po_0034",
+      "ecosystem": "postgresql",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between tuples_only and csv_fieldsep in postgresql?",
+      "positive_chunk_id": "57ac5dfb2df1e35188c7d4f8",
+      "positive_source_path": "ref/psql-ref.sgml",
+      "positive_excerpt": "writes column values separated by commas, applying the quoting rules described in RFC 4180 . This output is compatible with the CSV format of the server's COPY command. A header line with column names is generated unless the tuples_only parameter is on . Titles and footers are not printed. Each row is terminated by the system-dependent end-of-line character, which is typically a single newline ( \\...",
+      "hard_negative_chunk_id": "e3c70f16f52de91a799d0d47",
+      "hard_negative_source_path": "datatype.sgml",
+      "hard_negative_excerpt": "To address these difficulties, we recommend using date/time types that contain both date and time when using time zones. We do not recommend using the type time with time zone (though it is supported by PostgreSQL for legacy applications and for compliance with the SQL standard). PostgreSQL assumes your local time zone for any type containing only date or time. All timezone-aware dates and times a...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 11,
+      "dense_rank": null,
+      "hybrid_rank": 19,
+      "rrf_score": 0.014085,
+      "teacher_scores": {
+        "positive_score": 0.6494,
+        "negative_score": 0.0214,
+        "margin": 0.628
+      },
+      "lexical_jaccard_overlap": 0.1387,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 11,
+      "query_id": "train_py_0126",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Guards Overview  Variables in pytorch?",
+      "positive_chunk_id": "d89da464237cf1f5303e0745",
+      "positive_source_path": "torch.compiler_guards_overview.rst",
+      "positive_excerpt": "In our case, our signature will be a *little* different due to the way we create ``Instruction`` objects, but the gist of it will be the same. Instead of passing in ``count``, we pass in an object with a little extra bookkeeping, and of course, we deal with turning regular old python objects into TorchDynamo notions: ```python def BUILD_TUPLE(self, inst): items = self.popn(inst.argval) options = V...",
+      "hard_negative_chunk_id": "fefab7d390d5ae8ce7f22a52",
+      "hard_negative_source_path": "torch.compiler_guards_overview.rst",
+      "hard_negative_excerpt": "Across both the logic downstream of ``step`` and the logic from invoking ``VariableBuilder`` - we now have a lot of ``VariableTracker``\\ s and of course, we\u2019ve spoken about creating guards quiet a bit. Let\u2019s dig into what Variables are, and get a little closer to understanding guards.",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 9,
+      "hybrid_rank": 4,
+      "rrf_score": 0.030886,
+      "teacher_scores": {
+        "positive_score": 0.8658,
+        "negative_score": 0.0516,
+        "margin": 0.8142
+      },
+      "lexical_jaccard_overlap": 0.131,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 12,
+      "query_id": "train_py_0129",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Quantization  Quantization API Summary in pytorch?",
+      "positive_chunk_id": "f8f43ecf2dec4566d42359ed",
+      "positive_source_path": "quantization.rst",
+      "positive_excerpt": "PyTorch 2 Export Quantization is the new full graph mode quantization workflow, released as prototype feature in PyTorch 2.1. With PyTorch 2, we are moving to a better solution for full program capture (torch.export) since it can capture a higher percentage (88.8% on 14K models) of models compared to torch.fx.symbolic_trace (72.7% on 14K models), the program capture solution used by FX Graph Mode ...",
+      "hard_negative_chunk_id": "5f6bd2baffdcd75f95702adc",
+      "hard_negative_source_path": "quantization.rst",
+      "hard_negative_excerpt": "To learn more about static quantization, please see the `static quantization tutorial <https://pytorch.org/tutorials/advanced/static_quantization_tutorial.html>`_.",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 9,
+      "hybrid_rank": 2,
+      "rrf_score": 0.030886,
+      "teacher_scores": {
+        "positive_score": 0.9852,
+        "negative_score": 0.5673,
+        "margin": 0.4179
+      },
+      "lexical_jaccard_overlap": 0.0533,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 13,
+      "query_id": "train_py_0131",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between symbolic_trace and 2.1 in pytorch?",
+      "positive_chunk_id": "f8f43ecf2dec4566d42359ed",
+      "positive_source_path": "quantization.rst",
+      "positive_excerpt": "PyTorch 2 Export Quantization is the new full graph mode quantization workflow, released as prototype feature in PyTorch 2.1. With PyTorch 2, we are moving to a better solution for full program capture (torch.export) since it can capture a higher percentage (88.8% on 14K models) of models compared to torch.fx.symbolic_trace (72.7% on 14K models), the program capture solution used by FX Graph Mode ...",
+      "hard_negative_chunk_id": "a90259ead224bdf9768664bd",
+      "hard_negative_source_path": "fx.rst",
+      "hard_negative_excerpt": "traced = torch.fx.symbolic_trace(DropoutRepro()) print(traced.code) \"\"\" def forward(self, x): dropout = torch.nn.functional.dropout(x, p = 0.5, training = True, inplace = False); x = None return dropout \"\"\" traced.eval() x = torch.randn(5, 3) torch.testing.assert_close(traced(x), x) \"\"\" AssertionError: Tensor-likes are not close! Mismatched elements: 15 / 15 (100.0%) Greatest absolute difference: ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 7,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031054,
+      "teacher_scores": {
+        "positive_score": 0.9011,
+        "negative_score": 0.5528,
+        "margin": 0.3484
+      },
+      "lexical_jaccard_overlap": 0.1078,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 14,
+      "query_id": "train_py_0133",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between torch.matmul and torch.bmm in pytorch?",
+      "positive_chunk_id": "9c5781c73d65505246f6aa9d",
+      "positive_source_path": "nested.rst",
+      "positive_excerpt": ":func:`torch.matmul`; \"Supports matrix multiplication between two (>= 3d) nested tensors where the last two dimensions are matrix dimensions and the leading (batch) dimensions have the same size (i.e. no broadcasting support for batch dimensions yet).\" :func:`torch.bmm`; \"Supports batch matrix multiplication of two 3-d nested tensors.\" :func:`torch.nn.Linear`; \"Supports 3-d nested input and a dens...",
+      "hard_negative_chunk_id": "fd1d66128a6182938cc1ce8e",
+      "hard_negative_source_path": "torch.rst",
+      "hard_negative_excerpt": "addbmm addmm addmv addr baddbmm bmm chain_matmul cholesky cholesky_inverse cholesky_solve dot geqrf ger inner inverse det logdet slogdet lu lu_solve lu_unpack matmul matrix_power matrix_exp mm mv orgqr ormqr outer pinverse qr svd svd_lowrank pca_lowrank lobpcg trapz trapezoid cumulative_trapezoid triangular_solve vdot",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 6,
+      "dense_rank": 3,
+      "hybrid_rank": 2,
+      "rrf_score": 0.031025,
+      "teacher_scores": {
+        "positive_score": 0.67,
+        "negative_score": 0.0477,
+        "margin": 0.6223
+      },
+      "lexical_jaccard_overlap": 0.0354,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 15,
+      "query_id": "train_py_0140",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure TORCH_DISTRIBUTED_DEBUG in pytorch?",
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_path": "distributed.rst",
+      "positive_excerpt": "def worker(rank): dist.init_process_group(\"nccl\", rank=rank, world_size=2) # monitored barrier requires gloo process group to perform host-side sync. group_gloo = dist.new_group(backend=\"gloo\") if rank not in [1]: dist.monitored_barrier(group=group_gloo, timeout=timedelta(seconds=2)) if __name__ == \"__main__\": os.environ[\"MASTER_ADDR\"] = \"localhost\" os.environ[\"MASTER_PORT\"] = \"29501\" mp.spawn(wor...",
+      "hard_negative_chunk_id": "80385519cf694a22e286a565",
+      "hard_negative_source_path": "quantization.rst",
+      "hard_negative_excerpt": "1. How can I do quantized inference on GPU?: We don't have official GPU support yet, but this is an area of active development, you can find more information `here <https://github.com/pytorch/pytorch/issues/87395>`_ 2. Where can I get ONNX support for my quantized model? If you get errors exporting the model (using APIs under ``torch.onnx``), you may open an issue in the PyTorch repository. Prefix...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 8,
+      "dense_rank": null,
+      "hybrid_rank": 9,
+      "rrf_score": 0.014706,
+      "teacher_scores": {
+        "positive_score": 0.9661,
+        "negative_score": 0.0603,
+        "margin": 0.9058
+      },
+      "lexical_jaccard_overlap": 0.0673,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 16,
+      "query_id": "train_py_0141",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between TORCH_DISTRIBUTED_DEBUG and OFF in pytorch?",
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_path": "distributed.rst",
+      "positive_excerpt": "def worker(rank): dist.init_process_group(\"nccl\", rank=rank, world_size=2) # monitored barrier requires gloo process group to perform host-side sync. group_gloo = dist.new_group(backend=\"gloo\") if rank not in [1]: dist.monitored_barrier(group=group_gloo, timeout=timedelta(seconds=2)) if __name__ == \"__main__\": os.environ[\"MASTER_ADDR\"] = \"localhost\" os.environ[\"MASTER_PORT\"] = \"29501\" mp.spawn(wor...",
+      "hard_negative_chunk_id": "18f030967b351c6a81fb2676",
+      "hard_negative_source_path": "distributed.rst",
+      "hard_negative_excerpt": "In addition to explicit debugging support via :func:`torch.distributed.monitored_barrier` and ``TORCH_DISTRIBUTED_DEBUG``, the underlying C++ library of ``torch.distributed`` also outputs log messages at various levels. These messages can be helpful to understand the execution state of a distributed training job and to troubleshoot problems such as network connection failures. The following matrix...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 4,
+      "dense_rank": 8,
+      "hybrid_rank": 4,
+      "rrf_score": 0.030331,
+      "teacher_scores": {
+        "positive_score": 0.9626,
+        "negative_score": 0.306,
+        "margin": 0.6566
+      },
+      "lexical_jaccard_overlap": 0.1105,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 17,
+      "query_id": "train_py_0151",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of CUDA semantics  Best practices in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "positive_excerpt": "Device-agnostic code ^^^^^^^^^^^^^^^^^^^^ Due to the structure of PyTorch, you may need to explicitly write device-agnostic (CPU or GPU) code; an example may be creating a new tensor as the initial hidden state of a recurrent neural network. The first step is to determine whether the GPU should be used or not. A common pattern is to use Python's ``argparse`` module to read in user arguments, and h...",
+      "hard_negative_chunk_id": "4403998edec4b54716349856",
+      "hard_negative_source_path": "notes/cuda.rst",
+      "hard_negative_excerpt": "c = a + b # c.device is device(type='cuda', index=1) z = x + y # z.device is device(type='cuda', index=0) # even within a context, you can specify the device # (or give a GPU index to the .cuda call) d = torch.randn(2, device=cuda2) e = torch.randn(2).to(cuda2) f = torch.randn(2).cuda(cuda2) # d.device, e.device, and f.device are all device(type='cuda', index=2)",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 1,
+      "hybrid_rank": 13,
+      "rrf_score": 0.016393,
+      "teacher_scores": {
+        "positive_score": 0.9863,
+        "negative_score": 0.4318,
+        "margin": 0.5545
+      },
+      "lexical_jaccard_overlap": 0.1007,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 18,
+      "query_id": "train_py_0152",
+      "ecosystem": "pytorch",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure argparse in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "positive_excerpt": "Device-agnostic code ^^^^^^^^^^^^^^^^^^^^ Due to the structure of PyTorch, you may need to explicitly write device-agnostic (CPU or GPU) code; an example may be creating a new tensor as the initial hidden state of a recurrent neural network. The first step is to determine whether the GPU should be used or not. A common pattern is to use Python's ``argparse`` module to read in user arguments, and h...",
+      "hard_negative_chunk_id": "c5915c47bc83b419bcdcbb0d",
+      "hard_negative_source_path": "notes/cuda.rst",
+      "hard_negative_excerpt": "PyTorch uses a caching memory allocator to speed up memory allocations. This allows fast memory deallocation without device synchronizations. However, the unused memory managed by the allocator will still show as if used in ``nvidia-smi``. You can use :meth:`~torch.cuda.memory_allocated` and :meth:`~torch.cuda.max_memory_allocated` to monitor memory occupied by tensors, and use :meth:`~torch.cuda....",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 19,
+      "dense_rank": 21,
+      "hybrid_rank": 3,
+      "rrf_score": 0.025004,
+      "teacher_scores": {
+        "positive_score": 0.8667,
+        "negative_score": 0.0324,
+        "margin": 0.8343
+      },
+      "lexical_jaccard_overlap": 0.165,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 19,
+      "query_id": "train_py_0153",
+      "ecosystem": "pytorch",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between argparse and args.device in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "positive_excerpt": "Device-agnostic code ^^^^^^^^^^^^^^^^^^^^ Due to the structure of PyTorch, you may need to explicitly write device-agnostic (CPU or GPU) code; an example may be creating a new tensor as the initial hidden state of a recurrent neural network. The first step is to determine whether the GPU should be used or not. A common pattern is to use Python's ``argparse`` module to read in user arguments, and h...",
+      "hard_negative_chunk_id": "30d43281849e8f3dee46e937",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "hard_negative_excerpt": "```python import torch import torch._dynamo as dynamo from torch import tensor, device import torch.fx as fx from torch._dynamo.testing import rand_strided from math import inf from torch._dynamo.debug_utils import run_fwd_maybe_bwd from torch.nn import * class Repro(torch.nn.Module): def __init__(self): super().__init__() def forward(self, add): relu = torch.relu(add); add = None return (relu,) m...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 3,
+      "dense_rank": null,
+      "hybrid_rank": 9,
+      "rrf_score": 0.015873,
+      "teacher_scores": {
+        "positive_score": 0.9252,
+        "negative_score": 0.045,
+        "margin": 0.8802
+      },
+      "lexical_jaccard_overlap": 0.1202,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 20,
+      "query_id": "train_py_0154",
+      "ecosystem": "pytorch",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve fail issues with argparse in pytorch?",
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_path": "notes/cuda.rst",
+      "positive_excerpt": "Device-agnostic code ^^^^^^^^^^^^^^^^^^^^ Due to the structure of PyTorch, you may need to explicitly write device-agnostic (CPU or GPU) code; an example may be creating a new tensor as the initial hidden state of a recurrent neural network. The first step is to determine whether the GPU should be used or not. A common pattern is to use Python's ``argparse`` module to read in user arguments, and h...",
+      "hard_negative_chunk_id": "75d4d0d93b30e4837568404f",
+      "hard_negative_source_path": "torch.compiler_troubleshooting.rst",
+      "hard_negative_excerpt": "If you then change ``torch.compile(backend=\"inductor\")`` to ``torch.compile(backend=\"aot_eager\")``, it will run without error, because `the issue <https://github.com/pytorch/torchdynamo/blob/d09e50fbee388d466b5252a63045643166006f77/torchinductor/lowering.py#:~:text=%23%20This%20shouldn%27t%20be,assert%20False>`__ is in the TorchInductor lowering process, not in AOTAutograd.",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 2,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.9214,
+        "negative_score": 0.0478,
+        "margin": 0.8737
+      },
+      "lexical_jaccard_overlap": 0.1007,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 21,
+      "query_id": "train_ku_0265",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure AdmissionReview in kubernetes?",
+      "positive_chunk_id": "61f7b4f6b758dbf813117642",
+      "positive_source_path": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "positive_excerpt": "Please refer to the implementation of the [admission webhook server](https://github.com/kubernetes/kubernetes/blob/release-1.21/test/images/agnhost/webhook/main.go) that is validated in a Kubernetes e2e test. The webhook handles the `AdmissionReview` request sent by the API servers, and sends back its decision as an `AdmissionReview` object in the same version it received. See the [webhook request...",
+      "hard_negative_chunk_id": "93439a88251ff2952a356555",
+      "hard_negative_source_path": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "hard_negative_excerpt": "Webhooks are sent as POST requests, with `Content-Type: application/json`, with an `AdmissionReview` API object in the `admission.k8s.io` API group serialized to JSON as the body. Webhooks can specify what versions of `AdmissionReview` objects they accept with the `admissionReviewVersions` field in their configuration: ```yaml apiVersion: admissionregistration.k8s.io/v1 kind: ValidatingWebhookConf...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 2,
+      "hybrid_rank": 1,
+      "rrf_score": 0.032522,
+      "teacher_scores": {
+        "positive_score": 0.6551,
+        "negative_score": 0.1019,
+        "margin": 0.5532
+      },
+      "lexical_jaccard_overlap": 0.2313,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 22,
+      "query_id": "train_ku_0268",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure priorityClassName in kubernetes?",
+      "positive_chunk_id": "7ef2f63519e05d8c05cf20db",
+      "positive_source_path": "concepts/scheduling-eviction/pod-priority-preemption.md",
+      "positive_excerpt": "To use priority and preemption: 1. Add one or more [PriorityClasses](#priorityclass). 1. Create Pods with[`priorityClassName`](#pod-priority) set to one of the added PriorityClasses. Of course you do not need to create the Pods directly; normally you would add `priorityClassName` to the Pod template of a collection object like a Deployment. Keep reading for more information about these steps. Kube...",
+      "hard_negative_chunk_id": "dfc2d11956366c1657364bb2",
+      "hard_negative_source_path": "concepts/scheduling-eviction/pod-priority-preemption.md",
+      "hard_negative_excerpt": "After you have one or more PriorityClasses, you can create Pods that specify one of those PriorityClass names in their specifications. The priority admission controller uses the `priorityClassName` field and populates the integer value of the priority. If the priority class is not found, the Pod is rejected. The following YAML is an example of a Pod configuration that uses the PriorityClass create...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.032258,
+      "teacher_scores": {
+        "positive_score": 0.9994,
+        "negative_score": 0.371,
+        "margin": 0.6284
+      },
+      "lexical_jaccard_overlap": 0.1842,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 23,
+      "query_id": "train_ku_0275",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure ownerReference in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "positive_excerpt": "In v1.20+, if the garbage collector detects an invalid cross-namespace `ownerReference`, or a cluster-scoped dependent with an `ownerReference` referencing a namespaced kind, a warning Event with a reason of `OwnerRefInvalidNamespace` and an `involvedObject` of the invalid dependent is reported. You can check for that kind of Event by running `kubectl get events -A --field-selector=reason=OwnerRef...",
+      "hard_negative_chunk_id": "cbe7e426d815454c05ba7b47",
+      "hard_negative_source_path": "concepts/security/service-accounts.md",
+      "hard_negative_excerpt": "If you need the credentials for a ServiceAccount to mount in a non-standard location, or for an audience that isn't the API server, use one of the following methods: * [TokenRequest API](/docs/reference/kubernetes-api/authentication-resources/token-request-v1/) (recommended): Request a short-lived service account token from within your own *application code*. The token expires automatically and ca...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 5,
+      "dense_rank": null,
+      "hybrid_rank": 8,
+      "rrf_score": 0.015385,
+      "teacher_scores": {
+        "positive_score": 0.3104,
+        "negative_score": 0.0475,
+        "margin": 0.2629
+      },
+      "lexical_jaccard_overlap": 0.1125,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 24,
+      "query_id": "train_ku_0276",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between ownerReference and OwnerRefInvalidNamespace in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "positive_excerpt": "In v1.20+, if the garbage collector detects an invalid cross-namespace `ownerReference`, or a cluster-scoped dependent with an `ownerReference` referencing a namespaced kind, a warning Event with a reason of `OwnerRefInvalidNamespace` and an `involvedObject` of the invalid dependent is reported. You can check for that kind of Event by running `kubectl get events -A --field-selector=reason=OwnerRef...",
+      "hard_negative_chunk_id": "752d0033a89a6ba9dc0c36fb",
+      "hard_negative_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "hard_negative_excerpt": "When you tell Kubernetes to delete a resource, the API server allows the managing controller to process any [finalizer rules](/docs/concepts/overview/working-with-objects/finalizers/) for the resource. prevent accidental deletion of resources your cluster may still need to function correctly. For example, if you try to delete a [PersistentVolume](/docs/concepts/storage/persistent-volumes/) that is...",
+      "mining_retriever": "dense_e4c",
+      "lexical_rank": null,
+      "dense_rank": 3,
+      "hybrid_rank": 5,
+      "rrf_score": 0.015873,
+      "teacher_scores": {
+        "positive_score": 0.8917,
+        "negative_score": 0.1148,
+        "margin": 0.777
+      },
+      "lexical_jaccard_overlap": 0.1489,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 25,
+      "query_id": "train_ku_0277",
+      "ecosystem": "kubernetes",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve warning issues with ownerReference in kubernetes?",
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_path": "concepts/overview/working-with-objects/owners-dependents.md",
+      "positive_excerpt": "In v1.20+, if the garbage collector detects an invalid cross-namespace `ownerReference`, or a cluster-scoped dependent with an `ownerReference` referencing a namespaced kind, a warning Event with a reason of `OwnerRefInvalidNamespace` and an `involvedObject` of the invalid dependent is reported. You can check for that kind of Event by running `kubectl get events -A --field-selector=reason=OwnerRef...",
+      "hard_negative_chunk_id": "1e605d71fe8e0850d7a44f64",
+      "hard_negative_source_path": "tasks/administer-cluster/dns-debugging-resolution.md",
+      "hard_negative_excerpt": "Take a look inside the resolv.conf file. (See [Customizing DNS Service](/docs/tasks/administer-cluster/dns-custom-nameservers) and [Known issues](#known-issues) below for more information) ```shell kubectl exec -ti dnsutils -- cat /etc/resolv.conf ``` Verify that the search path and name server are set up like the following (note that search path may vary for different cloud providers): ``` search...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 2,
+      "dense_rank": null,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.4435,
+        "negative_score": 0.1015,
+        "margin": 0.342
+      },
+      "lexical_jaccard_overlap": 0.0846,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 26,
+      "query_id": "train_ku_0278",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Installing Romana with kubeadm  Applying network policies in kubernetes?",
+      "positive_chunk_id": "baefdc0ab4ae165fee776e8c",
+      "positive_source_path": "tasks/administer-cluster/network-policy-provider/romana-network-policy.md",
+      "positive_excerpt": "To apply network policies use one of the following: * [Romana network policies](https://github.com/romana/romana/wiki/Romana-policies). * [Example of Romana network policy](https://github.com/romana/core/blob/master/doc/policy.md). * The NetworkPolicy API. ## Once you have installed Romana, you can follow the [Declare Network Policy](/docs/tasks/administer-cluster/declare-network-policy/) to try o...",
+      "hard_negative_chunk_id": "227d41e1823fca619d242e32",
+      "hard_negative_source_path": "tasks/administer-cluster/network-policy-provider/romana-network-policy.md",
+      "hard_negative_excerpt": "This page shows how to use Romana for NetworkPolicy. ## Complete steps 1, 2, and 3 of the [kubeadm getting started guide](/docs/reference/setup-tools/kubeadm/).",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 3,
+      "dense_rank": 2,
+      "hybrid_rank": 3,
+      "rrf_score": 0.032002,
+      "teacher_scores": {
+        "positive_score": 0.993,
+        "negative_score": 0.3436,
+        "margin": 0.6494
+      },
+      "lexical_jaccard_overlap": 0.2373,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 27,
+      "query_id": "train_ku_0287",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between ca.pem and key.pem in kubernetes?",
+      "positive_chunk_id": "fcba815235ca397bc1ec3328",
+      "positive_source_path": "reference/access-authn-authz/kubelet-tls-bootstrapping.md",
+      "positive_excerpt": "As without bootstrapping, you will need a Certificate Authority (CA) key and certificate. As without bootstrapping, these will be used to sign the kubelet certificate. As before, it is your responsibility to distribute them to control plane nodes. For the purposes of this document, we will assume these have been distributed to control plane nodes at `/var/lib/kubernetes/ca.pem` (certificate) and `...",
+      "hard_negative_chunk_id": "a871859197ed8a6d187d91f5",
+      "hard_negative_source_path": "reference/access-authn-authz/kubelet-tls-bootstrapping.md",
+      "hard_negative_excerpt": "This is normal for all client certificate authentication. If not already set, add the `--client-ca-file=FILENAME` flag to the kube-apiserver command to enable client certificate authentication, referencing a certificate authority bundle containing the signing certificate, for example `--client-ca-file=/var/lib/kubernetes/ca.pem`.",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 5,
+      "dense_rank": 3,
+      "hybrid_rank": 3,
+      "rrf_score": 0.031258,
+      "teacher_scores": {
+        "positive_score": 0.7977,
+        "negative_score": 0.0398,
+        "margin": 0.7579
+      },
+      "lexical_jaccard_overlap": 0.2468,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 28,
+      "query_id": "train_ku_0289",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Deploying Antrea with kubeadm in kubernetes?",
+      "positive_chunk_id": "6e3109d5438a8e26f56b0030",
+      "positive_source_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "positive_excerpt": "Follow [Getting Started](https://github.com/vmware-tanzu/antrea/blob/main/docs/getting-started.md) guide to deploy Antrea for kubeadm. ## Once your cluster is running, you can follow the [Declare Network Policy](/docs/tasks/administer-cluster/declare-network-policy/) to try out Kubernetes NetworkPolicy.",
+      "hard_negative_chunk_id": "37e21ac9771d3e03f4a0bc2b",
+      "hard_negative_source_path": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "hard_negative_excerpt": "This page shows how to install and use Antrea CNI plugin on Kubernetes. For background on Project Antrea, read the [Introduction to Antrea](https://antrea.io/docs/). ## You need to have a Kubernetes cluster. Follow the [kubeadm getting started guide](/docs/reference/setup-tools/kubeadm/) to bootstrap one.",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 2,
+      "hybrid_rank": 2,
+      "rrf_score": 0.032258,
+      "teacher_scores": {
+        "positive_score": 0.9122,
+        "negative_score": 0.2722,
+        "margin": 0.6401
+      },
+      "lexical_jaccard_overlap": 0.3115,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 29,
+      "query_id": "train_ku_0299",
+      "ecosystem": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between spec.replicas and handover-to-hpa in kubernetes?",
+      "positive_chunk_id": "14dacfd52d78f2b751b492a1",
+      "positive_source_path": "reference/using-api/server-side-apply.md",
+      "positive_excerpt": "```yaml # Save this file as 'nginx-deployment-replicas-only.yaml'. apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment spec: replicas: 3 ``` The YAML file for SSA in this case only contains the fields you want to change. You are not supposed to provide a fully compliant Deployment manifest if you only want to modify the `spec.replicas` field using SSA. The user applies that manif...",
+      "hard_negative_chunk_id": "670e2c116bea82a30eb0d45a",
+      "hard_negative_source_path": "tasks/run-application/horizontal-pod-autoscale.md",
+      "hard_negative_excerpt": "When an HPA is enabled, it is recommended that the value of `spec.replicas` of the Deployment and / or StatefulSet be removed from their . If this isn't done, any time a change to that object is applied, for example via `kubectl apply -f deployment.yaml`, this will instruct Kubernetes to scale the current number of Pods to the value of the `spec.replicas` key. This may not be desired and could be ...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 3,
+      "dense_rank": 2,
+      "hybrid_rank": 3,
+      "rrf_score": 0.032002,
+      "teacher_scores": {
+        "positive_score": 0.6341,
+        "negative_score": 0.1028,
+        "margin": 0.5313
+      },
+      "lexical_jaccard_overlap": 0.2152,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 30,
+      "query_id": "train_ku_0300",
+      "ecosystem": "kubernetes",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Metrics API in kubernetes?",
+      "positive_chunk_id": "b4cbef95d71262020e58d04d",
+      "positive_source_path": "tasks/debug/debug-cluster/resource-metrics-pipeline.md",
+      "positive_excerpt": "To learn more about the Metrics API, see [resource metrics API design](https://git.k8s.io/design-proposals-archive/instrumentation/resource-metrics-api.md), the [metrics-server repository](https://github.com/kubernetes-sigs/metrics-server) and the [resource metrics API](https://github.com/kubernetes/metrics#resource-metrics-api). You must deploy the metrics-server or alternative adapter that serve...",
+      "hard_negative_chunk_id": "d9dd9f8dd565debbfc880db5",
+      "hard_negative_source_path": "tasks/debug/debug-cluster/resource-metrics-pipeline.md",
+      "hard_negative_excerpt": "To learn about how the kubelet serves node metrics, and how you can access those via the Kubernetes API, read [Node Metrics Data](/docs/reference/instrumentation/node-metrics).",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 14,
+      "dense_rank": 4,
+      "hybrid_rank": 4,
+      "rrf_score": 0.029139,
+      "teacher_scores": {
+        "positive_score": 0.7264,
+        "negative_score": 0.4718,
+        "margin": 0.2546
+      },
+      "lexical_jaccard_overlap": 0.2766,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 31,
+      "query_id": "train_fa_0379",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure app in fastapi?",
+      "positive_chunk_id": "dbe44b30f16193bd25679690",
+      "positive_source_path": "deployment/docker.md",
+      "positive_excerpt": "* Create an `app` directory and enter it. * Create an empty file `__init__.py`. * Create a `main.py` file with: ```Python from typing import Union from fastapi import FastAPI app = FastAPI() @app.get(\"/\") def read_root(): return {\"Hello\": \"World\"} @app.get(\"/items/{item_id}\") def read_item(item_id: int, q: Union[str, None] = None): return {\"item_id\": item_id, \"q\": q} ```",
+      "hard_negative_chunk_id": "7d7346fcdf1f02d15e3973cc",
+      "hard_negative_source_path": "deployment/docker.md",
+      "hard_negative_excerpt": "```Dockerfile COPY ./app /code/app ```",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 8,
+      "dense_rank": 6,
+      "hybrid_rank": 2,
+      "rrf_score": 0.029857,
+      "teacher_scores": {
+        "positive_score": 0.6867,
+        "negative_score": 0.4095,
+        "margin": 0.2772
+      },
+      "lexical_jaccard_overlap": 0.2273,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 32,
+      "query_id": "train_fa_0383",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between dict and list in fastapi?",
+      "positive_chunk_id": "8993648a7cdf754bb648f723",
+      "positive_source_path": "advanced/response-directly.md",
+      "positive_excerpt": "When you create a **FastAPI** *path operation* you can normally return any data from it: a `dict`, a `list`, a Pydantic model, a database model, etc. By default, **FastAPI** would automatically convert that return value to JSON using the `jsonable_encoder` explained in [JSON Compatible Encoder](../tutorial/encoder.md){.internal-link target=_blank}. Then, behind the scenes, it would put that JSON-c...",
+      "hard_negative_chunk_id": "b19cf4587787d65382555e20",
+      "hard_negative_source_path": "features.md",
+      "hard_negative_excerpt": "* Validation for most (or all?) Python **data types**, including: * JSON objects (`dict`). * JSON array (`list`) defining item types. * String (`str`) fields, defining min and max lengths. * Numbers (`int`, `float`) with min and max values, etc. * Validation for more exotic types, like: * URL. * Email. * UUID. * ...and others. All the validation is handled by the well-established and robust **Pyda...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 5,
+      "dense_rank": 1,
+      "hybrid_rank": 1,
+      "rrf_score": 0.031778,
+      "teacher_scores": {
+        "positive_score": 0.8154,
+        "negative_score": 0.5289,
+        "margin": 0.2865
+      },
+      "lexical_jaccard_overlap": 0.1068,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 33,
+      "query_id": "train_fa_0384",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Deployments Concepts  Restarts  Restart After Crash in fastapi?",
+      "positive_chunk_id": "48d8a013f97bcc2036796396",
+      "positive_source_path": "deployment/concepts.md",
+      "positive_excerpt": "But in those cases with really bad errors that crash the running **process**, you would want an external component that is in charge of **restarting** the process, at least a couple of times... !!! tip ...Although if the whole application is just **crashing immediately** it probably doesn't make sense to keep restarting it forever. But in those cases, you will probably notice it during development...",
+      "hard_negative_chunk_id": "936ede431845c4e28d1da31a",
+      "hard_negative_source_path": "deployment/concepts.md",
+      "hard_negative_excerpt": "In most cases, the same tool that is used to **run the program on startup** is also used to handle automatic **restarts**. For example, this could be handled by: * Docker * Kubernetes * Docker Compose * Docker in Swarm Mode * Systemd * Supervisor * Handled internally by a cloud provider as part of their services * Others...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 9,
+      "hybrid_rank": 3,
+      "rrf_score": 0.030622,
+      "teacher_scores": {
+        "positive_score": 0.7235,
+        "negative_score": 0.3937,
+        "margin": 0.3298
+      },
+      "lexical_jaccard_overlap": 0.1405,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 34,
+      "query_id": "train_fa_0385",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Extra Models  Multiple models  About user_indict  Pydantics dict in fastapi?",
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_path": "tutorial/extra-models.md",
+      "positive_excerpt": "`user_in` is a Pydantic model of class `UserIn`. Pydantic models have a `.dict()` method that returns a `dict` with the model's data. So, if we create a Pydantic object `user_in` like: ```Python user_in = UserIn(username=\"john\", password=\"secret\", email=\"john.doe@example.com\") ``` and then we call: ```Python user_dict = user_in.dict() ``` we now have a `dict` with the data in the variable `user_di...",
+      "hard_negative_chunk_id": "d89f4667b2233cfeb86f031c",
+      "hard_negative_source_path": "tutorial/extra-models.md",
+      "hard_negative_excerpt": "You can also declare a response using a plain arbitrary `dict`, declaring just the type of the keys and values, without using a Pydantic model. This is useful if you don't know the valid field/attribute names (that would be needed for a Pydantic model) beforehand. In this case, you can use `typing.Dict` (or just `dict` in Python 3.9 and above): === \"Python 3.9+\" ```Python hl_lines=\"6\" {!> ../../.....",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 7,
+      "dense_rank": 8,
+      "hybrid_rank": 6,
+      "rrf_score": 0.029631,
+      "teacher_scores": {
+        "positive_score": 0.989,
+        "negative_score": 0.4025,
+        "margin": 0.5865
+      },
+      "lexical_jaccard_overlap": 0.172,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 35,
+      "query_id": "train_fa_0387",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between user_in and UserIn in fastapi?",
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_path": "tutorial/extra-models.md",
+      "positive_excerpt": "`user_in` is a Pydantic model of class `UserIn`. Pydantic models have a `.dict()` method that returns a `dict` with the model's data. So, if we create a Pydantic object `user_in` like: ```Python user_in = UserIn(username=\"john\", password=\"secret\", email=\"john.doe@example.com\") ``` and then we call: ```Python user_dict = user_in.dict() ``` we now have a `dict` with the data in the variable `user_di...",
+      "hard_negative_chunk_id": "54d9389be12dc8ba211a59c8",
+      "hard_negative_source_path": "tutorial/extra-models.md",
+      "hard_negative_excerpt": "And then adding the extra keyword argument `hashed_password=hashed_password`, like in: ```Python UserInDB(**user_in.dict(), hashed_password=hashed_password) ``` ...ends up being like: ```Python UserInDB( username = user_dict[\"username\"], password = user_dict[\"password\"], email = user_dict[\"email\"], full_name = user_dict[\"full_name\"], hashed_password = hashed_password, ) ``` !!! warning The support...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 19,
+      "dense_rank": 3,
+      "hybrid_rank": 3,
+      "rrf_score": 0.028531,
+      "teacher_scores": {
+        "positive_score": 0.6735,
+        "negative_score": 0.0266,
+        "margin": 0.6469
+      },
+      "lexical_jaccard_overlap": 0.2564,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 36,
+      "query_id": "train_fa_0392",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Get Current User  Create a get_current_user dependency in fastapi?",
+      "positive_chunk_id": "0ed46589a4ede0d40b91674d",
+      "positive_source_path": "tutorial/security/get-current-user.md",
+      "positive_excerpt": "Let's create a dependency `get_current_user`. Remember that dependencies can have sub-dependencies? `get_current_user` will have a dependency with the same `oauth2_scheme` we created before. The same as we were doing before in the *path operation* directly, our new dependency `get_current_user` will receive a `token` as a `str` from the sub-dependency `oauth2_scheme`: === \"Python 3.10+\" ```Python ...",
+      "hard_negative_chunk_id": "4ac0e349f0e80360cae9bfdb",
+      "hard_negative_source_path": "advanced/security/oauth2-scopes.md",
+      "hard_negative_excerpt": "Let's review again this dependency tree and the scopes. As the `get_current_active_user` dependency has as a sub-dependency on `get_current_user`, the scope `\"me\"` declared at `get_current_active_user` will be included in the list of required scopes in the `security_scopes.scopes` passed to `get_current_user`. The *path operation* itself also declares a scope, `\"items\"`, so this will also be in th...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 2,
+      "dense_rank": 6,
+      "hybrid_rank": 3,
+      "rrf_score": 0.031281,
+      "teacher_scores": {
+        "positive_score": 0.9854,
+        "negative_score": 0.1217,
+        "margin": 0.8637
+      },
+      "lexical_jaccard_overlap": 0.1575,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 37,
+      "query_id": "train_fa_0393",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure get_current_user in fastapi?",
+      "positive_chunk_id": "0ed46589a4ede0d40b91674d",
+      "positive_source_path": "tutorial/security/get-current-user.md",
+      "positive_excerpt": "Let's create a dependency `get_current_user`. Remember that dependencies can have sub-dependencies? `get_current_user` will have a dependency with the same `oauth2_scheme` we created before. The same as we were doing before in the *path operation* directly, our new dependency `get_current_user` will receive a `token` as a `str` from the sub-dependency `oauth2_scheme`: === \"Python 3.10+\" ```Python ...",
+      "hard_negative_chunk_id": "4ac0e349f0e80360cae9bfdb",
+      "hard_negative_source_path": "advanced/security/oauth2-scopes.md",
+      "hard_negative_excerpt": "Let's review again this dependency tree and the scopes. As the `get_current_active_user` dependency has as a sub-dependency on `get_current_user`, the scope `\"me\"` declared at `get_current_active_user` will be included in the list of required scopes in the `security_scopes.scopes` passed to `get_current_user`. The *path operation* itself also declares a scope, `\"items\"`, so this will also be in th...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 1,
+      "dense_rank": 9,
+      "hybrid_rank": 4,
+      "rrf_score": 0.030886,
+      "teacher_scores": {
+        "positive_score": 0.5982,
+        "negative_score": 0.0635,
+        "margin": 0.5348
+      },
+      "lexical_jaccard_overlap": 0.1575,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 38,
+      "query_id": "train_fa_0408",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "What is the configuration and purpose of Path Operation Configuration  Response description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "positive_excerpt": "You can specify the response description with the parameter `response_description`: === \"Python 3.10+\" ```Python hl_lines=\"19\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py310.py!} ``` === \"Python 3.9+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py39.py!} ``` === \"Python 3.8+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operati...",
+      "hard_negative_chunk_id": "564b1d086d67a4f34864ec85",
+      "hard_negative_source_path": "advanced/path-operation-advanced-configuration.md",
+      "hard_negative_excerpt": "You probably have seen how to declare the `response_model` and `status_code` for a *path operation*. That defines the metadata about the main response of a *path operation*. You can also declare additional responses with their models, status codes, etc. There's a whole chapter here in the documentation about it, you can read it at [Additional Responses in OpenAPI](additional-responses.md){.interna...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 10,
+      "dense_rank": 2,
+      "hybrid_rank": 4,
+      "rrf_score": 0.030415,
+      "teacher_scores": {
+        "positive_score": 0.9961,
+        "negative_score": 0.0379,
+        "margin": 0.9581
+      },
+      "lexical_jaccard_overlap": 0.1505,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 39,
+      "query_id": "train_fa_0409",
+      "ecosystem": "fastapi",
+      "typology": "direct_lookup",
+      "query_text": "How to use and configure response_description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "positive_excerpt": "You can specify the response description with the parameter `response_description`: === \"Python 3.10+\" ```Python hl_lines=\"19\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py310.py!} ``` === \"Python 3.9+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py39.py!} ``` === \"Python 3.8+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operati...",
+      "hard_negative_chunk_id": "c6105ad9768750834a29247b",
+      "hard_negative_source_path": "deployment/https.md",
+      "hard_negative_excerpt": "Having **HTTPS** is very important, and quite **critical** in most cases. Most of the effort you as a developer have to put around HTTPS is just about **understanding these concepts** and how they work. But once you know the basic information of **HTTPS for developers** you can easily combine and configure different tools to help you manage everything in a simple way. In some of the next chapters,...",
+      "mining_retriever": "bm25",
+      "lexical_rank": 2,
+      "dense_rank": null,
+      "hybrid_rank": 3,
+      "rrf_score": 0.016129,
+      "teacher_scores": {
+        "positive_score": 0.9857,
+        "negative_score": 0.0533,
+        "margin": 0.9324
+      },
+      "lexical_jaccard_overlap": 0.0721,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    },
+    {
+      "item_index": 40,
+      "query_id": "train_fa_0410",
+      "ecosystem": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference and interaction between response_description and description in fastapi?",
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_path": "tutorial/path-operation-configuration.md",
+      "positive_excerpt": "You can specify the response description with the parameter `response_description`: === \"Python 3.10+\" ```Python hl_lines=\"19\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py310.py!} ``` === \"Python 3.9+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operation_configuration/tutorial005_py39.py!} ``` === \"Python 3.8+\" ```Python hl_lines=\"21\" {!> ../../../docs_src/path_operati...",
+      "hard_negative_chunk_id": "0e0e57630335462875d8b505",
+      "hard_negative_source_path": "tutorial/response-status-code.md",
+      "hard_negative_excerpt": "Let's see the previous example again: ```Python hl_lines=\"6\" {!../../../docs_src/response_status_code/tutorial001.py!} ``` `201` is the status code for \"Created\". But you don't have to memorize what each of these codes mean. You can use the convenience variables from `fastapi.status`. ```Python hl_lines=\"1 6\" {!../../../docs_src/response_status_code/tutorial002.py!} ``` They are just a convenience...",
+      "mining_retriever": "bm25+dense_e4c",
+      "lexical_rank": 20,
+      "dense_rank": 9,
+      "hybrid_rank": 2,
+      "rrf_score": 0.026993,
+      "teacher_scores": {
+        "positive_score": 0.9756,
+        "negative_score": 0.0258,
+        "margin": 0.9498
+      },
+      "lexical_jaccard_overlap": 0.177,
+      "quarantine_rule_checks": {
+        "is_not_known_positive": true,
+        "is_not_same_document_subtopic": true,
+        "is_not_high_overlap": true,
+        "teacher_margin_positive": true,
+        "teacher_margin_ge_0_25": true,
+        "teacher_neg_below_0_60": true,
+        "teacher_pos_ge_0_30": true,
+        "teacher_neg_ge_0_02": true
+      },
+      "all_quarantine_rules_passed": true,
+      "human_audit": {
+        "decision": null,
+        "allowed_decisions": [
+          "TRUE_NEGATIVE",
+          "FALSE_NEGATIVE",
+          "AMBIGUOUS"
+        ],
+        "reviewer": null,
+        "review_timestamp_utc": null,
+        "reviewer_notes": ""
+      }
+    }
+  ]
+}

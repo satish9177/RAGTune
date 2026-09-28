@@ -1,0 +1,4049 @@
+{
+  "description": "Structural quality and positive mapping validation over canonical 188 E7 primary queries.",
+  "flag_frequency": {
+    "CODE_IDENTIFIER_PROMPT": 25,
+    "DOUBLE_SPACE_IN_QUERY": 33,
+    "HEADING_ARTIFACT": 7,
+    "NO_QUERY_ENTITIES_IN_POSITIVE": 4,
+    "VERY_LOW_LEXICAL_OVERLAP": 2
+  },
+  "queries": [
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "rel_16_stable"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rel_16_stable"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0533,
+      "positive_chunk_id": "13586ed97d7472b603df33b6",
+      "positive_source_file": "release-16.sgml",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0002",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "gmail",
+        "com",
+        "www",
+        "openwall",
+        "com"
+      ],
+      "key_tokens_matched_in_positive": [
+        "gmail",
+        "com",
+        "www",
+        "openwall",
+        "com"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0789,
+      "positive_chunk_id": "a0e26aded9dd4620784d7fcf",
+      "positive_source_file": "pgcrypto.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0006",
+      "query_text": "What is the difference and interaction between gmail.com and www.openwall.com in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "vacuum_freeze_table_age"
+      ],
+      "key_tokens_matched_in_positive": [
+        "vacuum_freeze_table_age"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0307,
+      "positive_chunk_id": "882eee4bd0e86201e0dc069e",
+      "positive_source_file": "maintenance.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0011",
+      "query_text": "How to use and configure vacuum_freeze_table_age in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "example",
+        "program"
+      ],
+      "key_tokens_matched_in_positive": [
+        "example",
+        "program"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0674,
+      "positive_chunk_id": "04f7981b7172c021ac60b1a5",
+      "positive_source_file": "lobj.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0013",
+      "query_text": "What is the configuration and purpose of Example Program in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_subscription",
+        "copy_data"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_subscription",
+        "copy_data"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0429,
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_file": "ref/create_subscription.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0017",
+      "query_text": "What is the difference and interaction between pg_subscription and copy_data in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "warning",
+        "pg_subscription"
+      ],
+      "key_tokens_matched_in_positive": [
+        "warning",
+        "pg_subscription"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.037,
+      "positive_chunk_id": "a848812f09706ca3bf2437e7",
+      "positive_source_file": "ref/create_subscription.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0018",
+      "query_text": "How to resolve warning issues with pg_subscription in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "lo_read",
+        "size_t"
+      ],
+      "key_tokens_matched_in_positive": [
+        "lo_read",
+        "size_t"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0633,
+      "positive_chunk_id": "d3354d5f91648052077e559d",
+      "positive_source_file": "lobj.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0021",
+      "query_text": "What is the difference and interaction between lo_read and size_t in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "error",
+        "lo_read"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "lo_read"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0513,
+      "positive_chunk_id": "d3354d5f91648052077e559d",
+      "positive_source_file": "lobj.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0022",
+      "query_text": "How to resolve error issues with lo_read in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "1997"
+      ],
+      "key_tokens_matched_in_positive": [
+        "1997"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0813,
+      "positive_chunk_id": "f465dba67f03f0f5f7e50020",
+      "positive_source_file": "datatype.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0025",
+      "query_text": "What is the difference and interaction between 16.00 and 17.12.1997 in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "measurement_y2006m02",
+        "conf"
+      ],
+      "key_tokens_matched_in_positive": [
+        "measurement_y2006m02",
+        "conf"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0409,
+      "positive_chunk_id": "ff6ed76bd5adb740df7e6b8d",
+      "positive_source_file": "ddl.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0028",
+      "query_text": "What is the difference and interaction between measurement_y2006m02 and postgresql.conf in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "rel_16_stable"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rel_16_stable"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0316,
+      "positive_chunk_id": "d45af033d1c66df05a40cdf9",
+      "positive_source_file": "release-16.sgml",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0030",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "tuples_only",
+        "csv_fieldsep"
+      ],
+      "key_tokens_matched_in_positive": [
+        "tuples_only",
+        "csv_fieldsep"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0331,
+      "positive_chunk_id": "57ac5dfb2df1e35188c7d4f8",
+      "positive_source_file": "ref/psql-ref.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0034",
+      "query_text": "What is the difference and interaction between tuples_only and csv_fieldsep in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "missing_ok"
+      ],
+      "key_tokens_matched_in_positive": [
+        "missing_ok"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0515,
+      "positive_chunk_id": "96feb7309aadd71be65c9aa6",
+      "positive_source_file": "fdwhandler.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0040",
+      "query_text": "How to use and configure missing_ok in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "error",
+        "missing_ok"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "missing_ok"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0619,
+      "positive_chunk_id": "96feb7309aadd71be65c9aa6",
+      "positive_source_file": "fdwhandler.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0042",
+      "query_text": "How to resolve error issues with missing_ok in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "error",
+        "psql_history"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "psql_history"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0311,
+      "positive_chunk_id": "3bdd517182ce8e74f992301d",
+      "positive_source_file": "ref/psql-ref.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0046",
+      "query_text": "How to resolve error issues with PSQL_HISTORY in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0496,
+      "positive_chunk_id": "bd5de716fe7b9f31f122a019",
+      "positive_source_file": "datatype.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0048",
+      "query_text": "How to use and configure 12.34 in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "52093"
+      ],
+      "key_tokens_matched_in_positive": [
+        "52093"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0738,
+      "positive_chunk_id": "bd5de716fe7b9f31f122a019",
+      "positive_source_file": "datatype.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0049",
+      "query_text": "What is the difference and interaction between 12.34 and 52093.89 in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "listen_addresses"
+      ],
+      "key_tokens_matched_in_positive": [
+        "listen_addresses"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0278,
+      "positive_chunk_id": "f2eda4b2ea27378476d37593",
+      "positive_source_file": "ref/postgres-ref.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0051",
+      "query_text": "How to use and configure listen_addresses in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "listen_addresses",
+        "conf"
+      ],
+      "key_tokens_matched_in_positive": [
+        "listen_addresses",
+        "conf"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0414,
+      "positive_chunk_id": "f2eda4b2ea27378476d37593",
+      "positive_source_file": "ref/postgres-ref.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0052",
+      "query_text": "What is the difference and interaction between listen_addresses and postgresql.conf in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "rel_16_stable"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rel_16_stable"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.023,
+      "positive_chunk_id": "9c7cf48803b2ba36c1defc80",
+      "positive_source_file": "release-16.sgml",
+      "quality_flags": [
+        "VERY_LOW_LEXICAL_OVERLAP",
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0054",
+      "query_text": "How to use and configure REL_16_STABLE in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "locked_row"
+      ],
+      "key_tokens_matched_in_positive": [
+        "locked_row"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0294,
+      "positive_chunk_id": "30ad61d4f5fa8ce1ba517b09",
+      "positive_source_file": "pgrowlocks.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0057",
+      "query_text": "How to use and configure locked_row in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "ii_context",
+        "ii_amcache"
+      ],
+      "key_tokens_matched_in_positive": [
+        "ii_context",
+        "ii_amcache"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0476,
+      "positive_chunk_id": "9f88da55a9885d6e2868916b",
+      "positive_source_file": "indexam.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0065",
+      "query_text": "What is the difference and interaction between ii_Context and ii_AmCache in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_function_info_v1"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_function_info_v1"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.045,
+      "positive_chunk_id": "7ca6bd97e2a2e6ebc85490a4",
+      "positive_source_file": "gist.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0068",
+      "query_text": "How to use and configure PG_FUNCTION_INFO_V1 in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_function_info_v1",
+        "my_fetch"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_function_info_v1",
+        "my_fetch"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0531,
+      "positive_chunk_id": "7ca6bd97e2a2e6ebc85490a4",
+      "positive_source_file": "gist.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0069",
+      "query_text": "What is the difference and interaction between PG_FUNCTION_INFO_V1 and my_fetch in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_class",
+        "pg_am"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_class",
+        "pg_am"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.052,
+      "positive_chunk_id": "c7ba36f341ab3802249dfdc5",
+      "positive_source_file": "indexam.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0072",
+      "query_text": "What is the difference and interaction between pg_class and pg_am in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "exception",
+        "pg_class"
+      ],
+      "key_tokens_matched_in_positive": [
+        "exception",
+        "pg_class"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0345,
+      "positive_chunk_id": "c7ba36f341ab3802249dfdc5",
+      "positive_source_file": "indexam.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0073",
+      "query_text": "How to resolve exception issues with pg_class in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "add_path",
+        "create_foreignscan_path"
+      ],
+      "key_tokens_matched_in_positive": [
+        "add_path",
+        "create_foreignscan_path"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.037,
+      "positive_chunk_id": "4009f8c33c83f745534254bd",
+      "positive_source_file": "fdwhandler.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0076",
+      "query_text": "What is the difference and interaction between add_path and create_foreignscan_path in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "max_val"
+      ],
+      "key_tokens_matched_in_positive": [
+        "max_val"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0325,
+      "positive_chunk_id": "a78b8ccad4e64a4f8999ad7b",
+      "positive_source_file": "system-views.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0080",
+      "query_text": "How to use and configure max_val in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "max_val",
+        "boot_val"
+      ],
+      "key_tokens_matched_in_positive": [
+        "max_val",
+        "boot_val"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0452,
+      "positive_chunk_id": "a78b8ccad4e64a4f8999ad7b",
+      "positive_source_file": "system-views.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0081",
+      "query_text": "What is the difference and interaction between max_val and boot_val in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_basebackup"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_basebackup"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0686,
+      "positive_chunk_id": "a26d0b38d1633955d12e440b",
+      "positive_source_file": "ref/pg_basebackup.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0083",
+      "query_text": "What is the difference and interaction between pg_basebackup and 9.1 in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "brief",
+        "history"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "brief",
+        "history"
+      ],
+      "lexical_jaccard": 0.1212,
+      "positive_chunk_id": "306b8acb0fbe521349fbde11",
+      "positive_source_file": "history.sgml",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE"
+      ],
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "query_id": "train_po_0085",
+      "query_text": "What is the configuration and purpose of A Brief History of PostgreSQL in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "fail",
+        "pg_ctl"
+      ],
+      "key_tokens_matched_in_positive": [
+        "fail",
+        "pg_ctl"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.042,
+      "positive_chunk_id": "93c59c3e24e90d3ba164add5",
+      "positive_source_file": "maintenance.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0090",
+      "query_text": "How to resolve fail issues with pg_ctl in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "btree_gin",
+        "pg_trgm"
+      ],
+      "key_tokens_matched_in_positive": [
+        "btree_gin",
+        "pg_trgm"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0603,
+      "positive_chunk_id": "afbb039fccdc28c6068e5dd9",
+      "positive_source_file": "gin.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0096",
+      "query_text": "What is the difference and interaction between btree_gin and pg_trgm in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "do_db_maintenance"
+      ],
+      "key_tokens_matched_in_positive": [
+        "do_db_maintenance"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0388,
+      "positive_chunk_id": "0e3867425f07d0dcbf6e91ac",
+      "positive_source_file": "ref/drop_procedure.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0097",
+      "query_text": "How to use and configure do_db_maintenance in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "do_db_maintenance",
+        "target_schema"
+      ],
+      "key_tokens_matched_in_positive": [
+        "do_db_maintenance",
+        "target_schema"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0538,
+      "positive_chunk_id": "0e3867425f07d0dcbf6e91ac",
+      "positive_source_file": "ref/drop_procedure.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0098",
+      "query_text": "What is the difference and interaction between do_db_maintenance and target_schema in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "error",
+        "do_db_maintenance"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "do_db_maintenance"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0465,
+      "positive_chunk_id": "0e3867425f07d0dcbf6e91ac",
+      "positive_source_file": "ref/drop_procedure.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0099",
+      "query_text": "How to resolve error issues with do_db_maintenance in postgresql?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "geqo_seed"
+      ],
+      "key_tokens_matched_in_positive": [
+        "geqo_seed"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0284,
+      "positive_chunk_id": "d20c49c3de0963db08d3c886",
+      "positive_source_file": "geqo.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0101",
+      "query_text": "How to use and configure geqo_seed in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "geqo_seed",
+        "geqo_main"
+      ],
+      "key_tokens_matched_in_positive": [
+        "geqo_seed",
+        "geqo_main"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0395,
+      "positive_chunk_id": "d20c49c3de0963db08d3c886",
+      "positive_source_file": "geqo.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0102",
+      "query_text": "What is the difference and interaction between geqo_seed and geqo_main in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "work_mem"
+      ],
+      "key_tokens_matched_in_positive": [
+        "work_mem"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0511,
+      "positive_chunk_id": "8ef74713e5d7f3431ef5c68d",
+      "positive_source_file": "ref/postgres-ref.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0104",
+      "query_text": "What is the difference and interaction between work_mem and e.g in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "table_name",
+        "new_owner"
+      ],
+      "key_tokens_matched_in_positive": [
+        "table_name",
+        "new_owner"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.042,
+      "positive_chunk_id": "fba1e7cfbcf6d06f3e416003",
+      "positive_source_file": "ddl.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0107",
+      "query_text": "What is the difference and interaction between table_name and new_owner in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "default",
+        "roles",
+        "renamed",
+        "predefined",
+        "roles"
+      ],
+      "key_tokens_matched_in_positive": [
+        "default",
+        "roles",
+        "predefined",
+        "roles"
+      ],
+      "key_tokens_missing_in_positive": [
+        "renamed"
+      ],
+      "lexical_jaccard": 0.1875,
+      "positive_chunk_id": "1e59cde4d3fc3b5e64e2db1a",
+      "positive_source_file": "appendix-obsolete-default-roles.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0109",
+      "query_text": "What is the configuration and purpose of Default Roles Renamed to Predefined Roles in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "large",
+        "objects"
+      ],
+      "key_tokens_matched_in_positive": [
+        "large"
+      ],
+      "key_tokens_missing_in_positive": [
+        "objects"
+      ],
+      "lexical_jaccard": 0.0614,
+      "positive_chunk_id": "f4a280d510db512ab168a69b",
+      "positive_source_file": "lobj.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0110",
+      "query_text": "What is the configuration and purpose of Large Objects in postgresql?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "complex_add",
+        "complex_sub"
+      ],
+      "key_tokens_matched_in_positive": [
+        "complex_add",
+        "complex_sub"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.047,
+      "positive_chunk_id": "02639f72b143d287af02bac3",
+      "positive_source_file": "xaggr.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0117",
+      "query_text": "What is the difference and interaction between complex_add and complex_sub in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_opfamily",
+        "pg_opclass"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_opfamily",
+        "pg_opclass"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0636,
+      "positive_chunk_id": "d290c5d135e527054f7e5eed",
+      "positive_source_file": "indexam.sgml",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_po_0120",
+      "query_text": "What is the difference and interaction between pg_opfamily and pg_opclass in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "postgresql",
+      "key_tokens_extracted": [
+        "pg_stat_scan_tables",
+        "locked_row"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pg_stat_scan_tables",
+        "locked_row"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0405,
+      "positive_chunk_id": "7a3441a51dc2f688d062ce80",
+      "positive_source_file": "pgrowlocks.sgml",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_po_0125",
+      "query_text": "What is the difference and interaction between pg_stat_scan_tables and locked_row in postgresql?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "guards",
+        "overview",
+        "variables"
+      ],
+      "key_tokens_matched_in_positive": [
+        "guards",
+        "variables"
+      ],
+      "key_tokens_missing_in_positive": [
+        "overview"
+      ],
+      "lexical_jaccard": 0.0547,
+      "positive_chunk_id": "d89da464237cf1f5303e0745",
+      "positive_source_file": "torch.compiler_guards_overview.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0126",
+      "query_text": "What is the configuration and purpose of Guards Overview  Variables in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "quantization",
+        "quantization",
+        "api",
+        "summary"
+      ],
+      "key_tokens_matched_in_positive": [
+        "quantization",
+        "quantization",
+        "api"
+      ],
+      "key_tokens_missing_in_positive": [
+        "summary"
+      ],
+      "lexical_jaccard": 0.0652,
+      "positive_chunk_id": "f8f43ecf2dec4566d42359ed",
+      "positive_source_file": "quantization.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0129",
+      "query_text": "What is the configuration and purpose of Quantization  Quantization API Summary in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "symbolic_trace"
+      ],
+      "key_tokens_matched_in_positive": [
+        "symbolic_trace"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.073,
+      "positive_chunk_id": "f8f43ecf2dec4566d42359ed",
+      "positive_source_file": "quantization.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0131",
+      "query_text": "What is the difference and interaction between symbolic_trace and 2.1 in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torch",
+        "matmul",
+        "torch",
+        "bmm"
+      ],
+      "key_tokens_matched_in_positive": [
+        "torch",
+        "matmul",
+        "torch",
+        "bmm"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0921,
+      "positive_chunk_id": "9c5781c73d65505246f6aa9d",
+      "positive_source_file": "nested.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0133",
+      "query_text": "What is the difference and interaction between torch.matmul and torch.bmm in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torch_distributed_debug"
+      ],
+      "key_tokens_matched_in_positive": [
+        "torch_distributed_debug"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0296,
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_file": "distributed.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0140",
+      "query_text": "How to use and configure TORCH_DISTRIBUTED_DEBUG in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torch_distributed_debug",
+        "off"
+      ],
+      "key_tokens_matched_in_positive": [
+        "torch_distributed_debug",
+        "off"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0441,
+      "positive_chunk_id": "b702daf3dc0b076f885c031c",
+      "positive_source_file": "distributed.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0141",
+      "query_text": "What is the difference and interaction between TORCH_DISTRIBUTED_DEBUG and OFF in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "cuda",
+        "semantics",
+        "best",
+        "practices"
+      ],
+      "key_tokens_matched_in_positive": [
+        "cuda"
+      ],
+      "key_tokens_missing_in_positive": [
+        "semantics",
+        "best",
+        "practices"
+      ],
+      "lexical_jaccard": 0.0583,
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY",
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0151",
+      "query_text": "What is the configuration and purpose of CUDA semantics  Best practices in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "argparse"
+      ],
+      "key_tokens_matched_in_positive": [
+        "argparse"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0517,
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0152",
+      "query_text": "How to use and configure argparse in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "argparse",
+        "args",
+        "device"
+      ],
+      "key_tokens_matched_in_positive": [
+        "argparse",
+        "args",
+        "device"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0678,
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0153",
+      "query_text": "What is the difference and interaction between argparse and args.device in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "fail",
+        "argparse"
+      ],
+      "key_tokens_matched_in_positive": [
+        "fail",
+        "argparse"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0513,
+      "positive_chunk_id": "76dd7888f56b843c0dca8c62",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0154",
+      "query_text": "How to resolve fail issues with argparse in pytorch?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torchtensor",
+        "data",
+        "types"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "torchtensor",
+        "data",
+        "types"
+      ],
+      "lexical_jaccard": 0.0,
+      "positive_chunk_id": "5d2bd6022f1a2ba994674796",
+      "positive_source_file": "tensors.rst",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "query_id": "train_py_0155",
+      "query_text": "What is the configuration and purpose of torchTensor  Data types in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torch",
+        "quint8",
+        "torch",
+        "qint8"
+      ],
+      "key_tokens_matched_in_positive": [
+        "torch",
+        "quint8",
+        "torch",
+        "qint8"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0909,
+      "positive_chunk_id": "5d2bd6022f1a2ba994674796",
+      "positive_source_file": "tensors.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0157",
+      "query_text": "What is the difference and interaction between torch.quint8 and torch.qint8 in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "fwd"
+      ],
+      "key_tokens_matched_in_positive": [
+        "fwd"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0693,
+      "positive_chunk_id": "f4f8092da1be00c0bdec041b",
+      "positive_source_file": "torch.compiler_inductor_profiling.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0160",
+      "query_text": "What is the difference and interaction between fwd.py and k.py in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "loss_fn",
+        "static_input"
+      ],
+      "key_tokens_matched_in_positive": [
+        "loss_fn",
+        "static_input"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0645,
+      "positive_chunk_id": "8905772e4560558f3583088d",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0168",
+      "query_text": "What is the difference and interaction between loss_fn and static_input in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "error",
+        "new_alloc"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "new_alloc"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0541,
+      "positive_chunk_id": "5b74091a0a0a740501f5ef7d",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0172",
+      "query_text": "How to resolve error issues with new_alloc in pytorch?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "modules",
+        "neural",
+        "network",
+        "training",
+        "modules"
+      ],
+      "key_tokens_matched_in_positive": [
+        "modules",
+        "neural",
+        "network",
+        "training",
+        "modules"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0804,
+      "positive_chunk_id": "a4bb01aa0f2fc07dd3fa4e77",
+      "positive_source_file": "notes/modules.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0173",
+      "query_text": "What is the configuration and purpose of Modules  Neural Network Training with Modules in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "requires_grad",
+        "net",
+        "weight"
+      ],
+      "key_tokens_matched_in_positive": [
+        "requires_grad",
+        "net",
+        "weight"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0811,
+      "positive_chunk_id": "a4bb01aa0f2fc07dd3fa4e77",
+      "positive_source_file": "notes/modules.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0175",
+      "query_text": "What is the difference and interaction between requires_grad and net.l1.weight in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "autograd_tutorial"
+      ],
+      "key_tokens_matched_in_positive": [
+        "autograd_tutorial"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0538,
+      "positive_chunk_id": "7b38049a0e3299bc323a6e2d",
+      "positive_source_file": "notes/modules.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0176",
+      "query_text": "How to use and configure autograd_tutorial in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "autograd_tutorial",
+        "org"
+      ],
+      "key_tokens_matched_in_positive": [
+        "autograd_tutorial",
+        "org"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0745,
+      "positive_chunk_id": "7b38049a0e3299bc323a6e2d",
+      "positive_source_file": "notes/modules.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0177",
+      "query_text": "What is the difference and interaction between autograd_tutorial and pytorch.org in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "patching",
+        "batch",
+        "norm",
+        "fix"
+      ],
+      "key_tokens_matched_in_positive": [
+        "patching",
+        "batch",
+        "norm"
+      ],
+      "key_tokens_missing_in_positive": [
+        "fix"
+      ],
+      "lexical_jaccard": 0.0899,
+      "positive_chunk_id": "38d2bdfb4b68f3f8afc9ac1e",
+      "positive_source_file": "func.batch_norm.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0178",
+      "query_text": "What is the configuration and purpose of Patching Batch Norm  How to fix in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "replace_all_batch_norm_modules_"
+      ],
+      "key_tokens_matched_in_positive": [
+        "replace_all_batch_norm_modules_"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0588,
+      "positive_chunk_id": "38d2bdfb4b68f3f8afc9ac1e",
+      "positive_source_file": "func.batch_norm.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0179",
+      "query_text": "How to use and configure replace_all_batch_norm_modules_ in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "replace_all_batch_norm_modules_",
+        "norm_layer"
+      ],
+      "key_tokens_matched_in_positive": [
+        "replace_all_batch_norm_modules_",
+        "norm_layer"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.069,
+      "positive_chunk_id": "38d2bdfb4b68f3f8afc9ac1e",
+      "positive_source_file": "func.batch_norm.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0180",
+      "query_text": "What is the difference and interaction between replace_all_batch_norm_modules_ and norm_layer in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "quantization",
+        "quantization",
+        "api",
+        "summary"
+      ],
+      "key_tokens_matched_in_positive": [
+        "quantization",
+        "quantization"
+      ],
+      "key_tokens_missing_in_positive": [
+        "api",
+        "summary"
+      ],
+      "lexical_jaccard": 0.0667,
+      "positive_chunk_id": "1949ada0f4d69398b23a9d9b",
+      "positive_source_file": "quantization.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0184",
+      "query_text": "What is the configuration and purpose of Quantization  Quantization API Summary in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "add_scalar"
+      ],
+      "key_tokens_matched_in_positive": [
+        "add_scalar"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0667,
+      "positive_chunk_id": "dc4e60bc57df6620dde98464",
+      "positive_source_file": "tensorboard.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0185",
+      "query_text": "How to use and configure add_scalar in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torchtensor",
+        "data",
+        "types"
+      ],
+      "key_tokens_matched_in_positive": [
+        "data",
+        "types"
+      ],
+      "key_tokens_missing_in_positive": [
+        "torchtensor"
+      ],
+      "lexical_jaccard": 0.0702,
+      "positive_chunk_id": "a41cdfea4d75dc4b65109a3c",
+      "positive_source_file": "tensors.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0187",
+      "query_text": "What is the configuration and purpose of torchTensor  Data types in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "float32"
+      ],
+      "key_tokens_matched_in_positive": [
+        "float32"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0442,
+      "positive_chunk_id": "a41cdfea4d75dc4b65109a3c",
+      "positive_source_file": "tensors.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0188",
+      "query_text": "How to use and configure float32 in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "float32",
+        "uint8"
+      ],
+      "key_tokens_matched_in_positive": [
+        "float32",
+        "uint8"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0614,
+      "positive_chunk_id": "a41cdfea4d75dc4b65109a3c",
+      "positive_source_file": "tensors.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0189",
+      "query_text": "What is the difference and interaction between float32 and uint8 in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "distributed",
+        "communication",
+        "package",
+        "torchdistributed",
+        "logging"
+      ],
+      "key_tokens_matched_in_positive": [
+        "distributed"
+      ],
+      "key_tokens_missing_in_positive": [
+        "communication",
+        "package",
+        "torchdistributed",
+        "logging"
+      ],
+      "lexical_jaccard": 0.082,
+      "positive_chunk_id": "18f030967b351c6a81fb2676",
+      "positive_source_file": "distributed.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0190",
+      "query_text": "What is the configuration and purpose of Distributed communication package - torchdistributed  Logging in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torchsparse",
+        "constructing",
+        "sparse",
+        "semi",
+        "structured",
+        "tensors"
+      ],
+      "key_tokens_matched_in_positive": [
+        "sparse",
+        "semi",
+        "structured",
+        "tensors"
+      ],
+      "key_tokens_missing_in_positive": [
+        "torchsparse",
+        "constructing"
+      ],
+      "lexical_jaccard": 0.0825,
+      "positive_chunk_id": "8832fed395de2f5b0136fabf",
+      "positive_source_file": "sparse.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0193",
+      "query_text": "What is the configuration and purpose of torchsparse  Constructing Sparse Semi-Structured Tensors in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torchfx",
+        "writing",
+        "transformations"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "torchfx",
+        "writing",
+        "transformations"
+      ],
+      "lexical_jaccard": 0.0,
+      "positive_chunk_id": "6356ec9fbbc3d357a317a6e4",
+      "positive_source_file": "fx.rst",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "query_id": "train_py_0196",
+      "query_text": "What is the configuration and purpose of torchfx  Writing Transformations in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "using",
+        "visualizer",
+        "allocator",
+        "state",
+        "history"
+      ],
+      "key_tokens_matched_in_positive": [
+        "allocator",
+        "state",
+        "history"
+      ],
+      "key_tokens_missing_in_positive": [
+        "using",
+        "visualizer"
+      ],
+      "lexical_jaccard": 0.0808,
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0201",
+      "query_text": "What is the configuration and purpose of Using the visualizer  Allocator State History in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "b7f064c000000_0"
+      ],
+      "key_tokens_matched_in_positive": [
+        "b7f064c000000_0"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0521,
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0202",
+      "query_text": "How to use and configure b7f064c000000_0 in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "oom",
+        "b7f064c000000_0"
+      ],
+      "key_tokens_matched_in_positive": [
+        "oom",
+        "b7f064c000000_0"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0515,
+      "positive_chunk_id": "04caec50ac8546432f6385e9",
+      "positive_source_file": "torch_cuda_memory.rst",
+      "quality_flags": [
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0203",
+      "query_text": "How to resolve oom issues with b7f064c000000_0 in pytorch?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "automatic",
+        "mixed",
+        "precision",
+        "package",
+        "torchamp"
+      ],
+      "key_tokens_matched_in_positive": [
+        "automatic",
+        "mixed",
+        "precision"
+      ],
+      "key_tokens_missing_in_positive": [
+        "package",
+        "torchamp"
+      ],
+      "lexical_jaccard": 0.0851,
+      "positive_chunk_id": "502df59774f5de7d9c1f1e81",
+      "positive_source_file": "amp.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0204",
+      "query_text": "What is the configuration and purpose of Automatic Mixed Precision package - torchamp in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "device",
+        "device"
+      ],
+      "key_tokens_matched_in_positive": [
+        "device",
+        "device"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1463,
+      "positive_chunk_id": "4403998edec4b54716349856",
+      "positive_source_file": "notes/cuda.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0209",
+      "query_text": "What is the difference and interaction between c.device and z.device in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "troubleshooting",
+        "torchdynamo",
+        "errors"
+      ],
+      "key_tokens_matched_in_positive": [
+        "torchdynamo",
+        "errors"
+      ],
+      "key_tokens_missing_in_positive": [
+        "troubleshooting"
+      ],
+      "lexical_jaccard": 0.0636,
+      "positive_chunk_id": "1c77428cbf4591d96d453107",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0210",
+      "query_text": "What is the configuration and purpose of PyTorch 20 Troubleshooting  Torchdynamo Errors in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "log_level",
+        "test_assertion_error"
+      ],
+      "key_tokens_matched_in_positive": [
+        "log_level",
+        "test_assertion_error"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.055,
+      "positive_chunk_id": "1c77428cbf4591d96d453107",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0212",
+      "query_text": "What is the difference and interaction between log_level and test_assertion_error in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "error",
+        "log_level"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "log_level"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0463,
+      "positive_chunk_id": "1c77428cbf4591d96d453107",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0213",
+      "query_text": "How to resolve error issues with log_level in pytorch?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "guards",
+        "overview",
+        "variables"
+      ],
+      "key_tokens_matched_in_positive": [
+        "guards"
+      ],
+      "key_tokens_missing_in_positive": [
+        "overview",
+        "variables"
+      ],
+      "lexical_jaccard": 0.0732,
+      "positive_chunk_id": "03fe9fdef395c02b2bb8c035",
+      "positive_source_file": "torch.compiler_guards_overview.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0214",
+      "query_text": "What is the configuration and purpose of Guards Overview  Variables in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "variablebuilder",
+        "make_guards"
+      ],
+      "key_tokens_matched_in_positive": [
+        "variablebuilder",
+        "make_guards"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0875,
+      "positive_chunk_id": "03fe9fdef395c02b2bb8c035",
+      "positive_source_file": "torch.compiler_guards_overview.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0216",
+      "query_text": "What is the difference and interaction between VariableBuilder and make_guards in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torchnn",
+        "loss",
+        "functions"
+      ],
+      "key_tokens_matched_in_positive": [
+        "loss"
+      ],
+      "key_tokens_missing_in_positive": [
+        "torchnn",
+        "functions"
+      ],
+      "lexical_jaccard": 0.0,
+      "positive_chunk_id": "4a77147edd325550435d7b6c",
+      "positive_source_file": "nn.rst",
+      "quality_flags": [
+        "VERY_LOW_LEXICAL_OVERLAP",
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0217",
+      "query_text": "What is the configuration and purpose of torchnn  Loss Functions in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "l1loss"
+      ],
+      "key_tokens_matched_in_positive": [
+        "l1loss"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.069,
+      "positive_chunk_id": "4a77147edd325550435d7b6c",
+      "positive_source_file": "nn.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0218",
+      "query_text": "How to use and configure nn.L1Loss in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "l1loss",
+        "mseloss"
+      ],
+      "key_tokens_matched_in_positive": [
+        "l1loss",
+        "mseloss"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0968,
+      "positive_chunk_id": "4a77147edd325550435d7b6c",
+      "positive_source_file": "nn.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0219",
+      "query_text": "What is the difference and interaction between nn.L1Loss and nn.MSELoss in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "inspect",
+        "getsource"
+      ],
+      "key_tokens_matched_in_positive": [
+        "inspect",
+        "getsource"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0674,
+      "positive_chunk_id": "e3bd92327e79aea9332e1f12",
+      "positive_source_file": "notes/large_scale_deployments.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0221",
+      "query_text": "How to use and configure inspect.getsource in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "inspect",
+        "getsource"
+      ],
+      "key_tokens_matched_in_positive": [
+        "inspect",
+        "getsource"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0769,
+      "positive_chunk_id": "e3bd92327e79aea9332e1f12",
+      "positive_source_file": "notes/large_scale_deployments.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0222",
+      "query_text": "What is the difference and interaction between inspect.getsource and .py in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "pipeline_tutorial"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pipeline_tutorial"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1364,
+      "positive_chunk_id": "34368c3d0620c85f1b8534b6",
+      "positive_source_file": "pipeline.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0224",
+      "query_text": "How to use and configure pipeline_tutorial in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "pipeline_tutorial",
+        "ddp_pipeline"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pipeline_tutorial",
+        "ddp_pipeline"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1042,
+      "positive_chunk_id": "34368c3d0620c85f1b8534b6",
+      "positive_source_file": "pipeline.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0225",
+      "query_text": "What is the difference and interaction between pipeline_tutorial and ddp_pipeline in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "troubleshooting",
+        "minifying",
+        "torchinductor",
+        "errors"
+      ],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [
+        "troubleshooting",
+        "minifying",
+        "torchinductor",
+        "errors"
+      ],
+      "lexical_jaccard": 0.0286,
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "quality_flags": [
+        "NO_QUERY_ENTITIES_IN_POSITIVE",
+        "DOUBLE_SPACE_IN_QUERY",
+        "HEADING_ARTIFACT"
+      ],
+      "quality_status": "REVIEW_POSITIVE_MAPPING",
+      "query_id": "train_py_0226",
+      "query_text": "What is the configuration and purpose of PyTorch 20 Troubleshooting  Minifying TorchInductor Errors in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "minifier_launcher"
+      ],
+      "key_tokens_matched_in_positive": [
+        "minifier_launcher"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0404,
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0227",
+      "query_text": "How to use and configure minifier_launcher.py in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "error",
+        "minifier_launcher"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "minifier_launcher"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0505,
+      "positive_chunk_id": "0dffc4b41ed42e48fd2078fb",
+      "positive_source_file": "torch.compiler_troubleshooting.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0229",
+      "query_text": "How to resolve error issues with minifier_launcher.py in pytorch?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "quantize_per_tensor"
+      ],
+      "key_tokens_matched_in_positive": [
+        "quantize_per_tensor"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0833,
+      "positive_chunk_id": "83622c3f5dbb766e18c65301",
+      "positive_source_file": "quantization.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0234",
+      "query_text": "How to use and configure quantize_per_tensor in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "quantize_per_tensor",
+        "zero_point"
+      ],
+      "key_tokens_matched_in_positive": [
+        "quantize_per_tensor",
+        "zero_point"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1224,
+      "positive_chunk_id": "83622c3f5dbb766e18c65301",
+      "positive_source_file": "quantization.rst",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0235",
+      "query_text": "What is the difference and interaction between quantize_per_tensor and zero_point in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "torchmasked",
+        "unary",
+        "operators"
+      ],
+      "key_tokens_matched_in_positive": [
+        "unary",
+        "operators"
+      ],
+      "key_tokens_missing_in_positive": [
+        "torchmasked"
+      ],
+      "lexical_jaccard": 0.0472,
+      "positive_chunk_id": "68813f71c4da15c765710cd5",
+      "positive_source_file": "masked.rst",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_py_0240",
+      "query_text": "What is the configuration and purpose of torchmasked  Unary Operators in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "bitwise_not",
+        "conj_physical"
+      ],
+      "key_tokens_matched_in_positive": [
+        "bitwise_not",
+        "conj_physical"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0377,
+      "positive_chunk_id": "68813f71c4da15c765710cd5",
+      "positive_source_file": "masked.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0242",
+      "query_text": "What is the difference and interaction between bitwise_not and conj_physical in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "ctx"
+      ],
+      "key_tokens_matched_in_positive": [
+        "ctx"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.04,
+      "positive_chunk_id": "9ccb0750a77ac7775d7beb6b",
+      "positive_source_file": "notes/extending.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0244",
+      "query_text": "How to use and configure ctx in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "basecolor"
+      ],
+      "key_tokens_matched_in_positive": [
+        "basecolor"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0268,
+      "positive_chunk_id": "f5fee61fcc3e6f26ade78c3e",
+      "positive_source_file": "jit_language_reference_v2.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0247",
+      "query_text": "How to use and configure BaseColor in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "basecolor",
+        "color"
+      ],
+      "key_tokens_matched_in_positive": [
+        "basecolor",
+        "color"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0442,
+      "positive_chunk_id": "f5fee61fcc3e6f26ade78c3e",
+      "positive_source_file": "jit_language_reference_v2.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0248",
+      "query_text": "What is the difference and interaction between BaseColor and Color in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "add",
+        "reduce"
+      ],
+      "key_tokens_matched_in_positive": [
+        "add",
+        "reduce"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.102,
+      "positive_chunk_id": "0f534f7ee1e7e14c32853ca8",
+      "positive_source_file": "torch.compiler_faq.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0250",
+      "query_text": "How to use and configure np.add.reduce in pytorch?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "pytorch",
+      "key_tokens_extracted": [
+        "add",
+        "reduce",
+        "poly1d"
+      ],
+      "key_tokens_matched_in_positive": [
+        "add",
+        "reduce",
+        "poly1d"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1176,
+      "positive_chunk_id": "0f534f7ee1e7e14c32853ca8",
+      "positive_source_file": "torch.compiler_faq.rst",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_py_0251",
+      "query_text": "What is the difference and interaction between np.add.reduce and np.poly1d in pytorch?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "admissionreview"
+      ],
+      "key_tokens_matched_in_positive": [
+        "admissionreview"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0659,
+      "positive_chunk_id": "61f7b4f6b758dbf813117642",
+      "positive_source_file": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0265",
+      "query_text": "How to use and configure AdmissionReview in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "admissionreview",
+        "clientauth"
+      ],
+      "key_tokens_matched_in_positive": [
+        "admissionreview",
+        "clientauth"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0753,
+      "positive_chunk_id": "61f7b4f6b758dbf813117642",
+      "positive_source_file": "reference/access-authn-authz/extensible-admission-controllers.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0266",
+      "query_text": "What is the difference and interaction between AdmissionReview and ClientAuth in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "priorityclassname"
+      ],
+      "key_tokens_matched_in_positive": [
+        "priorityclassname"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0725,
+      "positive_chunk_id": "7ef2f63519e05d8c05cf20db",
+      "positive_source_file": "concepts/scheduling-eviction/pod-priority-preemption.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0268",
+      "query_text": "How to use and configure priorityClassName in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "ownerreference"
+      ],
+      "key_tokens_matched_in_positive": [
+        "ownerreference"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0625,
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_file": "concepts/overview/working-with-objects/owners-dependents.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0275",
+      "query_text": "How to use and configure ownerReference in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "ownerreference",
+        "ownerrefinvalidnamespace"
+      ],
+      "key_tokens_matched_in_positive": [
+        "ownerreference",
+        "ownerrefinvalidnamespace"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.125,
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_file": "concepts/overview/working-with-objects/owners-dependents.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0276",
+      "query_text": "What is the difference and interaction between ownerReference and OwnerRefInvalidNamespace in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "warning",
+        "ownerreference"
+      ],
+      "key_tokens_matched_in_positive": [
+        "warning",
+        "ownerreference"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0833,
+      "positive_chunk_id": "0365b1af04817887f6ee60b6",
+      "positive_source_file": "concepts/overview/working-with-objects/owners-dependents.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0277",
+      "query_text": "How to resolve warning issues with ownerReference in kubernetes?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "installing",
+        "romana",
+        "kubeadm",
+        "applying",
+        "network",
+        "policies"
+      ],
+      "key_tokens_matched_in_positive": [
+        "romana",
+        "network",
+        "policies"
+      ],
+      "key_tokens_missing_in_positive": [
+        "installing",
+        "kubeadm",
+        "applying"
+      ],
+      "lexical_jaccard": 0.1277,
+      "positive_chunk_id": "baefdc0ab4ae165fee776e8c",
+      "positive_source_file": "tasks/administer-cluster/network-policy-provider/romana-network-policy.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0278",
+      "query_text": "What is the configuration and purpose of Installing Romana with kubeadm  Applying network policies in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [],
+      "key_tokens_matched_in_positive": [],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.069,
+      "positive_chunk_id": "5ad2971fe5ae0991ac086ae7",
+      "positive_source_file": "tasks/extend-kubectl/kubectl-plugins.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0284",
+      "query_text": "How to use and configure 1.0.0 in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "pem",
+        "key",
+        "pem"
+      ],
+      "key_tokens_matched_in_positive": [
+        "pem",
+        "key",
+        "pem"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1167,
+      "positive_chunk_id": "fcba815235ca397bc1ec3328",
+      "positive_source_file": "reference/access-authn-authz/kubelet-tls-bootstrapping.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0287",
+      "query_text": "What is the difference and interaction between ca.pem and key.pem in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "deploying",
+        "antrea",
+        "kubeadm"
+      ],
+      "key_tokens_matched_in_positive": [
+        "antrea",
+        "kubeadm"
+      ],
+      "key_tokens_missing_in_positive": [
+        "deploying"
+      ],
+      "lexical_jaccard": 0.1163,
+      "positive_chunk_id": "6e3109d5438a8e26f56b0030",
+      "positive_source_file": "tasks/administer-cluster/network-policy-provider/antrea-network-policy.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0289",
+      "query_text": "What is the configuration and purpose of Deploying Antrea with kubeadm in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "spec",
+        "replicas",
+        "handover",
+        "hpa"
+      ],
+      "key_tokens_matched_in_positive": [
+        "spec",
+        "replicas",
+        "handover",
+        "hpa"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0865,
+      "positive_chunk_id": "14dacfd52d78f2b751b492a1",
+      "positive_source_file": "reference/using-api/server-side-apply.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0299",
+      "query_text": "What is the difference and interaction between spec.replicas and handover-to-hpa in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "metrics",
+        "api"
+      ],
+      "key_tokens_matched_in_positive": [
+        "metrics",
+        "api"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1163,
+      "positive_chunk_id": "b4cbef95d71262020e58d04d",
+      "positive_source_file": "tasks/debug/debug-cluster/resource-metrics-pipeline.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0300",
+      "query_text": "What is the configuration and purpose of Metrics API in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "default"
+      ],
+      "key_tokens_matched_in_positive": [
+        "default"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0758,
+      "positive_chunk_id": "387f614a38eff10947127e43",
+      "positive_source_file": "concepts/security/service-accounts.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0304",
+      "query_text": "How to use and configure default in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "optionaloldself"
+      ],
+      "key_tokens_matched_in_positive": [
+        "optionaloldself"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0364,
+      "positive_chunk_id": "7a879b15dd234edd5cbbd25b",
+      "positive_source_file": "tasks/extend-kubernetes/custom-resources/custom-resource-definitions.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0306",
+      "query_text": "How to use and configure optionalOldSelf in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "removed",
+        "apis",
+        "release",
+        "v132",
+        "v116",
+        "deployment",
+        "deployment",
+        "v116"
+      ],
+      "key_tokens_matched_in_positive": [
+        "removed",
+        "deployment",
+        "deployment"
+      ],
+      "key_tokens_missing_in_positive": [
+        "apis",
+        "release",
+        "v132",
+        "v116",
+        "v116"
+      ],
+      "lexical_jaccard": 0.0933,
+      "positive_chunk_id": "222fb45e26cf5e106a2b19fa",
+      "positive_source_file": "reference/using-api/deprecation-guide.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0309",
+      "query_text": "What is the configuration and purpose of Removed APIs by release  v132  v116  Deployment deployment-v116 in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "spec",
+        "rollbackto"
+      ],
+      "key_tokens_matched_in_positive": [
+        "spec",
+        "rollbackto"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.087,
+      "positive_chunk_id": "222fb45e26cf5e106a2b19fa",
+      "positive_source_file": "reference/using-api/deprecation-guide.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0310",
+      "query_text": "How to use and configure spec.rollbackTo in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "spec",
+        "rollbackto",
+        "spec",
+        "selector"
+      ],
+      "key_tokens_matched_in_positive": [
+        "spec",
+        "rollbackto",
+        "spec",
+        "selector"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0986,
+      "positive_chunk_id": "222fb45e26cf5e106a2b19fa",
+      "positive_source_file": "reference/using-api/deprecation-guide.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0311",
+      "query_text": "What is the difference and interaction between spec.rollbackTo and spec.selector in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "usersecretnamespace"
+      ],
+      "key_tokens_matched_in_positive": [
+        "usersecretnamespace"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0889,
+      "positive_chunk_id": "9238a67f972cc9b038dfabe2",
+      "positive_source_file": "concepts/storage/storage-classes.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0313",
+      "query_text": "How to use and configure userSecretNamespace in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "patchstrategy"
+      ],
+      "key_tokens_matched_in_positive": [
+        "patchstrategy"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0526,
+      "positive_chunk_id": "da2d53bdd08ee9c3095da00d",
+      "positive_source_file": "tasks/manage-kubernetes-objects/declarative-config.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0317",
+      "query_text": "How to use and configure patchStrategy in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "patchstrategy",
+        "finalizers"
+      ],
+      "key_tokens_matched_in_positive": [
+        "patchstrategy",
+        "finalizers"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0779,
+      "positive_chunk_id": "da2d53bdd08ee9c3095da00d",
+      "positive_source_file": "tasks/manage-kubernetes-objects/declarative-config.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0318",
+      "query_text": "What is the difference and interaction between patchStrategy and finalizers in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "kubeadm",
+        "glibc"
+      ],
+      "key_tokens_matched_in_positive": [
+        "kubeadm",
+        "glibc"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0725,
+      "positive_chunk_id": "3153cabc295342fb5ee4ad39",
+      "positive_source_file": "setup/production-environment/tools/kubeadm/install-kubeadm.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0320",
+      "query_text": "What is the difference and interaction between kubeadm and glibc in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "0008895654642000348"
+      ],
+      "key_tokens_matched_in_positive": [
+        "0008895654642000348"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0741,
+      "positive_chunk_id": "220ee49e1f9da364f430351c",
+      "positive_source_file": "concepts/cluster-administration/flow-control.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0322",
+      "query_text": "How to use and configure 0.0008895654642000348 in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "0008895654642000348",
+        "116062922897309e"
+      ],
+      "key_tokens_matched_in_positive": [
+        "0008895654642000348",
+        "116062922897309e"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1379,
+      "positive_chunk_id": "220ee49e1f9da364f430351c",
+      "positive_source_file": "concepts/cluster-administration/flow-control.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0323",
+      "query_text": "What is the difference and interaction between 0.0008895654642000348 and 4.116062922897309e in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "kubeadm",
+        "etcd",
+        "advertise"
+      ],
+      "key_tokens_matched_in_positive": [
+        "kubeadm",
+        "etcd",
+        "advertise"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1224,
+      "positive_chunk_id": "068bd7afd4aa3a49d9b94ed4",
+      "positive_source_file": "reference/labels-annotations-taints/_index.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0326",
+      "query_text": "What is the difference and interaction between kubeadm.kubernetes.io and etcd.advertise in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "create",
+        "customresourcedefinition",
+        "delete",
+        "customresourcedefinition"
+      ],
+      "key_tokens_matched_in_positive": [
+        "create",
+        "customresourcedefinition",
+        "delete",
+        "customresourcedefinition"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1071,
+      "positive_chunk_id": "0e95aca82f169122411bbdbc",
+      "positive_source_file": "tasks/extend-kubernetes/custom-resources/custom-resource-definitions.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0327",
+      "query_text": "What is the configuration and purpose of Create a CustomResourceDefinition  Delete a CustomResourceDefinition in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "error",
+        "resourcedefinition",
+        "yaml"
+      ],
+      "key_tokens_matched_in_positive": [
+        "error",
+        "resourcedefinition",
+        "yaml"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0926,
+      "positive_chunk_id": "0e95aca82f169122411bbdbc",
+      "positive_source_file": "tasks/extend-kubernetes/custom-resources/custom-resource-definitions.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0330",
+      "query_text": "How to resolve error issues with resourcedefinition.yaml in kubernetes?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "motivation",
+        "updating",
+        "labels"
+      ],
+      "key_tokens_matched_in_positive": [
+        "labels"
+      ],
+      "key_tokens_missing_in_positive": [
+        "motivation",
+        "updating"
+      ],
+      "lexical_jaccard": 0.037,
+      "positive_chunk_id": "af0e1b620fc71a12cec80a5a",
+      "positive_source_file": "concepts/overview/working-with-objects/labels.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0331",
+      "query_text": "What is the configuration and purpose of Motivation  Updating labels in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "metrics",
+        "component",
+        "metrics",
+        "kube",
+        "scheduler",
+        "metrics"
+      ],
+      "key_tokens_matched_in_positive": [
+        "metrics",
+        "metrics",
+        "kube",
+        "scheduler",
+        "metrics"
+      ],
+      "key_tokens_missing_in_positive": [
+        "component"
+      ],
+      "lexical_jaccard": 0.0647,
+      "positive_chunk_id": "1fea93d2296d52a1b8d3fdea",
+      "positive_source_file": "concepts/cluster-administration/system-metrics.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0332",
+      "query_text": "What is the configuration and purpose of Metrics in Kubernetes  Component metrics  kube-scheduler metrics in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "get",
+        "list"
+      ],
+      "key_tokens_matched_in_positive": [
+        "get",
+        "list"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0725,
+      "positive_chunk_id": "cd667943e24a61d2233381bf",
+      "positive_source_file": "concepts/extend-kubernetes/compute-storage-net/device-plugins.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0343",
+      "query_text": "What is the difference and interaction between Get and List in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "tmpfs"
+      ],
+      "key_tokens_matched_in_positive": [
+        "tmpfs"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0588,
+      "positive_chunk_id": "699926636f2773077655e39d",
+      "positive_source_file": "concepts/configuration/manage-resources-containers.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0346",
+      "query_text": "How to use and configure tmpfs in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "user",
+        "accounts",
+        "versus",
+        "service",
+        "accounts",
+        "bound",
+        "service",
+        "account",
+        "tokens"
+      ],
+      "key_tokens_matched_in_positive": [
+        "service",
+        "bound",
+        "service",
+        "account",
+        "tokens"
+      ],
+      "key_tokens_missing_in_positive": [
+        "user",
+        "accounts",
+        "versus",
+        "accounts"
+      ],
+      "lexical_jaccard": 0.0989,
+      "positive_chunk_id": "34fd204ff773217c174ea297",
+      "positive_source_file": "reference/access-authn-authz/service-accounts-admin.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0347",
+      "query_text": "What is the configuration and purpose of User accounts versus service accounts  Bound service account tokens in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "nginx"
+      ],
+      "key_tokens_matched_in_positive": [
+        "nginx"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0612,
+      "positive_chunk_id": "8c342f193290858c578ea423",
+      "positive_source_file": "tasks/administer-cluster/declare-network-policy.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0351",
+      "query_text": "How to use and configure nginx in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "timeout",
+        "nginx"
+      ],
+      "key_tokens_matched_in_positive": [
+        "timeout",
+        "nginx"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0816,
+      "positive_chunk_id": "8c342f193290858c578ea423",
+      "positive_source_file": "tasks/administer-cluster/declare-network-policy.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0353",
+      "query_text": "How to resolve timeout issues with nginx in kubernetes?",
+      "typology": "troubleshooting_scenario"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "diagnosing",
+        "problem",
+        "debugging",
+        "pods",
+        "debugging",
+        "services",
+        "network",
+        "traffic",
+        "not",
+        "forwarded"
+      ],
+      "key_tokens_matched_in_positive": [
+        "problem",
+        "debugging",
+        "pods",
+        "debugging",
+        "not"
+      ],
+      "key_tokens_missing_in_positive": [
+        "diagnosing",
+        "services",
+        "network",
+        "traffic",
+        "forwarded"
+      ],
+      "lexical_jaccard": 0.1429,
+      "positive_chunk_id": "31a663a71eee7c8a6f2f4a4e",
+      "positive_source_file": "tasks/debug/debug-application/debug-pods.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0354",
+      "query_text": "What is the configuration and purpose of Diagnosing the problem  Debugging Pods  Debugging Services  Network traffic is not forwarded in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "w6p4j_6qq1hztg9nreorubximb9k5hzcmpxc9ixpx2k4xo9l",
+        "ofiuw93dah3m5plup6k7eoe6txburvfecpjswlelsosw8gb8vjcnzms9enzpea0tw_p"
+      ],
+      "key_tokens_matched_in_positive": [
+        "w6p4j_6qq1hztg9nreorubximb9k5hzcmpxc9ixpx2k4xo9l",
+        "ofiuw93dah3m5plup6k7eoe6txburvfecpjswlelsosw8gb8vjcnzms9enzpea0tw_p"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.087,
+      "positive_chunk_id": "090edfa24dffdeb43bc685dd",
+      "positive_source_file": "reference/access-authn-authz/authentication.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0359",
+      "query_text": "What is the difference and interaction between w6p4J_6qQ1HzTG9nrEOrubxIMb9K5hzcMPxc9IxPx2K4xO9l and oFiUw93daH3m5pluP6K7eOE6txBuRVfEcpJSwlelsOsW8gb8VJcnzMS9EnZpeA0tW_p in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "status",
+        "certificate"
+      ],
+      "key_tokens_matched_in_positive": [
+        "status",
+        "certificate"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0968,
+      "positive_chunk_id": "a7eebee7253df8b071eee4d7",
+      "positive_source_file": "reference/access-authn-authz/certificate-signing-requests.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0361",
+      "query_text": "How to use and configure status.certificate in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "status",
+        "certificate",
+        "myuser",
+        "crt"
+      ],
+      "key_tokens_matched_in_positive": [
+        "status",
+        "certificate",
+        "myuser",
+        "crt"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.2258,
+      "positive_chunk_id": "a7eebee7253df8b071eee4d7",
+      "positive_source_file": "reference/access-authn-authz/certificate-signing-requests.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0362",
+      "query_text": "What is the difference and interaction between status.certificate and myuser.crt in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "keda"
+      ],
+      "key_tokens_matched_in_positive": [
+        "keda"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0816,
+      "positive_chunk_id": "8f165e1a43cdb04c2079a624",
+      "positive_source_file": "concepts/workloads/autoscaling.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0364",
+      "query_text": "How to use and configure keda.sh in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "controller_utils"
+      ],
+      "key_tokens_matched_in_positive": [
+        "controller_utils"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0394,
+      "positive_chunk_id": "f7501e4b1649032d74075629",
+      "positive_source_file": "concepts/cluster-administration/system-logs.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0366",
+      "query_text": "How to use and configure controller_utils in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "controller_utils",
+        "525108"
+      ],
+      "key_tokens_matched_in_positive": [
+        "controller_utils",
+        "525108"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0625,
+      "positive_chunk_id": "f7501e4b1649032d74075629",
+      "positive_source_file": "concepts/cluster-administration/system-logs.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0367",
+      "query_text": "What is the difference and interaction between controller_utils and 15.525108 in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "deprecatedversion"
+      ],
+      "key_tokens_matched_in_positive": [
+        "deprecatedversion"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0278,
+      "positive_chunk_id": "dcfab5394393e002d2afe0cf",
+      "positive_source_file": "reference/using-api/deprecation-policy.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_ku_0369",
+      "query_text": "How to use and configure deprecatedVersion in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "rootlesscontaine"
+      ],
+      "key_tokens_matched_in_positive": [
+        "rootlesscontaine"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0676,
+      "positive_chunk_id": "82dcc4e1fa7697571d5f157f",
+      "positive_source_file": "tasks/administer-cluster/kubelet-in-userns.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0371",
+      "query_text": "How to use and configure rootlesscontaine.rs in kubernetes?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "kubernetes",
+      "key_tokens_extracted": [
+        "requiredduringschedulingignoredduringexecution",
+        "k8s"
+      ],
+      "key_tokens_matched_in_positive": [
+        "requiredduringschedulingignoredduringexecution",
+        "k8s"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0794,
+      "positive_chunk_id": "dc5c8e03381265ceb90588eb",
+      "positive_source_file": "tasks/configure-pod-container/assign-pods-nodes-using-node-affinity.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_ku_0374",
+      "query_text": "What is the difference and interaction between requiredDuringSchedulingIgnoredDuringExecution and k8s.io in kubernetes?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "app"
+      ],
+      "key_tokens_matched_in_positive": [
+        "app"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0789,
+      "positive_chunk_id": "dbe44b30f16193bd25679690",
+      "positive_source_file": "deployment/docker.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0379",
+      "query_text": "How to use and configure app in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "dict",
+        "list"
+      ],
+      "key_tokens_matched_in_positive": [
+        "dict",
+        "list"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0676,
+      "positive_chunk_id": "8993648a7cdf754bb648f723",
+      "positive_source_file": "advanced/response-directly.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0383",
+      "query_text": "What is the difference and interaction between dict and list in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "deployments",
+        "concepts",
+        "restarts",
+        "restart",
+        "after",
+        "crash"
+      ],
+      "key_tokens_matched_in_positive": [
+        "restart",
+        "after",
+        "crash"
+      ],
+      "key_tokens_missing_in_positive": [
+        "deployments",
+        "concepts",
+        "restarts"
+      ],
+      "lexical_jaccard": 0.0842,
+      "positive_chunk_id": "48d8a013f97bcc2036796396",
+      "positive_source_file": "deployment/concepts.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0384",
+      "query_text": "What is the configuration and purpose of Deployments Concepts  Restarts  Restart After Crash in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "extra",
+        "models",
+        "multiple",
+        "models",
+        "about",
+        "user_indict",
+        "pydantics",
+        "dict"
+      ],
+      "key_tokens_matched_in_positive": [
+        "models",
+        "models",
+        "dict"
+      ],
+      "key_tokens_missing_in_positive": [
+        "extra",
+        "multiple",
+        "about",
+        "user_indict",
+        "pydantics"
+      ],
+      "lexical_jaccard": 0.125,
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_file": "tutorial/extra-models.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY",
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0385",
+      "query_text": "What is the configuration and purpose of Extra Models  Multiple models  About user_indict  Pydantics dict in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "user_in",
+        "userin"
+      ],
+      "key_tokens_matched_in_positive": [
+        "user_in",
+        "userin"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1154,
+      "positive_chunk_id": "8445cc48574b0e8878582782",
+      "positive_source_file": "tutorial/extra-models.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0387",
+      "query_text": "What is the difference and interaction between user_in and UserIn in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "get",
+        "current",
+        "user",
+        "create",
+        "get_current_user",
+        "dependency"
+      ],
+      "key_tokens_matched_in_positive": [
+        "get",
+        "current",
+        "user",
+        "create",
+        "get_current_user",
+        "dependency"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.087,
+      "positive_chunk_id": "0ed46589a4ede0d40b91674d",
+      "positive_source_file": "tutorial/security/get-current-user.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0392",
+      "query_text": "What is the configuration and purpose of Get Current User  Create a get_current_user dependency in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "get_current_user"
+      ],
+      "key_tokens_matched_in_positive": [
+        "get_current_user"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0635,
+      "positive_chunk_id": "0ed46589a4ede0d40b91674d",
+      "positive_source_file": "tutorial/security/get-current-user.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0393",
+      "query_text": "How to use and configure get_current_user in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "instagram_basic"
+      ],
+      "key_tokens_matched_in_positive": [
+        "instagram_basic"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0737,
+      "positive_chunk_id": "cfb331ee0850320d35e1708d",
+      "positive_source_file": "advanced/security/oauth2-scopes.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0401",
+      "query_text": "What is the difference and interaction between instagram_basic and e.g in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "path",
+        "operation",
+        "response",
+        "description"
+      ],
+      "key_tokens_matched_in_positive": [
+        "path",
+        "operation",
+        "response",
+        "description"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1475,
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_file": "tutorial/path-operation-configuration.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0408",
+      "query_text": "What is the configuration and purpose of Path Operation Configuration  Response description in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "response_description"
+      ],
+      "key_tokens_matched_in_positive": [
+        "response_description"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0656,
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_file": "tutorial/path-operation-configuration.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0409",
+      "query_text": "How to use and configure response_description in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "response_description",
+        "description"
+      ],
+      "key_tokens_matched_in_positive": [
+        "response_description",
+        "description"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0794,
+      "positive_chunk_id": "f1e52760ae44ab668e16f317",
+      "positive_source_file": "tutorial/path-operation-configuration.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0410",
+      "query_text": "What is the difference and interaction between response_description and description in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "router",
+        "users"
+      ],
+      "key_tokens_matched_in_positive": [
+        "router",
+        "users"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0674,
+      "positive_chunk_id": "644fd3a461fb1646ea7e82e0",
+      "positive_source_file": "tutorial/bigger-applications.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0413",
+      "query_text": "What is the difference and interaction between router and users in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "security",
+        "first",
+        "steps",
+        "does"
+      ],
+      "key_tokens_matched_in_positive": [
+        "security",
+        "does"
+      ],
+      "key_tokens_missing_in_positive": [
+        "first",
+        "steps"
+      ],
+      "lexical_jaccard": 0.0921,
+      "positive_chunk_id": "61032db09188fdb033ebca76",
+      "positive_source_file": "tutorial/security/first-steps.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0414",
+      "query_text": "What is the configuration and purpose of Security - First Steps  What it does in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "authorization",
+        "str"
+      ],
+      "key_tokens_matched_in_positive": [
+        "authorization",
+        "str"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0811,
+      "positive_chunk_id": "61032db09188fdb033ebca76",
+      "positive_source_file": "tutorial/security/first-steps.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0416",
+      "query_text": "What is the difference and interaction between Authorization and str in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "include_in_schema"
+      ],
+      "key_tokens_matched_in_positive": [
+        "include_in_schema"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.125,
+      "positive_chunk_id": "09dc83367963c280142df2ad",
+      "positive_source_file": "advanced/path-operation-advanced-configuration.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0419",
+      "query_text": "How to use and configure include_in_schema in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "openapi_extra",
+        "hl_lines"
+      ],
+      "key_tokens_matched_in_positive": [
+        "openapi_extra",
+        "hl_lines"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0638,
+      "positive_chunk_id": "b936f329e8ff77a846897aeb",
+      "positive_source_file": "advanced/path-operation-advanced-configuration.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0426",
+      "query_text": "What is the difference and interaction between openapi_extra and hl_lines in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "features",
+        "features",
+        "validation"
+      ],
+      "key_tokens_matched_in_positive": [
+        "validation"
+      ],
+      "key_tokens_missing_in_positive": [
+        "features",
+        "features"
+      ],
+      "lexical_jaccard": 0.0784,
+      "positive_chunk_id": "b19cf4587787d65382555e20",
+      "positive_source_file": "features.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0427",
+      "query_text": "What is the configuration and purpose of Features  FastAPI features  Validation in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "dict",
+        "list"
+      ],
+      "key_tokens_matched_in_positive": [
+        "dict",
+        "list"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1,
+      "positive_chunk_id": "b19cf4587787d65382555e20",
+      "positive_source_file": "features.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0429",
+      "query_text": "What is the difference and interaction between dict and list in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "people",
+        "sponsors",
+        "individual",
+        "sponsors"
+      ],
+      "key_tokens_matched_in_positive": [
+        "sponsors",
+        "sponsors"
+      ],
+      "key_tokens_missing_in_positive": [
+        "people",
+        "individual"
+      ],
+      "lexical_jaccard": 0.0526,
+      "positive_chunk_id": "7f5eeee3266d1e93b9ddbdc3",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0431",
+      "query_text": "What is the configuration and purpose of FastAPI People  Sponsors  Individual Sponsors in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "github_sponsors"
+      ],
+      "key_tokens_matched_in_positive": [
+        "github_sponsors"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0588,
+      "positive_chunk_id": "7f5eeee3266d1e93b9ddbdc3",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0432",
+      "query_text": "How to use and configure github_sponsors in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "three_months_experts"
+      ],
+      "key_tokens_matched_in_positive": [
+        "three_months_experts"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0556,
+      "positive_chunk_id": "d59baa17f82ead57c2052984",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0441",
+      "query_text": "How to use and configure three_months_experts in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "three_months_experts"
+      ],
+      "key_tokens_matched_in_positive": [
+        "three_months_experts"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0909,
+      "positive_chunk_id": "d59baa17f82ead57c2052984",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0442",
+      "query_text": "What is the difference and interaction between three_months_experts and fastapi.md in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "sponsors",
+        "example",
+        "upgrade",
+        "recap"
+      ],
+      "key_tokens_matched_in_positive": [
+        "example"
+      ],
+      "key_tokens_missing_in_positive": [
+        "sponsors",
+        "upgrade",
+        "recap"
+      ],
+      "lexical_jaccard": 0.0455,
+      "positive_chunk_id": "3193be200596c6cb9dcad2f0",
+      "positive_source_file": "index.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0443",
+      "query_text": "What is the configuration and purpose of Sponsors  Example upgrade  Recap in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "maximum_length"
+      ],
+      "key_tokens_matched_in_positive": [
+        "maximum_length"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0577,
+      "positive_chunk_id": "3193be200596c6cb9dcad2f0",
+      "positive_source_file": "index.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0444",
+      "query_text": "How to use and configure maximum_length in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "maximum_length",
+        "regex"
+      ],
+      "key_tokens_matched_in_positive": [
+        "maximum_length",
+        "regex"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0463,
+      "positive_chunk_id": "3193be200596c6cb9dcad2f0",
+      "positive_source_file": "index.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0445",
+      "query_text": "What is the difference and interaction between maximum_length and regex in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "worker",
+        "class"
+      ],
+      "key_tokens_matched_in_positive": [
+        "worker",
+        "class"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1364,
+      "positive_chunk_id": "b4805da96e72412f37b61cf7",
+      "positive_source_file": "deployment/manually.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0447",
+      "query_text": "How to use and configure --worker-class in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "containers",
+        "docker",
+        "container",
+        "image"
+      ],
+      "key_tokens_matched_in_positive": [
+        "container",
+        "image"
+      ],
+      "key_tokens_missing_in_positive": [
+        "containers",
+        "docker"
+      ],
+      "lexical_jaccard": 0.0976,
+      "positive_chunk_id": "918beade7a8e8312b7a104a0",
+      "positive_source_file": "deployment/docker.md",
+      "quality_flags": [
+        "DOUBLE_SPACE_IN_QUERY"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0449",
+      "query_text": "What is the configuration and purpose of FastAPI in Containers - Docker  What is a Container Image in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "sponsors",
+        "gold"
+      ],
+      "key_tokens_matched_in_positive": [
+        "sponsors",
+        "gold"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1111,
+      "positive_chunk_id": "2fa67c1949f7e856d627a010",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0453",
+      "query_text": "How to use and configure sponsors.gold in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "sponsors",
+        "gold",
+        "sponsor",
+        "url"
+      ],
+      "key_tokens_matched_in_positive": [
+        "sponsors",
+        "gold",
+        "sponsor",
+        "url"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1724,
+      "positive_chunk_id": "2fa67c1949f7e856d627a010",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0454",
+      "query_text": "What is the difference and interaction between sponsors.gold and sponsor.url in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "annotated",
+        "convert_underscores"
+      ],
+      "key_tokens_matched_in_positive": [
+        "annotated",
+        "convert_underscores"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.119,
+      "positive_chunk_id": "f804d7e0abd436ff1aeb8cc3",
+      "positive_source_file": "tutorial/header-params.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0460",
+      "query_text": "What is the difference and interaction between Annotated and convert_underscores in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "get"
+      ],
+      "key_tokens_matched_in_positive": [
+        "get"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0645,
+      "positive_chunk_id": "8053fe9372738685123f8902",
+      "positive_source_file": "tutorial/first-steps.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0463",
+      "query_text": "How to use and configure get in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "get",
+        "get"
+      ],
+      "key_tokens_matched_in_positive": [
+        "get",
+        "get"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0968,
+      "positive_chunk_id": "8053fe9372738685123f8902",
+      "positive_source_file": "tutorial/first-steps.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0464",
+      "query_text": "What is the difference and interaction between get and GET in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "include_router"
+      ],
+      "key_tokens_matched_in_positive": [
+        "include_router"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1042,
+      "positive_chunk_id": "641c1a4ad8357618e3057f4d",
+      "positive_source_file": "tutorial/bigger-applications.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0469",
+      "query_text": "How to use and configure include_router in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "sqlite",
+        "def"
+      ],
+      "key_tokens_matched_in_positive": [
+        "sqlite",
+        "def"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0759,
+      "positive_chunk_id": "b11bdf7943939c8a84a12f8f",
+      "positive_source_file": "tutorial/sql-databases.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0473",
+      "query_text": "What is the difference and interaction between SQLite and def in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "httpconnection",
+        "class"
+      ],
+      "key_tokens_matched_in_positive": [
+        "httpconnection"
+      ],
+      "key_tokens_missing_in_positive": [
+        "class"
+      ],
+      "lexical_jaccard": 0.1026,
+      "positive_chunk_id": "9ecf908f16379d896c290fbf",
+      "positive_source_file": "reference/httpconnection.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0474",
+      "query_text": "What is the configuration and purpose of HTTPConnection class in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "httpconnection"
+      ],
+      "key_tokens_matched_in_positive": [
+        "httpconnection"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1111,
+      "positive_chunk_id": "9ecf908f16379d896c290fbf",
+      "positive_source_file": "reference/httpconnection.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0475",
+      "query_text": "How to use and configure HTTPConnection in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "logo"
+      ],
+      "key_tokens_matched_in_positive": [
+        "logo"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.129,
+      "positive_chunk_id": "3d9a825acf4863ff0fba6626",
+      "positive_source_file": "how-to/extending-openapi.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0482",
+      "query_text": "How to use and configure x-logo in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "six_months_experts"
+      ],
+      "key_tokens_matched_in_positive": [
+        "six_months_experts"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0556,
+      "positive_chunk_id": "f640099487b2a0908370c65f",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0491",
+      "query_text": "How to use and configure six_months_experts in fastapi?",
+      "typology": "direct_lookup"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "six_months_experts"
+      ],
+      "key_tokens_matched_in_positive": [
+        "six_months_experts"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0909,
+      "positive_chunk_id": "f640099487b2a0908370c65f",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [
+        "CODE_IDENTIFIER_PROMPT"
+      ],
+      "quality_status": "REVIEW_QUERY",
+      "query_id": "train_fa_0492",
+      "query_text": "What is the difference and interaction between six_months_experts and fastapi.md in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "starlette"
+      ],
+      "key_tokens_matched_in_positive": [
+        "starlette"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.0638,
+      "positive_chunk_id": "b4db3a6f59f4387d1e1e5b1c",
+      "positive_source_file": "features.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0498",
+      "query_text": "What is the difference and interaction between FastAPI and Starlette in fastapi?",
+      "typology": "comparative_discrimination"
+    },
+    {
+      "domain": "fastapi",
+      "key_tokens_extracted": [
+        "sponsors",
+        "silver",
+        "sponsor",
+        "url"
+      ],
+      "key_tokens_matched_in_positive": [
+        "sponsors",
+        "silver",
+        "sponsor",
+        "url"
+      ],
+      "key_tokens_missing_in_positive": [],
+      "lexical_jaccard": 0.1724,
+      "positive_chunk_id": "027eecf5647ecb222d46bca7",
+      "positive_source_file": "fastapi-people.md",
+      "quality_flags": [],
+      "quality_status": "CLEAN",
+      "query_id": "train_fa_0501",
+      "query_text": "What is the difference and interaction between sponsors.silver and sponsor.url in fastapi?",
+      "typology": "comparative_discrimination"
+    }
+  ],
+  "report_name": "E7_QUERY_POSITIVE_QUALITY",
+  "status_distribution": {
+    "CLEAN": 125,
+    "REVIEW_POSITIVE_MAPPING": 4,
+    "REVIEW_QUERY": 59
+  },
+  "target_stage": "Stage-2 Cross-Encoder Domain Reranker (E7)",
+  "total_queries_evaluated": 188
+}
