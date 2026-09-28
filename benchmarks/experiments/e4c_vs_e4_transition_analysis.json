@@ -1,0 +1,290 @@
+{
+  "comparison": "E4C (Matched Easy Negatives) -> E4 (Hard Negatives)",
+  "primary_causal_hypothesis": {
+    "delta_ndcg10_mean": 0.013017671034896844,
+    "delta_ndcg10_ci_95_bca": [
+      -0.002431536189461029,
+      0.029219450319684863
+    ],
+    "delta_recall10_mean": -0.011904761904761904,
+    "delta_recall10_ci_95_bca": [
+      -0.03214285714285714,
+      0.003571428571428571
+    ],
+    "mcnemar": {
+      "candidate_wins": 0,
+      "candidate_losses": 2,
+      "both_hit": 132,
+      "both_miss": 6,
+      "chi2_stat": 0.5,
+      "p_value": 0.47950012218695337,
+      "raw_p_value": 0.47950012218695337,
+      "reporting": "McNemar p=0.4795 (unadjusted for multiple comparisons)"
+    }
+  },
+  "summary": {
+    "total_queries": 140,
+    "e4_wins_recall10": 0,
+    "e4c_wins_recall10": 2,
+    "both_hit": 132,
+    "both_miss": 6,
+    "net_recall_transition": -2,
+    "ndcg_rank_shifts": {
+      "significant_gainers_delta_gt_05": 24,
+      "significant_losers_delta_lt_neg_05": 13
+    }
+  },
+  "transition_by_typology": {
+    "direct_lookup": {
+      "fixed": 0,
+      "regressed": 0,
+      "both_hit": 38,
+      "both_miss": 2
+    },
+    "comparative_discrimination": {
+      "fixed": 0,
+      "regressed": 2,
+      "both_hit": 57,
+      "both_miss": 1
+    },
+    "troubleshooting_scenario": {
+      "fixed": 0,
+      "regressed": 0,
+      "both_hit": 37,
+      "both_miss": 3
+    }
+  },
+  "failures_fixed": [],
+  "queries_regressed": [
+    {
+      "query_id": "v0_k8s_020",
+      "domain": "kubernetes",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the distinction between a ResourceQuota that limits aggregated namespace consumption and a LimitRange that constrains individual pods?",
+      "delta_ndcg10": -0.10642269850451405,
+      "delta_recall10": -0.5,
+      "canonical_chunk_id": "7f2f8d9e75e63d2a8dd34275",
+      "e4c_top10": [
+        "6f7c49c9b796ad4349aa48c7",
+        "cca3d475d730812fa11e4c21",
+        "e53cff7e0f7f63b0ea5c352b",
+        "3e0dd972c66bb2ba8d145bde",
+        "21f474220a38f21e8bb1fe20",
+        "1710a9b06733092c2144e28b",
+        "e5dfedb480aa38c3e1103e09",
+        "842688d4d195a2f4d44f02f4",
+        "dbcdef0f47248da7b9886ce5",
+        "e184a2fb1dd44d4cc2d61e48"
+      ],
+      "e4_top10": [
+        "6f7c49c9b796ad4349aa48c7",
+        "e53cff7e0f7f63b0ea5c352b",
+        "e184a2fb1dd44d4cc2d61e48",
+        "cca3d475d730812fa11e4c21",
+        "21f474220a38f21e8bb1fe20",
+        "1710a9b06733092c2144e28b",
+        "e5dfedb480aa38c3e1103e09",
+        "3e0dd972c66bb2ba8d145bde",
+        "569e23f82594883e664f9996",
+        "dbcdef0f47248da7b9886ce5"
+      ]
+    },
+    {
+      "query_id": "v0_fa_015",
+      "domain": "fastapi",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference between setting dependencies on APIRouter(dependencies=[...]) versus the top-level FastAPI(dependencies=[...])?",
+      "delta_ndcg10": -0.23695714672525509,
+      "delta_recall10": -0.5,
+      "canonical_chunk_id": "bbb2bb83a3ebad8971a4ecbd",
+      "e4c_top10": [
+        "582d2244ca642324db8c4f37",
+        "2166469c1f933baf037b9492",
+        "870bba3c873896f9a98a6147",
+        "92f2b78840e29178d39b8dd7",
+        "27174fd717837b5ce29a0ccb",
+        "cd8b07f7f85b92abb6df9184",
+        "b8dc82bac44341c05d277e80",
+        "80f4b0de729049c4d0d7601c",
+        "bbb2bb83a3ebad8971a4ecbd",
+        "bf7ddf36798bfcb77a7673bb"
+      ],
+      "e4_top10": [
+        "582d2244ca642324db8c4f37",
+        "2166469c1f933baf037b9492",
+        "cd8b07f7f85b92abb6df9184",
+        "92f2b78840e29178d39b8dd7",
+        "27174fd717837b5ce29a0ccb",
+        "870bba3c873896f9a98a6147",
+        "b8dc82bac44341c05d277e80",
+        "bf7ddf36798bfcb77a7673bb",
+        "af048dea04097c273cc62017",
+        "77beec7408adaf4d6313cd7b"
+      ]
+    }
+  ],
+  "representative_gainers": [
+    {
+      "query_id": "v0_pg_005",
+      "typology": "direct_lookup",
+      "query_text": "How does checkpoint_timeout dictate the maximum duration between automatic WAL checkpoints?",
+      "e4c_ndcg": 0.43067655807339306,
+      "e4_ndcg": 0.5,
+      "delta_ndcg": 0.06932344192660694
+    },
+    {
+      "query_id": "v0_pg_007",
+      "typology": "direct_lookup",
+      "query_text": "How does the pg_class system catalog represent estimated on-disk table size in pages and estimated live row count?",
+      "e4c_ndcg": 0.8339912323981488,
+      "e4_ndcg": 1.0,
+      "delta_ndcg": 0.16600876760185124
+    },
+    {
+      "query_id": "v0_pg_008",
+      "typology": "direct_lookup",
+      "query_text": "What is the syntax for using the RETURNING clause in an INSERT or UPDATE statement in PostgreSQL?",
+      "e4c_ndcg": 0.3935773014954859,
+      "e4_ndcg": 0.4966392596877323,
+      "delta_ndcg": 0.1030619581922464
+    },
+    {
+      "query_id": "v0_pg_010",
+      "typology": "direct_lookup",
+      "query_text": "What table options are required when creating a foreign table using file_fdw in PostgreSQL?",
+      "e4c_ndcg": 0.3562071871080222,
+      "e4_ndcg": 0.5,
+      "delta_ndcg": 0.14379281289197782
+    },
+    {
+      "query_id": "v0_pg_026",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to resolve 'FATAL: sorry, too many clients already' by configuring max_connections and connection limits in PostgreSQL?",
+      "e4c_ndcg": 0.3726262671130988,
+      "e4_ndcg": 0.47020199776783905,
+      "delta_ndcg": 0.09757573065474023
+    },
+    {
+      "query_id": "v0_pg_028",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How does setting idle_in_transaction_session_timeout prevent orphaned transactions from holding locks and causing table bloat in PostgreSQL?",
+      "e4c_ndcg": 0.8339912323981488,
+      "e4_ndcg": 1.0,
+      "delta_ndcg": 0.16600876760185124
+    },
+    {
+      "query_id": "v0_pg_031",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How to monitor PostgreSQL disk space usage when relation size rapidly expands due to dead tuples and bloat?",
+      "e4c_ndcg": 0.6763610077981964,
+      "e4_ndcg": 0.8339912323981488,
+      "delta_ndcg": 0.15763022459995235
+    },
+    {
+      "query_id": "v0_pt_004",
+      "typology": "direct_lookup",
+      "query_text": "What communication hook in PyTorch DDP compresses model gradients to FP16 before the AllReduce step?",
+      "e4c_ndcg": 0.4731889542498568,
+      "e4_ndcg": 0.5518544320968081,
+      "delta_ndcg": 0.07866547784695127
+    },
+    {
+      "query_id": "v0_pt_008",
+      "typology": "direct_lookup",
+      "query_text": "What sharing strategies can be configured using torch.multiprocessing.set_sharing_strategy?",
+      "e4c_ndcg": 0.7309292742059024,
+      "e4_ndcg": 1.0,
+      "delta_ndcg": 0.26907072579409763
+    },
+    {
+      "query_id": "v0_pt_009",
+      "typology": "direct_lookup",
+      "query_text": "What conditions must two tensor shapes satisfy to be broadcastable according to PyTorch broadcasting semantics?",
+      "e4c_ndcg": 0.7309292742059024,
+      "e4_ndcg": 0.8339912323981488,
+      "delta_ndcg": 0.1030619581922464
+    }
+  ],
+  "representative_losers": [
+    {
+      "query_id": "v0_pg_012",
+      "typology": "comparative_discrimination",
+      "query_text": "How does synchronous_commit = local differ from synchronous_commit = off regarding standby acknowledgment?",
+      "e4c_ndcg": 0.5997368403740738,
+      "e4_ndcg": 0.4310608540188655,
+      "delta_ndcg": -0.1686759863552083
+    },
+    {
+      "query_id": "v0_pg_020",
+      "typology": "comparative_discrimination",
+      "query_text": "How do the query operators provided by intarray compare to PostgreSQL built-in array operators for integer lookups?",
+      "e4c_ndcg": 0.5997368403740738,
+      "e4_ndcg": 0.3373519727104165,
+      "delta_ndcg": -0.2623848676636573
+    },
+    {
+      "query_id": "v0_pg_021",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the distinction between the exist operator ? and the defined operator in the PostgreSQL hstore extension?",
+      "e4c_ndcg": 0.16867598635520825,
+      "e4_ndcg": 0.11245065757013882,
+      "delta_ndcg": -0.05622532878506943
+    },
+    {
+      "query_id": "v0_pg_024",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the structural difference between the default pg_default tablespace and pg_global catalog tablespace?",
+      "e4c_ndcg": 0.6271448173568673,
+      "e4_ndcg": 0.4109356663991626,
+      "delta_ndcg": -0.2162091509577047
+    },
+    {
+      "query_id": "v0_pt_023",
+      "typology": "comparative_discrimination",
+      "query_text": "How do scale and zero-point calculations differ between symmetric and asymmetric affine quantization schemes in PyTorch?",
+      "e4c_ndcg": 0.5648906813093276,
+      "e4_ndcg": 0.2128453970090281,
+      "delta_ndcg": -0.3520452843002995
+    },
+    {
+      "query_id": "v0_pt_029",
+      "typology": "troubleshooting_scenario",
+      "query_text": "How does PyTorch detect when a tensor needed for gradient computation has been modified by an in-place operation?",
+      "e4c_ndcg": 0.4966392596877323,
+      "e4_ndcg": 0.3935773014954859,
+      "delta_ndcg": -0.1030619581922464
+    },
+    {
+      "query_id": "v0_k8s_003",
+      "typology": "direct_lookup",
+      "query_text": "What pod fields control the total number of successful completions and concurrent pods in a Kubernetes Job?",
+      "e4c_ndcg": 0.41089568461968107,
+      "e4_ndcg": 0.3571243439897748,
+      "delta_ndcg": -0.053771340629906295
+    },
+    {
+      "query_id": "v0_k8s_011",
+      "typology": "comparative_discrimination",
+      "query_text": "What advantages does nodeAffinity offer over nodeSelector for expressing complex node selection rules?",
+      "e4c_ndcg": 0.3935773014954859,
+      "e4_ndcg": 0.30451296789464855,
+      "delta_ndcg": -0.08906433360083738
+    },
+    {
+      "query_id": "v0_k8s_020",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the distinction between a ResourceQuota that limits aggregated namespace consumption and a LimitRange that constrains individual pods?",
+      "e4c_ndcg": 0.10642269850451405,
+      "e4_ndcg": 0.0,
+      "delta_ndcg": -0.10642269850451405
+    },
+    {
+      "query_id": "v0_k8s_023",
+      "typology": "comparative_discrimination",
+      "query_text": "What is the difference in container lifecycle when a Job pod specifies restartPolicy: OnFailure versus restartPolicy: Never?",
+      "e4c_ndcg": 0.3373519727104165,
+      "e4_ndcg": 0.16867598635520825,
+      "delta_ndcg": -0.16867598635520825
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "experiment_id": "E4C-BGE-MatchedEasy-v0",
+  "description": "Matched Control Fine-Tuning: Same queries and positives as E4, but with safe easy/non-hard negatives",
+  "status": "COMPLETED",
+  "benchmark_sha256": "36e34a26da3765e9ed45bf83fb79614c372a624527e23f5f912ecb04506e223d",
+  "corpus_chunks_sha256": "bb366346ec1b7dea9cb61286c435c074f17b88a4dd1ea75dbbdbaab575e13d57",
+  "training_data_path": "data/training/e4_matched_easy_control_v1.jsonl",
+  "training_data_sha256": "d1f225db30b1622b85dca21ecddcbbb8bb44f4c481a080ccf26f5acc80dd9cb7",
+  "training_telemetry": {
+    "model_name": "BAAI/bge-small-en-v1.5",
+    "model_revision": "main",
+    "optimizer": "AdamW",
+    "learning_rate": 2e-05,
+    "warmup_ratio": 0.1,
+    "epochs": 3,
+    "batch_size": 16,
+    "effective_batch_size": 16,
+    "max_sequence_length": 512,
+    "precision": "fp16",
+    "seed": 42,
+    "wall_time_sec": 52.8,
+    "peak_vram_allocated_mb": 4205.4,
+    "peak_vram_reserved_mb": 4496.0,
+    "examples_seen": 2217,
+    "total_training_triples": 739,
+    "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+    "cuda_version": "12.8",
+    "pytorch_version": "2.11.0+cu128"
+  },
+  "overall_metrics": {
+    "recall_at_1": 0.3392857142857143,
+    "recall_at_5": 0.6952380952380952,
+    "recall_at_10": 0.8154761904761904,
+    "recall_at_20": 0.8642857142857143,
+    "mrr_at_10": 0.6971428571428571,
+    "ndcg_at_10": 0.6497432364683401,
+    "top10_failures": 6,
+    "failure_rate": 0.04285714285714286
+  },
+  "latency_telemetry": {
+    "mean_ms": 24.88208500435576,
+    "p50_ms": 23.064499953761697,
+    "p95_ms": 32.345375005388625,
+    "p99_ms": 35.117736976826556,
+    "total_eval_time_sec": 3.493868099991232,
+    "queries_per_sec": 40.0702018488767
+  }
+}

@@ -115,3 +115,26 @@ def test_hard_negatives_v1_zero_leakage(partition_lookup: dict[str, str]):
         assert t["teacher_margin"] >= 0.25
         assert t["verification_status"] == "ACCEPTED_VERIFIED_HARD_NEGATIVE"
 
+
+def test_matched_easy_control_v1_zero_leakage(partition_lookup: dict[str, str]):
+    """Assert all triples in e4_matched_easy_control_v1.jsonl strictly belong to train partition."""
+    ctrl_path = Path("data/training/e4_matched_easy_control_v1.jsonl")
+    assert ctrl_path.exists(), f"Matched control file not found: {ctrl_path}"
+
+    with open(ctrl_path, "r", encoding="utf-8") as f:
+        triples = [json.loads(line) for line in f if line.strip()]
+
+    assert len(triples) == 739, f"Matched control must contain exactly 739 rows, got {len(triples)}"
+
+    for t in triples:
+        validate_training_triple(t, chunk_partition_lookup=partition_lookup)
+        assert t["query_source_partition"] == "train"
+        assert t["positive_source_partition"] == "train"
+        assert t["negative_source_partition"] == "train"
+        assert partition_lookup[t["positive_chunk_id"]] == "train"
+        assert partition_lookup[t["negative_chunk_id"]] == "train"
+        assert t["positive_chunk_id"] != t["negative_chunk_id"]
+        assert t["source_path"] != t["positive_source_path"]
+        assert t["verification_status"] == "MATCHED_EASY_CONTROL_NEGATIVE"
+
+

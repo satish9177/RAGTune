@@ -1,0 +1,15 @@
+{
+  "total_candidates_mined": 10669,
+  "total_accounted": 10669,
+  "disposition_breakdown": {
+    "known_positive_exclusions": 422,
+    "quarantined_same_document_subtopic": 956,
+    "quarantined_high_lexical_overlap": 31,
+    "quarantined_teacher_inversion": 1696,
+    "quarantined_high_teacher_score": 1106,
+    "quarantined_ambiguous_margin": 1221,
+    "accepted_training_negatives": 739,
+    "pruned_excess_eligible_quota_exceeded": 4317,
+    "rejected_low_positive_teacher_score": 181
+  }
+}
